@@ -28,6 +28,9 @@ Web Resources:
 - [LEA Release Form](https://k12.ncseaa.edu/media/m44elcjw/esa-lea-release.pdf)
 - [OS Renewal Process](https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/how-to-renew/)
 - [ESA+ Continuing Eligibility](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-to-renew/continuing-eligibility/)
+- [ClassWallet Approval Process](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2021/08/ESA_ClassWallet-Approval-Process.pdf)
+- [NC DPI Eligibility Determination](https://www.dpi.nc.gov/eligibility-determination/download?attachment)
+- [Documentation of Disability](https://k12.ncseaa.edu/the-education-student-accounts/documentation-of-a-disability/)
 
 North Carolina General Statutes (Authoritative Legal Sources):
 - [G.S. 115C-562.1 - ESA+ Eligibility and Definitions](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.1.html)
@@ -276,11 +279,18 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 
 1) Parent creates/uses MyPortal account; selects ESA+; submits application.
 2) Within 7 days, parent uploads Eligibility Determination via MyPortal To-Do.
-3) SEAA verifies eligibility; if eligible and within window, student enters lottery.
-4) Lottery in April; awards offered until funds exhausted.
-5) Parent accepts award in MyPortal by deadline. (Video guidance linked on site.)
-6) Next steps: choose school option (Direct Payment / Reimbursement / Home School), sign Parent Agreement (+ LEA Release if required), submit W-9/affidavit.
-7) Funding flows per school option begin (see 5.3–5.5). (Sources: Awarding Process; Program Rules; How Scholarship Funds Work)
+   - Must be from NC public school or Department of Defense school in NC.
+   - Legal document identifying student as having disability and eligible for special education services.
+   - Typically part of Individualized Education Program (IEP).
+   - Full individualized evaluation must have been conducted by team including parents and qualified professionals.
+   - Evaluation must be current (conducted within last 3 years).
+3) SEAA verifies eligibility determination document and other requirements (residency, age, not in full-time postsecondary).
+4) If eligible and within application window, student enters lottery.
+5) Lottery in April; awards offered until funds exhausted.
+6) Parent accepts award in MyPortal by deadline. (Video guidance linked on site.)
+7) Next steps: choose school option (Direct Payment / Reimbursement / Home School), sign Parent Agreement (+ LEA Release if required), submit W-9/affidavit.
+8) Funding flows per school option begin (see 5.3–5.5). 
+(Sources: [Awarding Process](https://k12.ncseaa.edu/the-education-student-accounts/awarding-process/); [Documentation of Disability](https://k12.ncseaa.edu/the-education-student-accounts/documentation-of-a-disability/); [Program Rules](https://k12.ncseaa.edu/the-education-student-accounts/program-rules-and-requirements/); [How Scholarship Funds Work](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-scholarship-funds-work/); [NC DPI Eligibility Determination](https://www.dpi.nc.gov/eligibility-determination/download?attachment))
 
 ### 5.2 OS New Application & Income Verification
 
@@ -314,11 +324,40 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 
 ### 5.6 ESA+ Allowable Expense Purchasing
 
-- Products: Must be purchased via ClassWallet marketplace. Not all marketplace items are allowable.
-- Services: Tutors/therapists/transport providers must be enrolled with SEAA. Find via Provider Search; submit invoices; transportation requires signed contract with first invoice.
-- Off-market vendors: Use Pay Vendor; upload invoice/cart screenshot; staff review; rejection codes if non-compliant.
-- Timing rules: accessory window (30 days) and frequency (e.g., once per 3 years) enforced.
-(Sources: Allowable Expenses pages and Parent Guide; ClassWallet resources)
+**Marketplace Product Purchase:**
+- Parent signs into ClassWallet account.
+- Browses marketplace and selects items from authorized vendors.
+- Adds items to cart and submits order for SEAA review.
+- SEAA reviews purchase against allowable expense categories and rules.
+- Upon approval, funds deducted from ESA+ account and products shipped to parent address.
+- If rejected, parent receives notification with rejection code and remediation guidance.
+
+**Service Provider Payment:**
+- Parent obtains invoice from enrolled service provider at time of service.
+- Signs into ClassWallet account.
+- Finds provider from list of enrolled providers.
+- Uploads invoice, enters required details (amount, service description, dates).
+- Submits for SEAA review.
+- SEAA verifies provider enrollment status, service category allowability, and invoice details.
+- Upon approval, funds transferred directly to service provider.
+- If rejected, parent receives notification with rejection code.
+
+**Off-Market Vendor (Pay Vendor):**
+- Parent identifies vendor/product not in ClassWallet marketplace.
+- Obtains invoice or cart screenshot showing item details, price, vendor info.
+- Signs into ClassWallet, selects "Pay Vendor" option.
+- Uploads invoice/screenshot and enters vendor details.
+- Submits for SEAA staff manual review.
+- Staff validates: allowable category, reasonable pricing, vendor legitimacy, documentation completeness.
+- Approval or rejection with specific code and guidance.
+
+**Special Rules:**
+- Transportation requires signed contract between parent and provider included with first invoice. (Parent Guide)
+- Accessories must be purchased within 30 days of main device order; frequency limits enforced (e.g., once per 3 years).
+- All purchases must support core academic subjects (math, science, English/language arts, social studies, foreign language).
+- Prohibited: computer hardware not defined as educational technology, consumable supplies (paper, pens, markers), non-enrolled service providers.
+
+(Sources: [ClassWallet](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/classwallet/); [Allowable Expenses](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/allowable-expenses/); [Parent Guide to Allowable Expenses](https://k12.ncseaa.edu/media/0ckgxt0f/parentguideae2526final.pdf); [ClassWallet Approval Process](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2021/08/ESA_ClassWallet-Approval-Process.pdf))
 
 ### 5.7 Renewal & Continuing Eligibility (ESA+)
 
@@ -428,6 +467,8 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 - Standardized Testing Requirements: Students in grades 3-12 must take nationally standardized tests annually; grades 3-8: achievement tests in English, grammar, reading, spelling, math; grades 9, 10, 12: same or competencies in verbal/quantitative areas; grade 11: ACT required; acceptable tests include Stanford Achievement Test, Iowa Tests of Basic Skills, TerraNova; results must include Standard/Scaled Score, National Percentile Rank, and if available National Stanine, NCE, or Grade Equivalent. (Sources: [Testing and Reporting](https://k12.ncseaa.edu/school-admins/annual-requirements/testing-and-reporting/); [DNPE Testing Requirements](https://www.doa.nc.gov/divisions/non-public-education/private-schools/standardized-testing))
 
 - ESA+ Disability Eligibility (G.S. 115C-562.1): Student must have documented disability per public school Eligibility Determination confirming need for special education or related services; determination must be submitted within 7 days of application. (Sources: [G.S. 115C-562.1](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.1.html); ESA+ Awarding Process)
+
+- ESA+ Eligibility Determination Requirements: Must be from NC public school or Department of Defense school in NC; legal document identifying student with disability and eligible for special education services; typically part of IEP; full individualized evaluation required by team including parents and qualified professionals; evaluation must be current (within 3 years); student must also meet residency, age, and enrollment requirements. (Sources: [Documentation of Disability](https://k12.ncseaa.edu/the-education-student-accounts/documentation-of-a-disability/); [NC DPI Eligibility Determination](https://www.dpi.nc.gov/eligibility-determination/download?attachment))
 
 - Scholarship Endorsement (G.S. 115C-562.6): Authority must remit scholarship funds to nonpublic schools at least twice per year; funds must be endorsed by at least one parent/guardian; failure to endorse results in forfeiture and reallocation to other students. (Source: [G.S. 115C-562.6](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.6.html))
 
