@@ -31,6 +31,30 @@ Web Resources:
 - [ClassWallet Approval Process](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2021/08/ESA_ClassWallet-Approval-Process.pdf)
 - [NC DPI Eligibility Determination](https://www.dpi.nc.gov/eligibility-determination/download?attachment)
 - [Documentation of Disability](https://k12.ncseaa.edu/the-education-student-accounts/documentation-of-a-disability/)
+- [School Administrator Resources](https://k12.ncseaa.edu/school-admins/resources/)
+- [School Admins Portal](https://k12.ncseaa.edu/school-admins/)
+- [MyPortal Guide for Parents](https://k12.ncseaa.edu/media/pjqhsiz4/myportal-guide-for-parents.pdf)
+- [How to Upload Documents in MyPortal](https://k12.ncseaa.edu/media/2w2p4xp0/how-to-upload-docs-myportal.pdf)
+- [ESA+ School Transfers](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/school-transfers/)
+- [School Transfer Form Guide](https://k12.ncseaa.edu/media/n0gjhckv/how-to-transfer-schools-or-cancel-your-scholarship.pdf)
+- [ESA+ School Options](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/school-transfers/esaplus-school-options/)
+- [OS Choosing a School](https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/school-transfers/choosing-a-school/)
+- [K12 Program Certification Deadlines](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2022/08/K12-Program-NPS-Certification-Deadlines.pdf)
+- [Annual Requirements](https://k12.ncseaa.edu/school-admins/annual-requirements/)
+- [Certification and Endorsement](https://k12.ncseaa.edu/school-admins/managing-funds/certification-and-endorsement/)
+- [Educational Technology](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/allowable-expenses/educational-technology/)
+- [ESA+ Educational Technology Info](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2020/10/EducationalTechnology.pdf)
+- [ESA+ Excluded Educational Technology](https://k12.ncseaa.edu/media/pnyownzr/esa-excluded-ed-tech.pdf)
+- [DNPE Home School Requirements](https://www.doa.nc.gov/divisions/non-public-education/home-schools/requirements-recommendations)
+- [DNPE Home Schools](https://www.doa.nc.gov/divisions/non-public-education/home-schools)
+- [DNPE Private Schools](https://www.doa.nc.gov/divisions/non-public-education/private-schools)
+- [Private School Requirements](https://www.doa.nc.gov/divisions/non-public-education/private-schools/requirements)
+- [OS Awarding Process](https://k12prod.ncseaa.edu/opportunity-scholarship/awarding-process/)
+- [OS FAQ](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2024/11/FAQ-for-website_NOV2024_expanded-from-notification.pdf)
+- [Priority Period Announcement](https://www.ncseaa.edu/2025/02/k12-program-announcement/)
+- [CFNC Financial Aid](https://www.cfnc.org/pay-for-college/apply-for-financial-aid/)
+- [Approved Provider List](https://www2.ncseaa.edu/approvedprovidersk12/Documents/K12ApprovedProviders.pdf)
+- [Provider Portal Enrollment](https://www2.ncseaa.edu/k12_provider_portal/CreateAccount.aspx)
 
 North Carolina General Statutes (Authoritative Legal Sources):
 - [G.S. 115C-562.1 - ESA+ Eligibility and Definitions](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.1.html)
@@ -124,15 +148,24 @@ The domains below can be deployed as services or modules within a modular monoli
 ### B) Awarding & Funding Context
 
 - Aggregates
-  - AwardOffer — links to Application; includes AwardLevel (ESA+: base/higher; OS: income-based amount), OfferDate, AcceptanceDeadline
+  - AwardOffer — links to Application; includes AwardLevel (ESA+: base/higher; OS: income-based amount), OfferDate, AcceptanceDeadline, AwardTier
   - ScholarshipAward — the active award for a school year; Status (pending/active/suspended/terminated/expired)
   - PaymentSchedule — semester payments (fall/spring) per program and school type
+  - AwardTier (OS) — income-based prioritization level for lottery; lower income brackets receive priority
+  - Waitlist — students eligible but not awarded due to funding exhaustion; may receive awards if additional funding becomes available
 - Key Invariants
   - Awards must be accepted in MyPortal by deadline to activate.
   - Direct Payment school payments occur twice per year; parent must complete Parent Endorsement Task each semester. (Source: How Scholarship Funds Work)
   - Dual Award ordering: OS before ESA+ for tuition/fees; ESA+ remainder to ClassWallet. (Source: How Scholarship Funds Work)
+  - OS lottery conducted in March for applications submitted Feb 1 - March 1; awards placed in tiers based on household income with lower income receiving priority.
+  - Award decisions made in April; families must accept/decline via MyPortal by specified deadline.
+  - Additional funding periods may be announced (e.g., early December) to distribute remaining resources to waitlist students.
 - Domain Events
-  - AwardActivated, ParentEndorsementCompleted, SchoolPaid, FundsMovedToWallet, AwardSuspended, AwardTerminated
+  - AwardActivated, ParentEndorsementCompleted, SchoolPaid, FundsMovedToWallet, AwardSuspended, AwardTerminated, StudentAddedToWaitlist, AdditionalFundingAnnounced, WaitlistStudentAwarded
+- Sources
+  - [OS Awarding Process](https://k12prod.ncseaa.edu/opportunity-scholarship/awarding-process/)
+  - [OS FAQ](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2024/11/FAQ-for-website_NOV2024_expanded-from-notification.pdf)
+  - [Priority Period Announcement](https://www.ncseaa.edu/2025/02/k12-program-announcement/)
 
 ### C) School Choice & Enrollment Context
 
@@ -145,6 +178,15 @@ The domains below can be deployed as services or modules within a modular monoli
   - School must be eligible/registered for direct payments to occur.
   - For ESA+ nonpublic/home full-time, LEA Release must be signed.
   - Transfers have deadlines and may impact disbursements and wallet availability.
+  - ESA+ funding is portable; students can transfer to another eligible nonpublic school mid-year.
+  - Parent must notify current school and complete enrollment at new school for transfer.
+- Domain Events
+  - SchoolSelected, SchoolTransferRequested, CurrentSchoolNotified, NewSchoolEnrollmentConfirmed, SchoolTransferCompleted, SchoolCanceled
+- Sources
+  - [ESA+ School Transfers](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/school-transfers/)
+  - [School Transfer Form Guide](https://k12.ncseaa.edu/media/n0gjhckv/how-to-transfer-schools-or-cancel-your-scholarship.pdf)
+  - [ESA+ School Options](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/school-transfers/esaplus-school-options/)
+  - [OS Choosing a School](https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/school-transfers/choosing-a-school/)
 
 ### D) ESA+ Wallet, Purchasing & Expenses Context (ESA+ only)
 
@@ -190,16 +232,34 @@ The domains below can be deployed as services or modules within a modular monoli
   - ToDoItem (MyPortal) — DocumentRequest, AffidavitSignature, Parent Endorsement, Income Verification Worksheet, EDD submission
   - Notice/Message — Award offers, reminders, deadline notices
   - Document — uploaded via MyPortal (PDFs, images) with type and validation status
+  - Webinar/Training — recorded sessions with slides for parents and school administrators
+  - Resource/Guide — step-by-step instructions, FAQ documents, best practices
+  - Newsletter — periodic updates on key program information and deadlines
 - Invariants
   - To-Do tasks must be completed by deadlines to avoid forfeiture or delays.
+  - Parents must regularly check MyPortal To-Do list for pending tasks.
+- Sources
+  - [School Administrator Resources](https://k12.ncseaa.edu/school-admins/resources/)
+  - [MyPortal Guide for Parents](https://k12.ncseaa.edu/media/pjqhsiz4/myportal-guide-for-parents.pdf)
+  - [How to Upload Documents in MyPortal](https://k12.ncseaa.edu/media/2w2p4xp0/how-to-upload-docs-myportal.pdf)
 
 ### H) Reporting & Tax Context
 
 - Entities
   - TaxReport1099G — records ESA+ non-tuition spend per calendar year
   - Program Analytics — award counts, fund utilization, compliance metrics
+  - AnnualCertification — school verifies student enrollment and costs once per year (starts August)
+  - TuitionFeeSchedule — annual submission required regardless of scholarship recipients enrolled
+  - GraduationDataReport — required for all high school seniors who received K12 program funds
 - Invariants
   - Only amounts actually spent by parents on non-tuition allowable expenses are reported (in January for prior calendar year). (Program Rules)
+  - Certification completed once per year; school administrators verify enrollment and provide cost information.
+  - Tuition and fee schedules must be submitted annually.
+  - Graduation data required for all high school seniors with K12 funds.
+- Sources
+  - [K12 Program Certification Deadlines](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2022/08/K12-Program-NPS-Certification-Deadlines.pdf)
+  - [Annual Requirements](https://k12.ncseaa.edu/school-admins/annual-requirements/)
+  - [Certification and Endorsement](https://k12.ncseaa.edu/school-admins/managing-funds/certification-and-endorsement/)
 
 ### I) Domicile Verification & Inter-Agency Cooperation Context
 
@@ -271,7 +331,17 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 - DisabilityReevaluation { reevaluationId, studentId, dueDate, submittedAt, documentType (IEP|professionalAssessment), status }
 - ParentEndorsement { endorsementId, awardId, term, parentName, nameEntered, validationResult, endorsedAt, deadline }
 - LEARelease { releaseId, studentId, enrollmentType, signedAt, effectivePeriod }
-- Value objects: AcademicSubject, ExpenseCategory, AwardLevel, SchoolTerm (Fall/Spring), HouseholdSize, HouseholdIncome, RejectionCode, DomicileEvidenceType, VerificationMethod, StateAgency
+- SchoolTransfer { transferId, studentId, fromSchoolId, toSchoolId, requestedAt, currentSchoolNotifiedAt, newSchoolEnrollmentConfirmedAt, completedAt, status }
+- AwardTier { tierId, programType, householdIncomeRange, priorityLevel, description }
+- Waitlist { waitlistId, studentId, applicationId, addedAt, tier, status, awardedFromWaitlistAt? }
+- AnnualCertification { certificationId, schoolId, fiscalYear, submittedAt, studentsCount, verificationStatus }
+- TuitionFeeSchedule { scheduleId, schoolId, fiscalYear, submittedAt, tuitionAmounts[], requiredFees[] }
+- TestResult { resultId, studentId, schoolId, grade, testType, testDate, scores (standard/scaled, percentile, stanine?, NCE?, gradeEquivalent?), submittedAt }
+- GraduationDataReport { reportId, schoolId, fiscalYear, seniorCount, graduationData[], submittedAt }
+- Webinar { webinarId, title, topic, recordingUrl, slidesUrl, scheduledAt, targetAudience (parents|schools|administrators) }
+- Resource { resourceId, title, type (guide|FAQ|bestPractice), url, targetAudience, lastUpdated }
+- Newsletter { newsletterId, issueDate, title, content, recipientType }
+- Value objects: AcademicSubject, ExpenseCategory, AwardLevel, SchoolTerm (Fall/Spring), HouseholdSize, HouseholdIncome, RejectionCode, DomicileEvidenceType, VerificationMethod, StateAgency, TestType, AudienceType
 
 ## 5) Principal Workflows (Happy-path and key branches)
 
@@ -436,6 +506,37 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 - If parent fails to endorse by deadline, award forfeited and funds reallocated to other students.
 (Sources: [How Scholarship Funds Work](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-scholarship-funds-work/); [G.S. 115C-562.6](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.6.html))
 
+### 5.15 School Transfer Process (Mid-Year Transfer)
+
+- Parent decides to transfer student to different eligible nonpublic school.
+- Parent logs into MyPortal and fills out Student Transfer Form.
+- Parent notifies current school of intent to transfer.
+- Parent completes enrollment process at new school.
+- New school confirms enrollment in MyPortal.
+- SEAA updates funding records; ESA+ funds remain portable and transfer with student.
+- Timing of transfer may affect disbursement timing and available wallet funds.
+(Sources: [ESA+ School Transfers](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/school-transfers/); [School Transfer Form Guide](https://k12.ncseaa.edu/media/n0gjhckv/how-to-transfer-schools-or-cancel-your-scholarship.pdf))
+
+### 5.16 School Annual Certification Process
+
+- August: School certification period begins.
+- School administrator logs into MyPortal.
+- For each scholarship student: verify enrollment status and provide cost information (tuition, required fees).
+- Submit certification for each student.
+- SEAA reviews and processes certifications.
+- Certifications link to payment calculations for upcoming semester.
+(Sources: [K12 Program Certification Deadlines](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2022/08/K12-Program-NPS-Certification-Deadlines.pdf); [Certification and Endorsement](https://k12.ncseaa.edu/school-admins/managing-funds/certification-and-endorsement/))
+
+### 5.17 School Testing and Reporting Submission
+
+- Throughout school year: administer nationally standardized tests to scholarship students in grades 3-12.
+- Tests must measure achievement in required subjects (English, grammar, reading, spelling, mathematics for grades 3-8; same or verbal/quantitative competencies for grades 9, 10, 12; ACT for grade 11).
+- Acceptable tests: Stanford Achievement Test, Iowa Tests of Basic Skills, TerraNova, ACT.
+- By July 15: submit test results to NCSEAA electronically in PDF format.
+- Results must include: Standard/Scaled Score, National Percentile Rank, and if available National Stanine, NCE, or Grade Equivalent.
+- SEAA reviews submissions for compliance.
+(Sources: [Testing and Reporting](https://k12.ncseaa.edu/school-admins/annual-requirements/testing-and-reporting/); [DNPE Testing Requirements](https://www.doa.nc.gov/divisions/non-public-education/private-schools/standardized-testing))
+
 ## 6) Policies, Rules, and Invariants (selected with citations)
 
 - ESA+ Minimum Spending Requirement: Spend at least $1,000 on tuition and/or allowable expenses in core subjects (ELA, math, social studies, science) by end of school year; else ineligible for renewal. (Program Rules)
@@ -485,6 +586,18 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 - Allowable Expenses Categories (ESA+): Curriculum, educational technology, testing materials/textbooks, tutoring, educational therapy, transportation (with signed contract). (Sources: [Allowable Expenses](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/allowable-expenses/); [Parent Guide to Allowable Expenses](https://k12.ncseaa.edu/media/0ckgxt0f/parentguideae2526final.pdf))
 
 - Prohibited Expenses (ESA+): Computer hardware/technological devices not defined as educational technology, consumable supplies (paper, pens, markers), services from providers not enrolled with SEAA. (Source: [ESA+ Program Rules](https://www.ncseaa.edu/wp-content/uploads/sites/1429/2022/01/ESA-Plus-Program-Rules-FINAL.pdf))
+
+- Educational Technology Allowable (ESA+): Desktops, laptops, tablets (e.g., iPads); wireless keyboards/mice, printers, cables, carrying cases, external speakers; educational software and apps designed to aid learning and disabilities. Accessories must be purchased within 30 days of device order if not bundled; can be replaced once every 3 years. (Sources: [Educational Technology](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/allowable-expenses/educational-technology/); [ESA+ Educational Technology Info](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2020/10/EducationalTechnology.pdf); [Parent Guide](https://k12.ncseaa.edu/media/0ckgxt0f/parentguideae2526final.pdf))
+
+- Educational Technology Non-Allowable (ESA+): Printer ink, household items, memberships, out-of-state providers. (Source: [ESA+ Excluded Educational Technology](https://k12.ncseaa.edu/media/pnyownzr/esa-excluded-ed-tech.pdf))
+
+- DNPE Home School Requirements: Parent/guardian must hold at least high school diploma or equivalent; submit Notice of Intent to Operate including school name and address; maintain attendance records and nationally standardized test results. (Sources: [DNPE Home School Requirements](https://www.doa.nc.gov/divisions/non-public-education/home-schools/requirements-recommendations); [DNPE Home Schools](https://www.doa.nc.gov/divisions/non-public-education/home-schools))
+
+- DNPE Private School Requirements: File Notice of Intent form to register; ensure fire and sanitation inspections are current; for multiple locations, follow guidance on administering and registering each location correctly. (Sources: [DNPE Private Schools](https://www.doa.nc.gov/divisions/non-public-education/private-schools); [Private School Requirements](https://www.doa.nc.gov/divisions/non-public-education/private-schools/requirements))
+
+- OS Priority Application Period: Applications submitted Feb 1 - March 1 receive priority; must be complete by deadline; lottery conducted in March; students placed in Award Tiers based on household income with lower income receiving priority; awards distributed until funds exhausted. (Sources: [OS Awarding Process](https://k12prod.ncseaa.edu/opportunity-scholarship/awarding-process/); [Priority Period Announcement](https://www.ncseaa.edu/2025/02/k12-program-announcement/))
+
+- Additional Funding Allocations: SEAA may announce additional funding periods (e.g., early December) to distribute remaining resources to students on waitlist who were not previously awarded. (Source: [OS FAQ](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2024/11/FAQ-for-website_NOV2024_expanded-from-notification.pdf))
 
 ## 7) Domain Events (suggested event vocabulary)
 
@@ -539,6 +652,29 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 - AwardForfeitedForNonEndorsement(awardId)
 - LEAReleaseRequired(studentId, enrollmentType)
 - LEAReleaseSubmitted(studentId)
+- SchoolTransferRequested(transferId, studentId, fromSchoolId, toSchoolId)
+- CurrentSchoolNotified(transferId)
+- NewSchoolEnrollmentConfirmed(transferId, schoolId)
+- SchoolTransferCompleted(transferId)
+- SchoolTransferCanceled(transferId, reason)
+- SchoolCertificationStarted(schoolId, fiscalYear)
+- StudentEnrollmentVerified(studentId, schoolId, fiscalYear)
+- SchoolCertificationSubmitted(schoolId, fiscalYear, studentCount)
+- TuitionFeeScheduleSubmitted(schoolId, fiscalYear)
+- TestResultsReceived(schoolId, grade, testType, studentCount)
+- TestResultsValidated(schoolId, fiscalYear)
+- GraduationDataSubmitted(schoolId, fiscalYear, seniorCount)
+- WebinarScheduled(webinarId, topic, scheduledAt)
+- ResourcePublished(resourceId, type, targetAudience)
+- NewsletterSent(newsletterId, recipientType, sentAt)
+- StudentPlacedOnWaitlist(studentId, applicationId, tier)
+- WaitlistStudentOffered(studentId, offerId)
+- AdditionalFundingAllocated(programType, amount, announcedAt)
+- EducationalTechnologyPurchased(requestId, deviceType, accessory)
+- AccessoryPurchaseValidated(requestId, withinTimeWindow, frequencyCheckPassed)
+- DNPENoticeOfIntentFiled(schoolId, schoolType, filedAt)
+- FireInspectionUpdated(schoolId, inspectionDate, status)
+- SanitationInspectionUpdated(schoolId, inspectionDate, status)
 
 ## 8) Third-Party Systems & Integrations
 
@@ -549,7 +685,7 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 - IRS — OS income verification relies on IRS Return Transcript; system should store attestation and metadata of transcript receipt (not necessarily automate IRS integration).
 - Payment Rails — bank ACH to schools/vendors/providers; could be via ClassWallet for ESA+ non-school payments; direct ACH for OS/ESA+ school disbursements.
 - Communications — Email and in-portal messaging; Wistia video links for training (non-transactional).
-- CFNC — partner brand/resources; no direct operational integration surfaced for K12 ESA+/OS on public site; keep as external content reference only.
+- CFNC (College Foundation of North Carolina) — partner organization providing education planning, NC 529 savings plan, and financial aid resources (FAFSA assistance, grants, scholarships, loans); contextual relationship but no direct operational integration for K12 ESA+/OS; provides planning tools and resources for families transitioning from K12 to higher education. (Source: [CFNC Financial Aid](https://www.cfnc.org/pay-for-college/apply-for-financial-aid/))
 - Division of Motor Vehicles (NC DOT) — domicile verification via driver's license/state ID validation; electronic verification interface required. (Source: [G.S. 115C-562.3](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html))
 - Department of Public Instruction — verify public school enrollment for domicile; provide average State per pupil allocation by December 1 annually; receive standardized test results from schools; coordinate special education eligibility determinations. (Source: [G.S. 115C-562.3](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html))
 - Department of Commerce — verify receipt of public benefits for domicile verification. (Source: [G.S. 115C-562.3](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html))
@@ -558,7 +694,7 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 - State Board of Elections — verify voter registration for domicile determination. (Source: [G.S. 115C-562.3](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html))
 - State Chief Information Officer — facilitate and coordinate electronic verification infrastructure across state agencies. (Source: [G.S. 115C-562.3](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html))
 - NC Residency Determination Service (RDS) — authoritative residency determination system; reusable residency classification for state aid programs. (Source: [NC RDS](https://www.ncresidency.org/))
-- Division of Non-Public Education (DNPE) — receive tuition documentation from schools; maintain private/home school registry; enforce standardized testing requirements. (Source: [G.S. 115C-562.5](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.5.html))
+- Division of Non-Public Education (DNPE) — receive tuition documentation from schools; maintain private/home school registry; enforce standardized testing requirements; verify fire and sanitation inspections for private schools; manage Notice of Intent forms for private and home school registration. Home schools must have parent/guardian with at least high school diploma; maintain attendance records and nationally standardized test results. Private schools must file Notice of Intent and ensure current fire/sanitation inspections. (Sources: [G.S. 115C-562.5](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.5.html); [DNPE Home Schools Requirements](https://www.doa.nc.gov/divisions/non-public-education/home-schools/requirements-recommendations); [DNPE Private Schools](https://www.doa.nc.gov/divisions/non-public-education/private-schools); [Private School Requirements](https://www.doa.nc.gov/divisions/non-public-education/private-schools/requirements))
 
 ## 9) Non-Functional Requirements (NFRs)
 
