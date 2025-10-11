@@ -423,4 +423,9 @@ A modern implementation can be a modular monolith or microservice suite. Below i
 - [ClassWallet](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/classwallet/)
 - [CFNC](https://www.cfnc.org/)
 
+## Configuration Settings
+
+- [  ] application, feature-level
+- [  ] CONST items?
+
 — End —
