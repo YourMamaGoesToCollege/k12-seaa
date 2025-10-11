@@ -433,4 +433,9 @@ A modern implementation can be a modular monolith or microservice suite. Below i
 1. Will there be any time zone considerations? Some of the events or action items have deadline dates and times. What if the person completing the form or task is in a different time zone?
 2. Requirements for multi-language support (US English, Spanish)?
 
+## Tool Selection 
+
+1. Rules Engine for both frontend and backend.
+2. Internationalization Tools (i18n).
+
 — End —
