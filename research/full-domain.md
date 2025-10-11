@@ -22,6 +22,12 @@ Web Resources:
 - [Testing and Reporting Requirements](https://k12.ncseaa.edu/school-admins/annual-requirements/testing-and-reporting/)
 - [NC Residency Determination Service](https://www.ncresidency.org/)
 - [DNPE Private School Standardized Testing](https://www.doa.nc.gov/divisions/non-public-education/private-schools/standardized-testing)
+- [Rules Governing Opportunity Scholarship Program](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2020/10/Rules_OPS.pdf)
+- [ESA+ Program Rules](https://www.ncseaa.edu/wp-content/uploads/sites/1429/2022/01/ESA-Plus-Program-Rules-FINAL.pdf)
+- [Parent Guide to Allowable Expenses](https://k12.ncseaa.edu/media/0ckgxt0f/parentguideae2526final.pdf)
+- [LEA Release Form](https://k12.ncseaa.edu/media/m44elcjw/esa-lea-release.pdf)
+- [OS Renewal Process](https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/how-to-renew/)
+- [ESA+ Continuing Eligibility](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-to-renew/continuing-eligibility/)
 
 North Carolina General Statutes (Authoritative Legal Sources):
 - [G.S. 115C-562.1 - ESA+ Eligibility and Definitions](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.1.html)
@@ -258,6 +264,10 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 - StateAgencyVerification { verificationId, agency (DMV|DPI|Revenue|DHHS|Commerce|Elections), requestType, requestedAt, responseAt, verificationResult }
 - VerificationCase { caseId, applicationId, sampleType (random|error-prone|all), selectedAt, documentsRequired[], householdCooperation, deadlineDate, outcome }
 - StatePerPupilAllocation { fiscalYear, amount, reportedByDPI, reportDate }
+- RenewalOffer { offerId, studentId, programType, fiscalYear, sentAt, responseDeadline, status (pending|accepted|declined|expired) }
+- DisabilityReevaluation { reevaluationId, studentId, dueDate, submittedAt, documentType (IEP|professionalAssessment), status }
+- ParentEndorsement { endorsementId, awardId, term, parentName, nameEntered, validationResult, endorsedAt, deadline }
+- LEARelease { releaseId, studentId, enrollmentType, signedAt, effectivePeriod }
 - Value objects: AcademicSubject, ExpenseCategory, AwardLevel, SchoolTerm (Fall/Spring), HouseholdSize, HouseholdIncome, RejectionCode, DomicileEvidenceType, VerificationMethod, StateAgency
 
 ## 5) Principal Workflows (Happy-path and key branches)
@@ -356,6 +366,37 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 - System updates award calculation parameters annually based on DPI-provided allocation.
 (Sources: [G.S. 115C-562.3(c)](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html); [G.S. 115C-562.2](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.2.html))
 
+### 5.12 OS Renewal Process
+
+- Starting late January, SEAA sends renewal offers to students who received OS funding in prior fall semester.
+- Renewal students prioritized for funding before new applicants.
+- Parent accesses MyPortal, completes renewal application, addresses all To-Do items.
+- Deadline: April 15 to respond and complete all tasks.
+- Students who received spring-only funding receive renewal offers later in spring semester.
+- System validates continued income eligibility and residency.
+- If requirements met and funds available, renewal award issued.
+(Sources: [OS Renewal](https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/how-to-renew/); [Rules Governing Opportunity Scholarship](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2020/10/Rules_OPS.pdf))
+
+### 5.13 ESA+ Renewal & Continuing Eligibility
+
+- Annual renewal process via MyPortal.
+- Student must continue to meet all initial eligibility requirements.
+- Every 3 years: Disability re-evaluation required; parent submits updated IEP or professional assessment documentation via MyPortal To-Do.
+- Minimum Spend verification: System checks that ≥ $1,000 spent on allowable core-subject expenses during school year; if not met, student ineligible for renewal.
+- Rollover computation for higher award students (base award not eligible for rollover).
+- Renewal offer issued if all requirements satisfied; parent accepts by deadline.
+(Sources: [ESA+ Continuing Eligibility](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-to-renew/continuing-eligibility/); Program Rules)
+
+### 5.14 Parent Endorsement Process (Each Semester for Direct Payment)
+
+- MyPortal notifies parent of Parent Endorsement To-Do task for current semester.
+- Parent logs in to MyPortal, reviews award amount and school information.
+- Parent types their name exactly as it appears in MyPortal account (case-sensitive validation).
+- Endorsement submitted; if name mismatch, system rejects and displays error with exact match requirement.
+- Upon successful endorsement, Authority processes payment to school per G.S. 115C-562.6.
+- If parent fails to endorse by deadline, award forfeited and funds reallocated to other students.
+(Sources: [How Scholarship Funds Work](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-scholarship-funds-work/); [G.S. 115C-562.6](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.6.html))
+
 ## 6) Policies, Rules, and Invariants (selected with citations)
 
 - ESA+ Minimum Spending Requirement: Spend at least $1,000 on tuition and/or allowable expenses in core subjects (ELA, math, social studies, science) by end of school year; else ineligible for renewal. (Program Rules)
@@ -387,6 +428,22 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 - Standardized Testing Requirements: Students in grades 3-12 must take nationally standardized tests annually; grades 3-8: achievement tests in English, grammar, reading, spelling, math; grades 9, 10, 12: same or competencies in verbal/quantitative areas; grade 11: ACT required; acceptable tests include Stanford Achievement Test, Iowa Tests of Basic Skills, TerraNova; results must include Standard/Scaled Score, National Percentile Rank, and if available National Stanine, NCE, or Grade Equivalent. (Sources: [Testing and Reporting](https://k12.ncseaa.edu/school-admins/annual-requirements/testing-and-reporting/); [DNPE Testing Requirements](https://www.doa.nc.gov/divisions/non-public-education/private-schools/standardized-testing))
 
 - ESA+ Disability Eligibility (G.S. 115C-562.1): Student must have documented disability per public school Eligibility Determination confirming need for special education or related services; determination must be submitted within 7 days of application. (Sources: [G.S. 115C-562.1](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.1.html); ESA+ Awarding Process)
+
+- Scholarship Endorsement (G.S. 115C-562.6): Authority must remit scholarship funds to nonpublic schools at least twice per year; funds must be endorsed by at least one parent/guardian; failure to endorse results in forfeiture and reallocation to other students. (Source: [G.S. 115C-562.6](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.6.html))
+
+- Parent Endorsement Case Sensitivity: Parent must type name exactly as appears in MyPortal account; system is case-sensitive; variation in capitalization causes endorsement failure. (Source: [How Scholarship Funds Work](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-scholarship-funds-work/))
+
+- OS Renewal Process: Renewal offers sent starting late January to prior-year recipients; families must respond by April 15 via MyPortal; all tasks must be completed by deadlines; renewal students prioritized before new applicants; spring-only recipients receive renewal offers later in semester. (Sources: [OS Renewal](https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/how-to-renew/); [Rules Governing Opportunity Scholarship](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2020/10/Rules_OPS.pdf))
+
+- OS Eligibility Requirements: Available to students K-12 who attended public school minimum 10 days in fall semester before applying; also available to new K/1st grade students meeting household income criteria; students must maintain income eligibility annually. (Source: [OS Program](https://k12.ncseaa.edu/opportunity-scholarship/))
+
+- ESA+ Continuing Eligibility: Students must re-evaluate disability every 3 years by submitting updated IEP or professional assessments; must continue to meet all initial eligibility requirements annually. (Source: [ESA+ Continuing Eligibility](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-to-renew/continuing-eligibility/))
+
+- LEA Release Requirement: ESA+ students attending full-time nonpublic or home school must sign LEA Release waiving child's right to receive public school special education services during period of ESA+ participation; required because scholarships for settings where public school services unavailable. (Sources: [LEA Release Form](https://k12.ncseaa.edu/media/m44elcjw/esa-lea-release.pdf); [Program Rules](https://k12.ncseaa.edu/the-education-student-accounts/program-rules-and-requirements/))
+
+- Allowable Expenses Categories (ESA+): Curriculum, educational technology, testing materials/textbooks, tutoring, educational therapy, transportation (with signed contract). (Sources: [Allowable Expenses](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/allowable-expenses/); [Parent Guide to Allowable Expenses](https://k12.ncseaa.edu/media/0ckgxt0f/parentguideae2526final.pdf))
+
+- Prohibited Expenses (ESA+): Computer hardware/technological devices not defined as educational technology, consumable supplies (paper, pens, markers), services from providers not enrolled with SEAA. (Source: [ESA+ Program Rules](https://www.ncseaa.edu/wp-content/uploads/sites/1429/2022/01/ESA-Plus-Program-Rules-FINAL.pdf))
 
 ## 7) Domain Events (suggested event vocabulary)
 
@@ -429,6 +486,18 @@ This context implements the requirements of G.S. 115C-562.3 for verifying domici
 - SchoolTestResultsSubmitted(schoolId, fiscalYear, studentCount)
 - SchoolFinancialReviewCompleted(schoolId, fiscalYear)
 - SchoolBackgroundCheckSubmitted(schoolId, authorityPersonId)
+- RenewalOfferSent(studentId, programType, fiscalYear)
+- RenewalApplicationCompleted(studentId)
+- RenewalDeadlinePassed(studentId, outcome)
+- DisabilityReevaluationRequired(studentId)
+- DisabilityReevaluationSubmitted(studentId, documentType)
+- ParentEndorsementInitiated(awardId, term)
+- ParentEndorsementSubmitted(awardId, nameEntered, validated)
+- ParentEndorsementRejected(awardId, reason)
+- EndorsementDeadlinePassed(awardId)
+- AwardForfeitedForNonEndorsement(awardId)
+- LEAReleaseRequired(studentId, enrollmentType)
+- LEAReleaseSubmitted(studentId)
 
 ## 8) Third-Party Systems & Integrations
 
@@ -631,6 +700,7 @@ A modern implementation can be a modular monolith or microservice suite. Below i
 - [G.S. 115C-562.2 (Award Amounts)](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.2.html)
 - [G.S. 115C-562.3 (Verification & Inter-Agency Cooperation)](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html)
 - [G.S. 115C-562.5 (School Obligations)](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.5.html)
+- [G.S. 115C-562.6 (Scholarship Endorsement)](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.6.html)
 - [G.S. 115C-366 (Domicile Requirements)](https://www.ncleg.gov/EnactedLegislation/Statutes/PDF/BySection/Chapter_115C/GS_115C-366.pdf)
 - [Testing and Reporting](https://k12.ncseaa.edu/school-admins/annual-requirements/testing-and-reporting/)
 - [NC Residency Determination Service](https://www.ncresidency.org/)
@@ -765,6 +835,50 @@ This section identifies areas where statutory requirements, regulatory guidance,
   - Third-party verification services if any
 
 **Source**: [G.S. 115C-562.3(a)(6)](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html)
+
+### 16.11 Anti-Discrimination Requirements and Religious Exemptions
+
+**Policy Gap:**
+- Statutes establish requirements for schools accepting scholarship students (G.S. 115C-562.5), but do not explicitly address anti-discrimination requirements or religious exemptions for private schools.
+- Public sources indicate nonpublic schools accepting scholarships are not bound by same anti-discrimination requirements as public schools and can implement admission/enrollment policies based on religious beliefs.
+- **Investigation Needed**:
+  - Statutory or regulatory anti-discrimination requirements (if any) for schools accepting scholarship students
+  - Religious exemptions scope and application
+  - Disclosure requirements to parents about school policies
+  - Impact on ESA+ students with disabilities when private schools not required to follow IDEA
+  - Recourse for families if student denied admission or expelled based on protected characteristics
+  - Whether Authority has oversight or enforcement role regarding school admission/enrollment policies
+
+**Note**: This is a policy-sensitive area requiring legal review to understand current statutory requirements vs. school autonomy. Implementation should document actual legal requirements and any disclosure/transparency obligations.
+
+**Sources**: General research on NC private school scholarship programs; requires authoritative legal interpretation.
+
+### 16.12 OS Public School Attendance Requirement
+
+**Clarification Needed:**
+- OS eligibility requires students K-12 to have attended public school minimum 10 days in fall semester before applying, OR be new K/1st grade students.
+- **Questions**:
+  - Exact definition of "public school" (does charter school count? virtual public school?)
+  - How 10-day attendance verified (school district records? parent attestation? state database?)
+  - Exception handling for students who cannot meet 10-day requirement (e.g., move to NC mid-semester)
+  - Relationship to domicile verification timing
+  - Renewal students: do they need to re-verify public school attendance or is initial verification sufficient?
+
+**Source**: [OS Program](https://k12.ncseaa.edu/opportunity-scholarship/)
+
+### 16.13 Case-Sensitive Parent Endorsement Implementation
+
+**User Experience Concern:**
+- MyPortal requires exact case-sensitive name match for parent endorsement; mismatch causes rejection.
+- **Investigation Needed**:
+  - Rationale for case-sensitive requirement (security? identity verification?)
+  - User guidance to prevent errors (e.g., display expected name format before entry)
+  - Error message clarity and remediation guidance
+  - Accessibility considerations (screen readers, assistive technology)
+  - Alternative verification methods for users with name variations or special characters
+  - Appeal process if parent unable to complete endorsement due to name mismatch issues
+
+**Source**: [How Scholarship Funds Work](https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-scholarship-funds-work/)
 
 ## Configuration Settings
 
