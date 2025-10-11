@@ -428,4 +428,8 @@ A modern implementation can be a modular monolith or microservice suite. Below i
 - [  ] application, feature-level
 - [  ] CONST items?
 
+## Questions 
+
+1. Will there be any time zone considerations some of the event or action items have deadline dates and times. What of the person completing the form or task is in a different time zone
+
 — End —
