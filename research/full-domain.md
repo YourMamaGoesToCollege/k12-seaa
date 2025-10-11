@@ -431,5 +431,6 @@ A modern implementation can be a modular monolith or microservice suite. Below i
 ## Questions 
 
 1. Will there be any time zone considerations? Some of the events or action items have deadline dates and times. What if the person completing the form or task is in a different time zone?
+2. Requirements for multi-language support (US English, Spanish)?
 
 — End —
