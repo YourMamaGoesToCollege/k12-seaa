@@ -644,7 +644,7 @@ October 15, 2025    Pivot to reactive forms; core workflow development
 - **Response:** "Sunk cost. The question is: what's the best path forward from here? We can preserve the Builder code for Phase 2 evaluation, but continuing now creates unacceptable schedule and technical risk."
 
 **Objection:** "Can we do both – finish the Builder AND deliver on time?"
-- **Response:** "No. The math doesn't work. We need 19 weeks for the Builder plus 16 weeks for core workflows, but there's only 13 months until end of April 2026. We don't have 35 weeks of runway. More critically, **the end-of-April deadline is non-negotiable** - we have May early access and June turnover commitments that cannot be delayed."
+- **Response:** "No. The math doesn't work. We need 19 weeks for the Builder plus additional time for core workflows, but there are only about 28 weeks from October 15, 2025 to May 1, 2026. More critically, **the May 1, 2026 deadline is non-negotiable.** Option A would extend the project well beyond this timeframe."
 
 **Closing:** "Option B is not just the recommended path - it's the **only viable path** to meet our hard deadline. We're confident this is the right call. What questions can we answer?"
 

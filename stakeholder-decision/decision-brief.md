@@ -99,13 +99,13 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 **Total Effort:** 19 weeks (includes testing buffer)
 
 **Risks:**
-- **CRITICAL: Misses Hard Deadline:** Cannot complete by end of April 2026 - would push to late summer 2026 or beyond, missing May early adopter access and June client turnover entirely
+- **CRITICAL: Misses Hard Deadline:** Cannot complete by May 1, 2026 - would push to early fall 2026 or beyond, missing the hard deadline by several months
 - **Technical Debt:** Data mapping layer is complex, high-risk architectural component
 - **Resource Constraint:** Core workflows remain blocked or under-resourced
 - **Scope Creep:** Additional feature requests likely during development/testing
 - **Data Integrity:** Schema migration strategy for existing applications unclear
 - **Opportunity Cost:** Cross-cutting services (Communications, Rules Engine, Security) remain incomplete
-- **Contract Risk:** Missing June turnover date may have contractual and financial penalties
+- **Contract Risk:** Missing deadline may have contractual and financial penalties
 
 **Benefits:**
 - Delivers on original promise to business stakeholders
@@ -265,7 +265,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 3. **Quality Assurance:** Provides adequate testing time for mission-critical scholarship workflows
 4. **Resource Optimization:** Redirects engineering capacity to incomplete, high-value features
 5. **Data Integrity:** Removes architectural risk of dynamic-to-static data mapping failures
-6. **Contract Compliance:** Meets turnover commitments without penalties or delays
+6. **Contract Compliance:** Meets delivery commitments without penalties or delays
 
 ### Implementation Approach
 1. **Immediate (This Week):**

@@ -402,8 +402,8 @@ mmdc -i timeline-comparison.md -o timeline-comparison.png
 
 ### Decision Criteria Checklist
 
-- [ ] **Hard Deadline:** Can we miss the end-of-April 2026 deadline?
-- [ ] **Contract:** Can we miss May early access and June turnover?
+- [ ] **Hard Deadline:** Can we miss the May 1, 2026 deadline?
+- [ ] **Contract:** Can we delay project completion by 6+ months?
 - [ ] **Schedule:** Can we accept 75% probability of delays?
 - [ ] **Risk:** Can we accept 60% data integrity failure risk?
 - [ ] **Cost:** Is $180K-$240K investment justified?
