@@ -294,6 +294,15 @@ If something here contradicts tribal knowledge, that’s your cue to correct the
 
 # Bounded contexts and core aggregates
 
+> **📖 For Enhanced Aggregate & Entity Details:** See [aggregate-details-enhancement.md](./aggregate-details-enhancement.md) for comprehensive documentation including:
+> - Detailed domain role & usage for each aggregate
+> - Complete attribute descriptions and relationships
+> - Concrete workflow examples showing aggregate usage
+> - Methods/operations with business logic
+> - Invariants and business rules
+> - Dependency diagrams
+> - Source URL references
+
 ## 1) K-12 Scholarship Administration
 
 **Aggregates**:
