@@ -102,10 +102,10 @@
 ## 🗣️ Key Messages to Deliver
 
 ### Primary Message
-"We're recommending Option B - retiring the Enrollment Builder from Phase 1 - because **it's the ONLY way to meet our end-of-April 2026 hard deadline** and deliver on our May early access and June turnover commitments."
+"We're recommending Option B - retiring the Enrollment Builder from Phase 1 - because **it's the ONLY way to meet our May 1, 2026 hard deadline** and deliver the project on time."
 
 ### Supporting Messages
-1. **Hard Deadline:** "End of April 2026 is non-negotiable - we have May early access and June turnover commitments. Option A will miss these by 3-4 months minimum."
+1. **Hard Deadline:** "May 1, 2026 is non-negotiable. Option A will miss this deadline by 6+ months minimum."
 2. **Risk Management:** "Option B reduces our total risk by 87.6% and eliminates all 4 critical risks."
 3. **Schedule:** "Option A cannot meet the hard deadline. Option B is the only viable path to complete on time."
 4. **Cost:** "Option B saves $180K-$240K in Phase 1 and avoids contract penalties for missing deadlines."
@@ -118,7 +118,7 @@
 
 ### Q: "Why didn't we know about these issues earlier?"
 
-**A:** "The technical complexity of the data mapping layer and state machine requirements became clear during detailed design and prototyping. We're raising this now, before we're too committed, because that's responsible project management. **More importantly, we need to acknowledge that the end-of-April 2026 deadline is non-negotiable, and Option A cannot meet it.**"
+**A:** "The technical complexity of the data mapping layer and state machine requirements became clear during detailed design and prototyping. We're raising this now, before we're too committed, because that's responsible project management. **More importantly, we need to acknowledge that the May 1, 2026 deadline is non-negotiable, and Option A cannot meet it.**"
 
 **Backup:** Slide 7 (technical gaps identified) + hard deadline constraint
 
@@ -126,7 +126,7 @@
 
 ### Q: "Can we get more developers to finish both?"
 
-**A:** "Adding more developers doesn't proportionally reduce time due to coordination overhead (Brooks's Law). More importantly, **the end-of-April 2026 deadline is a hard constraint** - even with unlimited resources, Option A's 19-week critical path plus integration makes the deadline impossible to meet. The technical risks - particularly data integrity - don't go away with more people."
+**A:** "Adding more developers doesn't proportionally reduce time due to coordination overhead (Brooks's Law). More importantly, **the May 1, 2026 deadline is a hard constraint** - even with unlimited resources, Option A's 19-week critical path plus integration makes the deadline impossible to meet. The technical risks - particularly data integrity - don't go away with more people."
 
 **Backup:** Slide 12 (risk matrix), Slide 13 (cost analysis), Slide 11 (timeline showing Option A misses deadline)
 
@@ -168,13 +168,13 @@
 
 **Ask stakeholders to rate their comfort level (Yes/No) on each:**
 
-1. **Hard Deadline:** Can we miss the end-of-April 2026 deadline?
+1. **Hard Deadline:** Can we miss the May 1, 2026 deadline?
    - [ ] Yes (proceed with Option A - acknowledging deadline will be missed)
    - [ ] No (choose Option B - only path to meet deadline)
 
-2. **Contract Commitments:** Can we miss May early access and June turnover dates?
-   - [ ] Yes (proceed with Option A - will miss both)
-   - [ ] No (choose Option B - meets both commitments)
+2. **Contract Commitments:** Can we delay project completion by 6+ months?
+   - [ ] Yes (proceed with Option A - will extend to fall 2026)
+   - [ ] No (choose Option B - meets May 1, 2026 commitment)
 
 3. **Data Integrity Risk:** Can we accept 60% probability of data mapping failures in production?
    - [ ] Yes (proceed with Option A)
@@ -265,11 +265,11 @@
 - [ ] Begin ESA+ application form development (week 1)
 
 ### Execution (Option A - if approved)
-- [ ] **CRITICAL:** Acknowledge that end-of-April 2026 hard deadline CANNOT be met
-- [ ] Communicate to stakeholders that May early access and June turnover will be missed  
-- [ ] Negotiate new turnover date (summer 2026 or later) with client
+- [ ] **CRITICAL:** Acknowledge that May 1, 2026 hard deadline CANNOT be met
+- [ ] Communicate to stakeholders revised timeline (fall 2026 or later)
+- [ ] Negotiate new delivery date with client
 - [ ] Assess contractual and financial penalties for missing deadlines
-- [ ] Update project timeline to summer/fall 2026
+- [ ] Update project timeline to fall/winter 2026
 - [ ] Implement enhanced oversight (weekly checkpoints)
 - [ ] Create risk mitigation task force
 - [ ] Schedule architecture review for data mapping layer
@@ -324,5 +324,5 @@
 ---
 
 **Document Version:** 1.0  
-**Created:** March 2025  
+**Created:** October 2025  
 **Location:** `/stakeholder-decision/MEETING-DAY-CHECKLIST.md`
