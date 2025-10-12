@@ -118,7 +118,7 @@
 
 ### Q: "Why didn't we know about these issues earlier?"
 
-**A:** "The technical complexity of the data mapping layer and state machine requirements became clear during detailed design and prototyping. We're raising this now, before we're too committed, because that's responsible project management. **More importantly, we need to acknowledge that the end-of-April 2026 deadline is non-negotiable, and Option A cannot meet it.**"
+**A:** "The technical complexity of the data mapping layer and state machine requirements became clear during detailed design and prototyping. We're raising this now, before we're too committed, because that's responsible project management. **More importantly, we need to acknowledge that the May 1, 2026 deadline is non-negotiable, and Option A cannot meet it.**"
 
 **Backup:** Slide 7 (technical gaps identified) + hard deadline constraint
 
@@ -126,7 +126,7 @@
 
 ### Q: "Can we get more developers to finish both?"
 
-**A:** "Adding more developers doesn't proportionally reduce time due to coordination overhead (Brooks's Law). More importantly, **the end-of-April 2026 deadline is a hard constraint** - even with unlimited resources, Option A's 19-week critical path plus integration makes the deadline impossible to meet. The technical risks - particularly data integrity - don't go away with more people."
+**A:** "Adding more developers doesn't proportionally reduce time due to coordination overhead (Brooks's Law). More importantly, **the May 1, 2026 deadline is a hard constraint** - even with unlimited resources, Option A's 19-week critical path plus integration makes the deadline impossible to meet. The technical risks - particularly data integrity - don't go away with more people."
 
 **Backup:** Slide 12 (risk matrix), Slide 13 (cost analysis), Slide 11 (timeline showing Option A misses deadline)
 
@@ -324,5 +324,5 @@
 ---
 
 **Document Version:** 1.0  
-**Created:** March 2025  
+**Created:** October 2025  
 **Location:** `/stakeholder-decision/MEETING-DAY-CHECKLIST.md`
