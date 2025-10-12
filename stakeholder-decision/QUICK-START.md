@@ -24,18 +24,16 @@ You now have a **complete, professional IT decision package** with:
 
 **Recommendation:** **Option B - Retire Enrollment Builder from Phase 1**
 
-**Critical Constraint:** **End of April 2026 is a HARD DEADLINE**
-- All core functionality must be complete by end of April 2026
-- May 2026 required for early adopter access and burn-in
-- First week of June 2026 is client turnover
-- No new features after turnover - support/maintenance only
+**Critical Constraint:** **May 1, 2026 is a HARD DEADLINE**
+- All core functionality must be complete by May 1, 2026
+- No new features after May 1, 2026 - support/maintenance only
 
 **The Reality:**
-- **Option A CANNOT meet the hard deadline** - would miss by 3-4 months minimum
-- **Option B is the ONLY viable path** to meet April 2026 requirement
+- **Option A CANNOT meet the hard deadline** - would miss by 6+ months minimum
+- **Option B is the ONLY viable path** to meet May 1, 2026 requirement
 
 **Three Key Numbers:**
-- **CRITICAL: Option A misses hard deadline** (would complete summer 2026 or later)
+- **CRITICAL: Option A misses hard deadline** (would complete fall 2026 or later)
 - **87.6% reduction** in total risk with Option B
 - **$180K-$240K** cost savings in Phase 1 with Option B
 
@@ -43,9 +41,7 @@ You now have a **complete, professional IT decision package** with:
 
 | Factor | Option A (Continue) | Option B (Retire) | Winner |
 |--------|---------------------|-------------------|---------|
-| **Meets Hard Deadline** | ❌ NO (misses by 3-4 months) | ✅ YES | **Option B** ✅ |
-| **Early Access May 2026** | ❌ NO (impossible) | ✅ YES | **Option B** ✅ |
-| **Turnover June 2026** | ❌ NO (impossible) | ✅ YES | **Option B** ✅ |
+| **Meets Hard Deadline** | ❌ NO (misses by 6+ months) | ✅ YES | **Option B** ✅ |
 | Schedule Risk | 75% overrun | 25% delay | **Option B** ✅ |
 | Critical Risks | 4 | 0 | **Option B** ✅ |
 | Phase 1 Cost | +$180K-$240K | $0 (redirect) | **Option B** ✅ |
@@ -101,24 +97,21 @@ You now have a **complete, professional IT decision package** with:
 
 ### 1. This is About Meeting a Hard Deadline, Not Just Risk Management
 
-**Message:** "The end of April 2026 is a non-negotiable hard deadline. We have May early access and June turnover commitments. Option A cannot meet these dates - it's not viable, regardless of the Enrollment Builder's merits."
+**Message:** "The May 1, 2026 is a non-negotiable hard deadline. Option A cannot meet this date - it's not viable, regardless of the Enrollment Builder's merits."
 
 **Support:** 
-- Option A would miss deadline by 3-4 months minimum (summer 2026 completion)
-- May 2026 early adopter access would be impossible
-- June 2026 client turnover would be missed
+- Option A would miss deadline by 6+ months minimum (fall 2026 completion)
 - Potential contract penalties and relationship damage
 
 ### 2. Option B is the ONLY Way to Meet the Deadline
 
-**Message:** "This isn't about choosing the better option - Option B is the ONLY option that meets our hard deadline. Angular reactive forms give us the only viable path to complete by end of April 2026."
+**Message:** "This isn't about choosing the better option - Option B is the ONLY option that meets our hard deadline. Angular reactive forms give us the only viable path to complete by May 1, 2026."
 
 **Support:**
-- 16-week critical path (vs 29 weeks for Option A)
+- 24-week critical path (vs 45+ weeks for Option A)
 - Parallel development possible
 - No blocking dependencies
-- Adequate buffer to meet end-of-April deadline
-- Supports May early access and June turnover
+- Adequate buffer to meet May 1, 2026 deadline
 
 ### 3. The Numbers Speak for Themselves
 
@@ -128,8 +121,8 @@ You now have a **complete, professional IT decision package** with:
 - $180K-$240K cost savings in Phase 1
 - 87.6% total risk reduction
 - Zero critical risks
-- ONLY option that meets end-of-April 2026 hard deadline
-- Avoids contract penalties for missing turnover
+- ONLY option that meets May 1, 2026 hard deadline
+- Avoids contract penalties for missing deadline
 
 ### 4. We Can Revisit the Builder in Phase 2
 
@@ -147,7 +140,7 @@ You now have a **complete, professional IT decision package** with:
 
 ### "We promised the Enrollment Builder to stakeholders."
 
-**Response:** "Yes, and we're committed to it long-term. We're proposing to defer it to Phase 2 based on new information about technical complexity and schedule risk. **More critically, we have a hard deadline of end-of-April 2026 with May early access and June turnover commitments. Option A makes meeting these dates impossible.** We'd rather deliver a stable platform that meets our commitments than miss our turnover date by 3-4 months."
+**Response:** "Yes, and we're committed to it long-term. We're proposing to defer it to Phase 2 based on new information about technical complexity and schedule risk. **More critically, we have a hard deadline of May 1, 2026. Option A makes meeting this date impossible.** We'd rather deliver a stable platform that meets our commitments than miss our deadline by 6+ months."
 
 **Backup:** Show slide 12 (risk matrix) - Option A CANNOT meet hard deadline
 
@@ -171,7 +164,7 @@ You now have a **complete, professional IT decision package** with:
 
 ### "Can we do both – finish the Builder AND deliver on time?"
 
-**Response:** "No. The math doesn't work. We need 19 weeks for the Builder plus 16 weeks for core workflows, but there's only 13 months until end of April 2026. We don't have 35 weeks of runway. **More critically, the end-of-April deadline is non-negotiable** - we have May early access and June turnover commitments that cannot be delayed. Option A will miss these dates by 3-4 months minimum."
+**Response:** "No. The math doesn't work. We need 19 weeks for the Builder plus additional time for core workflows, but there are only about 28 weeks from October 15, 2025 to May 1, 2026. **More critically, the May 1, 2026 deadline is non-negotiable.** Option A will miss this deadline by 6+ months minimum."
 
 **Backup:** Show slide 11 (critical path analysis) - Option A misses hard deadline
 
@@ -181,7 +174,7 @@ You now have a **complete, professional IT decision package** with:
 
 Use this during the meeting to frame the decision:
 
-- [ ] **Schedule:** Can we accept a 3-4 month delay to Phase 1 delivery?
+- [ ] **Schedule:** Can we accept a 6+ month delay to Phase 1 delivery?
 - [ ] **Risk:** Are we comfortable with 60% data integrity failure risk?
 - [ ] **Cost:** Is $180K-$240K investment justified for this feature?
 - [ ] **Resources:** Can we sustain 50%+ allocation to the Builder?
@@ -212,26 +205,26 @@ Use this during the meeting to frame the decision:
 2. Finalize cross-cutting services
 3. Begin end-to-end testing
 
-**Timeline:** April 2026 production launch (on schedule)
+**Timeline:** May 1, 2026 production launch (on schedule)
 
 ### If Option A Approved ⚠️
 
 **Required Actions:**
-1. Update project timeline to August 2026 or later
+1. Update project timeline to December 2026 or later
 2. Communicate revised delivery date to stakeholders
 3. Allocate additional resources per risk mitigation strategies
 4. Implement enhanced project oversight and milestone gates
 
-**Timeline:** August-September 2026 (optimistic)
+**Timeline:** November-December 2026 (optimistic)
 
 ---
 
 ## 📊 The Data (At a Glance)
 
 ### Timeline Impact
-- **Option A:** 29-week critical path → August 2026 delivery
-- **Option B:** 16-week critical path → April 2026 delivery
-- **Difference:** 4 months earlier with Option B
+- **Option A:** 45-week critical path → December 2026 delivery
+- **Option B:** 24-week critical path → May 1, 2026 delivery
+- **Difference:** 6+ months earlier with Option B
 
 ### Risk Impact
 - **Option A:** 145 total risk score, 4 critical risks, 75% overrun probability
@@ -339,5 +332,5 @@ The recommendation is clear, the analysis is solid, and the path forward is well
 ---
 
 **Document Version:** 1.0  
-**Created:** March 2025  
+**Created:** October 2025  
 **Location:** `/stakeholder-decision/QUICK-START.md`
