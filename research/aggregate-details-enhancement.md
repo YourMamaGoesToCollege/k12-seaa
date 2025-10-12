@@ -608,3 +608,108 @@ ComplianceRecord
 4. **Dynamic Allowable Expense Rules**: Current rules are static; future versions may need rule engines for dynamic category management.
 
 5. **Cross-Student Family Aggregates**: For families with multiple ESA+ students, may need family-level aggregates for shared resources.
+
+---
+
+## Shared Aggregates (ESA+ and Opportunity Scholarship)
+
+These aggregates are used by both ESA+ and Opportunity Scholarship (OS) programs, though with program-specific variations in rules and workflows.
+
+### 10. **Application** *(Application & Eligibility Aggregate)*
+
+**Domain Role & Usage:**
+Application is the root aggregate for the application and eligibility determination process. It manages the entire application lifecycle from initial submission through eligibility verification, lottery participation, and award offering. This aggregate serves both ESA+ and OS programs but enforces program-specific eligibility criteria.
+
+**Attributes:**
+- `applicationId` — Unique identifier
+- `studentId` — Student applying for scholarship
+- `householdId` — Family/household unit
+- `programType` — Enum: ESA_PLUS, OPPORTUNITY_SCHOLARSHIP
+- `submissionWindow` — Application period (e.g., Feb 1 - March 1 for OS priority period)
+- `submittedDate` — When application was completed and submitted
+- `status` — Enum: draft, submitted, eligible, ineligible, waitlisted, awarded, declined, canceled
+- `eligibilityDocuments` — Array of required documents (varies by program)
+- `lotteryRank` — If entered in lottery, the random selection order
+- `lotteryBatchId` — Links to specific lottery execution
+- `ineligibilityReason` — If rejected, structured reason code
+- `verificationRequired` — Boolean: selected for income/eligibility verification (4% sampling per G.S. 115C-562.3)
+
+**For ESA+ Specific:**
+- `eligibilityDetermination` — Required IEP or eligibility doc from public school showing disability
+- `eligibilityDocSubmissionDate` — Must be within 7 days of application
+- `disabilityType` — Category of disability (affects award level: base vs higher)
+- `lastReevaluationDate` — For continuing eligibility tracking
+
+**For OS Specific:**
+- `householdIncome` — Self-reported income for tier calculation
+- `householdSize` — Number in household
+- `awardTier` — Income-based tier (lower income = higher priority in lottery)
+- `incomeVerificationStatus` — If selected for verification, tracks completion
+- `priorPublicSchoolAttendance` — 10-day public school requirement verification
+
+**Sources:**
+- [ESA+ Awarding Process](https://k12.ncseaa.edu/the-education-student-accounts/awarding-process/)
+- [OS Awarding Process](https://k12prod.ncseaa.edu/opportunity-scholarship/awarding-process/)
+- [G.S. 115C-562.3](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html)
+
+---
+
+### 11. **AwardOffer** *(Awarding & Funding Aggregate)*
+
+**Domain Role & Usage:**
+AwardOffer represents the official scholarship award offered to a student after successful application. It acts as a bridge between the application and the active scholarship award, managing the acceptance/decline decision and deadline enforcement.
+
+**Attributes:**
+- `offerId` — Unique identifier
+- `applicationId` — Links to approved application
+- `studentId` — Student receiving offer
+- `programType` — ESA_PLUS or OPPORTUNITY_SCHOLARSHIP
+- `offerDate` — When offer was made
+- `acceptanceDeadline` — Date by which student must accept or offer expires
+- `status` — Enum: pending, accepted, declined, expired
+- `awardLevel` — ESA+: base ($9,000) or higher ($17,000); OS: income-based amount
+
+**Sources:**
+- [OS Award Decisions](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2024/11/FAQ-for-website_NOV2024_expanded-from-notification.pdf)
+
+---
+
+### 12. **School** *(School Registration & Compliance Entity)*
+
+**Domain Role & Usage:**
+School represents an educational institution that participates in K12 scholarship programs. Schools must register, maintain compliance, and provide required reporting to receive scholarship payments.
+
+**Attributes:**
+- `schoolId` — Unique identifier
+- `schoolName` — Official name
+- `schoolType` — Enum: PrivateDirectPayment, PrivateReimbursement, HomeSchool
+- `registrationStatus` — Enum: pending, active, suspended, terminated
+- `programsAccepted` — Array: Can accept OS, ESA+, or both
+- `tuitionFeeSchedule` — Annual tuition and required fees
+- `DNPERegistrationNumber` — Division of Non-Public Education registration ID
+- `backgroundChecksCurrent` — Boolean: leadership background checks up to date
+- `testingCompliant` — Boolean: met testing and reporting requirements
+
+**Sources:**
+- [School Administrator Resources](https://k12.ncseaa.edu/school-admins/)
+- [G.S. 115C-562.5](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.5.html)
+
+---
+
+### 13. **Waitlist** *(Awarding Context Entity)*
+
+**Domain Role & Usage:**
+Waitlist manages students who are eligible for scholarships but not awarded due to funding exhaustion. It maintains priority order for award allocation if additional funding becomes available.
+
+**Attributes:**
+- `waitlistId` — Unique identifier
+- `studentId` — Student on waitlist
+- `applicationId` — Original application
+- `programType` — ESA_PLUS or OPPORTUNITY_SCHOLARSHIP
+- `addedDate` — When placed on waitlist
+- `priority` — Ranking/priority order
+- `status` — Enum: active, awarded, expired, withdrawn
+
+**Sources:**
+- [OS FAQ - Waitlist](https://www.ncseaa.edu/wp-content/uploads/sites/1171/2024/11/FAQ-for-website_NOV2024_expanded-from-notification.pdf)
+
