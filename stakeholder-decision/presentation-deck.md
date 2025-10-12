@@ -1,56 +1,63 @@
 # IT Stakeholder Presentation
-## SEAA K-12 Modernization: Enrollment Builder Strategic Decision
+## SEAA K-12 Modernization: Comprehensive Implementation Plan
 
-**Presentation Date:** Tuesday, October 2025  
+**Presentation Date:** October 2025  
 **Audience:** Senior IT Leadership & Business Stakeholders  
-**Duration:** 45 minutes (30 min presentation + 15 min Q&A)
+**Duration:** 60 minutes (45 min presentation + 15 min Q&A)  
+**Timeline:** October 15, 2025 - May 1, 2026 (28 weeks)
 
 ---
 
 ## Slide 1: Title Slide
 
 **SEAA K-12 Modernization**  
-**Enrollment Builder: Strategic Decision Required**
+**Comprehensive Implementation Plan**  
+**Complete Scope & Delivery Roadmap**
 
-IT Stakeholder Decision Meeting  
+IT Stakeholder Presentation  
 October 2025
 
 College Foundation, Inc.  
 North Carolina SEAA Programs
 
+**Timeline:** October 15, 2025 - May 1, 2026
+
 ---
 
 ## Slide 2: Agenda
 
-1. **Executive Summary** – The decision before us
-2. **Background & Context** – Platform overview and current state
-3. **The Enrollment Builder Challenge** – What we built and what's missing
-4. **Option A: Continue Development** – Complete the Enrollment Builder
-5. **Option B: Strategic Pivot** – Retire from Phase 1, focus on core workflows
-6. **Comparative Analysis** – Risk, cost, timeline impacts
-7. **Recommendation** – Our path forward
-8. **Next Steps** – Decision and implementation
+1. **Executive Summary** – Project overview and timeline
+2. **Platform Overview** – Complete system scope
+3. **Complete Feature Inventory** – All core capabilities
+4. **Implementation Roadmap** – Phased delivery plan
+5. **Resource Allocation** – Team structure and assignments
+6. **Risk Assessment** – Critical areas and mitigation
+7. **Success Criteria** – Delivery milestones and quality metrics
+8. **Next Steps** – Execution and monitoring
 
 ---
 
 ## Slide 3: Executive Summary
 
-### The Decision
+### Complete K-12 SEAA Modernization Scope
 
-**Should we continue building the custom Enrollment Builder for Phase 1, or pivot to Angular reactive forms?**
+**Timeline:** October 15, 2025 - May 1, 2026 (28 weeks)
 
-**Current Situation:**
-- 12 months of development effort
-- 50%+ of engineering resources allocated to Enrollment Builder
-- Core K-12 workflows remain incomplete
-- Cross-cutting infrastructure partially built
-- **CRITICAL: Hard deadline - May 1, 2026 for completion**
+**Platform Serves:**
+- Two scholarship programs (ESA+, Opportunity Scholarship)
+- Up to 80,000 concurrent users
+- Four web portals (Household, School, Provider, Admin)
+- Comprehensive scholarship lifecycle management
 
-**Two Options:**
-- **A:** Complete Enrollment Builder (10+ weeks) → **MISSES hard deadline** (cannot complete by May 1, 2026)
-- **B:** Retire Enrollment Builder → redirect resources to core workflows → **ONLY path to meet May 1, 2026 deadline**
+**Core Capabilities Required:**
+- **Household & Student Management** - Applications, renewals, profiles, school selection
+- **School Management** - Registration, certification, endorsement, compliance
+- **Provider Management** - Enrollment, directory, invoicing, payments
+- **Admin Operations** - Application processing, verification, lottery, awards
+- **Payment Systems** - Award calculation, disbursements, ESA+ purchasing, reconciliation
+- **Verification & Compliance** - Eligibility, domicile, income, mandatory reviews
 
-**Our Recommendation:** **Option B**
+**Critical Deadline:** **May 1, 2026** - All core functionality must be production-ready
 
 ---
 
@@ -81,376 +88,1225 @@ North Carolina SEAA Programs
 
 ---
 
-## Slide 5: What is the Enrollment Builder?
+## Slide 5: Complete Feature Inventory - Overview
 
-### The Vision
+### Six Core Capability Areas
 
-**Goal:** Enable CFI administrators to build and modify application forms without developer support
+**1. Household & Student Management (15+ features)**
+- Application submission (ESA+, OS)
+- Renewal workflows
+- Profile and account management
+- School selection and transfers
+- Communication and notifications
 
-**Capabilities (Planned):**
-- Visual form designer interface
-- Drag-and-drop field configuration
-- Dynamic validation rule creation
-- Real-time form publishing
-- Self-service form management
+**2. School Management (20+ features)**
+- Registration and profiles
+- Student enrollment tracking
+- Certification and endorsement workflows
+- Payment and financial tracking
+- Compliance and reporting
 
-**Business Value (Expected):**
-- Reduce developer dependency for form changes
-- Adapt quickly to legislative/program updates
-- Lower long-term maintenance costs
-- Empower business users
-
-**Technology:** Angular components + .NET backend + dynamic data storage
-
----
-
-## Slide 6: Current State Assessment
-
-### Development Progress (12 Months)
-
-**Completed:**
-- ✅ Basic form builder UI (Angular components)
-- ✅ Field type library (text, select, date, etc.)
-- ✅ Preview/render capability
-- ✅ Basic storage mechanism
-
-**In Progress / Incomplete:**
-- ⚠️ State machine architecture (workflow logic)
-- ⚠️ Data mapping layer (dynamic → SQL Server)
-- ⚠️ Advanced validation framework
-- ⚠️ Integration with APIs and services
-- ⚠️ Production testing and hardening
-
-**Not Started:**
-- ❌ Real-time data mapper (critical component)
-- ❌ Schema migration tooling
-- ❌ End-to-end workflow orchestration
-- ❌ Compliance audit trail
-
-**Resource Allocation:** 50%+ of engineering team (6-8 FTEs over 12 months)
+**3. Provider Management (12+ features)**
+- Provider registration and enrollment
+- Service directory
+- Invoice and payment processing
+- Compliance and quality management
 
 ---
 
-## Slide 7: Technical Gaps Identified
+## Slide 5a: Complete Feature Inventory - Continued
 
-### Critical Architecture Issues
+**4. Admin Portal Operations (30+ features)**
+- Application processing and review
+- Verification management (domicile, income, sampling)
+- Award management (lottery, calculation, lifecycle)
+- Document management
+- Communication and case management
+- Reporting and analytics
+- System administration
 
-#### 1. **Missing State Machine**
-- **Problem:** No XState or formal workflow engine implemented
-- **Impact:** Brittle workflow logic, difficult to audit, compliance risk
-- **Effort to Fix:** 3 weeks
+**5. Payment & Financial Systems (18+ features)**
+- Payment processing (direct payment schools)
+- ESA+ wallet and purchasing
+- Expense approval and compliance
+- Tax reporting and reconciliation
 
-#### 2. **Data Integrity Risk**
-- **Problem:** Dynamic form data cannot map cleanly to static SQL schema
-- **Impact:** Data loss risk, audit trail gaps, regulatory exposure
-- **Effort to Fix:** 4 weeks (complex, high-risk component)
+**6. Verification & Compliance (15+ features)**
+- State agency integrations
+- Eligibility verification workflows
+- Ongoing compliance monitoring
+- Audit and compliance reporting
 
-#### 3. **Incomplete Validation**
-- **Problem:** Advanced rules (eligibility, income calculations) not supported
-- **Impact:** Manual workarounds, business logic gaps
-- **Effort to Fix:** 2 weeks
-
-#### 4. **Limited Integration**
-- **Problem:** Not connected to core APIs, workflows, or services
-- **Impact:** Isolated component, no end-to-end testing possible
-- **Effort to Fix:** 2 weeks + 6 weeks testing
-
-**Total Effort to Production-Ready:** 14-19 weeks
-
----
-
-## Slide 8: Business Value vs. Cost Reality
-
-### Anticipated Benefits (If Successful)
-- ✅ Reduced developer time for minor form updates
-- ✅ Faster response to program changes (in theory)
-- ✅ Business user empowerment
-
-### Actual Constraints (Reality Check)
-- ❌ Annual program changes are scheduled, not ad-hoc
-- ❌ Legislative updates require legal review regardless of tool
-- ❌ Form changes still require QA testing and UAT
-- ❌ Schema changes still require developer involvement
-- ❌ Regulatory compliance review cannot be bypassed
-- ❌ Developer time reduced, not eliminated
-
-### Cost-Benefit Analysis
-- **Investment:** $180K - $240K (Phase 1) + ongoing maintenance
-- **Savings:** ~40 hours/year developer time (estimated)
-- **Break-Even:** 20+ years (assumes zero refactoring or technical debt)
-
-**Conclusion:** Limited business value relative to investment and risk
+**Total: 110+ distinct features to implement**
 
 ---
 
-## Slide 9: Option A – Continue Enrollment Builder
+## Slide 6: Household & Student Management Features
 
-### Complete Development for Phase 1
+### What Parents/Guardians Need to Do
 
-**Remaining Work:**
-1. Implement state machine (XState) – 3 weeks
-2. Build data mapping layer – 4 weeks
-3. Complete validation framework – 2 weeks
-4. Integrate with APIs and workflows – 2 weeks
-5. End-to-end testing – 6 weeks
-6. Production hardening – 2 weeks
+**Application Workflows:**
+- ESA+ new application (disability documentation, EDD upload, LEA Release)
+- Opportunity Scholarship application (income verification, lottery)
+- Renewal applications (simplified for returning students)
+- Application status tracking and notifications
 
-**Total Timeline:** 19 weeks (~5 months)
+**Profile & Account Management:**
+- Student and household information
+- Contact and communication preferences
+- Document storage and retrieval
+- Award and payment history
 
-**Impact on Phase 1:**
-- ✅ Delivers original vision
-- ✅ Potential long-term operational efficiency
-- ❌ **CRITICAL FAILURE: Cannot complete by May 1, 2026 hard deadline**
-- ❌ Delays core workflows by 4-5 months
-- ❌ **Would extend project well beyond available timeframe**
-- ❌ Cross-cutting services remain incomplete
-- ❌ Compressed testing window (quality risk)
-- ❌ Resource over-allocation continues
-- ❌ **Potential contractual penalties for missing deadline**
+**School Selection & Transfers:**
+- School search and directory
+- Enrollment confirmation
+- Mid-year transfer requests
+- School type identification (Direct Payment vs Reimbursement)
 
-**Total Cost:** $180K - $240K development + delayed value delivery + contract penalties
+**ESA+ Purchasing (ClassWallet):**
+- Browse allowable expenses
+- Submit purchase requests
+- Track approvals and payments
+- View transaction history
 
----
-
-## Slide 10: Option B – Strategic Pivot
-
-### Retire Enrollment Builder from Phase 1
-
-**Approach:**
-1. Archive Enrollment Builder codebase (preserve for Phase 2 evaluation)
-2. Implement ESA+ and OS applications using **Angular reactive forms** (proven pattern)
-3. Redirect engineering resources to core workflows and cross-cutting services
-4. Re-evaluate Enrollment Builder in Phase 2 based on actual operational needs
-
-**Immediate Benefits:**
-- ✅ **CRITICAL: Only viable path to meet May 1, 2026 hard deadline**
-- ✅ Proven technology (Angular reactive forms used by thousands of apps)
-- ✅ Type-safe, well-tested, well-documented
-- ✅ Direct schema mapping (no data integrity risk)
-- ✅ Faster development (established patterns)
-- ✅ Better testing coverage (more time available)
-- ✅ Resource reallocation to high-value features
-- ✅ **Avoids contractual penalties for missing deadlines**
-
-**Timeline to Complete Core Workflows:**
-- ESA+ and OS applications: 4 weeks
-- Renewal and verification workflows: 3 weeks
-- Cross-cutting services: 8 weeks
-- End-to-end testing: 4 weeks
-- **Total:** 24 weeks with buffer to meet May 1, 2026 requirement
-
-**Cost Impact:** Net savings of $180K - $240K in Phase 1
+**Communication:**
+- To-Do lists and tasks
+- Email/SMS notifications
+- In-app messaging
+- Document upload reminders
 
 ---
 
-## Slide 11: Timeline Comparison
+## Slide 7: School Management Features
 
-### Current Path (with Enrollment Builder)
+### What Schools Need to Manage
 
+**Registration & Profile:**
+- School registration workflow
+- DNPE verification
+- School type classification
+- Banking information for payments
+- Administrator account management
+
+**Student Enrollment:**
+- Student roster management
+- Enrollment confirmations
+- Semester updates
+- Transfer processing
+- Enrollment reporting
+
+**Certification & Endorsement:**
+- Annual school certification (tuition/fees)
+- Parent endorsement requests (semester)
+- Deadline tracking and reminders
+- Certification approval workflow
+
+**Payment & Financial:**
+- Payment schedule visibility
+- Expected payment calculations
+- ACH deposit tracking
+- Payment reconciliation
+- Dual award allocation (OS + ESA+)
+
+**Compliance:**
+- Testing requirements (grades 3-12, July 15 deadline)
+- Financial review (70+ students, CPA requirement)
+- Background checks (school leadership)
+- Compliance reporting
+
+**School Portal:**
+- Dashboard with key metrics
+- Student scholarship list
+- Payment history
+- Document management
+- Communication center
+
+---
+
+## Slide 8: Provider Management Features
+
+### What Service Providers Need
+
+**Registration & Enrollment:**
+- Provider application submission
+- Credentials and license verification
+- Background check processing
+- Service category selection
+- Provider agreement signature
+- Approval workflow
+
+**Provider Directory:**
+- Public provider search
+- Category-based browsing
+- Service area filters
+- Contact information
+- Service offerings
+
+**Invoice & Payment:**
+- Invoice submission
+- Purchase request matching
+- Payment processing via ClassWallet
+- Payment confirmation
+- Payment history
+- Reconciliation
+
+**Compliance:**
+- Credential maintenance
+- Annual reviews
+- Service quality monitoring
+- Complaint tracking
+- Performance metrics
+
+---
+
+## Slide 9: Admin Portal Operations - Processing
+
+### What CFI Staff Need to Do
+
+**Application Processing:**
+- Application queue management
+- Application review workflows
+- Document verification
+- Data validation
+- Exception handling
+- Processing status tracking
+
+**Eligibility Determination:**
+- Criteria evaluation
+- Income calculation
+- Domicile verification review
+- Disability documentation review
+- Exception and appeal handling
+- Decision recording and notification
+
+**Verification Management:**
+
+**Domicile Verification:**
+- Electronic verification via state agencies (DMV, DPI, Revenue, DHHS, Commerce, Elections)
+- Document evidence review (utility bills, bank statements)
+- Multi-evidence coordination
+- Verification result tracking
+
+**Income Verification (OS):**
+- 4% random sample selection
+- IRS transcript validation
+- Income calculation review
+- Extension request processing
+
+**Application Sampling:**
+- Random selection (4% of applications)
+- Error-prone identification
+- Verification case management
+- Non-compliance handling
+
+---
+
+## Slide 10: Admin Portal Operations - Awards & Documents
+
+**Award Management:**
+
+**Lottery Administration:**
+- Lottery batch creation
+- Random selection processing
+- Award offer generation
+- Waitlist management
+- Audit trail maintenance
+
+**Award Calculation:**
+- ESA+ amount determination ($9,000 vs $17,000)
+- OS tiered calculation (income-based)
+- Dual award ordering
+- Per pupil allocation integration (DPI)
+- Award recalculation for changes
+
+**Award Lifecycle:**
+- Award offer management
+- Acceptance tracking
+- Award activation
+- Mid-year adjustments
+- Renewal processing
+
+**Document Management:**
+- Document upload processing
+- Type classification
+- Virus scanning
+- Review workflows
+- Approval/rejection
+- PandaDocs e-signature integration
+- Secure storage and retrieval
+
+**Communication & Case Management:**
+- Bulk campaigns
+- Email template management
+- Scheduled notifications
+- Deadline reminders
+- Case assignment and tracking
+- Exception queue management
+
+---
+
+## Slide 11: Admin Portal Operations - Reporting
+
+**Operational Dashboards:**
+- Application pipeline status
+- Processing time metrics
+- Verification completion rates
+- Award utilization tracking
+- Payment disbursement status
+- School compliance monitoring
+- Provider activity metrics
+- System performance indicators
+
+**Compliance Reports:**
+- Statutory reporting
+- Audit trail exports
+- Financial reconciliation
+- State agency coordination
+- Verification completion
+- Award distribution analysis
+- Fraud detection indicators
+
+**Business Intelligence:**
+- Program participation trends
+- Geographic distribution
+- Demographic insights
+- Financial projections
+- Resource allocation
+- Capacity planning
+- Performance benchmarking
+
+**System Administration:**
+- User account management (RBAC)
+- Role and permission configuration
+- Microsoft Entra ID integration
+- Audit logging
+- System configuration
+- Feature flags
+- Policy version control
+
+---
+
+## Slide 12: Payment & Financial Systems
+
+### Direct Payment Schools
+
+**Payment Processing:**
+- Payment schedule management (Aug/Sep, Jan/Feb)
+- Parent endorsement validation
+- Tuition and fee calculation
+- Dual award allocation (OS first, then ESA+)
+- ACH payment file generation
+- Payment confirmation tracking
+- Failed payment handling
+- Payment reconciliation
+
+**ESA+ Wallet (ClassWallet):**
+- Account provisioning
+- Fund allocation after tuition
+- Balance tracking
+- Transaction logging
+- Rollover calculation
+
+### ESA+ Purchasing & Expenses
+
+**Allowable Expense Categories:**
+- Curriculum and materials
+- Tutoring and services
+- Educational technology
+- Therapies
+- Summer programs
+- AP exams
+- Transportation
+
+**Purchase Processing:**
+- On-marketplace purchases
+- Off-marketplace invoice submission
+- Category validation
+- Approval/rejection workflow
+- Payment to vendors
+- Transaction recording
+
+**Compliance:**
+- Minimum spending ($1,000 threshold)
+- Rollover management ($4,500 annual, $30,000 lifetime caps)
+- Tax reporting (1099-G for non-tuition spending)
+- Prohibited expense detection
+- Accessory timing and frequency rules
+
+---
+
+## Slide 13: Verification & Compliance Systems
+
+### State Agency Integration Platform
+
+**Agency Integrations Required:**
+- **DMV** - Driver's license/ID verification
+- **DPI** - School enrollment, per pupil allocation
+- **Department of Revenue** - Tax filing verification
+- **DHHS** - Public benefits verification
+- **Department of Commerce** - Public benefits
+- **State Board of Elections** - Voter registration
+- **State CIO** - Infrastructure coordination
+
+**Integration Capabilities:**
+- Electronic verification requests
+- Response processing and validation
+- Timeout and error handling
+- Manual fallback workflows
+- Data privacy compliance
+- Integration health monitoring
+- Response time SLA tracking
+
+### Eligibility Verification
+
+**Domicile Determination:**
+- G.S. 115C-366 implementation
+- Multiple evidence types
+- Electronic verification priority
+- Document upload alternatives
+- Conflicting evidence resolution
+
+**Disability Verification (ESA+):**
+- EDD validation
+- IEP/504 plan review
+- Prior public school verification
+
+**Income Verification (OS):**
+- Income calculation worksheet
+- IRS transcript validation
+- Income tier determination
+
+### Ongoing Compliance
+
+**Annual Verifications:**
+- Per pupil allocation update (DPI, Dec 1)
+- School testing compliance (July 15)
+- School financial reviews (70+ students)
+- Provider credential renewals
+- Background check renewals
+
+**Audit & Reporting:**
+- Immutable event logging
+- Compliance audit trail
+- Regulatory reporting
+- Exception tracking
+- Fraud detection
+
+---
+
+## Slide 14: Cross-Cutting Platform Services
+
+### Essential Infrastructure for All Features
+
+**Communication Center:**
+- Email template engine
+- Scheduled campaigns
+- Event-triggered notifications
+- Deadline reminders
+- Multi-channel delivery (Email, SMS, Print/Mail)
+- Localization (EN/ES)
+
+**Messaging Center:**
+- In-app notifications
+- Banner alerts and modals
+- Message inbox
+- To-Do task orchestration
+- Real-time updates
+
+**Rules Engine:**
+- Eligibility calculation rules
+- Income verification rules
+- Award calculation logic
+- Purchase approval rules
+- Compliance requirements
+- Policy versioning (by program year)
+
+**Document Service:**
+- Secure storage (Azure Blob)
+- Document lifecycle management
+- Virus scanning
+- PandaDocs e-signature integration
+- Access controls
+- Retention policies
+
+**Identity & Security:**
+- Microsoft Entra ID integration
+- Role-based access control (RBAC)
+- Multi-factor authentication
+- Single sign-on (SSO)
+- Security audit logging
+
+**Query & Reporting:**
+- Cube.js reporting layer
+- Ad-hoc query builder
+- Pre-built report templates
+- Dashboard visualizations
+- Data export capabilities
+
+---
+
+## Slide 15: Implementation Roadmap - Complete Timeline
+
+### 28-Week Phased Delivery Plan (Oct 15, 2025 - May 1, 2026)
+
+```mermaid
+gantt
+    title K-12 SEAA Complete Implementation (28 Weeks)
+    dateFormat YYYY-MM-DD
+    axisFormat %b %d
+    
+    section Phase 1: Foundation
+    ESA+ Application Forms           :a1, 2025-10-15, 2w
+    OS Application Forms             :a2, 2025-10-15, 2w
+    Renewal Workflows               :a3, 2025-10-29, 1w
+    Income Verification             :a4, 2025-11-05, 1w
+    School Registration             :a5, 2025-11-12, 2w
+    Provider Registration           :a6, 2025-11-12, 2w
+    
+    section Phase 2: Services
+    Communication Center            :b1, 2025-11-26, 2w
+    Messaging Center                :b2, 2025-11-26, 2w
+    Rules Engine                    :b3, 2025-12-10, 2w
+    Security Integration            :b4, 2025-12-17, 1w
+    Document Management             :b5, 2025-12-17, 1w
+    
+    section Phase 3: Admin
+    Domicile Verification          :c1, 2025-12-24, 2w
+    State Agency Integration       :c2, 2025-12-24, 2w
+    Lottery Service                :c3, 2026-01-07, 1w
+    Award Calculation              :c4, 2026-01-14, 2w
+    Certification Workflows        :c5, 2026-01-21, 1w
+    
+    section Phase 4: Financial
+    Payment Infrastructure         :d1, 2026-01-28, 2w
+    ClassWallet Integration        :d2, 2026-02-04, 2w
+    Purchase Workflows             :d3, 2026-02-11, 1w
+    Payment Reconciliation         :d4, 2026-02-11, 1w
+    
+    section Phase 5: Portals
+    School Portal Features         :e1, 2026-02-18, 2w
+    Provider Portal Features       :e2, 2026-02-18, 2w
+    
+    section Phase 6: Compliance
+    Compliance Monitoring          :f1, 2026-03-04, 2w
+    Tax Reporting                  :f2, 2026-03-11, 1w
+    Rollover Calculation           :f3, 2026-03-11, 1w
+    
+    section Phase 7: Testing
+    End-to-End Testing            :g1, 2026-03-18, 2w
+    Performance Testing           :g2, 2026-03-25, 1w
+    Security Testing              :g3, 2026-03-25, 1w
+    
+    section Phase 8: UAT
+    User Acceptance Testing       :h1, 2026-04-01, 2w
+    Defect Resolution            :h2, 2026-04-08, 2w
+    
+    section Phase 9: Launch
+    Production Setup              :i1, 2026-04-15, 1w
+    Staff Training               :i2, 2026-04-22, 1w
+    Go-Live                      :crit, i3, 2026-04-29, 2d
 ```
-October 15, 2025    Enrollment Builder development continues
-├─ January 2026     Builder feature-complete (optimistic)
-├─ March 2026       Integration testing complete
-├─ April 2026       Cross-cutting services begin
-├─ June 2026        Core workflows completed
-├─ August 2026      End-to-end testing
-├─ October 2026     UAT and defect resolution
-└─ Dec 2026+        Production deployment (BEST CASE)
-
-❌ CRITICAL FAILURE: Misses May 1, 2026 hard deadline by 7+ months
-❌ Project extends well beyond available timeframe
-❌ Potential contract penalties and relationship damage
-```
-
-**Risk:** Guaranteed to miss hard deadline - Option A is NOT viable
 
 ---
 
-### Recommended Path (without Enrollment Builder)
+## Slide 16: Implementation Roadmap - Phase Details
 
-```
-October 15, 2025    Pivot to reactive forms; core workflow development
-├─ November 2025    ESA+ and OS forms complete
-├─ December 2025    Renewal and verification workflows complete
-├─ December 2025    Cross-cutting services integrated
-├─ Jan-Feb 2026     End-to-end testing and performance validation
-├─ March 2026       User acceptance testing
-├─ March 2026       Security audit and remediation
-├─ April 2026       Production hardening and training
-└─ May 1, 2026      All core functionality complete ✅
+### Phase 1: Foundation & Core Applications (Weeks 1-8)
 
-✅ MEETS HARD DEADLINE: May 1, 2026
-✅ Production launch on schedule
-```
+**Weeks 1-4 (Oct 15 - Nov 11):**
+- ESA+ and OS application forms (reactive forms)
+- Application submission workflows
+- Document upload integration
+- Basic student profile management
+- Application status tracking
 
-**Risk:** Low probability of delays; adequate buffer to meet deadline
+**Weeks 5-8 (Nov 12 - Dec 9):**
+- Renewal workflows (both programs)
+- Income verification workflow
+- Eligibility determination submission
+- Household profile management
+- School registration and profile
+- Provider registration workflow
 
----
-
-## Slide 12: Risk Matrix Comparison
-
-| Risk Category | Option A (Continue) | Option B (Retire) |
-|--------------|--------------------:|------------------:|
-| **Misses Hard Deadline** | **CERTAIN** (100%) | LOW (25%) |
-| **Schedule Overrun** | **HIGH** (75%) | LOW (25%) |
-| **Technical Complexity** | **HIGH** | LOW |
-| **Data Integrity** | **HIGH** | LOW |
-| **Resource Availability** | MEDIUM | LOW |
-| **Scope Creep** | **HIGH** | LOW |
-| **Testing Coverage** | MEDIUM | **HIGH** |
-| **Contract Compliance** | **FAILS** | **MEETS** |
-| **Stakeholder Confidence** | MEDIUM | **HIGH** |
-
-### Critical Dependencies (Option A)
-1. State machine architecture → blocks workflow testing
-2. Data mapping layer → blocks data integrity validation
-3. Validation framework → blocks compliance readiness
-4. API integration → blocks backend services
-5. Cross-cutting services → delayed until Builder complete
-
-**Multiple single points of failure**
+**Deliverable:** Families can submit applications, schools and providers can register
 
 ---
 
-## Slide 13: Cost & Value Analysis
+### Phase 2: Cross-Cutting Services (Weeks 9-12)
 
-### 3-Year Total Cost of Ownership
+**Weeks 9-10 (Dec 10 - Dec 23):**
+- Communication Center (email templates, triggers)
+- Messaging Center (in-app notifications)
+- Microsoft Entra Security integration
+- Document Management (PandaDocs)
 
-#### Option A: Complete Enrollment Builder
-- Phase 1 development: **$180K - $240K**
-- Delayed delivery opportunity cost: **$500K+** (estimated business impact)
-- Maintenance and support: **$50K/year**
-- Technical debt remediation: **$100K - $200K** (projected)
-- **3-Year Total:** **$980K - $1.39M**
+**Weeks 11-12 (Dec 24 - Jan 6):**
+- Rules Engine integration
+- Query Builder (Cube.js) foundation
+- Basic reporting dashboards
 
-#### Option B: Reactive Forms
-- Phase 1 development: **$0** (redirected resources)
-- Annual form maintenance: **$8K/year** (40 hours developer time)
-- Platform maintenance: **$30K/year** (normal operations)
-- **3-Year Total:** **$114K**
-
-**Net Savings (Option B):** **$866K - $1.28M over 3 years**
+**Deliverable:** Communication infrastructure operational, security implemented
 
 ---
 
-## Slide 14: Cross-Cutting Services at Risk
+### Phase 3: Advanced Workflows & Admin (Weeks 13-16)
 
-### Currently Incomplete (Partially Built, Not Integrated)
+**Weeks 13-14 (Jan 7 - Jan 20):**
+- Domicile verification workflows
+- State agency integration framework
+- Verification sampling service
+- Admin application review workflows
 
-**If Enrollment Builder continues, these remain delayed:**
+**Weeks 15-16 (Jan 21 - Feb 3):**
+- Lottery service implementation
+- Award calculation engine
+- Award lifecycle management
+- School certification workflows
+- Parent endorsement workflows
 
-1. **Communication Center**
-   - Email template engine
-   - Scheduled campaigns (deadlines, reminders)
-   - Event-triggered notifications
-   - **Business Impact:** Manual communications, missed deadlines, user confusion
-
-2. **Messaging Center**
-   - In-app notifications (banner, modal, inbox)
-   - Task alerts and To-Do orchestration
-   - **Business Impact:** Poor user experience, support call volume
-
-3. **Rules Engine**
-   - Centralized eligibility calculations
-   - Income verification logic
-   - Award determination algorithms
-   - **Business Impact:** Manual processing, errors, compliance risk
+**Deliverable:** Complete admin processing capabilities, awards can be offered
 
 ---
 
-4. **Microsoft Entra Security**
-   - Role-based access control (RBAC)
-   - Permission management across portals
-   - Group synchronization
-   - **Business Impact:** Security vulnerabilities, audit failures
+### Phase 4: Financial & Payment Systems (Weeks 17-18)
 
-5. **Document Management**
-   - PandaDoc integration
-   - PDF upload and storage
-   - Virus scanning and validation
-   - **Business Impact:** Document processing delays, security risk
+**Weeks 17-18 (Feb 4 - Feb 17):**
+- Payment processing infrastructure
+- ACH payment file generation
+- ClassWallet integration
+- ESA+ purchase request workflows
+- Expense approval rules engine
+- Payment reconciliation
 
-6. **Query Builder**
-   - Ad-hoc reporting layer (Cube.js)
-   - Data access for business users
-   - **Business Impact:** Limited operational visibility, manual reporting
-
-**These are mission-critical services** – without them, the platform cannot operate effectively.
+**Deliverable:** End-to-end payment processing operational
 
 ---
 
-## Slide 15: Our Recommendation
+### Phase 5: School & Provider Portals (Weeks 19-20)
 
-### **Option B: Retire Enrollment Builder from Phase 1**
+**Weeks 19-20 (Feb 18 - Mar 3):**
+- School portal features (dashboard, roster, certification, payments)
+- Provider portal features (directory, invoicing, payments)
 
-**Why This is the Right Decision:**
-
-1. **CRITICAL: Only Way to Meet Hard Deadline**
-   - May 1, 2026 is non-negotiable
-   - Option A cannot meet this deadline
-
-2. **Risk Mitigation**
-   - Eliminates highest technical and schedule risk
-   - Removes data integrity exposure
-   - Proven technology reduces uncertainty
-
-3. **Quality & Stability**
-   - More testing time = fewer production defects
-   - Static forms = predictable data model
-   - Better user acceptance testing
-
-4. **Resource Optimization**
-   - Focus on incomplete, high-value features
-   - Complete cross-cutting services
-   - Better team morale and focus
-
-5. **Contract Compliance**
-   - Meets all delivery commitments
-   - Avoids penalties and relationship damage
-   - 80,000 users served on schedule
+**Deliverable:** Schools and providers have full self-service capabilities
 
 ---
 
-## Slide 16: Implementation Roadmap (Option B)
+### Phase 6: Compliance & Reporting (Weeks 21-22)
 
-### Phase 1 Execution Plan (October 15, 2025 - May 1, 2026)
+**Weeks 21-22 (Mar 4 - Mar 17):**
+- Compliance monitoring workflows
+- Testing requirement tracking
+- Financial review management
+- Background check tracking
+- Tax reporting (1099-G)
+- Rollover calculation
+- Minimum spending enforcement
 
-**October-November 2025:**
-- ✅ Pivot to reactive forms (1 week transition)
-- ✅ ESA+ application form development (2 weeks)
-- ✅ Opportunity Scholarship form development (2 weeks)
-- ✅ Renewal workflows (1 week)
-- ✅ Income verification workflow (1 week)
-- ✅ Eligibility determination submission (1 week)
-- ✅ Document upload integration (1 week)
-
-**November-December 2025:**
-- ✅ Communication Center integration (2 weeks)
-- ✅ Messaging Center implementation (2 weeks)
-- ✅ Rules Engine integration (2 weeks)
-- ✅ Microsoft Entra Security (1 week)
-- ✅ Document Management (PandaDoc) (1 week)
-
-**December 2025 - February 2026:**
-- ✅ End-to-end workflow testing (4 weeks)
-- ✅ Performance/load testing (2 weeks)
-- ✅ User acceptance testing (UAT) (4 weeks)
-- ✅ Security audit and penetration testing (2 weeks)
-
-**March-April 2026:**
-- ✅ Defect resolution and hardening (2 weeks)
-- ✅ Production environment setup and validation (2 weeks)
-- ✅ Staff training and documentation (2 weeks)
-- ✅ Final deployment preparation
-
-**May 1, 2026:**
-- ✅ All core functionality complete ✅
-- ✅ Production launch
-- ✅ Transition to support/maintenance mode
+**Deliverable:** Full compliance and regulatory reporting capabilities
 
 ---
 
-## Slide 17: Phase 2 Considerations
+### Phases 7-9: Testing & Launch (Weeks 23-28)
+
+**Weeks 23-24 (Mar 18 - Mar 31):**
+- End-to-end workflow testing
+- Performance and load testing (80K users)
+- Security testing and penetration testing
+- Integration testing (all external systems)
+
+**Weeks 25-26 (Apr 1 - Apr 14):**
+- User acceptance testing
+- Defect resolution
+- Performance optimization
+- User feedback incorporation
+
+**Weeks 27-28 (Apr 15 - Apr 28):**
+- Production environment setup
+- Data migration and validation
+- Staff training
+- Documentation finalization
+
+**May 1, 2026: Production Launch** ✅
+
+---
+
+## Slide 17: Resource Allocation & Team Structure
+
+### Development Teams (6-8 FTE Total)
+
+**Frontend Team (2-3 FTE):**
+- Angular application development (4 portals)
+- Reactive forms implementation
+- Portal UI components
+- Responsive design and accessibility
+- Material UI integration
+
+**Backend Team (2-3 FTE):**
+- .NET API development
+- Business logic implementation
+- Database schema design and optimization
+- Integration development
+- Performance optimization
+
+**Integration Team (1-2 FTE):**
+- ClassWallet API integration
+- PandaDocs integration
+- State agency connections (7 agencies)
+- Payment rails integration
+- External system coordination
+
+**QA Team (1-2 FTE):**
+- Test plan development
+- Automated testing (unit, integration, E2E)
+- Manual testing
+- UAT coordination
+- Defect tracking and resolution
+
+**Subject Matter Experts (Part-time):**
+- Business analyst (requirements)
+- DBA (database optimization)
+- Security specialist (compliance, penetration testing)
+- DevOps engineer (infrastructure, CI/CD)
+- Technical writer (documentation)
+
+---
+
+## Slide 18: Risk Assessment - High Priority
+
+### Critical Risk Areas & Mitigation
+
+**1. State Agency Integrations (HIGH RISK)**
+- **Challenge:** 7 different agencies, varying APIs, unknown response times, coordination complexity
+- **Mitigation:**
+  - Early integration testing starting Phase 3
+  - Fallback to manual verification workflows
+  - Regular agency coordination meetings
+  - Integration health monitoring and SLA tracking
+  - Dedicated integration team member
+
+**2. ClassWallet Integration (HIGH RISK)**
+- **Challenge:** Complex ESA+ workflows, vendor dependency, webhook reliability, transaction integrity
+- **Mitigation:**
+  - Sandbox environment testing early (Phase 4)
+  - Idempotency keys for all transactions
+  - Comprehensive error handling and retry logic
+  - Regular vendor communication and status checks
+  - Transaction reconciliation processes
+
+**3. Payment Processing (HIGH RISK)**
+- **Challenge:** Financial transactions, ACH accuracy, dual award ordering, regulatory compliance
+- **Mitigation:**
+  - Extensive testing with sample data
+  - Automated reconciliation workflows
+  - Comprehensive audit trail for all transactions
+  - Financial controls and approval gates
+  - Regular reconciliation with schools
+
+---
+
+## Slide 19: Risk Assessment - Medium Priority
+
+**4. Data Migration (MEDIUM RISK)**
+- **Challenge:** Legacy data quality, volume, complexity, schema mapping
+- **Mitigation:**
+  - Early data profiling (Phase 1)
+  - Iterative migration testing
+  - Phased migration approach
+  - Validation checkpoints
+  - Rollback procedures
+
+**5. Performance at Scale (MEDIUM RISK)**
+- **Challenge:** 80,000 concurrent users, peak load periods (application windows, payment cycles)
+- **Mitigation:**
+  - Load testing starting Phase 7
+  - Performance monitoring infrastructure
+  - Caching strategies (Redis)
+  - Database optimization
+  - Azure auto-scaling configuration
+
+**6. User Adoption & Training (MEDIUM RISK)**
+- **Challenge:** Multiple user groups, varying technical proficiency, change management
+- **Mitigation:**
+  - Early UAT involvement (Phase 8)
+  - Comprehensive training program (Phase 9)
+  - User documentation and video tutorials
+  - Phased rollout by user group
+  - Dedicated support during launch
+
+**7. Scope Creep (MEDIUM RISK)**
+- **Challenge:** Feature requests, changing requirements, stakeholder expectations
+- **Mitigation:**
+  - Formal change control process
+  - Phase 2 feature parking lot
+  - Regular stakeholder communication
+  - Sprint-level scope reviews
+  - Executive escalation for scope changes
+
+---
+
+## Slide 20: Success Criteria & Quality Metrics
+
+### Delivery Milestones
+
+✅ **Phase 1 complete** - December 9, 2025  
+✅ **Cross-cutting services** - December 23, 2025  
+✅ **Admin features** - February 3, 2026  
+✅ **Financial systems** - February 17, 2026  
+✅ **Portal features** - March 3, 2026  
+✅ **Compliance features** - March 17, 2026  
+✅ **Testing complete** - March 31, 2026  
+✅ **UAT approved** - April 14, 2026  
+✅ **Production ready** - April 28, 2026  
+✅ **Production launch** - **May 1, 2026** ✅
+
+### Quality Metrics
+
+- ✅ **Zero critical data integrity issues** in production
+- ✅ **80,000+ concurrent users** supported (load tested)
+- ✅ **<2% defect escape rate** post-UAT
+- ✅ **95%+ user satisfaction** in initial surveys
+- ✅ **100% regulatory compliance** (audit ready)
+- ✅ **<3 second page load times** (95th percentile)
+- ✅ **99.9% uptime** during business hours
+- ✅ **Complete audit trail** for all transactions
+
+### Business Outcomes
+
+- ✅ ESA+ and OS applications processed **without manual intervention**
+- ✅ Award calculations **automated and auditable**
+- ✅ Payment disbursements **on schedule**
+- ✅ Reduced support call volume (improved UX)
+- ✅ Staff productivity gains from automation
+- ✅ **Improved user experience** across all portals
+- ✅ **Complete transparency** for families, schools, providers
+
+---
+
+## Slide 21: Dependencies & Prerequisites
+
+### External Dependencies (Critical Path Items)
+
+**Required for Phase 4 (February 2026):**
+1. **ClassWallet API** - ESA+ purchasing, wallet management
+   - Sandbox access needed by January 2026
+   - Webhook endpoints configured
+   - Transaction testing completed
+
+2. **PandaDocs API** - Document e-signatures
+   - API credentials and templates
+   - Webhook callback configuration
+   - Integration testing
+
+3. **Payment Rails** - ACH disbursement infrastructure
+   - Bank account setup and verification
+   - ACH file format specification
+   - Test transaction capability
+
+**Required for Phase 3 (January 2026):**
+4. **State Agency APIs** - Domicile and income verification
+   - DMV, DPI, Revenue, DHHS, Commerce, Elections
+   - API contracts and authentication
+   - Test environments
+   - Data use agreements/MOUs
+
+**Required for Phase 2 (December 2025):**
+5. **Azure Services** - Hosting, storage, identity
+   - Production subscription
+   - Microsoft Entra ID tenant
+   - Blob storage configuration
+   - APIM setup
+
+6. **Email/SMS Providers** - Communication delivery
+   - Service selection and contracts
+   - API integration
+   - Template configuration
+
+### Technical Prerequisites
+
+- ✅ Development and staging environments (completed)
+- ✅ CI/CD pipeline established (in progress)
+- ✅ Monitoring and logging infrastructure (in progress)
+- ⚠️ Backup and disaster recovery (Phase 9)
+- ⚠️ Production environment (Phase 9)
+
+### Organizational Prerequisites
+
+- ✅ Project governance structure
+- ✅ Stakeholder approval process
+- ⚠️ Change management procedures (in development)
+- ⚠️ Training program development (Phase 8-9)
+- ⚠️ Support team readiness (Phase 9)
+- ⚠️ Communication plan execution (ongoing)
+
+## Slide 23: Implementation Approach & Execution
+
+### Proven Development Methodology
+
+**Technology Stack (Proven Patterns):**
+- Angular reactive forms (type-safe, well-tested)
+- .NET APIs (scalable, maintainable)
+- SQL Server (static schema, high performance)
+- Azure services (enterprise-grade infrastructure)
+- Material UI (accessibility compliant)
+
+**Development Approach:**
+- Agile/Scrum methodology
+- 2-week sprints
+- Continuous integration/deployment
+- Automated testing (unit, integration, E2E)
+- Code reviews and quality gates
+- Regular stakeholder demos
+
+**Parallel Development Strategy:**
+- Frontend and backend teams work simultaneously
+- Portal development in parallel (Phases 1-5)
+- Testing starts early (Phase 7)
+- No critical blocking dependencies
+- Risk mitigation through redundancy
+
+### Communication & Governance
+
+**Weekly Cadence:**
+- Sprint planning Monday
+- Daily standups
+- Demo Friday
+- Retrospective Friday
+- Stakeholder update Friday
+
+**Monthly Milestones:**
+- Phase completion reviews
+- Stakeholder presentations
+- Risk assessment updates
+- Budget and resource reviews
+
+**Escalation Path:**
+- Technical issues → Architecture team
+- Scope changes → Change control board
+- Resource constraints → Project steering committee
+- External dependencies → Vendor management
+
+---
+
+## Slide 24: Monitoring & Course Correction
+
+### How We Stay On Track
+
+**Progress Tracking:**
+- Sprint velocity monitoring
+- Burn-down charts by phase
+- Feature completion metrics
+- Defect tracking and trends
+- Integration test results
+- Performance benchmarks
+
+**Risk Monitoring:**
+- Weekly risk register review
+- External dependency status
+- Resource availability tracking
+- Technical debt assessment
+- Testing coverage metrics
+
+**Quality Gates:**
+- Code coverage thresholds (>80%)
+- Performance benchmarks (<3s page load)
+- Security scan results (zero critical)
+- Accessibility compliance (WCAG 2.1 AA)
+- Load test results (80K concurrent users)
+
+**Course Correction Triggers:**
+- Sprint velocity drops >20%
+- Critical defects discovered
+- External dependency delays
+- Resource availability issues
+- Scope creep detected
+
+**Contingency Plans:**
+- Resource augmentation options
+- Scope prioritization matrix
+- Phase schedule buffers
+- Alternative integration approaches
+- Manual workflow fallbacks
+
+---
+
+## Slide 25: Post-Launch Support & Phase 2
+
+### Production Support Plan
+
+**Launch Support (May-June 2026):**
+- Dedicated support team (24/5 coverage)
+- Rapid response to critical issues
+- User adoption monitoring
+- Performance tuning
+- Quick-fix deployment capability
+
+**Ongoing Support (July 2026+):**
+- Standard support hours (8am-6pm EST)
+- Incident management process
+- Change request handling
+- Monthly maintenance windows
+- Quarterly feature releases (minor)
+
+**Monitoring & Operations:**
+- Application performance monitoring (APM)
+- Error tracking and alerting
+- User analytics
+- System health dashboards
+- Capacity planning
+
+### Phase 2 Planning (Post-May 1, 2026)
+
+**Evaluation Period (May-July 2026):**
+- Collect operational data
+- Analyze user feedback
+- Identify enhancement opportunities
+- Assess technical debt
+
+**Potential Phase 2 Features:**
+- Advanced reporting and analytics
+- Mobile applications (native iOS/Android)
+- Enhanced provider marketplace
+- Automated verification improvements
+- AI-powered fraud detection
+- Parent self-service enhancements
+- **Enrollment Builder re-evaluation** (data-driven decision)
+
+**Phase 2 Decision Criteria:**
+- Actual form change frequency
+- User feedback and pain points
+- Operational efficiency metrics
+- ROI analysis
+- Technical debt assessment
+- Budget availability
+
+---
+
+## Slide 26: Key Success Factors
+
+### What Makes This Plan Achievable
+
+**1. Focused Scope**
+- Clear feature inventory (110+ features)
+- No nice-to-have features in Phase 1
+- Proven technology stack
+- Parallel development possible
+
+**2. Adequate Timeline**
+- 28 weeks from October 15 to May 1
+- Realistic phase durations
+- Built-in testing time (6 weeks)
+- Buffer for unexpected issues
+
+**3. Right Resources**
+- 6-8 dedicated FTE
+- Specialized teams (frontend, backend, integration, QA)
+- SME support available
+- Vendor partnerships established
+
+**4. Clear Governance**
+- Defined decision-making process
+- Regular stakeholder communication
+- Change control procedures
+- Escalation paths
+
+**5. Risk Management**
+- Identified high-risk areas
+- Mitigation strategies defined
+- Contingency plans ready
+- Regular risk reviews
+
+**6. Quality Focus**
+- Automated testing throughout
+- Early and continuous testing
+- User acceptance testing (2 weeks)
+- Performance and security testing
+- Quality gates at each phase
+
+**7. Stakeholder Alignment**
+- Clear requirements and priorities
+- Regular demos and feedback
+- Transparent communication
+- Shared understanding of constraints
+
+---
+
+## Slide 27: Questions & Discussion
+
+**Key Topics for Discussion:**
+
+1. **Scope Confirmation**
+   - Do we have the right feature set?
+   - Are there any must-have features missing?
+   - Are there any features we can defer to Phase 2?
+
+2. **Timeline & Resources**
+   - Is the May 1, 2026 deadline still firm?
+   - Are the resource assumptions realistic?
+   - Do we need additional team members?
+
+3. **External Dependencies**
+   - Are the external integrations progressing?
+   - Do we have commitments from state agencies?
+   - Are vendor contracts in place?
+
+4. **Risk Tolerance**
+   - Are we comfortable with the identified risks?
+   - Do we need additional mitigation strategies?
+   - What are the acceptable trade-offs?
+
+5. **Success Criteria**
+   - Do we agree on the quality metrics?
+   - Are the business outcomes achievable?
+   - How will we measure success?
+
+6. **Phase 2 Planning**
+   - What are the priorities for Phase 2?
+   - When should Phase 2 planning begin?
+   - What budget is available?
+
+**Open Floor for Discussion**
+
+---
+
+## Slide 28: Next Steps & Action Items
+
+### Immediate Actions (This Week)
+
+**Project Team:**
+- Finalize sprint 0 planning
+- Set up development environments
+- Confirm team assignments
+- Schedule kickoff meeting
+- Begin Phase 1 development (Oct 15)
+
+**Stakeholder Actions:**
+- Review and approve scope
+- Confirm resource allocation
+- Approve budget
+- Establish change control board
+- Confirm decision-making authority
+
+**External Dependencies:**
+- Initiate state agency coordination
+- Confirm ClassWallet timeline
+- Finalize PandaDocs contract
+- Azure subscription setup
+- Payment rails coordination
+
+### Short-Term Milestones (30 Days)
+
+- Week 2: ESA+ application forms complete
+- Week 4: OS application forms complete
+- Week 4: First stakeholder demo
+- Week 6: School registration complete
+- Week 8: Phase 1 completion review
+
+### Communication Plan
+
+**Weekly Updates:**
+- Project status report (Friday)
+- Risk register update
+- Upcoming milestones
+
+**Monthly Updates:**
+- Executive summary presentation
+- Phase completion review
+- Budget and resource status
+
+**Quarterly Updates:**
+- Comprehensive project review
+- Strategic alignment check
+- Phase 2 planning discussion
+
+---
+
+## Slide 29: Appendix - Reference Materials
+
+**Available in Repository:**
+
+**Core Documentation:**
+- Complete Implementation Plan: `/stakeholder-decision/comprehensive-implementation-plan.md`
+- Original Decision Brief: `/stakeholder-decision/decision-brief.md`
+- Timeline Comparison: `/stakeholder-decision/diagrams/timeline-comparison.md`
+- Dependency Map: `/stakeholder-decision/diagrams/dependency-map.md`
+- Risk Matrix: `/stakeholder-decision/diagrams/risk-matrix.md`
+
+**Domain Analysis:**
+- Full Domain Model: `/research/full-domain.md`
+- DDD Analysis Part 1: `/research/ddd-1.md`
+- DDD Analysis Part 2: `/research/ddd-2.md`
+- Aggregate Details: `/research/aggregate-details-enhancement.md`
+
+**Additional Resources:**
+- Feature-to-phase mapping matrix
+- Resource allocation spreadsheet
+- Technical architecture documentation
+- Integration specifications
+- Testing strategy
+- Training plan
+
+---
+
+## Slide 30: Contact & Thank You
+
+**Project Leadership**
+
+**Questions or Concerns:**
+- Schedule 1:1 meetings with project team
+- Review supporting documentation in repository
+- Submit questions via project portal
+- Escalate to steering committee if needed
+
+**Post-Meeting Deliverables:**
+- Finalized project plan (within 3 days)
+- Resource allocation confirmation (within 1 week)
+- Sprint 0 plan (within 1 week)
+- Communication plan (within 1 week)
+- Risk management plan (within 2 weeks)
+
+**Commitment:**
+We are committed to delivering a comprehensive, compliant, and scalable K-12 SEAA platform by **May 1, 2026**. With focused execution, disciplined scope management, and proactive risk mitigation, we will meet this critical deadline and serve North Carolina's scholarship programs effectively.
+
+**Thank you for your time, support, and partnership.**
+
+---
+
+# Presentation Notes
+
+## Delivery Guidance
+
+**Tone:** Professional, comprehensive, solution-oriented, confident
+
+**Key Messages to Emphasize:**
+1. This is a complete scope presentation - all features inventoried
+2. Timeline is achievable with disciplined execution
+3. We have a clear plan with realistic phases
+4. Risks are identified with mitigation strategies
+5. Success depends on stakeholder support and decision-making
+
+**Anticipated Questions (and Responses):**
+
+**Question:** "How do we know we can complete 110+ features in 28 weeks?"
+- **Response:** "We're using proven technology patterns (Angular reactive forms, .NET APIs) that allow for rapid, parallel development. Our phased approach allows multiple teams to work simultaneously. The Gantt chart shows realistic timelines based on industry standards for similar work. Plus, we have 6 weeks dedicated to testing and 2 weeks buffer."
+
+**Question:** "What happens if we encounter delays with state agency integrations?"
+- **Response:** "State agency integrations are in Phase 3 (January), giving us time to coordinate. We have manual fallback workflows planned for each agency. We're prioritizing early communication and have dedicated integration team resources. If an agency is delayed, we can proceed with manual verification temporarily."
+
+**Question:** "Is there room for additional features stakeholders might request?"
+- **Response:** "We have a formal change control process. Any new features will be evaluated against: 1) Impact on May 1 deadline, 2) Resource availability, 3) Business priority. Most new requests will be candidates for Phase 2. Our commitment is to deliver the core 110+ features on time with high quality."
+
+**Question:** "How confident are you in the May 1, 2026 deadline?"
+- **Response:** "We're confident because: 1) This plan uses proven technology, 2) We have adequate resources (6-8 FTE), 3) We have realistic phase durations with buffers, 4) We've identified and mitigated key risks, 5) We have parallel development capability. The biggest threat to the deadline would be uncontrolled scope creep, which we'll manage through change control."
+
+**Question:** "What about the Enrollment Builder - is it completely abandoned?"
+- **Response:** "No, it's deferred to Phase 2 evaluation. We'll collect actual data on form change frequency and administrative burden during Phase 1 operation. This data will inform a fact-based decision about whether to resurrect the Builder, use a commercial alternative, or continue with reactive forms. The focus now is on delivering core functionality on time."
+
+**Closing:** "This comprehensive plan gives us a clear roadmap to success. We have the scope, timeline, resources, and risk management strategies needed to deliver by May 1, 2026. What we need from this group is support, timely decision-making, and help removing obstacles. Are there any final questions or concerns?"
+
+---
+
+# End of Presentation
 
 ### What Happens to Enrollment Builder?
 
@@ -616,7 +1472,10 @@ October 15, 2025    Pivot to reactive forms; core workflow development
 - Review supporting documentation in repository
 - Escalate to project steering committee if needed
 
-**Thank you for your time and consideration.**
+**Commitment:**
+We are committed to delivering a comprehensive, compliant, and scalable K-12 SEAA platform by **May 1, 2026**. With focused execution, disciplined scope management, and proactive risk mitigation, we will meet this critical deadline and serve North Carolina's scholarship programs effectively.
+
+**Thank you for your time, support, and partnership.**
 
 ---
 
@@ -624,29 +1483,33 @@ October 15, 2025    Pivot to reactive forms; core workflow development
 
 ## Delivery Guidance
 
-**Tone:** Professional, factual, solution-oriented (not defensive)
+**Tone:** Professional, comprehensive, solution-oriented, confident
 
 **Key Messages to Emphasize:**
-1. This is a strategic decision, not a failure
-2. Both options are viable; Option B has better risk/reward profile
-3. We're recommending the path that best serves the business
-4. Enrollment Builder can be revisited in Phase 2 with real data
+1. This is a complete scope presentation - all features inventoried
+2. Timeline is achievable with disciplined execution
+3. We have a clear plan with realistic phases
+4. Risks are identified with mitigation strategies
+5. Success depends on stakeholder support and decision-making
 
-**Anticipated Objections (and Responses):**
+**Anticipated Questions (and Responses):**
 
-**Objection:** "We promised the Enrollment Builder to stakeholders."
-- **Response:** "Yes, and we're committed to it long-term. We're proposing to defer it to Phase 2 based on new information about technical complexity and schedule risk. We'd rather deliver a stable platform on time than an unstable platform late."
+**Question:** "How do we know we can complete 110+ features in 28 weeks?"
+- **Response:** "We're using proven technology patterns (Angular reactive forms, .NET APIs) that allow for rapid, parallel development. Our phased approach allows multiple teams to work simultaneously. The Gantt chart shows realistic timelines based on industry standards for similar work. Plus, we have 6 weeks dedicated to testing and 2 weeks buffer."
 
-**Objection:** "Developers will have to change forms every time regulations change."
-- **Response:** "That's true, but regulations change annually on a predictable schedule, and changes still require legal/compliance review regardless of the tool. The developer time is minimal (40 hours/year estimated) compared to the $240K and 4-month delay we're avoiding."
+**Question:** "What happens if we encounter delays with state agency integrations?"
+- **Response:** "State agency integrations are in Phase 3 (January), giving us time to coordinate. We have manual fallback workflows planned for each agency. We're prioritizing early communication and have dedicated integration team resources. If an agency is delayed, we can proceed with manual verification temporarily."
 
-**Objection:** "We've already invested 12 months in the Enrollment Builder."
-- **Response:** "Sunk cost. The question is: what's the best path forward from here? We can preserve the Builder code for Phase 2 evaluation, but continuing now creates unacceptable schedule and technical risk."
+**Question:** "Is there room for additional features stakeholders might request?"
+- **Response:** "We have a formal change control process. Any new features will be evaluated against: 1) Impact on May 1 deadline, 2) Resource availability, 3) Business priority. Most new requests will be candidates for Phase 2. Our commitment is to deliver the core 110+ features on time with high quality."
 
-**Objection:** "Can we do both – finish the Builder AND deliver on time?"
-- **Response:** "No. The math doesn't work. We need 19 weeks for the Builder plus additional time for core workflows, but there are only about 28 weeks from October 15, 2025 to May 1, 2026. More critically, **the May 1, 2026 deadline is non-negotiable.** Option A would extend the project well beyond this timeframe."
+**Question:** "How confident are you in the May 1, 2026 deadline?"
+- **Response:** "We're confident because: 1) This plan uses proven technology, 2) We have adequate resources (6-8 FTE), 3) We have realistic phase durations with buffers, 4) We've identified and mitigated key risks, 5) We have parallel development capability. The biggest threat to the deadline would be uncontrolled scope creep, which we'll manage through change control."
 
-**Closing:** "Option B is not just the recommended path - it's the **only viable path** to meet our hard deadline. We're confident this is the right call. What questions can we answer?"
+**Question:** "What about the Enrollment Builder - is it completely abandoned?"
+- **Response:** "No, it's deferred to Phase 2 evaluation. We'll collect actual data on form change frequency and administrative burden during Phase 1 operation. This data will inform a fact-based decision about whether to resurrect the Builder, use a commercial alternative, or continue with reactive forms. The focus now is on delivering core functionality on time."
+
+**Closing:** "This comprehensive plan gives us a clear roadmap to success. We have the scope, timeline, resources, and risk management strategies needed to deliver by May 1, 2026. What we need from this group is support, timely decision-making, and help removing obstacles. Are there any final questions or concerns?"
 
 ---
 
