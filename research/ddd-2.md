@@ -481,6 +481,15 @@ From the resources, actions get flesh:
 
 I will update the earlier aggregates/entities and show new relationships, constraints, and flows.
 
+> **📖 For Enhanced Aggregate Details:** See [aggregate-details-enhancement.md](./aggregate-details-enhancement.md) for comprehensive documentation of each aggregate including:
+> - Detailed domain role & usage explanations
+> - Complete attribute descriptions
+> - Relationship diagrams and dependencies  
+> - Concrete workflow examples
+> - Methods/operations with business logic
+> - Invariants and business rules
+> - Source URL references
+
 ### Aggregates / Entities (Revised)
 
 * **ScholarshipAccount / ESAAccount**  
