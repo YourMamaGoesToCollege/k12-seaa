@@ -391,25 +391,26 @@ mmdc -i timeline-comparison.md -o timeline-comparison.png
 
 | Metric | Option A | Option B | Difference |
 |--------|----------|----------|------------|
-| **Completion Date** | August 2026 | April 2026 | **4 months earlier** |
+| **Meets Hard Deadline** | ❌ NO | ✅ YES | **Option B only viable** |
+| **Completion Date** | Summer 2026+ | End April 2026 | **ONLY Option B meets deadline** |
 | **Critical Path** | 29 weeks | 16 weeks | **13 weeks shorter** |
 | **Schedule Risk** | 75% overrun | 25% delay | **50% lower** |
 | **Total Risk Score** | 145 (HIGH) | 18 (LOW) | **87.6% reduction** |
-| **Critical Risks** | 4 | 0 | **100% elimination** |
+| **Critical Risks** | 5 | 0 | **100% elimination** |
 | **Development Cost** | $180K-$240K | $0 (redirect) | **$180K-$240K savings** |
 | **Expected Value** | -$475K | +$2.9M | **$3.375M better** |
 
 ### Decision Criteria Checklist
 
-- [ ] Schedule: Can we accept 3-4 month delay?
-- [ ] Risk: Can we accept 60% data integrity failure risk?
-- [ ] Cost: Is $180K-$240K investment justified?
-- [ ] Resources: Can we sustain 50% allocation to Builder?
-- [ ] Quality: Is compressed testing acceptable?
-- [ ] Value: Does Builder deliver sufficient ROI?
-- [ ] Stakeholders: Will leadership support extended timeline?
+- [ ] **Hard Deadline:** Can we miss the end-of-April 2026 deadline?
+- [ ] **Contract:** Can we miss May early access and June turnover?
+- [ ] **Schedule:** Can we accept 75% probability of delays?
+- [ ] **Risk:** Can we accept 60% data integrity failure risk?
+- [ ] **Cost:** Is $180K-$240K investment justified?
+- [ ] **Resources:** Can we sustain 50% allocation to Builder?
+- [ ] **Quality:** Is compressed testing acceptable?
 
-**If any answer is "No," Option B is recommended.**
+**If first two answers are "No," Option B is mandatory.**
 
 ---
 

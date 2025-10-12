@@ -42,8 +42,8 @@ quadrantChart
 
 | Risk ID | Risk Description | Probability | Impact | Risk Score | Mitigation Strategy | Owner |
 |---------|-----------------|-------------|---------|------------|---------------------|-------|
-| **A-01** | **Schedule overrun beyond August 2026** | **75%** | **Critical** | **19.5** | Add buffer time; reduce scope | PM |
-| **A-02** | **Data mapping layer failures cause data loss** | **60%** | **Critical** | **15.6** | Extensive testing; rollback plan | Arch Team |
+| **A-01** | **CRITICAL: Misses end-of-April 2026 hard deadline** | **100%** | **Critical** | **20** | None - Option A cannot meet deadline | PM |
+| **A-02** | **Data mapping layer failures cause data loss** | **60%** | **Critical** | **12** | Extensive testing; rollback plan | Arch Team |
 | **A-03** | **State machine implementation more complex than estimated** | **70%** | **High** | **14.7** | Early proof-of-concept; XState expertise | Dev Lead |
 | **A-04** | **Resource allocation unsustainable (team burnout)** | **65%** | **High** | **13.65** | Staff augmentation; reduce hours | HR/PM |
 | **A-05** | **Validation framework incomplete for compliance** | **50%** | **Critical** | **13** | Regulatory review early; legal sign-off | Compliance |
@@ -52,10 +52,11 @@ quadrantChart
 | **A-08** | **Cross-cutting services delayed due to Builder focus** | **80%** | **High** | **16** | Parallel teams (requires more budget) | Arch Team |
 | **A-09** | **Production deployment issues due to compressed testing** | **55%** | **Critical** | **14.3** | Extended UAT; phased rollout | DevOps |
 | **A-10** | **Technical debt accumulation from rushed implementation** | **75%** | **High** | **15.75** | Code reviews; refactoring sprints | Tech Lead |
+| **A-11** | **Contract penalties for missing May/June deadlines** | **100%** | **Critical** | **20** | None - Option A will miss deadlines | Exec |
 
-**Average Risk Score:** **14.5** (HIGH)  
-**Risks in Critical Zone:** 4 out of 10  
-**Overall Risk Level:** **UNACCEPTABLE**
+**Average Risk Score:** **15.2** (HIGH)  
+**Risks in Critical Zone:** 5 out of 11  
+**Overall Risk Level:** **UNACCEPTABLE - Option A cannot meet hard deadline**
 
 ---
 
