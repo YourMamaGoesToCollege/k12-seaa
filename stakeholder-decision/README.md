@@ -379,7 +379,7 @@ mmdc -i timeline-comparison.md -o timeline-comparison.png
 ---
 
 **Prepared by:** Technical Architecture Team  
-**Date:** March 2025  
+**Date:** October 2025  
 **Document Version:** 1.0  
 **Classification:** Internal - Leadership Distribution
 
@@ -392,8 +392,8 @@ mmdc -i timeline-comparison.md -o timeline-comparison.png
 | Metric | Option A | Option B | Difference |
 |--------|----------|----------|------------|
 | **Meets Hard Deadline** | ❌ NO | ✅ YES | **Option B only viable** |
-| **Completion Date** | Summer 2026+ | End April 2026 | **ONLY Option B meets deadline** |
-| **Critical Path** | 29 weeks | 16 weeks | **13 weeks shorter** |
+| **Completion Date** | Fall 2026+ | May 1, 2026 | **ONLY Option B meets deadline** |
+| **Critical Path** | 45 weeks | 24 weeks | **21 weeks shorter** |
 | **Schedule Risk** | 75% overrun | 25% delay | **50% lower** |
 | **Total Risk Score** | 145 (HIGH) | 18 (LOW) | **87.6% reduction** |
 | **Critical Risks** | 5 | 0 | **100% elimination** |
