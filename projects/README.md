@@ -4,10 +4,12 @@ This folder contains project planning materials and guidance for managing the K1
 
 ## Contents
 
-1. **[INVEST Format Guide](invest-format-guide.md)** - Comprehensive explanation of the INVEST principles for user story creation
-2. **[Project Planning Guide](project-planning-guide.md)** - Guidance on extracting and managing initiatives, features, and work items
-3. **[Work Item Hierarchy](work-item-hierarchy.md)** - Understanding the structure from initiatives to tasks
-4. **[AI Business Case Review](ai-business-case-review.md)** - Analysis and recommendations based on the AI Business Case proposal
+1. **[Getting Started Guide](getting-started.md)** - **START HERE** - Navigation guide for all roles and experience levels
+2. **[Quick Reference](quick-reference.md)** - One-page summary card for desk reference
+3. **[INVEST Format Guide](invest-format-guide.md)** - Comprehensive explanation of the INVEST principles for user story creation
+4. **[Work Item Hierarchy](work-item-hierarchy.md)** - Understanding the structure from initiatives to tasks
+5. **[Project Planning Guide](project-planning-guide.md)** - Step-by-step guidance for extracting and managing work items
+6. **[AI Business Case Review](ai-business-case-review.md)** - Analysis and recommendations based on the AI Business Case proposal
 
 ## Quick Reference
 
