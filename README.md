@@ -6,11 +6,9 @@ NC K12 Scholarship programs (ESA+ and Opportunity Scholarship) - Domain-Driven D
 
 ### IT Stakeholder Decision Materials
 
-- **[Stakeholder Decision Package](stakeholder-decision/README.md)** - Comprehensive IT decision materials for Enrollment Builder strategic decision
-  - ⭐ **[Cinematic Presentation](stakeholder-decision/cinematic-presentation.md)** - **NEW**: 5-minute epic storytelling presentation for stakeholder meeting
+- **[Stakeholder Decision Package](stakeholder-decision/README.md)** - **NEW**: Comprehensive IT decision materials for Enrollment Builder strategic decision
   - [Decision Brief](stakeholder-decision/decision-brief.md) - 2-3 page executive summary with recommendation
-  - [Presentation Deck](stakeholder-decision/presentation-deck.md) - 30-slide stakeholder presentation
-  - [Comprehensive Implementation Plan](stakeholder-decision/comprehensive-implementation-plan.md) - Complete 110+ feature inventory and 28-week roadmap
+  - [Presentation Deck](stakeholder-decision/presentation-deck.md) - 23-slide stakeholder presentation
   - [Timeline Comparison](stakeholder-decision/diagrams/timeline-comparison.md) - Gantt charts and critical path analysis
   - [Risk Matrix](stakeholder-decision/diagrams/risk-matrix.md) - Comprehensive risk assessment and mitigation strategies
   - [Dependency Map](stakeholder-decision/diagrams/dependency-map.md) - Architecture diagrams and integration dependencies
