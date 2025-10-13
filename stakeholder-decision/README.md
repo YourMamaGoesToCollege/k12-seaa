@@ -12,9 +12,10 @@
 
 ### Primary Documents
 
-1. **[Comprehensive Implementation Plan](comprehensive-implementation-plan.md)** (Complete scope) – Full feature inventory, phased roadmap, 28-week timeline
-2. **[Presentation Deck](presentation-deck.md)** (30 slides) – IT stakeholder presentation with complete scope analysis
-3. **[Decision Brief](decision-brief.md)** (Reference) – Original strategic decision documentation
+1. **[Cinematic Presentation](cinematic-presentation.md)** (5 minutes) – ⭐ **NEW**: Epic storytelling presentation for stakeholder meeting
+2. **[Comprehensive Implementation Plan](comprehensive-implementation-plan.md)** (Complete scope) – Full feature inventory, phased roadmap, 28-week timeline
+3. **[Presentation Deck](presentation-deck.md)** (30 slides) – IT stakeholder presentation with complete scope analysis
+4. **[Decision Brief](decision-brief.md)** (Reference) – Original strategic decision documentation
 
 ### Supporting Diagrams & Analysis
 
@@ -26,7 +27,42 @@
 
 ## Document Overview
 
-### 1. Comprehensive Implementation Plan (`comprehensive-implementation-plan.md`)
+### 1. Cinematic Presentation (`cinematic-presentation.md`) ⭐ NEW
+
+**Purpose:** Epic 5-minute storytelling presentation that weaves facts into a compelling narrative  
+**Audience:** Senior stakeholders, business leadership, decision-makers  
+**Format:** Dramatic narrative with cinematic structure
+
+**Contents:**
+- **Opening:** The Decision - A glimpse of the critical choice ahead
+- **Act One:** The Vision - The ambitious promise of the Enrollment Builder
+- **Act Two:** The Reality - The awakening to timeline constraints and incomplete features
+- **Act Three:** The Decision - The choice between comfortable lie and difficult truth
+- **Closing:** The Appeal - Direct call to action for stakeholders
+- **Appendix:** Visual timeline showing the fork in the road
+- **Speaker Notes:** Delivery guidance, emotional beats, anticipated questions
+
+**Structure:**
+- Cinematic storytelling approach (beginning shows decision, then tells the tale)
+- High-level and persuasive, not technical deep-dive
+- Emotional engagement through narrative tension
+- Clear facts woven into compelling story
+- Powerful visual metaphors (crossroads, fork in the road)
+
+**Presentation Time:** 5 minutes  
+**Use Case:** Critical stakeholder meeting, strategic decision presentation, leadership appeal  
+**Impact:** Maximum emotional and rational persuasion for difficult pivot decision
+
+**Key Themes:**
+- 80,000 families depending on delivery
+- May 1, 2026 hard deadline (non-negotiable)
+- Choice between architectural perfection and on-time delivery
+- Leadership courage to admit course correction needed
+- Success over sophistication
+
+---
+
+### 2. Comprehensive Implementation Plan (`comprehensive-implementation-plan.md`)
 
 **Purpose:** Complete feature inventory and implementation roadmap for K-12 SEAA modernization  
 **Audience:** IT leadership, business stakeholders, project team  
