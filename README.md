@@ -4,18 +4,18 @@ NC K12 Scholarship programs (ESA+ and Opportunity Scholarship) - Domain-Driven D
 
 ## Documentation
 
-### Project Planning & Agile Practices
+### 🚀 Execution Roadmap (Start Here)
 
-- **[Project Planning Documentation](projects/README.md)** - **NEW**: Comprehensive Agile project planning guidance
-  - [INVEST Format Guide](projects/invest-format-guide.md) - Complete explanation of INVEST principles for user story creation
-  - [Work Item Hierarchy](projects/work-item-hierarchy.md) - Understanding initiatives, epics, features, stories, and tasks
-  - [Project Planning Guide](projects/project-planning-guide.md) - Step-by-step guidance for extracting and structuring work items
-  - [AI Business Case Review](projects/ai-business-case-review.md) - Analysis and recommendations for AI tool adoption
-  - [Quick Reference](projects/quick-reference.md) - One-page summary card for desk reference
+- **[EXECUTION-ROADMAP.md](EXECUTION-ROADMAP.md)** - **ACTIVE**: High-velocity delivery plan (Oct 2025 - May 1, 2026)
+  - 4 parallel team tracks (16 full-stack developers)
+  - 7-month timeline with monthly initiative milestones
+  - Startup mode approach with minimal process overhead
+  - Critical dependencies and risk mitigation
+  - Concurrent development strategy
 
 ### IT Stakeholder Decision Materials
 
-- **[Stakeholder Decision Package](stakeholder-decision/README.md)** - Comprehensive IT decision materials for Enrollment Builder strategic decision
+- **[Stakeholder Decision Package](stakeholder-decision/README.md)** - **NEW**: Comprehensive IT decision materials for Enrollment Builder strategic decision
   - [Decision Brief](stakeholder-decision/decision-brief.md) - 2-3 page executive summary with recommendation
   - [Presentation Deck](stakeholder-decision/presentation-deck.md) - 23-slide stakeholder presentation
   - [Timeline Comparison](stakeholder-decision/diagrams/timeline-comparison.md) - Gantt charts and critical path analysis
@@ -30,13 +30,6 @@ NC K12 Scholarship programs (ESA+ and Opportunity Scholarship) - Domain-Driven D
 - **[aggregate-details-enhancement.md](research/aggregate-details-enhancement.md)** - Detailed aggregate and entity documentation with relationships, workflows, and dependencies
 
 ### Key Resources
-
-**Project Planning Documentation** provides Agile best practices and AI-assisted planning:
-- INVEST principles for user story creation (Independent, Negotiable, Valuable, Estimable, Small, Testable)
-- Work item hierarchy from initiatives to tasks with K12-SEAA examples
-- Step-by-step guidance for extracting 110+ features into implementable stories
-- AI Business Case analysis: GitHub Copilot (4,267% ROI) and Gemini (30% time savings)
-- Ready-to-use templates and checklists for stories, epics, and initiatives
 
 **IT Decision Package** provides executive-level materials for strategic technical decisions:
 - Option analysis (continue vs retire Enrollment Builder)
