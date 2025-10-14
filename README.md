@@ -4,6 +4,15 @@ NC K12 Scholarship programs (ESA+ and Opportunity Scholarship) - Domain-Driven D
 
 ## Documentation
 
+### 🚀 Execution Roadmap (Start Here)
+
+- **[EXECUTION-ROADMAP.md](EXECUTION-ROADMAP.md)** - **ACTIVE**: High-velocity delivery plan (Oct 2025 - May 1, 2026)
+  - 4 parallel team tracks (16 full-stack developers)
+  - 7-month timeline with monthly initiative milestones
+  - Startup mode approach with minimal process overhead
+  - Critical dependencies and risk mitigation
+  - Concurrent development strategy
+
 ### IT Stakeholder Decision Materials
 
 - **[Stakeholder Decision Package](stakeholder-decision/README.md)** - **NEW**: Comprehensive IT decision materials for Enrollment Builder strategic decision
