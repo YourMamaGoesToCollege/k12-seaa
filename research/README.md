@@ -76,6 +76,34 @@ Complete domain model documentation covering the entire NCSEAA ecosystem.
 
 ---
 
+### 🏗️ Azure Architecture & System Design
+
+**Azure backend architecture:** [`azure-architecture.md`](./azure-architecture.md)
+
+Complete Azure architecture for the K-12 SEAA backend system:
+- High-level system architecture with all Azure services
+- Detailed RDS integration architecture
+- Sequence diagrams for new residency validation and re-verification flows
+- Event-driven architecture patterns
+- Security and compliance architecture
+- Deployment and CI/CD pipelines
+- Monitoring and observability
+- Cost optimization guidance
+
+**Includes 8 Mermaid diagrams:**
+1. High-Level Azure Architecture (complete system)
+2. RDS Integration Architecture (detailed components)
+3. RDS Integration Service Components
+4. New Residency Validation Sequence Diagram
+5. Re-Verification Sequence Diagram
+6. Event-Driven Architecture
+7. Azure Security Architecture
+8. CI/CD Pipeline Architecture
+
+**Best for:** Architects, DevOps engineers, developers implementing Azure services, understanding system integration flows.
+
+---
+
 ### 🔍 RDS Residency Verification System Research
 
 **⭐ START HERE:** [`rds-executive-summary.md`](./rds-executive-summary.md)
@@ -165,6 +193,8 @@ If you have questions about these documents or need clarification on any DDD con
 
 ## Document History
 
+- **2025-10-15:** Added Azure architecture documentation:
+  - `azure-architecture.md` - Complete Azure backend architecture with Mermaid diagrams
 - **2025-10-15:** Added RDS residency verification system research suite:
   - `rds-residency-verification-system.md` - Comprehensive technical and business research
   - `rds-meeting-preparation.md` - Meeting preparation guide with priority questions
