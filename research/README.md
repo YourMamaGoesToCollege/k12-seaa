@@ -77,6 +77,17 @@ Complete domain model documentation covering the entire NCSEAA ecosystem.
 ---
 
 ### 🔍 RDS Residency Verification System Research
+
+**⭐ START HERE:** [`rds-executive-summary.md`](./rds-executive-summary.md)
+
+Quick reference and executive summary of RDS research:
+- Research documents overview
+- Key findings (what we know vs. don't know)
+- Critical questions for meeting
+- Blind spots and risks
+- Pre-meeting checklist
+- Next steps and action items
+
 **Comprehensive RDS research:** [`rds-residency-verification-system.md`](./rds-residency-verification-system.md)
 
 Deep technical and business research on the North Carolina Residency Determination Service (RDS):
