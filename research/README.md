@@ -76,79 +76,6 @@ Complete domain model documentation covering the entire NCSEAA ecosystem.
 
 ---
 
-### 🏗️ Azure Architecture & System Design
-
-**Azure backend architecture:** [`azure-architecture.md`](./azure-architecture.md)
-
-Complete Azure architecture for the K-12 SEAA backend system:
-- High-level system architecture with all Azure services
-- Detailed RDS integration architecture
-- Sequence diagrams for new residency validation and re-verification flows
-- Event-driven architecture patterns
-- Security and compliance architecture
-- Deployment and CI/CD pipelines
-- Monitoring and observability
-- Cost optimization guidance
-
-**Includes 8 Mermaid diagrams:**
-1. High-Level Azure Architecture (complete system)
-2. RDS Integration Architecture (detailed components)
-3. RDS Integration Service Components
-4. New Residency Validation Sequence Diagram
-5. Re-Verification Sequence Diagram
-6. Event-Driven Architecture
-7. Azure Security Architecture
-8. CI/CD Pipeline Architecture
-
-**Best for:** Architects, DevOps engineers, developers implementing Azure services, understanding system integration flows.
-
----
-
-### 🔍 RDS Residency Verification System Research
-
-**⭐ START HERE:** [`rds-executive-summary.md`](./rds-executive-summary.md)
-
-Quick reference and executive summary of RDS research:
-- Research documents overview
-- Key findings (what we know vs. don't know)
-- Critical questions for meeting
-- Blind spots and risks
-- Pre-meeting checklist
-- Next steps and action items
-
-**Comprehensive RDS research:** [`rds-residency-verification-system.md`](./rds-residency-verification-system.md)
-
-Deep technical and business research on the North Carolina Residency Determination Service (RDS):
-- Business overview and organizational structure
-- System architecture (Level 1-11 technical depth)
-- Integration specifications and patterns
-- Data models and API endpoints (hypothetical)
-- Security, compliance, and state agency coordination
-- Critical blind spots and risk areas
-- Integration roadmap
-
-**Meeting preparation guide:** [`rds-meeting-preparation.md`](./rds-meeting-preparation.md)
-
-Structured meeting agenda and questions for RDS system owners:
-- Priority-ranked questions (Critical, High, Medium)
-- Integration scenarios and use cases
-- Information to request
-- Success criteria and follow-up actions
-- Risk mitigation strategies
-
-**Integration specification template:** [`rds-integration-specification.md`](./rds-integration-specification.md)
-
-Technical specification template to be completed after RDS discovery meeting:
-- API endpoints and authentication
-- Data models and schemas
-- Performance SLAs and rate limits
-- Error handling and retry strategies
-- Security, monitoring, and support
-
-**Best for:** Architects preparing for RDS integration, system owners meeting preparation, technical planning.
-
----
-
 ## Recommended Reading Path
 
 ### If you're new to DDD:
@@ -193,11 +120,5 @@ If you have questions about these documents or need clarification on any DDD con
 
 ## Document History
 
-- **2025-10-15:** Added Azure architecture documentation:
-  - `azure-architecture.md` - Complete Azure backend architecture with Mermaid diagrams
-- **2025-10-15:** Added RDS residency verification system research suite:
-  - `rds-residency-verification-system.md` - Comprehensive technical and business research
-  - `rds-meeting-preparation.md` - Meeting preparation guide with priority questions
-  - `rds-integration-specification.md` - Technical specification template
 - **2024-10-14:** Added `ddd-primer-for-stakeholders.md` - Comprehensive primer for IT stakeholders new to DDD
 - **Earlier:** Initial domain research and analysis documents created
