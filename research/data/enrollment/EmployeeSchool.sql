@@ -1,0 +1,12 @@
+﻿CREATE TABLE [Enrollment].[EmployeeSchool](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[SchoolName] [varchar](max) NOT NULL,
+	[SchoolCode] [varchar](50) NOT NULL,
+	[DateCreated] [datetimeoffset] NOT NULL DEFAULT GETUTCDATE() ,
+	[DateDeleted] [datetimeoffset] NULL,
+ CONSTRAINT [PK_EmployeeSchool] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+

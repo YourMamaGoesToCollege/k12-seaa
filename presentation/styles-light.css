@@ -1,0 +1,56 @@
+/* custom-theme.css */
+:root {
+    --color-background: #f7f7f7;
+    --color-primary: #333;
+    --color-secondary: #005cc5;
+    --color-tertiary: #00875a;
+    --font-family: 'Source Code Pro Light', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body marp-section table {
+    font-size: 0.8em !important; /* Adjust the font size of the table */
+    }
+    
+    body marp-section th, body marp-section td {
+    padding: 
+
+section {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-secondary);
+}
+
+a {
+    color: var(--color-tertiary);
+}
+
+/* START: TABLE */
+/* styles.css */
+
+
+    
+table {
+    font-size: 0.8em; /* Adjust the font size of the table */
+    width: 100%; /* Set table width */
+  }
+  
+  thead, th, td {
+    padding: 4px 8px; /* Adjust the padding inside table cells */
+  }
+  
+  th {
+    background-color: #f0f0f0; /* Background color for table headers */
+    color: #333; /* Font color for table headers */
+  }
+  
+  td {
+    background-color: #fff; /* Background color for table cells */
+    color: #666; /* Font color for table cells */
+  }
+
+    /* END: TABLE */

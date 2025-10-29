@@ -1,0 +1,20 @@
+﻿CREATE TABLE [Schools].[StudentEnrollment] (
+  [StudentEnrollmentId] UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+  [StudentId] UNIQUEIDENTIFIER NOT NULL,
+  [SchoolTermGradeId] UNIQUEIDENTIFIER NOT NULL,
+  [CertificationDate] DATETIME2 NULL,
+  [EndorsedDate] DATETIME2 NULL,
+  [StartDate] DATETIME2 NOT NULL,
+  [EndDate] DATETIME2 NULL,
+  [EnrollmentStatusId] INT NOT NULL,
+  [IsVerified] BIT NOT NULL DEFAULT 0,
+  [StandardCosts] DECIMAL(18, 4) NOT NULL DEFAULT 0,
+  [IndividualCosts] DECIMAL(18, 4) NOT NULL DEFAULT 0,
+  [TermAward] DECIMAL(18, 4) NOT NULL DEFAULT 0,
+  [PaymentStatusId] INT NOT NULL,
+  CONSTRAINT [PK_StudentEnrollment] PRIMARY KEY CLUSTERED ([StudentEnrollmentId] ASC),
+  CONSTRAINT [FK_StudentEnrollment.StudentId] FOREIGN KEY ([StudentId]) REFERENCES [Schools].[Student]([StudentId]),
+  CONSTRAINT [FK_StudentEnrollment.SchoolTermGradeId] FOREIGN KEY ([SchoolTermGradeId]) REFERENCES [Schools].[SchoolTermGrade]([SchoolTermGradeId]),
+  CONSTRAINT [FK_StudentEnrollment.EnrollmentStatusId] FOREIGN KEY ([EnrollmentStatusId]) REFERENCES [Schools].[EnrollmentStatus]([EnrollmentStatusId]),
+  CONSTRAINT [FK_StudentEnrollment.PaymentStatusId] FOREIGN KEY ([PaymentStatusId]) REFERENCES [Schools].[PaymentStatus]([PaymentStatusId])
+);

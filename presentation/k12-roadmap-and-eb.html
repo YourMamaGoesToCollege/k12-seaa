@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>k12-roadmap-and-eb.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="k12-technical-roadmap-and-eb-plan">K12 Technical Roadmap and EB Plan</h1>
+<!-- ![width:340px](./assets/mind-the-gap.jpeg) -->
+<!--  
+SPEAKER NOTES:
+- Matt Vaughn, Solutions Architect
+- 20+ years in IT
+- Financial Services, Healthcare, and Travel
+- Largest application: 50K/second, each transaction delivering data payloads to ad networks
+-->
+<hr>
+<h2 id="k12-modernization-comprehensive-implementation-plan">K12 Modernization: Comprehensive Implementation Plan</h2>
+<p><strong>Presentation Date:</strong> October 2025<br>
+<strong>Audience:</strong> Senior IT Leadership &amp; Business Stakeholders<br>
+<strong>Duration:</strong> 60 minutes (45 min presentation + 15 min Q&amp;A)<br>
+<strong>Timeline:</strong> October 15, 2025 - May 1, 2026 (28 weeks)</p>
+<hr>
+<h2 id="k12-modernization">K12 Modernization</h2>
+<p>IT Stakeholder Presentation<br>
+October 2025</p>
+<ul>
+<li>College Foundation, Inc.</li>
+<li>North Carolina SEAA Programs</li>
+<li><strong>Timeline:</strong> October 15, 2025 - May 1, 2026</li>
+</ul>
+<hr>
+<h2 id="agenda">Agenda</h2>
+<ol>
+<li><strong>Executive Summary</strong> – Project overview and timeline</li>
+<li><strong>Platform Overview</strong> – Complete system scope</li>
+<li><strong>Complete Feature Inventory</strong> – All core capabilities</li>
+<li><strong>Implementation Roadmap</strong> – Phased delivery plan</li>
+<li><strong>Resource Allocation</strong> – Team structure and assignments</li>
+<li><strong>Risk Assessment</strong> – Critical areas and mitigation</li>
+<li><strong>Success Criteria</strong> – Delivery milestones and quality metrics</li>
+<li><strong>Next Steps</strong> – Execution and monitoring</li>
+</ol>
+<hr>
+<h2 id="executive-summary">Executive Summary</h2>
+<hr>
+<h3 id="complete-k12-modernization-scope">Complete K12 Modernization Scope</h3>
+<p><strong>Timeline:</strong> October 15, 2025 - May 1, 2026 (28 weeks)</p>
+<p><strong>Platform Serves:</strong></p>
+<ul>
+<li>Two scholarship programs (ESA+, Opportunity Scholarship)</li>
+<li>Up to 80,000 concurrent users</li>
+<li>Four web portals (Household, School, Provider, Admin)</li>
+<li>Comprehensive scholarship lifecycle management</li>
+</ul>
+<hr>
+<h3 id="core-capabilities-required">Core Capabilities Required</h3>
+<ul>
+<li><strong>Household &amp; Student Management</strong> - Applications, renewals, profiles, school selection</li>
+<li><strong>School Management</strong> - Registration, certification, endorsement, compliance</li>
+<li><strong>Provider Management</strong> - Enrollment, directory, invoicing, paymentsw</li>
+<li><strong>Admin Operations</strong> - Application processing, verification, lottery, awards</li>
+<li><strong>Payment Systems</strong> - Award calculation, disbursements, ESA+ purchasing, reconciliation</li>
+<li><strong>Verification &amp; Compliance</strong> - Eligibility, domicile, income, mandatory reviews</li>
+</ul>
+<p><strong>Critical Deadline:</strong> <strong>May 1, 2026</strong> - All core functionality must be production-ready</p>
+<hr>
+<h3 id="cross-cutting-concerns-required">Cross-Cutting Concerns Required</h3>
+<ul>
+<li>Communication Center</li>
+<li>Notifications Center</li>
+<li>Rules Engine</li>
+<li>Entra</li>
+<li>Query Builder</li>
+<li>Task Engine</li>
+<li>PandaDocs</li>
+<li>Audit and Logging</li>
+<li>Internationalization</li>
+<li>PID Generator/Integration</li>
+</ul>
+<hr>
+<h3 id="3rd-party-integrations">3rd-Party Integration(s)</h3>
+<ul>
+<li>ClassWallet</li>
+<li>RDS??</li>
+<li>SparkPost (Email Engine)</li>
+</ul>
+<hr>
+<h3 id="data-migrations">Data Migrations</h3>
+<ul>
+<li>Schools</li>
+<li>Providers</li>
+<li>Household and Students</li>
+<li>Operational Data (existing)</li>
+</ul>
+<hr>
+<h2 id="platform-overview">Platform Overview</h2>
+<hr>
+<h3 id="enrollment-builder-eb-overview">Enrollment Builder (EB) Overview</h3>
+<ul>
+<li>Initial plan to use EB for application forms
+<ul>
+<li>based on POC</li>
+<li>simple workflow logic</li>
+<li>limited validation</li>
+</ul>
+</li>
+<li>Requires API for data submission and transitions</li>
+<li>Requires Data Mapper
+<ul>
+<li>Transform dynamic form data to static schema</li>
+<li>Complex mapping rules</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="enrollment-builder-eb-continued-development-current">Enrollment Builder (EB) Continued Development (Current)</h3>
+<ul>
+<li><input type="checkbox" id="checkbox0"><label for="checkbox0">2-3 resources</label></li>
+<li><input type="checkbox" id="checkbox1"><label for="checkbox1">Add additional/complete validation to form fields</label></li>
+<li><input type="checkbox" id="checkbox2"><label for="checkbox2">Need to map and create configurations for all forms/fields</label></li>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3">Current estimate is 1.5 PIs to stabilize current POC version</label></li>
+<li><input type="checkbox" id="checkbox4"><label for="checkbox4">(2 resources) Design and implement the </label><code>Data Mapper</code> service to migrate data to static schema</li>
+<li><input type="checkbox" id="checkbox5"><label for="checkbox5">has dependency on complete static schema for all enrollment and registration data</label></li>
+</ul>
+<hr>
+<h3 id="enrollment-builder-eb-continued-development-refactor">Enrollment Builder (EB) Continued Development (Refactor)</h3>
+<ul>
+<li><input type="checkbox" id="checkbox6"><label for="checkbox6">3-4 resources</label></li>
+<li><input type="checkbox" id="checkbox7"><label for="checkbox7">Refactor to use State Machine tools</label></li>
+<li><input type="checkbox" id="checkbox8"><label for="checkbox8">Transition Logic to UI</label></li>
+</ul>
+<hr>
+<h3 id="enrollment-builder-eb-time-estimates">Enrollment Builder (EB) Time Estimates</h3>
+<ul>
+<li><input type="checkbox" id="checkbox9"><label for="checkbox9">EB UI and configuration tools (2 PIs).</label></li>
+<li><input type="checkbox" id="checkbox10"><label for="checkbox10">Data Mapper service (1.5 to 2 PIs).</label></li>
+</ul>
+<hr>
+<h3 id="total-110-distinct-features-to-implement">Total: 110+ distinct features to implement</h3>
+<hr>
+<h3 id="household--student-management-15-features">Household &amp; Student Management (15+ features)</h3>
+<ul>
+<li>Application submission (ESA+, OS)</li>
+<li>Renewal workflows</li>
+<li>Profile and account management</li>
+<li>School selection and transfers</li>
+<li>Communication and notifications</li>
+</ul>
+<hr>
+<h3 id="school-management-20-features">School Management (20+ features)</h3>
+<ul>
+<li>Registration and profiles</li>
+<li>Student enrollment tracking</li>
+<li>Certification and endorsement workflows</li>
+<li>Payment and financial tracking</li>
+<li>Compliance and reporting</li>
+</ul>
+<hr>
+<h3 id="provider-management-12-features">Provider Management (12+ features)</h3>
+<ul>
+<li>Provider registration and enrollment</li>
+<li>Service directory</li>
+<li>Invoice and payment processing</li>
+<li>Compliance and quality management</li>
+</ul>
+<hr>
+<h3 id="admin-portal-operations-30-features">Admin Portal Operations (30+ features)</h3>
+<ul>
+<li>Application processing and review</li>
+<li>Verification management (domicile, income, sampling)</li>
+<li>Award management (lottery, calculation, lifecycle)</li>
+<li>Document management</li>
+<li>Communication and case management</li>
+<li>Reporting and analytics</li>
+<li>System administration</li>
+</ul>
+<hr>
+<h3 id="payment--financial-systems-18-features">Payment &amp; Financial Systems (18+ features)</h3>
+<ul>
+<li>Payment processing (direct payment schools)</li>
+<li>ESA+ wallet and purchasing</li>
+<li>Expense approval and compliance</li>
+<li>Tax reporting and reconciliation</li>
+</ul>
+<hr>
+<h3 id="verification--compliance-15-features">Verification &amp; Compliance (15+ features)</h3>
+<ul>
+<li>??: State agency integrations</li>
+<li>Eligibility verification workflows</li>
+<li>Ongoing compliance monitoring</li>
+<li>Audit and compliance reporting</li>
+</ul>
+<hr>
+<h2 id="complete-feature-inventory">Complete Feature Inventory</h2>
+<hr>
+<h2 id="household--student-management-features">Household &amp; Student Management Features</h2>
+<hr>
+<h3 id="household-application-workflows">Household Application Workflows</h3>
+<ul>
+<li>ESA+ new application (disability documentation, EDD upload, LEA Release)</li>
+<li>Opportunity Scholarship application (income verification, lottery)</li>
+<li>Renewal applications (simplified for returning students)</li>
+<li>Application status tracking and notifications</li>
+</ul>
+<hr>
+<h3 id="profile--account-management">Profile &amp; Account Management</h3>
+<ul>
+<li>Student and household information</li>
+<li>Contact and communication preferences</li>
+<li>Document storage and retrieval</li>
+<li>Award and payment history</li>
+</ul>
+<hr>
+<h3 id="school-selection--transfers">School Selection &amp; Transfers</h3>
+<ul>
+<li>School search and directory</li>
+<li>Enrollment confirmation</li>
+<li>Mid-year transfer requests</li>
+<li>School type identification (Direct Payment vs Reimbursement)</li>
+</ul>
+<hr>
+<h3 id="esa-purchasing-classwallet">ESA+ Purchasing (ClassWallet):</h3>
+<ul>
+<li>Browse allowable expenses</li>
+<li>Submit purchase requests</li>
+<li>Track approvals and payments</li>
+<li>View transaction history</li>
+</ul>
+<hr>
+<h3 id="communications">Communications</h3>
+<ul>
+<li>To-Do lists and tasks</li>
+<li>Email/SMS notifications</li>
+<li>In-app messaging</li>
+<li>Document upload reminders</li>
+</ul>
+<hr>
+<h2 id="school-management-features">School Management Features</h2>
+<hr>
+<h3 id="registration--profile">Registration &amp; Profile:</h3>
+<ul>
+<li>School registration workflow</li>
+<li>DNPE verification</li>
+<li>School type classification</li>
+<li>Banking information for payments</li>
+<li>Administrator account management</li>
+</ul>
+<hr>
+<h3 id="student-enrollment">Student Enrollment:</h3>
+<ul>
+<li>Student roster management</li>
+<li>Enrollment confirmations</li>
+<li>Semester updates</li>
+<li>Transfer processing</li>
+<li>Enrollment reporting</li>
+</ul>
+<hr>
+<h3 id="certification--endorsement">Certification &amp; Endorsement</h3>
+<ul>
+<li>Annual school certification (tuition/fees)</li>
+<li>Parent endorsement requests (semester)</li>
+<li>Deadline tracking and reminders</li>
+<li>Certification approval workflow</li>
+</ul>
+<hr>
+<h3 id="payment--financial">Payment &amp; Financial</h3>
+<ul>
+<li>Payment schedule visibility</li>
+<li>Expected payment calculations</li>
+<li>ACH deposit tracking</li>
+<li>Payment reconciliation</li>
+<li>Dual award allocation (OS + ESA+)</li>
+</ul>
+<hr>
+<h3 id="compliance">Compliance</h3>
+<ul>
+<li>Testing requirements (grades 3-12, July 15 deadline)</li>
+<li>Financial review (70+ students, CPA requirement)</li>
+<li>Background checks (school leadership)</li>
+<li>Compliance reporting</li>
+</ul>
+<hr>
+<h3 id="school-portal">School Portal</h3>
+<ul>
+<li>Dashboard with key metrics</li>
+<li>Student scholarship list</li>
+<li>Payment history</li>
+<li>Document management</li>
+<li>Communication center</li>
+</ul>
+<hr>
+<h2 id="provider-management-features">Provider Management Features</h2>
+<hr>
+<h3 id="registration--enrollment">Registration &amp; Enrollment</h3>
+<ul>
+<li>Provider application submission</li>
+<li>Credentials and license verification</li>
+<li>Background check processing</li>
+<li>Service category selection</li>
+<li>Provider agreement signature</li>
+<li>Approval workflow</li>
+</ul>
+<hr>
+<h3 id="provider-directory">Provider Directory</h3>
+<ul>
+<li>Public provider search</li>
+<li>Category-based browsing</li>
+<li>Service area filters</li>
+<li>Contact information</li>
+<li>Service offerings</li>
+</ul>
+<hr>
+<h3 id="invoice--payment">Invoice &amp; Payment</h3>
+<ul>
+<li>Invoice submission</li>
+<li>Purchase request matching</li>
+<li>Payment processing via ClassWallet</li>
+<li>Payment confirmation</li>
+<li>Payment history</li>
+<li>Reconciliation</li>
+</ul>
+<hr>
+<h3 id="provider-compliance">Provider Compliance</h3>
+<ul>
+<li>Credential maintenance</li>
+<li>Annual reviews</li>
+<li>Service quality monitoring</li>
+<li>Complaint tracking</li>
+<li>Performance metrics</li>
+</ul>
+<hr>
+<h2 id="admin-portal-operations---processing">Admin Portal Operations - Processing</h2>
+<hr>
+<h3 id="application-processing">Application Processing</h3>
+<ul>
+<li>Application queue management</li>
+<li>Application review workflows</li>
+<li>Document verification</li>
+<li>Data validation</li>
+<li>Exception handling</li>
+<li>Processing status tracking</li>
+</ul>
+<hr>
+<h3 id="eligibility-determination">Eligibility Determination</h3>
+<ul>
+<li>Criteria evaluation</li>
+<li>Income calculation</li>
+<li>Domicile verification review</li>
+<li>Disability documentation review</li>
+<li>Exception and appeal handling</li>
+<li>Decision recording and notification</li>
+</ul>
+<hr>
+<h3 id="domicile-verification">Domicile Verification</h3>
+<ul>
+<li>Electronic verification via state agencies (DMV, DPI, Revenue, DHHS, Commerce, Elections)</li>
+<li>Document evidence review (utility bills, bank statements)</li>
+<li>Multi-evidence coordination</li>
+<li>Verification result tracking</li>
+</ul>
+<hr>
+<h3 id="income-verification-os">Income Verification (OS):</h3>
+<ul>
+<li>4% random sample selection</li>
+<li>IRS transcript validation</li>
+<li>Income calculation review</li>
+<li>Extension request processing</li>
+</ul>
+<hr>
+<h3 id="application-sampling">Application Sampling</h3>
+<ul>
+<li>Random selection (4% of applications)</li>
+<li>Error-prone identification</li>
+<li>Verification case management</li>
+<li>Non-compliance handling</li>
+</ul>
+<hr>
+<h2 id="admin-portal-operations---awards--documents">Admin Portal Operations - Awards &amp; Documents</h2>
+<h3 id="award-management">Award Management</h3>
+<hr>
+<h3 id="lottery-administration">Lottery Administration:</h3>
+<ul>
+<li>Lottery batch creation</li>
+<li>Random selection processing</li>
+<li>Award offer generation</li>
+<li>Waitlist management</li>
+<li>Audit trail maintenance</li>
+</ul>
+<hr>
+<h3 id="award-calculation">Award Calculation</h3>
+<ul>
+<li>ESA+ amount determination ($9,000 vs $17,000)</li>
+<li>OS tiered calculation (income-based)</li>
+<li>Dual award ordering</li>
+<li>Per pupil allocation integration (DPI)</li>
+<li>Award recalculation for changes</li>
+</ul>
+<hr>
+<h3 id="award-lifecycle">Award Lifecycle</h3>
+<ul>
+<li>Award offer management</li>
+<li>Acceptance tracking</li>
+<li>Award activation</li>
+<li>Mid-year adjustments</li>
+<li>Renewal processing</li>
+</ul>
+<hr>
+<h3 id="document-management">Document Management</h3>
+<ul>
+<li>Document upload processing</li>
+<li>Type classification</li>
+<li>Virus scanning</li>
+<li>Review workflows</li>
+<li>Approval/rejection</li>
+<li>PandaDocs e-signature integration</li>
+<li>Secure storage and retrieval</li>
+</ul>
+<hr>
+<h3 id="communication--case-management">Communication &amp; Case Management:</h3>
+<ul>
+<li>Bulk campaigns</li>
+<li>Email template management</li>
+<li>Scheduled notifications</li>
+<li>Deadline reminders</li>
+<li>Case assignment and tracking</li>
+<li>Exception queue management</li>
+</ul>
+<hr>
+<h2 id="admin-portal-operations---reporting">Admin Portal Operations - Reporting</h2>
+<hr>
+<h3 id="operational-dashboards">Operational Dashboards</h3>
+<ul>
+<li>Application pipeline status</li>
+<li>Processing time metrics</li>
+<li>Verification completion rates</li>
+<li>Award utilization tracking</li>
+<li>Payment disbursement status</li>
+<li>School compliance monitoring</li>
+<li>Provider activity metrics</li>
+<li>System performance indicators</li>
+</ul>
+<hr>
+<h3 id="compliance-reports">Compliance Reports</h3>
+<ul>
+<li>Statutory reporting</li>
+<li>Audit trail exports</li>
+<li>Financial reconciliation</li>
+<li>State agency coordination</li>
+<li>Verification completion</li>
+<li>Award distribution analysis</li>
+<li>Fraud detection indicators</li>
+</ul>
+<hr>
+<h3 id="business-intelligence">Business Intelligence</h3>
+<ul>
+<li>Program participation trends</li>
+<li>Geographic distribution</li>
+<li>Demographic insights</li>
+<li>Financial projections</li>
+<li>Resource allocation</li>
+<li>Capacity planning</li>
+<li>Performance benchmarking</li>
+</ul>
+<hr>
+<h3 id="system-administration">System Administration</h3>
+<ul>
+<li>User account management (RBAC)</li>
+<li>Role and permission configuration</li>
+<li>Microsoft Entra ID integration</li>
+<li>Audit logging</li>
+<li>System configuration</li>
+<li>Feature flags</li>
+<li>Policy version control</li>
+</ul>
+<hr>
+<h2 id="payment--financial-systems">Payment &amp; Financial Systems</h2>
+<hr>
+<h3 id="payment-processing">Payment Processing</h3>
+<ul>
+<li>Payment schedule management (Aug/Sep, Jan/Feb)</li>
+<li>Parent endorsement validation</li>
+<li>Tuition and fee calculation</li>
+<li>Dual award allocation (OS first, then ESA+)</li>
+<li>ACH payment file generation</li>
+<li>Payment confirmation tracking</li>
+<li>Failed payment handling</li>
+<li>Payment reconciliation</li>
+</ul>
+<hr>
+<h3 id="esa-wallet-classwallet">ESA+ Wallet (ClassWallet)</h3>
+<ul>
+<li>Account provisioning</li>
+<li>Fund allocation after tuition</li>
+<li>Balance tracking</li>
+<li>Transaction logging</li>
+<li>Rollover calculation</li>
+</ul>
+<hr>
+<h2 id="esa-purchasing--expenses">ESA+ Purchasing &amp; Expenses</h2>
+<hr>
+<h3 id="allowable-expense-categories">Allowable Expense Categories:</h3>
+<ul>
+<li>Curriculum and materials</li>
+<li>Tutoring and services</li>
+<li>Educational technology</li>
+<li>Therapies</li>
+<li>Summer programs</li>
+<li>AP exams</li>
+<li>Transportation</li>
+</ul>
+<hr>
+<h3 id="purchase-processing">Purchase Processing</h3>
+<ul>
+<li>On-marketplace purchases</li>
+<li>Off-marketplace invoice submission</li>
+<li>Category validation</li>
+<li>Approval/rejection workflow</li>
+<li>Payment to vendors</li>
+<li>Transaction recording</li>
+</ul>
+<hr>
+<h3 id="compliance--reporting">Compliance &amp; Reporting</h3>
+<ul>
+<li>Minimum spending ($1,000 threshold)</li>
+<li>Rollover management ($4,500 annual, $30,000 lifetime caps)</li>
+<li>Tax reporting (1099-G for non-tuition spending)</li>
+<li>Prohibited expense detection</li>
+<li>Accessory timing and frequency rules</li>
+</ul>
+<hr>
+<h2 id="verification--compliance-systems">Verification &amp; Compliance Systems</h2>
+<hr>
+<h3 id="state-agency-integration-platform">State Agency Integration Platform</h3>
+<hr>
+<h4 id="agency-integrations-required">Agency Integrations Required</h4>
+<ul>
+<li><strong>DMV</strong> - Driver's license/ID verification</li>
+<li><strong>DPI</strong> - School enrollment, per pupil allocation</li>
+<li><strong>Department of Revenue</strong> - Tax filing verification</li>
+<li><strong>DHHS</strong> - Public benefits verification</li>
+<li><strong>Department of Commerce</strong> - Public benefits</li>
+<li><strong>State Board of Elections</strong> - Voter registration</li>
+<li><strong>State CIO</strong> - Infrastructure coordination</li>
+</ul>
+<hr>
+<h4 id="integration-capabilities">Integration Capabilities</h4>
+<ul>
+<li>Electronic verification requests</li>
+<li>Response processing and validation</li>
+<li>Timeout and error handling</li>
+<li>Manual fallback workflows</li>
+<li>Data privacy compliance</li>
+<li>Integration health monitoring</li>
+<li>Response time SLA tracking</li>
+</ul>
+<hr>
+<h3 id="eligibility-verification">Eligibility Verification</h3>
+<hr>
+<h4 id="domicile-determination">Domicile Determination</h4>
+<ul>
+<li>G.S. 115C-366 implementation</li>
+<li>Multiple evidence types</li>
+<li>Electronic verification priority</li>
+<li>Document upload alternatives</li>
+<li>Conflicting evidence resolution</li>
+</ul>
+<hr>
+<h4 id="disability-verification-esa">Disability Verification (ESA+)</h4>
+<ul>
+<li>EDD validation</li>
+<li>IEP/504 plan review</li>
+<li>Prior public school verification</li>
+</ul>
+<hr>
+<h4 id="income-verification-os">Income Verification (OS)</h4>
+<ul>
+<li>Income calculation worksheet</li>
+<li>IRS transcript validation</li>
+<li>Income tier determination</li>
+</ul>
+<hr>
+<h3 id="ongoing-compliance">Ongoing Compliance</h3>
+<hr>
+<h4 id="annual-verifications">Annual Verifications</h4>
+<ul>
+<li>Per pupil allocation update (DPI, Dec 1)</li>
+<li>School testing compliance (July 15)</li>
+<li>School financial reviews (70+ students)</li>
+<li>Provider credential renewals</li>
+<li>Background check renewals</li>
+</ul>
+<hr>
+<h4 id="audit--reporting">Audit &amp; Reporting</h4>
+<ul>
+<li>Immutable event logging</li>
+<li>Compliance audit trail</li>
+<li>Regulatory reporting</li>
+<li>Exception tracking</li>
+<li>Fraud detection</li>
+</ul>
+<hr>
+<h2 id="cross-cutting-platform-services">Cross-Cutting Platform Services</h2>
+<hr>
+<h3 id="essential-infrastructure-for-all-features">Essential Infrastructure for All Features</h3>
+<hr>
+<h4 id="communication-center">Communication Center</h4>
+<ul>
+<li>Email template engine</li>
+<li>Scheduled campaigns</li>
+<li>Event-triggered notifications</li>
+<li>Deadline reminders</li>
+<li>Multi-channel delivery (Email, SMS, Print/Mail)</li>
+<li>Localization (EN/ES)</li>
+</ul>
+<hr>
+<h4 id="messaging-center">Messaging Center</h4>
+<ul>
+<li>In-app notifications</li>
+<li>Banner alerts and modals</li>
+<li>Message inbox</li>
+<li>To-Do task orchestration</li>
+<li>Real-time updates</li>
+</ul>
+<hr>
+<h4 id="rules-engine">Rules Engine</h4>
+<ul>
+<li>Eligibility calculation rules</li>
+<li>Income verification rules</li>
+<li>Award calculation logic</li>
+<li>Purchase approval rules</li>
+<li>Compliance requirements</li>
+<li>Policy versioning (by program year)</li>
+</ul>
+<hr>
+<h4 id="document-service">Document Service</h4>
+<ul>
+<li>Secure storage (Azure Blob)</li>
+<li>Document lifecycle management</li>
+<li>Virus scanning</li>
+<li>PandaDocs e-signature integration</li>
+<li>Access controls</li>
+<li>Retention policies</li>
+</ul>
+<hr>
+<h4 id="identity--security">Identity &amp; Security</h4>
+<ul>
+<li>Microsoft Entra ID integration</li>
+<li>Role-based access control (RBAC)</li>
+<li>Multi-factor authentication</li>
+<li>Single sign-on (SSO)</li>
+<li>Security audit logging</li>
+</ul>
+<hr>
+<h4 id="query--reporting">Query &amp; Reporting</h4>
+<ul>
+<li>Cube.js reporting layer</li>
+<li>Ad-hoc query builder</li>
+<li>Pre-built report templates</li>
+<li>Dashboard visualizations</li>
+<li>Data export capabilities</li>
+</ul>
+<hr>
+<p>#Implementation Roadmap - Complete Timeline</p>
+<h3 id="28-week-phased-delivery-plan-oct-15-2025---may-1-2026">28-Week Phased Delivery Plan (Oct 15, 2025 - May 1, 2026)</h3>
+<pre><code class="language-mermaid"><div class="mermaid">gantt
+    title K12 SEAA Complete Implementation (28 Weeks)
+    dateFormat YYYY-MM-DD
+    axisFormat %b %d
+    
+    section Phase 1: Foundation
+    ESA+ Application Forms           :a1, 2025-10-15, 2w
+    OS Application Forms             :a2, 2025-10-15, 2w
+    Renewal Workflows               :a3, 2025-10-29, 1w
+    Income Verification             :a4, 2025-11-05, 1w
+    School Registration             :a5, 2025-11-12, 2w
+    Provider Registration           :a6, 2025-11-12, 2w
+    
+    section Phase 2: Services
+    Communication Center            :b1, 2025-11-26, 2w
+    Messaging Center                :b2, 2025-11-26, 2w
+    Rules Engine                    :b3, 2025-12-10, 2w
+    Security Integration            :b4, 2025-12-17, 1w
+    Document Management             :b5, 2025-12-17, 1w
+    
+    section Phase 3: Admin
+    Domicile Verification          :c1, 2025-12-24, 2w
+    State Agency Integration       :c2, 2025-12-24, 2w
+    Lottery Service                :c3, 2026-01-07, 1w
+    Award Calculation              :c4, 2026-01-14, 2w
+    Certification Workflows        :c5, 2026-01-21, 1w
+    
+    section Phase 4: Financial
+    Payment Infrastructure         :d1, 2026-01-28, 2w
+    ClassWallet Integration        :d2, 2026-02-04, 2w
+    Purchase Workflows             :d3, 2026-02-11, 1w
+    Payment Reconciliation         :d4, 2026-02-11, 1w
+    
+    section Phase 5: Portals
+    School Portal Features         :e1, 2026-02-18, 2w
+    Provider Portal Features       :e2, 2026-02-18, 2w
+    
+    section Phase 6: Compliance
+    Compliance Monitoring          :f1, 2026-03-04, 2w
+    Tax Reporting                  :f2, 2026-03-11, 1w
+    Rollover Calculation           :f3, 2026-03-11, 1w
+    
+    section Phase 7: Testing
+    End-to-End Testing            :g1, 2026-03-18, 2w
+    Performance Testing           :g2, 2026-03-25, 1w
+    Security Testing              :g3, 2026-03-25, 1w
+    
+    section Phase 8: UAT
+    User Acceptance Testing       :h1, 2026-04-01, 2w
+    Defect Resolution            :h2, 2026-04-08, 2w
+    
+    section Phase 9: Launch
+    Production Setup              :i1, 2026-04-15, 1w
+    Staff Training               :i2, 2026-04-22, 1w
+    Go-Live                      :crit, i3, 2026-04-29, 2d
+</div></code></pre>
+<hr>
+<h2 id="roadmap-recommendation-phase-1">Roadmap Recommendation (Phase 1)</h2>
+<hr>
+<h3 id="enrollment-builder-eb-decision">Enrollment Builder (EB) Decision</h3>
+<hr>
+<h4 id="risks-identified">Risks Identified</h4>
+<ul>
+<li>High complexity and uncertainty</li>
+<li>Significant development effort to date</li>
+<li>Require 1.5 PIs to Stabilize current POC version</li>
+<li>Potential delays impacting May 1, 2026 deadline</li>
+<li>Limited flexibility for future changes</li>
+<li>Performance concerns at scale</li>
+<li>Enrollment Builder UI limitations</li>
+<li>Naive POC Architecture</li>
+</ul>
+<hr>
+<h4 id="data-mapper-challenges">Data Mapper Challenges</h4>
+<ul>
+<li>Complex mapping rules</li>
+<li>Error handling and validation</li>
+<li>Performance at scale</li>
+<li>Maintenance burden</li>
+<li>Current Architecture limitations</li>
+</ul>
+<hr>
+<h4 id="noted-feature-limitation">Noted Feature Limitation</h4>
+<blockquote>
+<p><strong>Prompts cannot support self-service for:​</strong></p>
+<ul>
+<li>Developing new prompts ​</li>
+<li>Any system functionality beyond data gathering​</li>
+</ul>
+<p>The kinds of changes above will always require a support ticket for custom development by CFI. <em>- Original CFI/SEAA Proposal</em></p>
+</blockquote>
+<hr>
+<h3 id="enrollment-builder-eb-paused">Enrollment Builder (EB) Paused</h3>
+<blockquote>
+<p>The current Enrollment Builder (EB) POC will be paused until the core platform is delivered and stable.​</p>
+</blockquote>
+<hr>
+<h3 id="key-recommendations-for-core">Key Recommendations for CORE</h3>
+<ol>
+<li>Focus on core features first
+<ol>
+<li>Parallel development approach</li>
+</ol>
+</li>
+<li>Angular Reactive Forms
+<ol>
+<li>Advanced validation, type-safe, well-tested</li>
+<li>Advanced form patterns</li>
+<li>Accessibility compliance</li>
+</ol>
+</li>
+<li>Cross-cutting services early
+<ol>
+<li>Foundation for all features</li>
+</ol>
+</li>
+<li>Data Migration early/continuous</li>
+</ol>
+<hr>
+<h2 id="roadmap-recommendation-phase-2">Roadmap Recommendation (Phase 2)</h2>
+<hr>
+<h3 id="dynamic-forms-approach">Dynamic Forms Approach</h3>
+<ul>
+<li>Enrollment Builder (EB re-imagined)</li>
+<li>Dynamic Form Generation to supplement core forms
+<ul>
+<li>scope: limited, targeted use cases, meta-data use</li>
+</ul>
+</li>
+<li>integration with ad-hoc Query Builder</li>
+</ul>
+<hr>
+<h2 id="implementation-roadmap---phase-details">Implementation Roadmap - Phase Details</h2>
+<ul>
+<li><strong>Sample</strong>...</li>
+</ul>
+<hr>
+<h3 id="phase-1-foundation--core-applications-weeks-1-8">Phase 1: Foundation &amp; Core Applications (Weeks 1-8)</h3>
+<p><strong>Weeks 1-4 (Oct 15 - Nov 11):</strong></p>
+<ul>
+<li>ESA+ and OS application forms (reactive forms)</li>
+<li>Application submission workflows</li>
+<li>Document upload integration</li>
+<li>Basic student profile management</li>
+<li>Application status tracking</li>
+</ul>
+<p><strong>Weeks 5-8 (Nov 12 - Dec 9):</strong></p>
+<ul>
+<li>Renewal workflows (both programs)</li>
+<li>Income verification workflow</li>
+<li>Eligibility determination submission</li>
+<li>Household profile management</li>
+<li>School registration and profile</li>
+<li>Provider registration workflow</li>
+</ul>
+<p><strong>Deliverable:</strong> Families can submit applications, schools and providers can register</p>
+<hr>
+<h3 id="phase-2-cross-cutting-services-weeks-9-12">Phase 2: Cross-Cutting Services (Weeks 9-12)</h3>
+<p><strong>Weeks 9-10 (Dec 10 - Dec 23):</strong></p>
+<ul>
+<li>Communication Center (email templates, triggers)</li>
+<li>Messaging Center (in-app notifications)</li>
+<li>Microsoft Entra Security integration</li>
+<li>Document Management (PandaDocs)</li>
+</ul>
+<p><strong>Weeks 11-12 (Dec 24 - Jan 6):</strong></p>
+<ul>
+<li>Rules Engine integration</li>
+<li>Query Builder (Cube.js) foundation</li>
+<li>Basic reporting dashboards</li>
+</ul>
+<p><strong>Deliverable:</strong> Communication infrastructure operational, security implemented</p>
+<hr>
+<h3 id="phase-3-advanced-workflows--admin-weeks-13-16">Phase 3: Advanced Workflows &amp; Admin (Weeks 13-16)</h3>
+<p><strong>Weeks 13-14 (Jan 7 - Jan 20):</strong></p>
+<ul>
+<li>Domicile verification workflows</li>
+<li>State agency integration framework</li>
+<li>Verification sampling service</li>
+<li>Admin application review workflows</li>
+</ul>
+<p><strong>Weeks 15-16 (Jan 21 - Feb 3):</strong></p>
+<ul>
+<li>Lottery service implementation</li>
+<li>Award calculation engine</li>
+<li>Award lifecycle management</li>
+<li>School certification workflows</li>
+<li>Parent endorsement workflows</li>
+</ul>
+<p><strong>Deliverable:</strong> Complete admin processing capabilities, awards can be offered</p>
+<hr>
+<h3 id="phase-4-financial--payment-systems-weeks-17-18">Phase 4: Financial &amp; Payment Systems (Weeks 17-18)</h3>
+<p><strong>Weeks 17-18 (Feb 4 - Feb 17):</strong></p>
+<ul>
+<li>Payment processing infrastructure</li>
+<li>ACH payment file generation</li>
+<li>ClassWallet integration</li>
+<li>ESA+ purchase request workflows</li>
+<li>Expense approval rules engine</li>
+<li>Payment reconciliation</li>
+</ul>
+<p><strong>Deliverable:</strong> End-to-end payment processing operational</p>
+<hr>
+<h3 id="phase-5-school--provider-portals-weeks-19-20">Phase 5: School &amp; Provider Portals (Weeks 19-20)</h3>
+<p><strong>Weeks 19-20 (Feb 18 - Mar 3):</strong></p>
+<ul>
+<li>School portal features (dashboard, roster, certification, payments)</li>
+<li>Provider portal features (directory, invoicing, payments)</li>
+</ul>
+<p><strong>Deliverable:</strong> Schools and providers have full self-service capabilities</p>
+<hr>
+<h3 id="phase-6-compliance--reporting-weeks-21-22">Phase 6: Compliance &amp; Reporting (Weeks 21-22)</h3>
+<p><strong>Weeks 21-22 (Mar 4 - Mar 17):</strong></p>
+<ul>
+<li>Compliance monitoring workflows</li>
+<li>Testing requirement tracking</li>
+<li>Financial review management</li>
+<li>Background check tracking</li>
+<li>Tax reporting (1099-G)</li>
+<li>Rollover calculation</li>
+<li>Minimum spending enforcement</li>
+</ul>
+<p><strong>Deliverable:</strong> Full compliance and regulatory reporting capabilities</p>
+<hr>
+<h3 id="phases-7-9-testing--launch-weeks-23-28">Phases 7-9: Testing &amp; Launch (Weeks 23-28)</h3>
+<p><strong>Weeks 23-24 (Mar 18 - Mar 31):</strong></p>
+<ul>
+<li>End-to-end workflow testing</li>
+<li>Performance and load testing (80K users)</li>
+<li>Security testing and penetration testing</li>
+<li>Integration testing (all external systems)</li>
+</ul>
+<p><strong>Weeks 25-26 (Apr 1 - Apr 14):</strong></p>
+<ul>
+<li>User acceptance testing</li>
+<li>Defect resolution</li>
+<li>Performance optimization</li>
+<li>User feedback incorporation</li>
+</ul>
+<p><strong>Weeks 27-28 (Apr 15 - Apr 28):</strong></p>
+<ul>
+<li>Production environment setup</li>
+<li>Data migration and validation</li>
+<li>Staff training</li>
+<li>Documentation finalization</li>
+</ul>
+<p><strong>May 1, 2026: Production Launch</strong> ✅</p>
+<hr>
+<h2 id="resource-allocation--team-structure">Resource Allocation &amp; Team Structure</h2>
+<hr>
+<h3 id="development-teams-16-fte-total">Development Teams (16 FTE Total)</h3>
+<hr>
+<h4 id="frontend-team-7-fte">Frontend Team (7 FTE)</h4>
+<ul>
+<li>Angular application development (4 portals)</li>
+<li>Reactive forms implementation</li>
+<li>Portal UI components</li>
+<li>Responsive design and accessibility</li>
+<li>Material UI integration</li>
+</ul>
+<hr>
+<h4 id="backend-team-7-fte">Backend Team (7 FTE)</h4>
+<ul>
+<li>.NET API development</li>
+<li>Business logic implementation</li>
+<li>Database schema design and optimization</li>
+<li>Integration development</li>
+<li>Performance optimization</li>
+</ul>
+<hr>
+<h4 id="integration-team-2-fte">Integration Team (2 FTE)</h4>
+<ul>
+<li>ClassWallet API integration</li>
+<li>PandaDocs integration</li>
+<li>??: State agency connections (7 agencies)</li>
+<li>Payment rails integration</li>
+<li>External system coordination</li>
+</ul>
+<hr>
+<h4 id="qa-team-2-4-fte">QA Team (2-4 FTE)</h4>
+<ul>
+<li>Test plan development</li>
+<li>Automated testing (unit, integration, E2E)</li>
+<li>Manual testing</li>
+<li>UAT coordination</li>
+<li>Defect tracking and resolution</li>
+</ul>
+<hr>
+<h4 id="subject-matter-experts-6-fte">Subject Matter Experts (6 FTE)</h4>
+<ul>
+<li>Business analyst (requirements)</li>
+<li>DBA (database optimization)</li>
+<li>?? Security specialist (compliance, penetration testing)</li>
+<li>DevOps Lead (infrastructure, CI/CD)</li>
+</ul>
+<hr>
+<h2 id="risk-assessment---high-priority">Risk Assessment - High Priority</h2>
+<hr>
+<h3 id="critical-risk-areas--mitigation">Critical Risk Areas &amp; Mitigation</h3>
+<hr>
+<h4 id="state-agency-integrations-high-risk">State Agency Integrations (HIGH RISK)</h4>
+<ul>
+<li><strong>Challenge:</strong> 7 different agencies, varying APIs, unknown response times, coordination complexity</li>
+<li><strong>Mitigation:</strong>
+<ul>
+<li>Early integration testing starting Phase 3</li>
+<li>Fallback to manual verification workflows</li>
+<li>Regular agency coordination meetings</li>
+<li>Integration health monitoring and SLA tracking</li>
+<li>Dedicated integration team member</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="classwallet-integration-high-risk">ClassWallet Integration (HIGH RISK)</h4>
+<ul>
+<li><strong>Challenge:</strong> Complex ESA+ workflows, vendor dependency, webhook reliability, transaction integrity</li>
+<li><strong>Mitigation:</strong>
+<ul>
+<li>Sandbox environment testing early (Phase 4)</li>
+<li>Idempotency keys for all transactions</li>
+<li>Comprehensive error handling and retry logic</li>
+<li>Regular vendor communication and status checks</li>
+<li>Transaction reconciliation processes</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="payment-processing-high-risk">Payment Processing (HIGH RISK)</h4>
+<ul>
+<li><strong>Challenge:</strong> Financial transactions, ACH accuracy, dual award ordering, regulatory compliance</li>
+<li><strong>Mitigation:</strong>
+<ul>
+<li>Extensive testing with sample data</li>
+<li>Automated reconciliation workflows</li>
+<li>Comprehensive audit trail for all transactions</li>
+<li>Financial controls and approval gates</li>
+<li>Regular reconciliation with schools</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="data-migration-high-risk">Data Migration (HIGH RISK)</h4>
+<ul>
+<li><strong>Challenge:</strong> Legacy data quality, volume, complexity, schema mapping</li>
+<li><strong>Mitigation:</strong>
+<ul>
+<li>Early data profiling (Phase 1)</li>
+<li>Iterative migration testing</li>
+<li>Phased migration approach</li>
+<li>Validation checkpoints</li>
+<li>Rollback procedures</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="risk-assessment---medium-priority">Risk Assessment - Medium Priority</h3>
+<hr>
+<h4 id="performance-at-scale-medium-risk">Performance at Scale (MEDIUM RISK)</h4>
+<ul>
+<li><strong>Challenge:</strong> 80,000 concurrent users, peak load periods (application windows, payment cycles)</li>
+<li><strong>Mitigation:</strong>
+<ul>
+<li>Load testing starting Phase 7</li>
+<li>Performance monitoring infrastructure</li>
+<li>Caching strategies (Redis)</li>
+<li>Database optimization</li>
+<li>Azure auto-scaling configuration</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="user-adoption--training-medium-risk">User Adoption &amp; Training (MEDIUM RISK)</h4>
+<ul>
+<li><strong>Challenge:</strong> Multiple user groups, varying technical proficiency, change management</li>
+<li><strong>Mitigation:</strong>
+<ul>
+<li>Early UAT involvement (Phase 8)</li>
+<li>Comprehensive training program (Phase 9)</li>
+<li>User documentation and video tutorials</li>
+<li>Phased rollout by user group</li>
+<li>Dedicated support during launch</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="scope-creep-medium-risk">Scope Creep (MEDIUM RISK)</h4>
+<ul>
+<li><strong>Challenge:</strong> Feature requests, changing requirements, stakeholder expectations</li>
+<li><strong>Mitigation:</strong>
+<ul>
+<li>Formal change control process</li>
+<li>Phase 2 feature parking lot</li>
+<li>Regular stakeholder communication</li>
+<li>Sprint-level scope reviews</li>
+<li>Executive escalation for scope changes</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="success-criteria--quality-metrics">Success Criteria &amp; Quality Metrics</h2>
+<hr>
+<h3 id="delivery-milestones">Delivery Milestones</h3>
+<p>✅ <strong>Phase 1 complete</strong> - December 9, 2025<br>
+✅ <strong>Cross-cutting services</strong> - December 23, 2025<br>
+✅ <strong>Admin features</strong> - February 3, 2026<br>
+✅ <strong>Financial systems</strong> - February 17, 2026<br>
+✅ <strong>Portal features</strong> - March 3, 2026<br>
+✅ <strong>Compliance features</strong> - March 17, 2026<br>
+✅ <strong>Testing complete</strong> - March 31, 2026<br>
+✅ <strong>UAT approved</strong> - April 14, 2026<br>
+✅ <strong>Production ready</strong> - April 28, 2026<br>
+✅ <strong>Production launch</strong> - <strong>May 1, 2026</strong> ✅</p>
+<hr>
+<h3 id="quality-metrics">Quality Metrics</h3>
+<ul>
+<li>✅ <strong>Zero critical data integrity issues</strong> in production</li>
+<li>✅ <strong>80,000+ concurrent users</strong> supported (load tested)</li>
+<li>✅ <strong>&lt;2% defect escape rate</strong> post-UAT</li>
+<li>✅ <strong>95%+ user satisfaction</strong> in initial surveys</li>
+<li>✅ <strong>100% regulatory compliance</strong> (audit ready)</li>
+<li>✅ <strong><img class="emoji" alt="heart" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAMrUlEQVR4Xu1bC6wV1RVdZ+a+LxR9UAqI8lEpBCimCLZUUmkNbbSS0iYFU2wQQT4tVRAFbesvgpYiWqnVlAq1mNhgakybGFshtoJG8YMRQX6CAgIi8n2/O/fO3N21eTM9deY9594HBfncZOWMz+GevdZeZ5/PnTEigtP54xBnBDiNcUaATGsI3GBMuwrgEgMMBNCLbXsAhQDYDWBtAXj5AZF1x4rAt4zJDAIuFgJAXwfoDAAC7Cc2Eqsd4LV5IvWlcimpCM40prMA17vAj40xfQwABaLvMAaiSojUFoA3ACzxgaUUo7E1xG8xpo0AY1xgrAMMMkC5iREQ26cKv4QdLX5YZN8xF4Dkr3OB2Y4xXYwIokCMHUcIYgQCYxCIrC4As5id5SWSH+EA92aM6e+EMUbk3bAtxPosqBgi2wLgtt+I/OWY1ADavWKWMY8xkEUZoIsrggoAXc85BwNHjMDlM2bge/Pm4cr77sOwqVNx0RVXoHPnzigHEN47kNfP3mrMrYafYuzOG+8uA55hP/0zIqgsK8N5ffti8LhxGD57NkYsXoyRS5bgO3Pn4uv8W7fevVFJ8npvBujOWJ9kZwv0u47KAaOMKT8f+HOZMVcrGVXrvD59cNGUKehOotUUwZQrVesGP5dDw86d2PHCC1jLQLe//jr8MDt5kce2AJOfEglaErst8HiG/Tkqnuuix/Dh6Dd+PM4dMgSV7duDDoQUCoC6kMI4vKdx/35sX74cqx98MN7f4rnABOGnVQLcZsxvSf7GI5l0HAyaOBEDZ81CVadOyNfVIX/wIIRtIZttCorBOBUVyJx1Fso6dIDf0ICNzNSqOXNwqLYWYgxyIos2AZOsCFbs3qHYRgQ1Xbrga3fdhV4jR8LxPHh79iB/6BBAgREEEO2L4rvV1ch07IjKrl0RsL837r8frxFZ39chCF9k9r0it5csAG3/wwpjni5TC5LY0DvuwIDp0+HX1yP74YcofPwxApJHlA1CVYdCg2NgZSRR3aMH9rz6Kl6gaz7evh1oCuoPd4pMhiXv9iN5Zn6MZr4TXTbskUfQ4YILUL9pEwJmWEjaiYIOWwkBJsc5+2xU9eyJym7dsHbhQvz75pvRmM/DBwIfHKEizxctwE3GtK8G3qAAPVWAIdOmYSCz4X30EbyNGxEw8xpMNKQ1gCgwdYIACEQ043Dphrb9+uEQiSwbOxYH9u5VoRCI3PZLkV8DwD3GzCk35hdKvobD6tscOu2Y1foNGyDMpGsMDEmaqA/A9hf2GRDIZFBOwdsNGIA358/Hy/fcgzzjyQPrs8BgO02mCPArY26iFecr+V5Dh+LyJ5/ULKBhzRoY2t0ww0pekZiWQkAdQWhwUlWFLzCo3StWYAXF9EhKgHwAXFIA2maAF13Q0SQwlIF3GjQIDSSvsjqxflrqT3moSwIAlXROJQvj8muvxaZly+ADyAHXz2ENShVAx2IfZr8S+EobjufvPvEEvsgKXLdqFQqNjRQ5A8cGErNkMrACoYGpCFXnn48Njz6KdUuXKjkE7Efndl4PEAC9Od77TpqE7I4dMCRD4mFf6f0Vov5CEdpefDEOsG78c9Qo1HqeCvDKSuCb/xLxP3Ml+GUGU9a02sJ5l16KDiRfu3o1AhYgJa9FSGLkY8TDNhYsi2Dje++hx1VXoe6dd7D73XdRAQyKgu/Yqxd6clrV+gJ1mSWa3l8cFKHu7bdRM3gwul12GTY8/zxc4KvfIC8Aaz5TAF1xuYDLMYlzhw2Dt2sXfMJxnGh8Ay0FkBJYQWtH27bozWnNYaHax7qghNrTGRdMmADDolWgULS9JVd0fxZgnDpkPYrZmUncymEgIpU65FIFcKkSgSravw0XNN7770M0665rOygBEheBDspUVqIPCR9ctw4QQTsWSZdzemHfPpiiBE1C4qALPM46bWpqUMXv9snBBfoAQJoAnQlUc1pxmBGPSrps9QujMW0LEkoI2No3UItzONVweEFF8TydUnXMpwylFoknXUD46jiKXUHX1SsPoEuqAESFknJpebWsaLAkb1IsaT6DvCQLmLpKFy5WnOT8bkm38N/JwpssvgWizHGiYlqVKoAD5AkYjiOf41GzL7wuxAI1pVk0GXQxIhXXR5I4YGcExk8uUcxeMQLUKznxfc2QCgEQVqAUB6QIkHZfupDJfiWGQgR1QMjFARR1xQyBnQjHqS57HRYQ+H5I0tYAk5ItU6ILTAkOsbAZR0yAIFwh5sgj8Lyoz13FCLCJQJ7Zz37yCVwuScXzYMIvZWsXJ63NdhrBdPLp9idgDLJcenMGiETekCqAAOuVq18ouHXbtuk0olOXkocTQlKIHmtIqpuS9oe2dG/dBx807UsAD8UIkAPWlQMfAuh+mCu3Gm4uylyXivgxy1qItumF7ehJp5O39udWOcd1xeEtWyJhtnjAxlQB7hSpm2/MS2JM90bOzQfWrkXH/v0hOhUS+pHEMEi2CpNCyJRG1l43P+6tCEyYxrufy2GtAeQCEXmR3BpSBVD4wN8LwBgYg0NUMMO25sILm3Z4WlF1SVw6mdZPc8U6wHEgmYxWfRxYvx6HOYTJIXLF34o+FhdgmS+ys2BM14IIDm/eDGExacsDhyquEMGOoFMMhTCEnR2ar+rmaKa6lAWPxqIAs17QlSttX7t1K2q5eVPiftPZw2YXeKmkE6EHjXmgypjp1QCqRFQplOk1t7WVPO6q4EFHhtcux5oJz+lMCEs6dWosPeMkqzCExh6wQPvcpnskrLNWlpbPKXGikeTV81mRu6aJ3J3igMT8upDKTQqMqSaQaVJLO0Mjd1k5QotjWZs2cLnWLiMM192uWlAzEgmrooStoISPikpEp016reLqvkFIUs8kAyLPtUqebvRtHVDbqwAKzf6hAHi8VYeiDxmzuNqYcVUAKonyEBnCVYjA2OkRLqEilFVXw2FruKM06hCScFQY+wNKC6mXkLvRVRxEwQwLSRdIOlAwASRFspawJigICedCZIkGhchDzP60Vv005gHzykVG++oCwHZqs2QFiAgwSJ+IaoBLMtEJrqEICoSZJdGQt0SHq1rAFLr20FlHycLEdnn2vKD5adAn8tqKHAiAB1v92+BMkfULjHk4w8syvdnOs5Z0XJD4LzhKICQlxe8j7HeEVdykTINBCF9hRbh/hsi2VgugCIC5eZEf0QU9/ZCUE6kdE8FJELCiIAkrYJEbHrsfseQLFggUNvvvHgQWHPWvw9NF9rMW3JID/upaFyggSRGSCyNFykyQdpZgms+8JZ60fsDrG3VRd9QCKG4Uefr3xugPF2MzkQtsC7EAil0dFr99tm0CVoC8FQA54KGfiyw/pg9IFIBbciKbtYO8HW/WDSnbYlMkeaNIWUBZ4hHsDOCJvPUJcOcxf0KEiu71gQnswLMiEKkiWJhikFIP4sQJm3mRerbj1frHXADFz0RW+MDMSAA/4QQiORzSRUipDZL87iT5Jkxlot76vz4jNFlkgSfyp1xMhIQbSjnZKfbAw5JOLHzyIr/7qcjjx+UhKR+4gSKstCIQMQGIxDE6SrC/SZ7wWAFimWcs/9hFZx63p8SodB2JXZMVec+LO8GSt0hxQfP3tEw++DT5tfXAtRz32eMmgGKiyHYSvZoB7LM1IW1IpB+MJEkTLWd+N1mP4jS954Q8JzhB5M0c8JNGqt/ScBDbxrLdsgsKMcSJK9hnbR4YTTeuP47PCSZxvchzfzRmosMCZIxxmh/X6cfokuIAa30o+XwOGMu+V57YJ0WtCE9kgZkeAMI6oYXagHiBa2GB40eIsk6EfUwl+WeO75Oi6cNh/iJjvkQXzGy2qrd0ZNbixiZpe68p+7ezr4Un4lHZdBGAWxeLnEURJoVkE4TdsDXJ4pfc0VniyCpEHhgvMvtz+7C08LOd9mSWlnoavLVwokAmkbw3KqyeQmTRdSIzPvdPi3M+9g8C4yjCs0eyZokQcTGSpPMx22ebyD/F6yknzePy00UaKcI1FOHFbFQYLSzp5pC0/XN7gesmiuRPGgEU00QO+sDoBpHXIzI5i4QgNuuWfIPIygZgzM0i9SflCxOs1nsY+UgSeTtygiVpBfBillfQPatI/gdTRA6c1G+MTBXZRSLfp5XXNScCYa+t7d9spHDcfu87JV6ZIZFtOWaTxDbZwqhIks+JvNPIe7nE/eiUemdokshmn07wKEZE1ouDAjUAI0h+xyn50hQr+YY8cJXPYeHHZwWRrQFwpbrllH5rbLLIWnUCrb77v9MhSbMdQYG2HO94TtibozxmH+IAz4XuH85qv+a0em+QVn8lB4z2gVEnirzizLvDxBkBTmOcEeA/9BHphhUr8z8AAAAASUVORK5CYII=" /> second page load times</strong> (95th percentile)</li>
+<li>✅ <strong>99.9% uptime</strong> during business hours</li>
+<li>✅ <strong>Complete audit trail</strong> for all transactions</li>
+</ul>
+<hr>
+<h3 id="business-outcomes">Business Outcomes</h3>
+<ul>
+<li>✅ ESA+ and OS applications processed <strong>without manual intervention</strong></li>
+<li>✅ Award calculations <strong>automated and auditable</strong></li>
+<li>✅ Payment disbursements <strong>on schedule</strong></li>
+<li>✅ Reduced support call volume (improved UX)</li>
+<li>✅ Staff productivity gains from automation</li>
+<li>✅ <strong>Improved user experience</strong> across all portals</li>
+<li>✅ <strong>Complete transparency</strong> for families, schools, providers</li>
+</ul>
+<hr>
+<h2 id="dependencies--prerequisites">Dependencies &amp; Prerequisites</h2>
+<hr>
+<h3 id="external-dependencies-critical-path-items">External Dependencies (Critical Path Items)</h3>
+<p><strong>Required for Phase 4 (February 2026):</strong></p>
+<hr>
+<h4 id="classwallet-api---esa-purchasing-wallet-management">ClassWallet API** - ESA+ purchasing, wallet management</h4>
+<ul>
+<li>Sandbox access needed by January 2026</li>
+<li>Webhook endpoints configured</li>
+<li>Transaction testing completed</li>
+</ul>
+<hr>
+<h4 id="pandadocs-api---document-e-signatures">PandaDocs API** - Document e-signatures</h4>
+<ul>
+<li>API credentials and templates</li>
+<li>Webhook callback configuration</li>
+<li>Integration testing</li>
+</ul>
+<hr>
+<h4 id="payment-rails---ach-disbursement-infrastructure">Payment Rails** - ACH disbursement infrastructure</h4>
+<ul>
+<li>Bank account setup and verification</li>
+<li>ACH file format specification</li>
+<li>Test transaction capability</li>
+</ul>
+<p><strong>Required for Phase 3 (January 2026):</strong></p>
+<hr>
+<h4 id="state-agency-apis---domicile-and-income-verification">State Agency APIs** - Domicile and income verification</h4>
+<ul>
+<li>DMV, DPI, Revenue, DHHS, Commerce, Elections</li>
+<li>API contracts and authentication</li>
+<li>Test environments</li>
+<li>Data use agreements/MOUs</li>
+</ul>
+<p><strong>Required for Phase 2 (December 2025):</strong></p>
+<hr>
+<h4 id="azure-services---hosting-storage-identity">Azure ServiceS - Hosting, storage, identity</h4>
+<ul>
+<li>Production subscription</li>
+<li>Microsoft Entra ID tenant</li>
+<li>Blob storage configuration</li>
+<li>APIM setup</li>
+</ul>
+<hr>
+<h4 id="emailsms-providers---communication-delivery">Email/SMS Providers - Communication delivery</h4>
+<ul>
+<li>Service selection and contracts</li>
+<li>API integration</li>
+<li>Template configuration</li>
+</ul>
+<hr>
+<h3 id="technical-prerequisites">Technical Prerequisites</h3>
+<ul>
+<li>✅ Development and staging environments (completed)</li>
+<li>✅ CI/CD pipeline established/stable (in progress)</li>
+<li>✅ Monitoring and logging infrastructure (in progress)</li>
+<li>⚠️ Backup and disaster recovery (Phase 9)</li>
+<li>⚠️ Production environment (Phase 9)</li>
+</ul>
+<hr>
+<h3 id="organizational-prerequisites">Organizational Prerequisites</h3>
+<ul>
+<li>✅ Project governance structure</li>
+<li>✅ Stakeholder approval process</li>
+<li>⚠️ Change management procedures (in development)</li>
+<li>⚠️ Training program development (Phase 8-9)</li>
+<li>⚠️ Support team readiness (Phase 9)</li>
+<li>⚠️ Communication plan execution (ongoing)</li>
+</ul>
+<hr>
+<h2 id="implementation-approach--execution">Implementation Approach &amp; Execution</h2>
+<h3 id="proven-development-methodology">Proven Development Methodology</h3>
+<hr>
+<h4 id="technology-stack-proven-patterns">Technology Stack (Proven Patterns)</h4>
+<ul>
+<li>Angular reactive forms (type-safe, well-tested)</li>
+<li>.NET APIs (scalable, maintainable)</li>
+<li>SQL Server (static schema, high performance)</li>
+<li>Azure services (enterprise-grade infrastructure)</li>
+<li>Material UI (accessibility compliant)</li>
+</ul>
+<hr>
+<h4 id="development-approach">Development Approach</h4>
+<ul>
+<li>Domain-Driven Design (DDD)</li>
+<li>Agile/Scrum methodology</li>
+<li>10-day sprints</li>
+<li>Continuous integration/deployment</li>
+<li>Automated testing (unit, integration, E2E)</li>
+<li>Code reviews and quality gates</li>
+<li>Regular stakeholder demos</li>
+</ul>
+<hr>
+<h4 id="parallel-development-strategy">Parallel Development Strategy</h4>
+<ul>
+<li>Frontend and backend teams work simultaneously</li>
+<li>Portal development in parallel (Phases 1-5)</li>
+<li>Testing starts early (Phase 7)</li>
+<li>No critical blocking dependencies</li>
+<li>Risk mitigation through redundancy</li>
+</ul>
+<hr>
+<h2 id="monitoring--course-correction">Monitoring &amp; Course Correction</h2>
+<h3 id="how-we-stay-on-track">How We Stay On Track</h3>
+<hr>
+<h4 id="progress-tracking">Progress Tracking</h4>
+<ul>
+<li>Sprint velocity monitoring</li>
+<li>Burn-down charts by phase</li>
+<li>Feature completion metrics</li>
+<li>Defect tracking and trends</li>
+<li>Integration test results</li>
+<li>Performance benchmarks</li>
+</ul>
+<hr>
+<h4 id="risk-monitoring">Risk Monitoring</h4>
+<ul>
+<li>Weekly risk register review</li>
+<li>External dependency status</li>
+<li>Resource availability tracking</li>
+<li>Technical debt assessment</li>
+<li>Testing coverage metrics</li>
+</ul>
+<hr>
+<h4 id="quality-gates">Quality Gates</h4>
+<ul>
+<li>Code coverage thresholds (&gt;80% custom)</li>
+<li>Performance benchmarks (&lt;3s page load)</li>
+<li>Security scan results (zero critical)</li>
+<li>Accessibility compliance (WCAG 2.1 AA)</li>
+<li>Load test results (80K concurrent users)</li>
+</ul>
+<hr>
+<h4 id="course-correction-triggers">Course Correction Triggers</h4>
+<ul>
+<li>Sprint velocity drops &gt;20%</li>
+<li>Critical defects discovered</li>
+<li>External dependency delays</li>
+<li>Resource availability issues</li>
+<li>Scope creep detected</li>
+</ul>
+<hr>
+<h4 id="contingency-plans">Contingency Plans</h4>
+<ul>
+<li>Resource augmentation options</li>
+<li>Scope prioritization matrix</li>
+<li>Phase schedule buffers</li>
+<li>Alternative integration approaches</li>
+<li>Manual workflow fallbacks</li>
+</ul>
+<hr>
+<h4 id="ai--automation">AI &amp; Automation??</h4>
+<ul>
+<li>Developer accerleration tools (code generation)</li>
+<li>Automated code reviews (SonarQube)</li>
+<li>AI-assisted testing (test case generation)</li>
+<li>ChatGPT for documentation and support</li>
+</ul>
+<h2 id="post-launch-support--phase-2">Post-Launch Support &amp; Phase 2</h2>
+<hr>
+<h3 id="production-support-plan">Production Support Plan</h3>
+<hr>
+<h4 id="launch-support-may-june-2026">Launch Support (May-June 2026)</h4>
+<ul>
+<li>Dedicated support team (24/5 coverage)</li>
+<li>Rapid response to critical issues</li>
+<li>User adoption monitoring</li>
+<li>Performance tuning</li>
+<li>Quick-fix deployment capability</li>
+</ul>
+<hr>
+<h4 id="ongoing-support-july-2026">Ongoing Support (July 2026+)</h4>
+<ul>
+<li>Standard support hours (8am-6pm EST)</li>
+<li>Incident management process</li>
+<li>Change request handling</li>
+<li>Monthly maintenance windows</li>
+<li>Quarterly feature releases (minor)</li>
+</ul>
+<hr>
+<h4 id="monitoring--operations">Monitoring &amp; Operations</h4>
+<ul>
+<li>Application performance monitoring (APM)</li>
+<li>Error tracking and alerting</li>
+<li>User analytics</li>
+<li>System health dashboards</li>
+<li>Capacity planning</li>
+</ul>
+<hr>
+<h3 id="phase-2-planning-post-may-1-2026">Phase 2 Planning (Post-May 1, 2026)</h3>
+<p><strong>Evaluation Period (May-July 2026):</strong></p>
+<ul>
+<li>Collect operational data</li>
+<li>Analyze user feedback</li>
+<li>Identify enhancement opportunities</li>
+<li>Assess technical debt</li>
+</ul>
+<p><strong>Potential Phase 2 Features:</strong></p>
+<ul>
+<li>Advanced reporting and analytics</li>
+<li>Mobile applications (native iOS/Android)</li>
+<li>Enhanced provider marketplace</li>
+<li>Automated verification improvements</li>
+<li>AI-powered fraud detection</li>
+<li>Parent self-service enhancements</li>
+<li><strong>Enrollment Builder re-evaluation</strong> (data-driven decision)</li>
+</ul>
+<p><strong>Phase 2 Decision Criteria:</strong></p>
+<ul>
+<li>Actual form change frequency</li>
+<li>User feedback and pain points</li>
+<li>Operational efficiency metrics</li>
+<li>ROI analysis</li>
+<li>Technical debt assessment</li>
+<li>Budget availability</li>
+</ul>
+<hr>
+<h2 id="key-success-factors">Key Success Factors</h2>
+<hr>
+<h3 id="what-makes-this-plan-achievable">What Makes This Plan Achievable</h3>
+<hr>
+<h4 id="focused-scope">Focused Scope</h4>
+<ul>
+<li>Clear feature inventory (110+ features)</li>
+<li>No nice-to-have features in Phase 1</li>
+<li>Proven technology stack</li>
+<li>Parallel development possible</li>
+</ul>
+<hr>
+<h4 id="adequate-timeline">Adequate Timeline</h4>
+<ul>
+<li>28 weeks from October 15 to May 1</li>
+<li>Realistic phase durations</li>
+<li>Built-in testing time (6 weeks)</li>
+<li>Buffer for unexpected issues</li>
+</ul>
+<hr>
+<h4 id="right-resources">Right Resources</h4>
+<ul>
+<li>dedicated FTEs</li>
+<li>Specialized teams (frontend, backend, integration, QA)</li>
+<li>SME support available</li>
+<li>Vendor partnerships established</li>
+</ul>
+<hr>
+<h4 id="clear-governance">Clear Governance</h4>
+<ul>
+<li>Defined decision-making process</li>
+<li>Regular stakeholder communication</li>
+<li>Change control procedures</li>
+<li>Escalation paths</li>
+</ul>
+<hr>
+<h4 id="risk-management">Risk Management</h4>
+<ul>
+<li>Identified high-risk areas</li>
+<li>Mitigation strategies defined</li>
+<li>Contingency plans ready</li>
+<li>Regular risk reviews</li>
+</ul>
+<hr>
+<h4 id="quality-focus">Quality Focus</h4>
+<ul>
+<li>Automated testing throughout</li>
+<li>Early and continuous testing</li>
+<li>User acceptance testing (2 weeks)</li>
+<li>Performance and security testing</li>
+<li>Quality gates at each phase</li>
+</ul>
+<hr>
+<h4 id="stakeholder-alignment">Stakeholder Alignment</h4>
+<ul>
+<li>Clear requirements and priorities</li>
+<li>Regular demos and feedback</li>
+<li>Transparent communication</li>
+<li>Shared understanding of constraints</li>
+</ul>
+<hr>
+
+</body>
+</html>

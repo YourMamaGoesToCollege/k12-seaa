@@ -1,4 +1,5 @@
 # IT Stakeholder Presentation
+
 ## SEAA K-12 Modernization: Comprehensive Implementation Plan
 
 **Presentation Date:** October 2025  
@@ -44,12 +45,14 @@ North Carolina SEAA Programs
 **Timeline:** October 15, 2025 - May 1, 2026 (28 weeks)
 
 **Platform Serves:**
+
 - Two scholarship programs (ESA+, Opportunity Scholarship)
 - Up to 80,000 concurrent users
 - Four web portals (Household, School, Provider, Admin)
 - Comprehensive scholarship lifecycle management
 
 **Core Capabilities Required:**
+
 - **Household & Student Management** - Applications, renewals, profiles, school selection
 - **School Management** - Registration, certification, endorsement, compliance
 - **Provider Management** - Enrollment, directory, invoicing, payments
@@ -66,16 +69,19 @@ North Carolina SEAA Programs
 ### SEAA K-12 Modernization Scope
 
 **Programs:**
+
 - ESA+ (Education Student Accounts) – students with disabilities
 - Opportunity Scholarship – income-qualified families
 - **Users:** Up to 80,000 concurrent (legacy system crashes under load)
 
 **Platform Architecture:**
+
 - **Front End:** 4 Angular SPAs (Household, School, Provider, Admin portals)
 - **Backend:** .NET APIs, SQL Server, Azure APIM
 - **Integrations:** ClassWallet, PandaDocs, State agencies, Payment rails
 
 **Key Features:**
+
 - Application submission and renewal
 - Eligibility determination and income verification
 - Award calculation and lottery processing
@@ -83,6 +89,7 @@ North Carolina SEAA Programs
 - Payment disbursements and compliance tracking
 
 **CRITICAL Timeline Requirements:**
+
 - **May 1, 2026:** All core functionality MUST be complete and production ready
 - **Post-May 1, 2026:** Support/maintenance only - no new features
 
@@ -93,6 +100,7 @@ North Carolina SEAA Programs
 ### Six Core Capability Areas
 
 **1. Household & Student Management (15+ features)**
+
 - Application submission (ESA+, OS)
 - Renewal workflows
 - Profile and account management
@@ -100,6 +108,7 @@ North Carolina SEAA Programs
 - Communication and notifications
 
 **2. School Management (20+ features)**
+
 - Registration and profiles
 - Student enrollment tracking
 - Certification and endorsement workflows
@@ -107,6 +116,7 @@ North Carolina SEAA Programs
 - Compliance and reporting
 
 **3. Provider Management (12+ features)**
+
 - Provider registration and enrollment
 - Service directory
 - Invoice and payment processing
@@ -117,6 +127,7 @@ North Carolina SEAA Programs
 ## Slide 5a: Complete Feature Inventory - Continued
 
 **4. Admin Portal Operations (30+ features)**
+
 - Application processing and review
 - Verification management (domicile, income, sampling)
 - Award management (lottery, calculation, lifecycle)
@@ -126,12 +137,14 @@ North Carolina SEAA Programs
 - System administration
 
 **5. Payment & Financial Systems (18+ features)**
+
 - Payment processing (direct payment schools)
 - ESA+ wallet and purchasing
 - Expense approval and compliance
 - Tax reporting and reconciliation
 
 **6. Verification & Compliance (15+ features)**
+
 - State agency integrations
 - Eligibility verification workflows
 - Ongoing compliance monitoring
@@ -146,30 +159,35 @@ North Carolina SEAA Programs
 ### What Parents/Guardians Need to Do
 
 **Application Workflows:**
+
 - ESA+ new application (disability documentation, EDD upload, LEA Release)
 - Opportunity Scholarship application (income verification, lottery)
 - Renewal applications (simplified for returning students)
 - Application status tracking and notifications
 
 **Profile & Account Management:**
+
 - Student and household information
 - Contact and communication preferences
 - Document storage and retrieval
 - Award and payment history
 
 **School Selection & Transfers:**
+
 - School search and directory
 - Enrollment confirmation
 - Mid-year transfer requests
 - School type identification (Direct Payment vs Reimbursement)
 
 **ESA+ Purchasing (ClassWallet):**
+
 - Browse allowable expenses
 - Submit purchase requests
 - Track approvals and payments
 - View transaction history
 
 **Communication:**
+
 - To-Do lists and tasks
 - Email/SMS notifications
 - In-app messaging
@@ -182,6 +200,7 @@ North Carolina SEAA Programs
 ### What Schools Need to Manage
 
 **Registration & Profile:**
+
 - School registration workflow
 - DNPE verification
 - School type classification
@@ -189,6 +208,7 @@ North Carolina SEAA Programs
 - Administrator account management
 
 **Student Enrollment:**
+
 - Student roster management
 - Enrollment confirmations
 - Semester updates
@@ -196,12 +216,14 @@ North Carolina SEAA Programs
 - Enrollment reporting
 
 **Certification & Endorsement:**
+
 - Annual school certification (tuition/fees)
 - Parent endorsement requests (semester)
 - Deadline tracking and reminders
 - Certification approval workflow
 
 **Payment & Financial:**
+
 - Payment schedule visibility
 - Expected payment calculations
 - ACH deposit tracking
@@ -209,12 +231,14 @@ North Carolina SEAA Programs
 - Dual award allocation (OS + ESA+)
 
 **Compliance:**
+
 - Testing requirements (grades 3-12, July 15 deadline)
 - Financial review (70+ students, CPA requirement)
 - Background checks (school leadership)
 - Compliance reporting
 
 **School Portal:**
+
 - Dashboard with key metrics
 - Student scholarship list
 - Payment history
@@ -228,6 +252,7 @@ North Carolina SEAA Programs
 ### What Service Providers Need
 
 **Registration & Enrollment:**
+
 - Provider application submission
 - Credentials and license verification
 - Background check processing
@@ -236,6 +261,7 @@ North Carolina SEAA Programs
 - Approval workflow
 
 **Provider Directory:**
+
 - Public provider search
 - Category-based browsing
 - Service area filters
@@ -243,6 +269,7 @@ North Carolina SEAA Programs
 - Service offerings
 
 **Invoice & Payment:**
+
 - Invoice submission
 - Purchase request matching
 - Payment processing via ClassWallet
@@ -251,6 +278,7 @@ North Carolina SEAA Programs
 - Reconciliation
 
 **Compliance:**
+
 - Credential maintenance
 - Annual reviews
 - Service quality monitoring
@@ -264,6 +292,7 @@ North Carolina SEAA Programs
 ### What CFI Staff Need to Do
 
 **Application Processing:**
+
 - Application queue management
 - Application review workflows
 - Document verification
@@ -272,6 +301,7 @@ North Carolina SEAA Programs
 - Processing status tracking
 
 **Eligibility Determination:**
+
 - Criteria evaluation
 - Income calculation
 - Domicile verification review
@@ -282,18 +312,21 @@ North Carolina SEAA Programs
 **Verification Management:**
 
 **Domicile Verification:**
+
 - Electronic verification via state agencies (DMV, DPI, Revenue, DHHS, Commerce, Elections)
 - Document evidence review (utility bills, bank statements)
 - Multi-evidence coordination
 - Verification result tracking
 
 **Income Verification (OS):**
+
 - 4% random sample selection
 - IRS transcript validation
 - Income calculation review
 - Extension request processing
 
 **Application Sampling:**
+
 - Random selection (4% of applications)
 - Error-prone identification
 - Verification case management
@@ -306,6 +339,7 @@ North Carolina SEAA Programs
 **Award Management:**
 
 **Lottery Administration:**
+
 - Lottery batch creation
 - Random selection processing
 - Award offer generation
@@ -313,6 +347,7 @@ North Carolina SEAA Programs
 - Audit trail maintenance
 
 **Award Calculation:**
+
 - ESA+ amount determination ($9,000 vs $17,000)
 - OS tiered calculation (income-based)
 - Dual award ordering
@@ -320,6 +355,7 @@ North Carolina SEAA Programs
 - Award recalculation for changes
 
 **Award Lifecycle:**
+
 - Award offer management
 - Acceptance tracking
 - Award activation
@@ -327,6 +363,7 @@ North Carolina SEAA Programs
 - Renewal processing
 
 **Document Management:**
+
 - Document upload processing
 - Type classification
 - Virus scanning
@@ -336,6 +373,7 @@ North Carolina SEAA Programs
 - Secure storage and retrieval
 
 **Communication & Case Management:**
+
 - Bulk campaigns
 - Email template management
 - Scheduled notifications
@@ -348,6 +386,7 @@ North Carolina SEAA Programs
 ## Slide 11: Admin Portal Operations - Reporting
 
 **Operational Dashboards:**
+
 - Application pipeline status
 - Processing time metrics
 - Verification completion rates
@@ -358,6 +397,7 @@ North Carolina SEAA Programs
 - System performance indicators
 
 **Compliance Reports:**
+
 - Statutory reporting
 - Audit trail exports
 - Financial reconciliation
@@ -367,6 +407,7 @@ North Carolina SEAA Programs
 - Fraud detection indicators
 
 **Business Intelligence:**
+
 - Program participation trends
 - Geographic distribution
 - Demographic insights
@@ -376,6 +417,7 @@ North Carolina SEAA Programs
 - Performance benchmarking
 
 **System Administration:**
+
 - User account management (RBAC)
 - Role and permission configuration
 - Microsoft Entra ID integration
@@ -391,6 +433,7 @@ North Carolina SEAA Programs
 ### Direct Payment Schools
 
 **Payment Processing:**
+
 - Payment schedule management (Aug/Sep, Jan/Feb)
 - Parent endorsement validation
 - Tuition and fee calculation
@@ -401,6 +444,7 @@ North Carolina SEAA Programs
 - Payment reconciliation
 
 **ESA+ Wallet (ClassWallet):**
+
 - Account provisioning
 - Fund allocation after tuition
 - Balance tracking
@@ -410,6 +454,7 @@ North Carolina SEAA Programs
 ### ESA+ Purchasing & Expenses
 
 **Allowable Expense Categories:**
+
 - Curriculum and materials
 - Tutoring and services
 - Educational technology
@@ -419,6 +464,7 @@ North Carolina SEAA Programs
 - Transportation
 
 **Purchase Processing:**
+
 - On-marketplace purchases
 - Off-marketplace invoice submission
 - Category validation
@@ -427,6 +473,7 @@ North Carolina SEAA Programs
 - Transaction recording
 
 **Compliance:**
+
 - Minimum spending ($1,000 threshold)
 - Rollover management ($4,500 annual, $30,000 lifetime caps)
 - Tax reporting (1099-G for non-tuition spending)
@@ -440,6 +487,7 @@ North Carolina SEAA Programs
 ### State Agency Integration Platform
 
 **Agency Integrations Required:**
+
 - **DMV** - Driver's license/ID verification
 - **DPI** - School enrollment, per pupil allocation
 - **Department of Revenue** - Tax filing verification
@@ -449,6 +497,7 @@ North Carolina SEAA Programs
 - **State CIO** - Infrastructure coordination
 
 **Integration Capabilities:**
+
 - Electronic verification requests
 - Response processing and validation
 - Timeout and error handling
@@ -460,6 +509,7 @@ North Carolina SEAA Programs
 ### Eligibility Verification
 
 **Domicile Determination:**
+
 - G.S. 115C-366 implementation
 - Multiple evidence types
 - Electronic verification priority
@@ -467,11 +517,13 @@ North Carolina SEAA Programs
 - Conflicting evidence resolution
 
 **Disability Verification (ESA+):**
+
 - EDD validation
 - IEP/504 plan review
 - Prior public school verification
 
 **Income Verification (OS):**
+
 - Income calculation worksheet
 - IRS transcript validation
 - Income tier determination
@@ -479,6 +531,7 @@ North Carolina SEAA Programs
 ### Ongoing Compliance
 
 **Annual Verifications:**
+
 - Per pupil allocation update (DPI, Dec 1)
 - School testing compliance (July 15)
 - School financial reviews (70+ students)
@@ -486,6 +539,7 @@ North Carolina SEAA Programs
 - Background check renewals
 
 **Audit & Reporting:**
+
 - Immutable event logging
 - Compliance audit trail
 - Regulatory reporting
@@ -499,6 +553,7 @@ North Carolina SEAA Programs
 ### Essential Infrastructure for All Features
 
 **Communication Center:**
+
 - Email template engine
 - Scheduled campaigns
 - Event-triggered notifications
@@ -507,6 +562,7 @@ North Carolina SEAA Programs
 - Localization (EN/ES)
 
 **Messaging Center:**
+
 - In-app notifications
 - Banner alerts and modals
 - Message inbox
@@ -514,6 +570,7 @@ North Carolina SEAA Programs
 - Real-time updates
 
 **Rules Engine:**
+
 - Eligibility calculation rules
 - Income verification rules
 - Award calculation logic
@@ -522,6 +579,7 @@ North Carolina SEAA Programs
 - Policy versioning (by program year)
 
 **Document Service:**
+
 - Secure storage (Azure Blob)
 - Document lifecycle management
 - Virus scanning
@@ -530,6 +588,7 @@ North Carolina SEAA Programs
 - Retention policies
 
 **Identity & Security:**
+
 - Microsoft Entra ID integration
 - Role-based access control (RBAC)
 - Multi-factor authentication
@@ -537,6 +596,7 @@ North Carolina SEAA Programs
 - Security audit logging
 
 **Query & Reporting:**
+
 - Cube.js reporting layer
 - Ad-hoc query builder
 - Pre-built report templates
@@ -614,6 +674,7 @@ gantt
 ### Phase 1: Foundation & Core Applications (Weeks 1-8)
 
 **Weeks 1-4 (Oct 15 - Nov 11):**
+
 - ESA+ and OS application forms (reactive forms)
 - Application submission workflows
 - Document upload integration
@@ -621,6 +682,7 @@ gantt
 - Application status tracking
 
 **Weeks 5-8 (Nov 12 - Dec 9):**
+
 - Renewal workflows (both programs)
 - Income verification workflow
 - Eligibility determination submission
@@ -635,12 +697,14 @@ gantt
 ### Phase 2: Cross-Cutting Services (Weeks 9-12)
 
 **Weeks 9-10 (Dec 10 - Dec 23):**
+
 - Communication Center (email templates, triggers)
 - Messaging Center (in-app notifications)
 - Microsoft Entra Security integration
 - Document Management (PandaDocs)
 
 **Weeks 11-12 (Dec 24 - Jan 6):**
+
 - Rules Engine integration
 - Query Builder (Cube.js) foundation
 - Basic reporting dashboards
@@ -652,12 +716,14 @@ gantt
 ### Phase 3: Advanced Workflows & Admin (Weeks 13-16)
 
 **Weeks 13-14 (Jan 7 - Jan 20):**
+
 - Domicile verification workflows
 - State agency integration framework
 - Verification sampling service
 - Admin application review workflows
 
 **Weeks 15-16 (Jan 21 - Feb 3):**
+
 - Lottery service implementation
 - Award calculation engine
 - Award lifecycle management
@@ -671,6 +737,7 @@ gantt
 ### Phase 4: Financial & Payment Systems (Weeks 17-18)
 
 **Weeks 17-18 (Feb 4 - Feb 17):**
+
 - Payment processing infrastructure
 - ACH payment file generation
 - ClassWallet integration
@@ -685,6 +752,7 @@ gantt
 ### Phase 5: School & Provider Portals (Weeks 19-20)
 
 **Weeks 19-20 (Feb 18 - Mar 3):**
+
 - School portal features (dashboard, roster, certification, payments)
 - Provider portal features (directory, invoicing, payments)
 
@@ -695,6 +763,7 @@ gantt
 ### Phase 6: Compliance & Reporting (Weeks 21-22)
 
 **Weeks 21-22 (Mar 4 - Mar 17):**
+
 - Compliance monitoring workflows
 - Testing requirement tracking
 - Financial review management
@@ -710,18 +779,21 @@ gantt
 ### Phases 7-9: Testing & Launch (Weeks 23-28)
 
 **Weeks 23-24 (Mar 18 - Mar 31):**
+
 - End-to-end workflow testing
 - Performance and load testing (80K users)
 - Security testing and penetration testing
 - Integration testing (all external systems)
 
 **Weeks 25-26 (Apr 1 - Apr 14):**
+
 - User acceptance testing
 - Defect resolution
 - Performance optimization
 - User feedback incorporation
 
 **Weeks 27-28 (Apr 15 - Apr 28):**
+
 - Production environment setup
 - Data migration and validation
 - Staff training
@@ -736,6 +808,7 @@ gantt
 ### Development Teams (6-8 FTE Total)
 
 **Frontend Team (2-3 FTE):**
+
 - Angular application development (4 portals)
 - Reactive forms implementation
 - Portal UI components
@@ -743,6 +816,7 @@ gantt
 - Material UI integration
 
 **Backend Team (2-3 FTE):**
+
 - .NET API development
 - Business logic implementation
 - Database schema design and optimization
@@ -750,6 +824,7 @@ gantt
 - Performance optimization
 
 **Integration Team (1-2 FTE):**
+
 - ClassWallet API integration
 - PandaDocs integration
 - State agency connections (7 agencies)
@@ -757,6 +832,7 @@ gantt
 - External system coordination
 
 **QA Team (1-2 FTE):**
+
 - Test plan development
 - Automated testing (unit, integration, E2E)
 - Manual testing
@@ -764,6 +840,7 @@ gantt
 - Defect tracking and resolution
 
 **Subject Matter Experts (Part-time):**
+
 - Business analyst (requirements)
 - DBA (database optimization)
 - Security specialist (compliance, penetration testing)
@@ -777,6 +854,7 @@ gantt
 ### Critical Risk Areas & Mitigation
 
 **1. State Agency Integrations (HIGH RISK)**
+
 - **Challenge:** 7 different agencies, varying APIs, unknown response times, coordination complexity
 - **Mitigation:**
   - Early integration testing starting Phase 3
@@ -786,6 +864,7 @@ gantt
   - Dedicated integration team member
 
 **2. ClassWallet Integration (HIGH RISK)**
+
 - **Challenge:** Complex ESA+ workflows, vendor dependency, webhook reliability, transaction integrity
 - **Mitigation:**
   - Sandbox environment testing early (Phase 4)
@@ -795,6 +874,7 @@ gantt
   - Transaction reconciliation processes
 
 **3. Payment Processing (HIGH RISK)**
+
 - **Challenge:** Financial transactions, ACH accuracy, dual award ordering, regulatory compliance
 - **Mitigation:**
   - Extensive testing with sample data
@@ -808,6 +888,7 @@ gantt
 ## Slide 19: Risk Assessment - Medium Priority
 
 **4. Data Migration (MEDIUM RISK)**
+
 - **Challenge:** Legacy data quality, volume, complexity, schema mapping
 - **Mitigation:**
   - Early data profiling (Phase 1)
@@ -817,6 +898,7 @@ gantt
   - Rollback procedures
 
 **5. Performance at Scale (MEDIUM RISK)**
+
 - **Challenge:** 80,000 concurrent users, peak load periods (application windows, payment cycles)
 - **Mitigation:**
   - Load testing starting Phase 7
@@ -826,6 +908,7 @@ gantt
   - Azure auto-scaling configuration
 
 **6. User Adoption & Training (MEDIUM RISK)**
+
 - **Challenge:** Multiple user groups, varying technical proficiency, change management
 - **Mitigation:**
   - Early UAT involvement (Phase 8)
@@ -835,6 +918,7 @@ gantt
   - Dedicated support during launch
 
 **7. Scope Creep (MEDIUM RISK)**
+
 - **Challenge:** Feature requests, changing requirements, stakeholder expectations
 - **Mitigation:**
   - Formal change control process
@@ -888,6 +972,7 @@ gantt
 ### External Dependencies (Critical Path Items)
 
 **Required for Phase 4 (February 2026):**
+
 1. **ClassWallet API** - ESA+ purchasing, wallet management
    - Sandbox access needed by January 2026
    - Webhook endpoints configured
@@ -905,17 +990,19 @@ gantt
 
 **Required for Phase 3 (January 2026):**
 4. **State Agency APIs** - Domicile and income verification
-   - DMV, DPI, Revenue, DHHS, Commerce, Elections
-   - API contracts and authentication
-   - Test environments
-   - Data use agreements/MOUs
+
+- DMV, DPI, Revenue, DHHS, Commerce, Elections
+- API contracts and authentication
+- Test environments
+- Data use agreements/MOUs
 
 **Required for Phase 2 (December 2025):**
 5. **Azure Services** - Hosting, storage, identity
-   - Production subscription
-   - Microsoft Entra ID tenant
-   - Blob storage configuration
-   - APIM setup
+
+- Production subscription
+- Microsoft Entra ID tenant
+- Blob storage configuration
+- APIM setup
 
 6. **Email/SMS Providers** - Communication delivery
    - Service selection and contracts
@@ -944,6 +1031,7 @@ gantt
 ### Proven Development Methodology
 
 **Technology Stack (Proven Patterns):**
+
 - Angular reactive forms (type-safe, well-tested)
 - .NET APIs (scalable, maintainable)
 - SQL Server (static schema, high performance)
@@ -951,6 +1039,7 @@ gantt
 - Material UI (accessibility compliant)
 
 **Development Approach:**
+
 - Agile/Scrum methodology
 - 2-week sprints
 - Continuous integration/deployment
@@ -959,6 +1048,7 @@ gantt
 - Regular stakeholder demos
 
 **Parallel Development Strategy:**
+
 - Frontend and backend teams work simultaneously
 - Portal development in parallel (Phases 1-5)
 - Testing starts early (Phase 7)
@@ -968,6 +1058,7 @@ gantt
 ### Communication & Governance
 
 **Weekly Cadence:**
+
 - Sprint planning Monday
 - Daily standups
 - Demo Friday
@@ -975,12 +1066,14 @@ gantt
 - Stakeholder update Friday
 
 **Monthly Milestones:**
+
 - Phase completion reviews
 - Stakeholder presentations
 - Risk assessment updates
 - Budget and resource reviews
 
 **Escalation Path:**
+
 - Technical issues → Architecture team
 - Scope changes → Change control board
 - Resource constraints → Project steering committee
@@ -993,6 +1086,7 @@ gantt
 ### How We Stay On Track
 
 **Progress Tracking:**
+
 - Sprint velocity monitoring
 - Burn-down charts by phase
 - Feature completion metrics
@@ -1001,6 +1095,7 @@ gantt
 - Performance benchmarks
 
 **Risk Monitoring:**
+
 - Weekly risk register review
 - External dependency status
 - Resource availability tracking
@@ -1008,6 +1103,7 @@ gantt
 - Testing coverage metrics
 
 **Quality Gates:**
+
 - Code coverage thresholds (>80%)
 - Performance benchmarks (<3s page load)
 - Security scan results (zero critical)
@@ -1015,6 +1111,7 @@ gantt
 - Load test results (80K concurrent users)
 
 **Course Correction Triggers:**
+
 - Sprint velocity drops >20%
 - Critical defects discovered
 - External dependency delays
@@ -1022,6 +1119,7 @@ gantt
 - Scope creep detected
 
 **Contingency Plans:**
+
 - Resource augmentation options
 - Scope prioritization matrix
 - Phase schedule buffers
@@ -1035,6 +1133,7 @@ gantt
 ### Production Support Plan
 
 **Launch Support (May-June 2026):**
+
 - Dedicated support team (24/5 coverage)
 - Rapid response to critical issues
 - User adoption monitoring
@@ -1042,6 +1141,7 @@ gantt
 - Quick-fix deployment capability
 
 **Ongoing Support (July 2026+):**
+
 - Standard support hours (8am-6pm EST)
 - Incident management process
 - Change request handling
@@ -1049,6 +1149,7 @@ gantt
 - Quarterly feature releases (minor)
 
 **Monitoring & Operations:**
+
 - Application performance monitoring (APM)
 - Error tracking and alerting
 - User analytics
@@ -1058,12 +1159,14 @@ gantt
 ### Phase 2 Planning (Post-May 1, 2026)
 
 **Evaluation Period (May-July 2026):**
+
 - Collect operational data
 - Analyze user feedback
 - Identify enhancement opportunities
 - Assess technical debt
 
 **Potential Phase 2 Features:**
+
 - Advanced reporting and analytics
 - Mobile applications (native iOS/Android)
 - Enhanced provider marketplace
@@ -1073,6 +1176,7 @@ gantt
 - **Enrollment Builder re-evaluation** (data-driven decision)
 
 **Phase 2 Decision Criteria:**
+
 - Actual form change frequency
 - User feedback and pain points
 - Operational efficiency metrics
@@ -1087,36 +1191,42 @@ gantt
 ### What Makes This Plan Achievable
 
 **1. Focused Scope**
+
 - Clear feature inventory (110+ features)
 - No nice-to-have features in Phase 1
 - Proven technology stack
 - Parallel development possible
 
 **2. Adequate Timeline**
+
 - 28 weeks from October 15 to May 1
 - Realistic phase durations
 - Built-in testing time (6 weeks)
 - Buffer for unexpected issues
 
 **3. Right Resources**
+
 - 6-8 dedicated FTE
 - Specialized teams (frontend, backend, integration, QA)
 - SME support available
 - Vendor partnerships established
 
 **4. Clear Governance**
+
 - Defined decision-making process
 - Regular stakeholder communication
 - Change control procedures
 - Escalation paths
 
 **5. Risk Management**
+
 - Identified high-risk areas
 - Mitigation strategies defined
 - Contingency plans ready
 - Regular risk reviews
 
 **6. Quality Focus**
+
 - Automated testing throughout
 - Early and continuous testing
 - User acceptance testing (2 weeks)
@@ -1124,6 +1234,7 @@ gantt
 - Quality gates at each phase
 
 **7. Stakeholder Alignment**
+
 - Clear requirements and priorities
 - Regular demos and feedback
 - Transparent communication
@@ -1174,6 +1285,7 @@ gantt
 ### Immediate Actions (This Week)
 
 **Project Team:**
+
 - Finalize sprint 0 planning
 - Set up development environments
 - Confirm team assignments
@@ -1181,6 +1293,7 @@ gantt
 - Begin Phase 1 development (Oct 15)
 
 **Stakeholder Actions:**
+
 - Review and approve scope
 - Confirm resource allocation
 - Approve budget
@@ -1188,6 +1301,7 @@ gantt
 - Confirm decision-making authority
 
 **External Dependencies:**
+
 - Initiate state agency coordination
 - Confirm ClassWallet timeline
 - Finalize PandaDocs contract
@@ -1205,16 +1319,19 @@ gantt
 ### Communication Plan
 
 **Weekly Updates:**
+
 - Project status report (Friday)
 - Risk register update
 - Upcoming milestones
 
 **Monthly Updates:**
+
 - Executive summary presentation
 - Phase completion review
 - Budget and resource status
 
 **Quarterly Updates:**
+
 - Comprehensive project review
 - Strategic alignment check
 - Phase 2 planning discussion
@@ -1226,6 +1343,7 @@ gantt
 **Available in Repository:**
 
 **Core Documentation:**
+
 - Complete Implementation Plan: `/stakeholder-decision/comprehensive-implementation-plan.md`
 - Original Decision Brief: `/stakeholder-decision/decision-brief.md`
 - Timeline Comparison: `/stakeholder-decision/diagrams/timeline-comparison.md`
@@ -1233,12 +1351,14 @@ gantt
 - Risk Matrix: `/stakeholder-decision/diagrams/risk-matrix.md`
 
 **Domain Analysis:**
+
 - Full Domain Model: `/research/full-domain.md`
 - DDD Analysis Part 1: `/research/ddd-1.md`
 - DDD Analysis Part 2: `/research/ddd-2.md`
 - Aggregate Details: `/research/aggregate-details-enhancement.md`
 
 **Additional Resources:**
+
 - Feature-to-phase mapping matrix
 - Resource allocation spreadsheet
 - Technical architecture documentation
@@ -1253,12 +1373,14 @@ gantt
 **Project Leadership**
 
 **Questions or Concerns:**
+
 - Schedule 1:1 meetings with project team
 - Review supporting documentation in repository
 - Submit questions via project portal
 - Escalate to steering committee if needed
 
 **Post-Meeting Deliverables:**
+
 - Finalized project plan (within 3 days)
 - Resource allocation confirmation (within 1 week)
 - Sprint 0 plan (within 1 week)
@@ -1279,6 +1401,7 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 **Tone:** Professional, comprehensive, solution-oriented, confident
 
 **Key Messages to Emphasize:**
+
 1. This is a complete scope presentation - all features inventoried
 2. Timeline is achievable with disciplined execution
 3. We have a clear plan with realistic phases
@@ -1288,18 +1411,23 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 **Anticipated Questions (and Responses):**
 
 **Question:** "How do we know we can complete 110+ features in 28 weeks?"
+
 - **Response:** "We're using proven technology patterns (Angular reactive forms, .NET APIs) that allow for rapid, parallel development. Our phased approach allows multiple teams to work simultaneously. The Gantt chart shows realistic timelines based on industry standards for similar work. Plus, we have 6 weeks dedicated to testing and 2 weeks buffer."
 
 **Question:** "What happens if we encounter delays with state agency integrations?"
+
 - **Response:** "State agency integrations are in Phase 3 (January), giving us time to coordinate. We have manual fallback workflows planned for each agency. We're prioritizing early communication and have dedicated integration team resources. If an agency is delayed, we can proceed with manual verification temporarily."
 
 **Question:** "Is there room for additional features stakeholders might request?"
+
 - **Response:** "We have a formal change control process. Any new features will be evaluated against: 1) Impact on May 1 deadline, 2) Resource availability, 3) Business priority. Most new requests will be candidates for Phase 2. Our commitment is to deliver the core 110+ features on time with high quality."
 
 **Question:** "How confident are you in the May 1, 2026 deadline?"
+
 - **Response:** "We're confident because: 1) This plan uses proven technology, 2) We have adequate resources (6-8 FTE), 3) We have realistic phase durations with buffers, 4) We've identified and mitigated key risks, 5) We have parallel development capability. The biggest threat to the deadline would be uncontrolled scope creep, which we'll manage through change control."
 
 **Question:** "What about the Enrollment Builder - is it completely abandoned?"
+
 - **Response:** "No, it's deferred to Phase 2 evaluation. We'll collect actual data on form change frequency and administrative burden during Phase 1 operation. This data will inform a fact-based decision about whether to resurrect the Builder, use a commercial alternative, or continue with reactive forms. The focus now is on delivering core functionality on time."
 
 **Closing:** "This comprehensive plan gives us a clear roadmap to success. We have the scope, timeline, resources, and risk management strategies needed to deliver by May 1, 2026. What we need from this group is support, timely decision-making, and help removing obstacles. Are there any final questions or concerns?"
@@ -1313,6 +1441,7 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 **Not Abandoned – Re-evaluated**
 
 **Phase 2 Planning (Post-April 2026):**
+
 1. Analyze Phase 1 operational data:
    - How often do forms actually change?
    - What types of changes occur?
@@ -1338,24 +1467,28 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 ### Managing the Message
 
 **Internal Team (This Week):**
+
 - Transparent communication of decision rationale
 - Acknowledge hard work on Enrollment Builder
 - Emphasize strategic pivot, not failure
 - Clear role assignments for reactive forms development
 
 **CFI Leadership (Next Week):**
+
 - Present business case for Option B
 - Highlight risk mitigation and on-time delivery
 - Address concerns about form maintenance
 - Commit to Phase 2 evaluation
 
 **NC SEAA (Following Week):**
+
 - Reassure on May 1, 2026 commitment
 - Explain technical decision in business terms
 - Preview Phase 1 feature completeness
 - Schedule demo of core workflows (December 2025)
 
 **Success Metrics:**
+
 - Team morale and focus improvement
 - Stakeholder confidence in revised plan
 - No major resistance or pushback
@@ -1367,6 +1500,7 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 ### How We Measure Success
 
 **Delivery Milestones:**
+
 - ✅ Core K-12 workflows operational by **December 2025**
 - ✅ Cross-cutting services integrated by **December 2025**
 - ✅ End-to-end testing complete by **February 2026**
@@ -1374,6 +1508,7 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 - ✅ Production launch **May 1, 2026** (on schedule)
 
 **Quality Metrics:**
+
 - ✅ Zero critical data integrity issues in production
 - ✅ Platform supports 80,000+ concurrent users (load tested)
 - ✅ <2% defect escape rate post-UAT
@@ -1381,6 +1516,7 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 - ✅ 100% regulatory compliance (audit ready)
 
 **Business Outcomes:**
+
 - ✅ ESA+ and OS applications processed without manual intervention
 - ✅ Award calculations automated and auditable
 - ✅ Payment disbursements on schedule
@@ -1396,6 +1532,7 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 **Required Decision:** Select Option A or Option B
 
 **Decision Criteria:**
+
 1. **Hard Deadline:** Can we miss the May 1, 2026 deadline? (Option A will miss it)
 2. **Contract Compliance:** Can we delay project completion by 6+ months? (Option A will)
 3. **Business Priority:** Is Enrollment Builder more important than meeting committed deadlines?
@@ -1404,6 +1541,7 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 6. **Data Integrity:** Are we comfortable with dynamic data mapping risks?
 
 **Recommended Decision Process:**
+
 1. Review analysis and ask clarifying questions (15 min)
 2. Discuss concerns and alternatives (10 min)
 3. Formal vote or consensus decision (5 min)
@@ -1449,6 +1587,7 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 - **Visual Diagrams:** `/stakeholder-decision/diagrams/`
 
 **Additional Resources:**
+
 - Project timeline (Gantt chart)
 - Resource allocation spreadsheet
 - Technical architecture documentation
@@ -1461,6 +1600,7 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 **Technical Architecture Team**
 
 **Post-Meeting Deliverables:**
+
 - Decision documentation and rationale
 - Updated project plan (within 3 days)
 - Stakeholder communication plan (within 1 week)
@@ -1468,6 +1608,7 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 - First sprint plan under new direction (within 2 weeks)
 
 **Questions or Concerns:**
+
 - Schedule 1:1 meetings with architecture team
 - Review supporting documentation in repository
 - Escalate to project steering committee if needed
@@ -1486,6 +1627,7 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 **Tone:** Professional, comprehensive, solution-oriented, confident
 
 **Key Messages to Emphasize:**
+
 1. This is a complete scope presentation - all features inventoried
 2. Timeline is achievable with disciplined execution
 3. We have a clear plan with realistic phases
@@ -1495,18 +1637,23 @@ We are committed to delivering a comprehensive, compliant, and scalable K-12 SEA
 **Anticipated Questions (and Responses):**
 
 **Question:** "How do we know we can complete 110+ features in 28 weeks?"
+
 - **Response:** "We're using proven technology patterns (Angular reactive forms, .NET APIs) that allow for rapid, parallel development. Our phased approach allows multiple teams to work simultaneously. The Gantt chart shows realistic timelines based on industry standards for similar work. Plus, we have 6 weeks dedicated to testing and 2 weeks buffer."
 
 **Question:** "What happens if we encounter delays with state agency integrations?"
+
 - **Response:** "State agency integrations are in Phase 3 (January), giving us time to coordinate. We have manual fallback workflows planned for each agency. We're prioritizing early communication and have dedicated integration team resources. If an agency is delayed, we can proceed with manual verification temporarily."
 
 **Question:** "Is there room for additional features stakeholders might request?"
+
 - **Response:** "We have a formal change control process. Any new features will be evaluated against: 1) Impact on May 1 deadline, 2) Resource availability, 3) Business priority. Most new requests will be candidates for Phase 2. Our commitment is to deliver the core 110+ features on time with high quality."
 
 **Question:** "How confident are you in the May 1, 2026 deadline?"
+
 - **Response:** "We're confident because: 1) This plan uses proven technology, 2) We have adequate resources (6-8 FTE), 3) We have realistic phase durations with buffers, 4) We've identified and mitigated key risks, 5) We have parallel development capability. The biggest threat to the deadline would be uncontrolled scope creep, which we'll manage through change control."
 
 **Question:** "What about the Enrollment Builder - is it completely abandoned?"
+
 - **Response:** "No, it's deferred to Phase 2 evaluation. We'll collect actual data on form change frequency and administrative burden during Phase 1 operation. This data will inform a fact-based decision about whether to resurrect the Builder, use a commercial alternative, or continue with reactive forms. The focus now is on delivering core functionality on time."
 
 **Closing:** "This comprehensive plan gives us a clear roadmap to success. We have the scope, timeline, resources, and risk management strategies needed to deliver by May 1, 2026. What we need from this group is support, timely decision-making, and help removing obstacles. Are there any final questions or concerns?"

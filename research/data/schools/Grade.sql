@@ -1,0 +1,6 @@
+﻿CREATE TABLE [Schools].[Grade] (
+  [GradeId] INT NOT NULL,
+  [Name] NVARCHAR(255) NOT NULL,
+  [IsActive] BIT NOT NULL DEFAULT 1,
+  CONSTRAINT [PK_Grade] PRIMARY KEY CLUSTERED ([GradeId] ASC)
+);

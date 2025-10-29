@@ -1,0 +1,53 @@
+{
+  "A11y Explain Violation": {
+    "prefix": "a11y-explain",
+    "body": [
+      "// copilot: Explain in 3 bullets why this axe violation is happening and list the closest WCAG success criteria.",
+      "// copilot: HTML: $1"
+    ],
+    "description": "Explain an axe violation in plain language and map to WCAG"
+  },
+
+  "A11y Fix + jest-axe test": {
+    "prefix": "a11y-fix-test",
+    "body": [
+      "/* copilot: Provide (1) an accessible Angular template replacement for the HTML below, (2) a jest-axe unit test that asserts no axe violations, and (3) a 1-line PR description. Output only code blocks. */",
+      "// copilot: HTML: $1"
+    ],
+    "description": "Ask Copilot to generate an Angular template fix and jest-axe test"
+  },
+
+  "A11y Playwright repro test": {
+    "prefix": "a11y-playwright",
+    "body": [
+      "// copilot: Write a minimal Playwright test that navigates to route \"$1\" and reproduces a failure for selector \"$2\" using keyboard navigation. The test must run under `npx playwright test`."
+    ],
+    "description": "Generate a Playwright test for reproducing an a11y issue"
+  },
+
+  "A11y Work Item Body": {
+    "prefix": "a11y-issue-body",
+    "body": [
+      "/* copilot: Using the axe node below, generate a concise Azure DevOps work item body in Markdown: summary, route/Storybook id, selector, redacted HTML snippet, failure summary, reproduction Playwright snippet (minimal), suggested owner, and tests to add. */",
+      "// copilot: Node: $1"
+    ],
+    "description": "Create an Azure DevOps work item body from an axe node"
+  },
+
+  "A11y PR safety note": {
+    "prefix": "a11y-pr-note",
+    "body": [
+      "// copilot: Produce a 2-3 bullet PR safety note for reviewers describing the manual validation steps required after an accessibility fix (keyboard, screen reader, contrast)."
+    ],
+    "description": "Generate a short PR reviewer safety checklist"
+  },
+
+  "LLM Sanitize HTML": {
+    "prefix": "a11y-sanitize",
+    "body": [
+      "// copilot: Sanitize this HTML snippet for LLM submission by removing PII and truncating long attribute values. Return only the sanitized HTML.",
+      "// copilot: HTML: $1"
+    ],
+    "description": "Helper to sanitize HTML before sending to an external LLM"
+  }
+}

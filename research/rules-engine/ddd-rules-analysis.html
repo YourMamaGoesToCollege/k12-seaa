@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ddd-rules-analysis.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="ddd-rules-engine-analysis-for-k12">DDD Rules Engine Analysis for K12</h1>
+<p>This Domain-Driven Design (DDD) analysis outlines the necessary components, contexts, and implementation strategy for the modernization of the North Carolina K12 Scholarship system, focusing heavily on financial management, compliance, and monetary transactions, particularly involving the General Ledger (GL) function and the ClassWallet platform.</p>
+<h2 id="1-architectural-approach-and-ddd-strategy">1. Architectural Approach and DDD Strategy</h2>
+<p>The recommended approach, aligning with principles like <strong>CLEAN Architecture</strong> or a <strong>Modular Monolith</strong>, separates core business logic (the Domain Layer) from external services and user interfaces. This structure ensures that critical financial rules and policies, which are excellent candidates for a Rule Engine, are consistent, testable, and isolated from fluctuating external systems like the ClassWallet API or state agency integrations.</p>
+<p><strong>Key Architectural Principle:</strong> <strong>Policy Externalization</strong>. Business rules governing award calculation, minimum spending, allowable expenses, and technology frequency limits should be managed by a dedicated <strong>Rule Engine Service</strong> or Policy Module layer to enhance testability and consistency.</p>
+<h2 id="2-bounded-contexts-domains">2. Bounded Contexts (Domains)</h2>
+<p>The modernization effort encompasses several distinct bounded contexts, managing specific areas of the K12 scholarship domain:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Context</th>
+<th style="text-align:left">Core Aggregate(s)</th>
+<th style="text-align:left">Domain Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>A. ESA+ Wallet, Purchasing &amp; Expenses</strong></td>
+<td style="text-align:left"><code>ScholarshipAccount</code>, <code>PurchaseRequest</code></td>
+<td style="text-align:left">The central financial hub managing funds, debits, credits, compliance spending, and integration with ClassWallet. <strong>(High Monetary Focus)</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>B. Awarding &amp; Funding</strong></td>
+<td style="text-align:left"><code>AwardOffer</code>, <code>ScholarshipAward</code>, <code>PaymentSchedule</code></td>
+<td style="text-align:left">Managing eligibility confirmation, lottery outcomes, award tiers, deadlines, and the active status of scholarships.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>C. Compliance &amp; Agreements</strong></td>
+<td style="text-align:left"><code>ParentAgreement</code>, <code>ComplianceRecord</code>, <code>LEARelease</code></td>
+<td style="text-align:left">Enforcing legal obligations, tracking misuse, suspensions, terminations, and securing annual parent contracts.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>D. Reporting &amp; Tax</strong></td>
+<td style="text-align:left"><code>TaxReport1099G</code>, <code>Program Analytics</code></td>
+<td style="text-align:left">Managing financial reporting obligations, specifically accumulating non-tuition spend for IRS compliance (1099-G). <strong>(High Monetary/GL Focus)</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>E. Application &amp; Eligibility</strong></td>
+<td style="text-align:left"><code>Application</code>, <code>OS IncomeVerification</code></td>
+<td style="text-align:left">Handling initial intake, document submission (EDD), income calculation, and verification sampling.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>F. Domicile Verification</strong></td>
+<td style="text-align:left"><code>DomicileDetermination</code>, <code>VerificationCase</code></td>
+<td style="text-align:left">Statutory validation of NC residency using inter-agency cooperation (DMV, DPI, Revenue, DHHS, etc.).</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>G. School Choice &amp; Enrollment</strong></td>
+<td style="text-align:left"><code>SchoolChoice</code>, <code>EnrollmentRecord</code>, <code>School</code></td>
+<td style="text-align:left">Tracking student placement (Direct Payment, Home School, Reimbursement), transfers, and school registration status.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>H. Provider Enrollment</strong></td>
+<td style="text-align:left"><code>ProviderEnrollment</code>, <code>Provider</code></td>
+<td style="text-align:left">Vetting and registering third-party service providers (tutors, therapists) who accept ESA+ funds.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>I. Renewal &amp; Eligibility Lifecycle</strong></td>
+<td style="text-align:left"><code>Renewal</code>, <code>DisabilityReevaluation</code></td>
+<td style="text-align:left">Managing annual re-qualification, minimum spend verification, and the 3-year disability re-evaluation cycle.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-operations-workflows-and-monetarygl-focus">3. Operations, Workflows, and Monetary/GL Focus</h2>
+<p>Monetary transactions underpin the entire system. Funds flow in two primary ways: Direct Disbursement (SEAA to School) and Wallet Spending (SEAA/ClassWallet to Providers/Vendors). The system must operate with eventual consistency, especially where the SEAA <code>ScholarshipAccount</code> interacts with the external ClassWallet ledger.</p>
+<h3 id="core-financial-aggregates-and-classwallet-integration">Core Financial Aggregates and ClassWallet Integration</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Aggregate / System</th>
+<th style="text-align:left">Domain Role &amp; Workflow</th>
+<th style="text-align:left">Monetary/GL Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><code>ScholarshipAccount</code></strong></td>
+<td style="text-align:left">The digital wallet tracking the available <code>balance</code>, <code>initialAwardAmount</code>, <code>totalSpent</code>, and eligibility for <code>rollover</code>. Debits occur when a <code>PurchaseRequest</code> is approved.</td>
+<td style="text-align:left"><strong>Core Ledger:</strong> Holds the authoritative balance and enforces key invariants like balance $\leq$ cumulative cap ($30,000) and balance cannot go negative.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>PurchaseRequest</code></strong></td>
+<td style="text-align:left">Represents any attempt to spend ESA+ funds (marketplace order, invoice, payment request). It moves through states: submitted, underReview, approved, rejected, paid, rolledBack.</td>
+<td style="text-align:left"><strong>Transaction Enforcement:</strong> Triggers the debit operation on the <code>ScholarshipAccount</code> and requires rigorous rules validation before payment execution.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>ClassWallet</strong></td>
+<td style="text-align:left">The third-party platform contracted by SEAA that hosts the electronic account, manages the marketplace, facilitates vendor payments, and captures invoices/receipts digitally.</td>
+<td style="text-align:left"><strong>External Payment Rail:</strong> Handles the actual fund transfer (<code>pay()</code> operation) to Vendors and Providers. SEAA must integrate via APIs/webhooks to sync the ClassWallet ledger back to the internal <code>ScholarshipAccount</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Direct Payment</strong></td>
+<td style="text-align:left">Workflow for paying tuition/fees directly to participating Direct Payment Schools (OS and ESA+). Requires annual school <strong>Certification</strong> and per-semester <strong>Parent Endorsement</strong>.</td>
+<td style="text-align:left"><strong>Disbursement GL:</strong> Funds flow from SEAA's internal GL system to the school's bank account (ACH). Dual Award logic (OS funds applied first, then ESA+ residual moves to ClassWallet) is critical.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Tax Reporting (<code>TaxReport1099G</code>)</strong></td>
+<td style="text-align:left">Accumulates ESA+ funds spent on non-tuition allowable expenses throughout the <em>calendar year</em> (Jan 1 - Dec 31) for IRS Form 1099-G generation.</td>
+<td style="text-align:left"><strong>Compliance GL:</strong> Tracks reportable income. Funds spent on tuition/required fees are specifically excluded from 1099-G reporting.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="operations-and-workflows-monetary--rules-driven">Operations and Workflows (Monetary &amp; Rules-Driven)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Workflow/Operation</th>
+<th style="text-align:left">Key Tasks/Contexts Involved</th>
+<th style="text-align:left">Rule Engine Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>ESA+ Allowable Expense Purchase</strong></td>
+<td style="text-align:left">Parent submits <code>PurchaseRequest</code> (Marketplace/Pay Vendor); SEAA/System staff validates against allowable categories, frequency rules, and documentation requirements.</td>
+<td style="text-align:left"><strong>Mandatory Rule Engine:</strong> Must enforce <strong>Allowable/Prohibited Expense</strong> lists; validate <strong>Accessory Timing/Frequency</strong> (e.g., 30 days/3 years); validate <strong>Provider Enrollment Status</strong>; ensure <strong>Curriculum</strong> supports core academic subjects.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>OS Award Tier Calculation</strong></td>
+<td style="text-align:left">Parent reports household income and size for the previous calendar year (2024 income for 2025-26). System determines the specific scholarship amount (Tier 1, 2, 3, or 4).</td>
+<td style="text-align:left"><strong>Mandatory Rule Engine:</strong> Must apply complex <strong>Income Calculation Rules</strong> (gross wages, net self-employment income, exclusions like foster payments/Combat Pay); determine <strong>Award Tier</strong> based on household size and income limits.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Endorsement &amp; Disbursement</strong></td>
+<td style="text-align:left">School certifies enrollment/cost (August). Parent performs <code>ParentEndorsement</code> via MyPortal each semester (Fall/Spring) to authorize payment to the Direct Payment School.</td>
+<td style="text-align:left"><strong>Strong Rule Engine Candidate:</strong> Enforces the <strong>case-sensitive validation</strong> of the parent's name to authorize funds; verifies that the school is an Active Direct Payment School.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Year-End Renewal Check</strong></td>
+<td style="text-align:left">At the end of the school year, the system evaluates the student’s spending and rollover eligibility before offering renewal.</td>
+<td style="text-align:left"><strong>Mandatory Rule Engine:</strong> Enforces the <strong>Minimum Spend Requirement</strong> ($\geq$ $1,000$ on allowable expenses); calculates <strong>Rollover eligibility and caps</strong> ($\leq$ $4,500$ rollover, $\leq$ $30,000$ cumulative balance, only for higher award level).</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Transaction Fees/Limits</strong></td>
+<td style="text-align:left">When a parent pays a provider or vendor, the system must validate the associated transaction fee.</td>
+<td style="text-align:left"><strong>Strong Rule Engine Candidate:</strong> Must enforce the <strong>Transaction Fee Limit</strong> (fee cannot exceed 2.5% of the item/service cost).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-rule-engine-implementation">4. Rule Engine Implementation</h2>
+<p>Implementing a Rule Engine (RE) within the Domain Layer (or Application Layer, separate from the UI and Persistence) is crucial for enforcing the complex and compliance-heavy invariants of the K12 system.</p>
+<h3 id="architectural-placement">Architectural Placement</h3>
+<p>Following a layered or CLEAN approach, the Rule Engine acts as a <strong>Policy Service</strong> or <strong>Domain Service</strong>.</p>
+<ul>
+<li>When a <code>PurchaseRequest</code> command is received, the <code>ScholarshipAccount</code> Aggregate Root calls the <strong>Policy Service</strong> to validate the request against current program rules (e.g., allowable category, accessory constraints, sufficient balance).</li>
+<li>The Policy Service reads the externalized rules (e.g., configuration, policy definitions) and returns a list of validation results or rejection codes.</li>
+</ul>
+<h3 id="key-rule-engine-candidates-monetarycompliance-focus">Key Rule Engine Candidates (Monetary/Compliance Focus)</h3>
+<p>The rules below are highly complex, statutory, or subject to policy changes, making them ideal for a Rule Engine:</p>
+<ol>
+<li>
+<p><strong>Monetary/Financial Rules (ESA+ <code>ScholarshipAccount</code> Invariants):</strong></p>
+<ul>
+<li><strong>Rollover Eligibility:</strong> If <code>awardLevel</code> is &quot;base,&quot; rollover is prohibited; if &quot;higher,&quot; funds up to $4,500 can roll over, provided the resulting <code>cumulativeBalance</code> does not exceed $30,000.</li>
+<li><strong>Minimum Spending:</strong> <code>totalSpent</code> must be $\geq$ $1,000$ annually to maintain renewal eligibility.</li>
+</ul>
+</li>
+<li>
+<p><strong>Purchase/Transaction Validation Rules (<code>PurchaseRequest</code> Invariants):</strong></p>
+<ul>
+<li><strong>Prohibited Items/Allowable Categories:</strong> Enforcing the comprehensive list of non-allowable expenses (e.g., household items, consumable supplies, entertainment).</li>
+<li><strong>Educational Technology Constraints:</strong> If <code>accessoryFlag == true</code>, must validate that the purchase timestamp is within 30 days of the <code>relatedMainDeviceOrderId</code> purchase date AND that the 3-year frequency limit for major devices/accessories is met.</li>
+<li><strong>Service Provider Compliance:</strong> If a service (tutoring, therapy) is requested, the associated <code>providerId</code> must have an <code>enrollmentStatus == enrolled</code>.</li>
+<li><strong>Transportation Documentation:</strong> If <code>category</code> is &quot;transportation,&quot; the first invoice must include the <code>signed contract</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>OS Income/Eligibility Calculation Rules:</strong></p>
+<ul>
+<li><strong>Income Calculation Model:</strong> Standardized calculation method based on Federal Free and Reduced-Price Lunch guidelines. The RE must process inputs (gross wages, net self-employment, specific exclusions like Combat Pay or foster care payments) to determine the final household income for the 2024 calendar year.</li>
+<li><strong>Award Tier Determination:</strong> Mapping the final income and household size to the correct Award Tier (1, 2, 3, or 4) to determine the scholarship amount.</li>
+</ul>
+</li>
+</ol>
+<p>By externalizing these rules, the system gains <strong>consistency</strong> (all purchasing paths run the same validation rules), <strong>testability</strong> (rules can be unit-tested without external dependencies), and <strong>architectural implementation</strong> in a dedicated layer, decoupling the complexity from the core business entities.</p>
+<h2 id="5-summary-of-high-focus-monetary-workflows">5. Summary of High-Focus Monetary Workflows</h2>
+<p>The system's modernization must ensure compliance and accuracy across these key monetary workflows:</p>
+<ol>
+<li><strong>Fund Allocation/Activation:</strong> Creating the <code>ScholarshipAccount</code> aggregate with the correct <code>initialAwardAmount</code> (Base $9,000 or Higher $17,000 for ESA+, or Tier 1-4 for OS) once the <code>AwardOffer</code> is accepted and the <code>ParentAgreement</code> is signed.</li>
+<li><strong>Direct Disbursement (SEAA GL):</strong> Executing ACH payments to schools following the twice-per-year schedule (Fall: Aug/Sep; Spring: Jan/Feb) only after both school Certification and Parent Endorsement are complete.</li>
+<li><strong>Wallet Management (ClassWallet GL/Sub-Ledger):</strong> Managing the fund transfer event (<code>FundsMovedToWallet</code>) when residual ESA+ funds remain after tuition payments or for Home School students. This requires reliable integration with ClassWallet.</li>
+<li><strong>Transaction Processing:</strong> Handling the full lifecycle of a <code>PurchaseRequest</code>, which validates rules against the Policy Service, reserves/debits funds from the <code>ScholarshipAccount</code>, and triggers the payment via ClassWallet.</li>
+<li><strong>Tax Compliance (1099-G):</strong> Aggregating and finalizing non-tuition spending totals (<code>nonTuitionSpendingAmount</code>) at the close of the calendar year (Dec 31) to fulfill the 1099-G reporting requirement to the IRS and parents by the following January 31 deadline.</li>
+<li><strong>Recoupment/Refunds:</strong> Implementing the <code>rollback()</code> method on the <code>ScholarshipAccount</code> and <code>PurchaseRequest</code> when misuse is detected, requiring the parent to return misused funds. This links the financial aggregates directly to the <code>ComplianceRecord</code>.</li>
+</ol>
+
+</body>
+</html>
