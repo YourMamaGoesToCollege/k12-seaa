@@ -1,4 +1,5 @@
 # IT Stakeholder Decision Brief
+
 ## SEAA K-12 Modernization: Enrollment Builder Strategic Decision
 
 **Date:** October 2025  
@@ -13,6 +14,7 @@
 The SEAA K-12 modernization project faces a critical architectural decision regarding the custom Enrollment Builder component. After one year of development effort on the Angular/.NET platform, the project has allocated over 50% of engineering resources to building a dynamic form builder that allows CFI administrators to configure application forms without developer intervention.
 
 **The Decision Required:**
+
 - **Option A:** Continue Enrollment Builder development and complete it for Phase 1 delivery (~10 additional weeks)
 - **Option B:** Retire/postpone Enrollment Builder to Phase 2; redirect resources to core K-12 workflows using Angular reactive forms
 
@@ -25,19 +27,24 @@ The SEAA K-12 modernization project faces a critical architectural decision rega
 ## Background & Context
 
 ### Platform Overview
+
 College Foundation, Inc. (CFI) manages North Carolina's K-12 scholarship programs (ESA+ and Opportunity Scholarship) serving up to 80,000 concurrent users. The current legacy system experiences scalability failures and requires immediate modernization.
 
 The new platform consists of:
+
 - **Four Angular Web Applications:** Household Portal, School Portal, Provider Portal, Admin Portal
 - **Backend Services:** .NET APIs, SQL Server, Azure APIM
 - **Target Users:** Parents/guardians, students, school administrators, service providers, CFI staff
 
 **Critical Timeline Constraint:**
+
 - **May 1, 2026:** All core functionality must be complete and production ready
 - **Post-May 1, 2026:** Support and maintenance only - no new feature development
 
 ### The Enrollment Builder Promise
+
 The Enrollment Builder was conceived to allow non-technical CFI administrators to:
+
 - Design and modify application forms through a visual interface
 - Add/remove form fields dynamically
 - Update validation rules without code deployment
@@ -46,6 +53,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 ### Current State Assessment
 
 **Development Progress:**
+
 - 12 months of active development
 - ~50%+ of total engineering capacity allocated
 - Component exists in pre-production state
@@ -89,6 +97,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 ### Option A: Continue Enrollment Builder Development
 
 **What Remains:**
+
 1. Implement state machine architecture (XState integration) – 3 weeks
 2. Build data mapping layer (dynamic to relational) – 4 weeks
 3. Complete validation framework – 2 weeks
@@ -99,6 +108,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 **Total Effort:** 19 weeks (includes testing buffer)
 
 **Risks:**
+
 - **CRITICAL: Misses Hard Deadline:** Cannot complete by May 1, 2026 - would push to early fall 2026 or beyond, missing the hard deadline by several months
 - **Technical Debt:** Data mapping layer is complex, high-risk architectural component
 - **Resource Constraint:** Core workflows remain blocked or under-resourced
@@ -108,11 +118,13 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 - **Contract Risk:** Missing deadline may have contractual and financial penalties
 
 **Benefits:**
+
 - Delivers on original promise to business stakeholders
 - Potential long-term operational efficiency (if successful)
 - Reduces developer involvement for minor form changes
 
 **Cost Impact:**
+
 - **Engineering:** ~1,900 hours (2.5 FTE for 4 months)
 - **QA/Testing:** ~600 hours
 - **Total Cost:** $180,000 - $240,000 (estimated)
@@ -122,6 +134,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 ### Option B: Retire Enrollment Builder from Phase 1
 
 **Approach:**
+
 1. Archive Enrollment Builder codebase as Phase 2 candidate
 2. Implement ESA+ and Opportunity Scholarship applications using Angular reactive forms
 3. Redirect engineering resources to core workflows and cross-cutting services
@@ -130,6 +143,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 **Immediate Work (Next 24 Weeks):**
 
 **Core K-12 Application Workflows (8 weeks):**
+
 - ESA+ New Student Application (reactive forms) – 2 weeks
 - Opportunity Scholarship Application (reactive forms) – 2 weeks
 - Renewal workflows (both programs) – 1 week
@@ -138,6 +152,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 - Document Upload integration – 1 week
 
 **Cross-Cutting Infrastructure (8 weeks):**
+
 - Communication Center (email templates, scheduling, triggers) – 2 weeks
 - Messaging Center (in-app notifications, banner, modal, inbox) – 2 weeks
 - Rules Engine integration (eligibility, financial calculations) – 2 weeks
@@ -145,17 +160,20 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 - Document Management (PandaDoc integration, scanning) – 1 week
 
 **Parallel Testing & Integration (ongoing):**
+
 - End-to-end workflow testing – 4 weeks
 - Performance/load testing (80K concurrent users) – 2 weeks
 - User acceptance testing – 4 weeks
 - Security testing and remediation – 2 weeks
 
 **Risks:**
+
 - **Political/Stakeholder:** Must communicate change rationally to business leaders
 - **Perception:** May appear as project failure or reversal
 - **Future Commitment:** No guarantee Enrollment Builder returns in Phase 2
 
 **Benefits:**
+
 - **CRITICAL: Meets Hard Deadline:** Only viable path to complete all functionality by May 1, 2026
 - **Reduced Complexity:** Proven Angular patterns, lower technical risk
 - **Better Testing:** More time for quality assurance and user acceptance testing
@@ -165,6 +183,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 - **Contract Compliance:** Meets deadline commitments without delay or penalties
 
 **Cost Impact:**
+
 - **Engineering:** Redirected capacity (no new cost)
 - **Form Maintenance:** Developer time for annual updates (~40 hours/year estimated)
 - **Total Savings:** $180,000 - $240,000 in Phase 1
@@ -175,6 +194,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 ## Timeline Impact Analysis
 
 ### Current State (with Enrollment Builder)
+
 - **October 15, 2025:** Enrollment Builder development continues
 - **January 2026:** Enrollment Builder feature-complete (optimistic)
 - **March 2026:** Integration testing complete
@@ -186,6 +206,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 - **CRITICAL FAILURE:** Misses May 1, 2026 hard deadline by 6+ months, making project completion impossible within required timeframe
 
 ### Recommended Path (without Enrollment Builder)
+
 - **October 15, 2025:** Pivot to reactive forms; begin core workflow development
 - **November 2025:** ESA+ and OS application forms complete
 - **December 2025:** Renewal and verification workflows complete
@@ -203,6 +224,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 ## Critical Dependencies & Risk Matrix
 
 ### Critical Path Items (Option A - Continue Builder)
+
 1. **Enrollment Builder State Machine:** Blocks all form workflow testing
 2. **Data Mapping Layer:** Blocks production data integrity validation
 3. **Validation Framework:** Blocks compliance/audit readiness
@@ -212,6 +234,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 **Risk Level:** **HIGH** – Multiple critical-path dependencies create schedule fragility
 
 ### Critical Path Items (Option B - Retire Builder)
+
 1. **Reactive Forms Development:** Well-understood Angular pattern
 2. **API Endpoints:** Parallel development possible
 3. **Cross-Cutting Services:** Immediate focus, no blockers
@@ -238,16 +261,19 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 ## Financial & Effort Summary
 
 ### Option A Total Cost
+
 - Development: $180,000 - $240,000
 - Delayed delivery cost (opportunity): $500,000+ (estimated business impact)
 - **Total Phase 1 Impact:** $680,000 - $740,000
 
 ### Option B Total Cost
+
 - Immediate savings: $180,000 - $240,000
 - Annual form maintenance: ~$8,000/year (40 hours × $200/hr)
 - **Total Phase 1 Impact:** Net savings + earlier value delivery
 
 ### 3-Year Total Cost of Ownership
+
 - **Option A:** Higher upfront, potential long-term savings (if successful)
 - **Option B:** Lower Phase 1 cost, predictable maintenance, lower risk
 
@@ -260,6 +286,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 **We recommend Option B: Retire the Enrollment Builder from Phase 1.**
 
 ### Justification
+
 1. **CRITICAL: Only Viable Path to Meet Hard Deadline:** Option A cannot complete by May 1, 2026. Option B is the only way to meet the required deadline.
 2. **Risk Mitigation:** Eliminating the Enrollment Builder removes the highest technical and schedule risk from Phase 1
 3. **Quality Assurance:** Provides adequate testing time for mission-critical scholarship workflows
@@ -268,6 +295,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 6. **Contract Compliance:** Meets delivery commitments without penalties or delays
 
 ### Implementation Approach
+
 1. **Immediate (This Week):**
    - Communicate decision to extended team
    - Archive Enrollment Builder codebase with documentation
@@ -289,6 +317,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
    - Make data-driven decision based on actual form change frequency
 
 ### Success Criteria for Option B
+
 - ✅ Core K-12 workflows operational by December 2025
 - ✅ Cross-cutting services integrated by December 2025
 - ✅ End-to-end testing complete by February 2026
@@ -331,6 +360,7 @@ The Enrollment Builder was conceived to allow non-technical CFI administrators t
 ---
 
 **Document Control:**
+
 - Version: 1.0
 - Last Updated: October 2025
 - Contact: Technical Architecture Team

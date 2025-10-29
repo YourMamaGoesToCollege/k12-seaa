@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>full-domain.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="nc-k12-scholarships-esa-and-opportunity-scholarship--full-domain-driven-design-analysis">NC K12 Scholarships (ESA+ and Opportunity Scholarship) — Full Domain-Driven Design Analysis</h1>
+<p>This document synthesizes authoritative public sources into a comprehensive, text-only DDD analysis for North Carolina’s K12 scholarship programs: Education Student Accounts (ESA+) and Opportunity Scholarship (OS). It is intended to ground a modern software implementation plan.</p>
+<p>Sources used (representative, not exhaustive):</p>
+<p>Web Resources:</p>
+<ul>
+<li><a href="https://k12.ncseaa.edu/">NCSEAA K12 home</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/resources/">ESA+ Resources hub</a></li>
+<li><a href="https://k12.ncseaa.edu/the-education-student-accounts/program-rules-and-requirements/">ESA+ Program Rules &amp; Requirements</a></li>
+<li><a href="https://k12.ncseaa.edu/the-education-student-accounts/awarding-process/">ESA+ Awarding Process</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/allowable-expenses/">ESA+ Allowable Expenses overview</a></li>
+<li><a href="https://k12.ncseaa.edu/opportunity-scholarship/">OS Program landing</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/payment-process/">OS Payment Process (How Scholarship Funds Work for OS and ESA+)</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/income-verification/">OS Income Verification</a></li>
+<li><a href="https://www2.ncseaa.edu/approvedprovidersk12/default.aspx">Provider Search (enrolled service providers)</a></li>
+<li><a href="https://myportal.ncseaa.edu/NC/login.aspx">MyPortal (family/school tasks and documents)</a></li>
+<li><a href="https://www.doa.nc.gov/divisions/non-public-education">DNPE (private/home school registration)</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/classwallet/">ClassWallet (platform referenced by ESA+)</a></li>
+<li><a href="http://www.irs.gov/individuals/get-transcript">IRS Transcript info referenced by OS Income Verification</a></li>
+<li><a href="https://www.cfnc.org/">CFNC portal (contextual partner)</a></li>
+<li><a href="https://k12.ncseaa.edu/school-admins/annual-requirements/testing-and-reporting/">Testing and Reporting Requirements</a></li>
+<li><a href="https://www.ncresidency.org/">NC Residency Determination Service</a></li>
+<li><a href="https://www.doa.nc.gov/divisions/non-public-education/private-schools/standardized-testing">DNPE Private School Standardized Testing</a></li>
+<li><a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2020/10/Rules_OPS.pdf">Rules Governing Opportunity Scholarship Program</a></li>
+<li><a href="https://www.ncseaa.edu/wp-content/uploads/sites/1429/2022/01/ESA-Plus-Program-Rules-FINAL.pdf">ESA+ Program Rules</a></li>
+<li><a href="https://k12.ncseaa.edu/media/0ckgxt0f/parentguideae2526final.pdf">Parent Guide to Allowable Expenses</a></li>
+<li><a href="https://k12.ncseaa.edu/media/m44elcjw/esa-lea-release.pdf">LEA Release Form</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/how-to-renew/">OS Renewal Process</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-to-renew/continuing-eligibility/">ESA+ Continuing Eligibility</a></li>
+<li><a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2021/08/ESA_ClassWallet-Approval-Process.pdf">ClassWallet Approval Process</a></li>
+<li><a href="https://www.dpi.nc.gov/eligibility-determination/download?attachment">NC DPI Eligibility Determination</a></li>
+<li><a href="https://k12.ncseaa.edu/the-education-student-accounts/documentation-of-a-disability/">Documentation of Disability</a></li>
+<li><a href="https://k12.ncseaa.edu/school-admins/resources/">School Administrator Resources</a></li>
+<li><a href="https://k12.ncseaa.edu/school-admins/">School Admins Portal</a></li>
+<li><a href="https://k12.ncseaa.edu/media/pjqhsiz4/myportal-guide-for-parents.pdf">MyPortal Guide for Parents</a></li>
+<li><a href="https://k12.ncseaa.edu/media/2w2p4xp0/how-to-upload-docs-myportal.pdf">How to Upload Documents in MyPortal</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/school-transfers/">ESA+ School Transfers</a></li>
+<li><a href="https://k12.ncseaa.edu/media/n0gjhckv/how-to-transfer-schools-or-cancel-your-scholarship.pdf">School Transfer Form Guide</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/school-transfers/esaplus-school-options/">ESA+ School Options</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/school-transfers/choosing-a-school/">OS Choosing a School</a></li>
+<li><a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2022/08/K12-Program-NPS-Certification-Deadlines.pdf">K12 Program Certification Deadlines</a></li>
+<li><a href="https://k12.ncseaa.edu/school-admins/annual-requirements/">Annual Requirements</a></li>
+<li><a href="https://k12.ncseaa.edu/school-admins/managing-funds/certification-and-endorsement/">Certification and Endorsement</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/allowable-expenses/educational-technology/">Educational Technology</a></li>
+<li><a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2020/10/EducationalTechnology.pdf">ESA+ Educational Technology Info</a></li>
+<li><a href="https://k12.ncseaa.edu/media/pnyownzr/esa-excluded-ed-tech.pdf">ESA+ Excluded Educational Technology</a></li>
+<li><a href="https://www.doa.nc.gov/divisions/non-public-education/home-schools/requirements-recommendations">DNPE Home School Requirements</a></li>
+<li><a href="https://www.doa.nc.gov/divisions/non-public-education/home-schools">DNPE Home Schools</a></li>
+<li><a href="https://www.doa.nc.gov/divisions/non-public-education/private-schools">DNPE Private Schools</a></li>
+<li><a href="https://www.doa.nc.gov/divisions/non-public-education/private-schools/requirements">Private School Requirements</a></li>
+<li><a href="https://k12prod.ncseaa.edu/opportunity-scholarship/awarding-process/">OS Awarding Process</a></li>
+<li><a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2024/11/FAQ-for-website_NOV2024_expanded-from-notification.pdf">OS FAQ</a></li>
+<li><a href="https://www.ncseaa.edu/2025/02/k12-program-announcement/">Priority Period Announcement</a></li>
+<li><a href="https://www.cfnc.org/pay-for-college/apply-for-financial-aid/">CFNC Financial Aid</a></li>
+<li><a href="https://www2.ncseaa.edu/approvedprovidersk12/Documents/K12ApprovedProviders.pdf">Approved Provider List</a></li>
+<li><a href="https://www2.ncseaa.edu/k12_provider_portal/CreateAccount.aspx">Provider Portal Enrollment</a></li>
+</ul>
+<p>North Carolina General Statutes (Authoritative Legal Sources):</p>
+<ul>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.1.html">G.S. 115C-562.1 - ESA+ Eligibility and Definitions</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.2.html">G.S. 115C-562.2 - Scholarship Grant Awards; Maximum Amounts</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3 - Verification of Eligibility; Information from Other State Agencies</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.5.html">G.S. 115C-562.5 - Obligations of Nonpublic Schools Accepting Scholarship Grant Recipients</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/PDF/BySection/Chapter_115C/GS_115C-366.pdf">G.S. 115C-366 - Assignment of Students Based on Domicile</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByChapter/Chapter_115C.html">Chapter 115C - Complete Statutes</a></li>
+</ul>
+<p>Federal Guidance:</p>
+<ul>
+<li><a href="https://www.fns.usda.gov/cn/verification-toolkit">USDA Verification Toolkit for School Meals</a></li>
+<li><a href="https://fns-prod.azureedge.us/sites/default/files/cn/SP36_CACFP15_SFSP11-2017a1.pdf">Eligibility Manual for School Meals</a></li>
+</ul>
+<p>Local reference documents (workspace requirements/ directory):</p>
+<ul>
+<li>k12-eligibility-requirements2526.pdf</li>
+<li>esaplus-101_january-2025.pdf; esa-enrollment-options_august-2024-final-1.pdf; esaplus-home-schools_january-2025.pdf; esa-at-direct-payment-schools_aug-2024_final-1.pdf</li>
+<li>esaplus-continuing-eligibility-7252025.pdf</li>
+<li>esa-parent-agreement.pdf</li>
+<li>2025-2026-opportunity-scholarship-program-income-faq125.pdf; ops-calculate-income.pdf; myportal-guide-for-parents.pdf</li>
+</ul>
+<p>Note: Statutes and program rules ultimately govern; web pages can change. Implementation should treat rules/content as externalized policy where feasible.</p>
+<h2 id="1-scope-and-programs">1) Scope and Programs</h2>
+<ul>
+<li>
+<p>Opportunity Scholarship (OS)</p>
+<ul>
+<li>Who: NC students entering K–12; private school enrollees.</li>
+<li>Award: ~ $3,000–$7,000 based on household income. (Source: OS program page)</li>
+<li>Usage: Tuition and required fees at registered private schools (Direct Payment schools only).</li>
+<li>Processes: Application, possible income verification, award offer/accept, parent endorsement each semester, payments to schools twice per year. (Sources: OS landing; OS payment process)</li>
+</ul>
+</li>
+<li>
+<p>Education Student Accounts (ESA+)</p>
+<ul>
+<li>Who: NC students with disabilities, entering K–12.</li>
+<li>Award: Base $9,000; Higher $17,000. (Source: Awarding Process FAQ, Program Rules)</li>
+<li>Usage: Depends on school option:
+<ul>
+<li>Direct Payment school: tuition/fees paid first; leftover ESA+ funds may move to ClassWallet for allowable expenses.</li>
+<li>ESA+ Reimbursement school: family pays tuition/fees out-of-pocket; reimbursed after semester via ClassWallet workflows.</li>
+<li>Home school: funds deposited to ClassWallet for allowable expenses (no tuition to a school). (Source: How Scholarship Funds Work)</li>
+</ul>
+</li>
+<li>Notable constraints: Minimum spending requirement, rollover rules, LEA Release, allowable/prohibited expenses, provider enrollment. (Source: Program Rules; Allowable Expenses; Resources)</li>
+</ul>
+</li>
+<li>
+<p>Dual Award (OS + ESA+)</p>
+<ul>
+<li>Only at Direct Payment schools.</li>
+<li>Ordering: OS funds applied first to tuition/fees, then ESA+. Remaining ESA+ funds may go to ClassWallet. (Source: How Scholarship Funds Work)</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-actors--users">2) Actors / Users</h2>
+<ul>
+<li>Parent/Guardian (Account Holder in MyPortal and ClassWallet)</li>
+<li>Student (beneficiary)</li>
+<li>School Administrator (Direct Payment School) — handles tasks in MyPortal</li>
+<li>School Business Officer / Finance Contact (Direct Payment School)</li>
+<li>ESA+ Reimbursement School Staff (providing receipts/documentation)</li>
+<li>Home School Parent/Administrator (ESA+)</li>
+<li>Service Provider (Tutor, Therapist, Transportation) — must enroll with SEAA to accept ESA+ funds</li>
+<li>Provider Organization Admin (manages credentials/enrollment)</li>
+<li>SEAA Program Staff (ESA+ and OS operations, awarding, compliance)</li>
+<li>SEAA Finance/Disbursements Staff (payment cycles, refunds)</li>
+<li>SEAA Compliance/Audit Staff (reviews, misuse handling, termination)</li>
+<li>SEAA Verification Staff (verification sampling, case management, inter-agency coordination)</li>
+<li>MyPortal System (task orchestration, document intake, notifications)</li>
+<li>ClassWallet Platform (ESA+ wallet, marketplace, pay vendor/invoice submission)</li>
+<li>DNPE (Division of Non-Public Education — external registry for private and home schools)</li>
+<li>IRS (receives 1099-G reporting; parent interacts for transcript retrieval for OS income verification)</li>
+<li>CFNC (College Foundation of North Carolina) — partner brand/resources; limited direct operational role in K12 ESA+/OS based on public site</li>
+<li>State Agency Representatives (for verification cooperation):
+<ul>
+<li>DMV Staff (driver's license/ID verification)</li>
+<li>DPI Staff (school enrollment verification, per pupil allocation reporting)</li>
+<li>Department of Revenue Staff (tax filing verification)</li>
+<li>DHHS Staff (public benefits verification)</li>
+<li>Department of Commerce Staff (public benefits verification)</li>
+<li>State Board of Elections Staff (voter registration verification)</li>
+<li>State CIO Office (electronic verification infrastructure)</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-bounded-contexts-and-aggregates">3) Bounded Contexts and Aggregates</h2>
+<p>The domains below can be deployed as services or modules within a modular monolith. Aggregates encapsulate invariants.</p>
+<h3 id="a-application--eligibility-context">A) Application &amp; Eligibility Context</h3>
+<ul>
+<li>Aggregates
+<ul>
+<li>Application (root) — ProgramType (OS or ESA+), Student, Household, SubmissionWindow, Status (draft/submitted/eligible/ineligible/waitlisted/awarded/declined)</li>
+<li>ESA+ EligibilityDetermination — submission of disability determination within 7 days of application; verified/accepted/rejected. (Source: Awarding Process)</li>
+<li>OS IncomeVerification — selection-based; requires Income Verification Worksheet, IRS Return Transcript 2024, other docs via MyPortal To-Do. (Source: OS Income Verification)</li>
+<li>LotteryBatch (ESA+/OS when applicable) — random selection for eligible applications within window; outcomes recorded; ties to award capacity.</li>
+</ul>
+</li>
+<li>Key Invariants
+<ul>
+<li>ESA+: Eligibility Determination document must be submitted within 7 days of applying (MyPortal To-Do). Late/missing leads to ineligibility.</li>
+<li>Lottery executed for eligible apps in the specified date window; awards until funding exhausted.</li>
+<li>OS income verification: follow MyPortal To-Do; only IRS Return Transcript is acceptable for tax proof unless exceptions granted.</li>
+</ul>
+</li>
+<li>Domain Events (examples)
+<ul>
+<li>ApplicationSubmitted, EDDocumentSubmitted, EligibilityVerified, LotteryConducted, AwardOfferMade, AwardAccepted, AwardDeclined, IncomeVerificationRequested, IncomeVerified, ApplicationClosed</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-awarding--funding-context">B) Awarding &amp; Funding Context</h3>
+<ul>
+<li>Aggregates
+<ul>
+<li>AwardOffer — links to Application; includes AwardLevel (ESA+: base/higher; OS: income-based amount), OfferDate, AcceptanceDeadline, AwardTier</li>
+<li>ScholarshipAward — the active award for a school year; Status (pending/active/suspended/terminated/expired)</li>
+<li>PaymentSchedule — semester payments (fall/spring) per program and school type</li>
+<li>AwardTier (OS) — income-based prioritization level for lottery; lower income brackets receive priority</li>
+<li>Waitlist — students eligible but not awarded due to funding exhaustion; may receive awards if additional funding becomes available</li>
+</ul>
+</li>
+<li>Key Invariants
+<ul>
+<li>Awards must be accepted in MyPortal by deadline to activate.</li>
+<li>Direct Payment school payments occur twice per year; parent must complete Parent Endorsement Task each semester. (Source: How Scholarship Funds Work)</li>
+<li>Dual Award ordering: OS before ESA+ for tuition/fees; ESA+ remainder to ClassWallet. (Source: How Scholarship Funds Work)</li>
+<li>OS lottery conducted in March for applications submitted Feb 1 - March 1; awards placed in tiers based on household income with lower income receiving priority.</li>
+<li>Award decisions made in April; families must accept/decline via MyPortal by specified deadline.</li>
+<li>Additional funding periods may be announced (e.g., early December) to distribute remaining resources to waitlist students.</li>
+</ul>
+</li>
+<li>Domain Events
+<ul>
+<li>AwardActivated, ParentEndorsementCompleted, SchoolPaid, FundsMovedToWallet, AwardSuspended, AwardTerminated, StudentAddedToWaitlist, AdditionalFundingAnnounced, WaitlistStudentAwarded</li>
+</ul>
+</li>
+<li>Sources
+<ul>
+<li><a href="https://k12prod.ncseaa.edu/opportunity-scholarship/awarding-process/">OS Awarding Process</a></li>
+<li><a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2024/11/FAQ-for-website_NOV2024_expanded-from-notification.pdf">OS FAQ</a></li>
+<li><a href="https://www.ncseaa.edu/2025/02/k12-program-announcement/">Priority Period Announcement</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="c-school-choice--enrollment-context">C) School Choice &amp; Enrollment Context</h3>
+<ul>
+<li>Entities/Aggregates
+<ul>
+<li>School (registered in MyPortal; type categorization)</li>
+<li>SchoolOption (ESA+): Direct Payment | Reimbursement | Home School; Co-enrollment rules</li>
+<li>EnrollmentRecord — student’s selected school per term; history of changes/transfers</li>
+<li>LEARelease (ESA+ full-time in nonpublic or home school) — required signature artifact (in Compliance context but referenced here)</li>
+</ul>
+</li>
+<li>Invariants
+<ul>
+<li>School must be eligible/registered for direct payments to occur.</li>
+<li>For ESA+ nonpublic/home full-time, LEA Release must be signed.</li>
+<li>Transfers have deadlines and may impact disbursements and wallet availability.</li>
+<li>ESA+ funding is portable; students can transfer to another eligible nonpublic school mid-year.</li>
+<li>Parent must notify current school and complete enrollment at new school for transfer.</li>
+</ul>
+</li>
+<li>Domain Events
+<ul>
+<li>SchoolSelected, SchoolTransferRequested, CurrentSchoolNotified, NewSchoolEnrollmentConfirmed, SchoolTransferCompleted, SchoolCanceled</li>
+</ul>
+</li>
+<li>Sources
+<ul>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/school-transfers/">ESA+ School Transfers</a></li>
+<li><a href="https://k12.ncseaa.edu/media/n0gjhckv/how-to-transfer-schools-or-cancel-your-scholarship.pdf">School Transfer Form Guide</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/school-transfers/esaplus-school-options/">ESA+ School Options</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/school-transfers/choosing-a-school/">OS Choosing a School</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="d-esa-wallet-purchasing--expenses-context-esa-only">D) ESA+ Wallet, Purchasing &amp; Expenses Context (ESA+ only)</h3>
+<ul>
+<li>Aggregates
+<ul>
+<li>ESAAccount (root) — AwardLevel, Balance, RolloverEligible, RolloverCap, CumulativeCap, MinSpendRequirement</li>
+<li>PurchaseRequest — type: Marketplace Order, Pay Vendor (off-market), Service Invoice; fields: Category, Amount, Status (submitted/review/approved/rejected), RejectionCode, Evidence (invoice/cart screenshot), RelatedMainDeviceOrderId (for accessories), ProviderId</li>
+<li>Provider (service entity) — EnrollmentStatus, Types (tutoring/therapy/transport), Credentials</li>
+<li>Vendor (product seller) — Marketplace vs Off-Market</li>
+</ul>
+</li>
+<li>Invariants &amp; Rules (partial)
+<ul>
+<li>Allowable expenses categories only; prohibited categories enforced by rules engine.</li>
+<li>Accessory timing: if not bundled, must be within 30 calendar days of main device order; accessory frequency limits (e.g., once every 3 years) apply. (Source: Educational Technology page)</li>
+<li>Transportation requires signed contract between parent and provider; first invoice must include contract. (Parent Guide)</li>
+<li>Minimum Spending Requirement: parent must spend ≥ $1,000 per school year on allowable core-subject expenses; failure renders student ineligible for renewal. (Program Rules)</li>
+<li>Rollover: only for higher award ($17,000); up to $4,500; cumulative balance must not exceed $30,000; base award cannot roll over. (Program Rules)</li>
+<li>Summer shutdown: ClassWallet purchasing disabled mid-June for fiscal close; plan ahead. (Plan for Summer Expenses)</li>
+<li>1099-G: ESA+ funds spent on non-tuition/required fees are reported by SEAA to IRS; parents may claim NC deduction only if included in federal AGI. (Program Rules – Tax Implications)</li>
+</ul>
+</li>
+<li>Domain Events
+<ul>
+<li>PurchaseSubmitted, PurchaseApproved, PurchaseRejected(code), VendorPaid, ProviderPaid, RolloverCalculated, 1099GPrepared</li>
+</ul>
+</li>
+</ul>
+<h3 id="e-provider-enrollment-context-esa">E) Provider Enrollment Context (ESA+)</h3>
+<ul>
+<li>Aggregates
+<ul>
+<li>ProviderEnrollment — Application, Documents, Credential Checks, ApprovalDate, Status</li>
+<li>Provider — Directory listing; allowable service mappings</li>
+</ul>
+</li>
+<li>Invariants
+<ul>
+<li>Only enrolled providers can be paid.</li>
+<li>Not all services offered by an enrolled provider are allowable; category validation applies per invoice.</li>
+</ul>
+</li>
+</ul>
+<h3 id="f-compliance--agreements-context">F) Compliance &amp; Agreements Context</h3>
+<ul>
+<li>Aggregates/Entities
+<ul>
+<li>ParentAgreement — signed annually; encapsulates: compliance with program requirements, enrollment in eligible school, LEA Release, enrollment changes, minimum spend, allowable/prohibited expenses, testing requirement, access to records, non-compliance, termination. (Program Rules)</li>
+<li>LEARelease — applies to full-time nonpublic/home school ESA+ students.</li>
+<li>ComplianceRecord — audits, warnings, misuse findings, refunds/recoupments, suspensions/terminations</li>
+</ul>
+</li>
+<li>Invariants
+<ul>
+<li>ParentAgreement must be signed to use funds (plus W-9 as required by operations).</li>
+<li>LEARelease signature is prerequisite for specific ESA+ enrollment paths.</li>
+<li>Misuse policy enforcement may lead to termination or refund obligations.</li>
+</ul>
+</li>
+</ul>
+<h3 id="g-communications-tasks--documents-context">G) Communications, Tasks &amp; Documents Context</h3>
+<ul>
+<li>Entities
+<ul>
+<li>ToDoItem (MyPortal) — DocumentRequest, AffidavitSignature, Parent Endorsement, Income Verification Worksheet, EDD submission</li>
+<li>Notice/Message — Award offers, reminders, deadline notices</li>
+<li>Document — uploaded via MyPortal (PDFs, images) with type and validation status</li>
+<li>Webinar/Training — recorded sessions with slides for parents and school administrators</li>
+<li>Resource/Guide — step-by-step instructions, FAQ documents, best practices</li>
+<li>Newsletter — periodic updates on key program information and deadlines</li>
+</ul>
+</li>
+<li>Invariants
+<ul>
+<li>To-Do tasks must be completed by deadlines to avoid forfeiture or delays.</li>
+<li>Parents must regularly check MyPortal To-Do list for pending tasks.</li>
+</ul>
+</li>
+<li>Sources
+<ul>
+<li><a href="https://k12.ncseaa.edu/school-admins/resources/">School Administrator Resources</a></li>
+<li><a href="https://k12.ncseaa.edu/media/pjqhsiz4/myportal-guide-for-parents.pdf">MyPortal Guide for Parents</a></li>
+<li><a href="https://k12.ncseaa.edu/media/2w2p4xp0/how-to-upload-docs-myportal.pdf">How to Upload Documents in MyPortal</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="h-reporting--tax-context">H) Reporting &amp; Tax Context</h3>
+<ul>
+<li>Entities
+<ul>
+<li>TaxReport1099G — records ESA+ non-tuition spend per calendar year</li>
+<li>Program Analytics — award counts, fund utilization, compliance metrics</li>
+<li>AnnualCertification — school verifies student enrollment and costs once per year (starts August)</li>
+<li>TuitionFeeSchedule — annual submission required regardless of scholarship recipients enrolled</li>
+<li>GraduationDataReport — required for all high school seniors who received K12 program funds</li>
+</ul>
+</li>
+<li>Invariants
+<ul>
+<li>Only amounts actually spent by parents on non-tuition allowable expenses are reported (in January for prior calendar year). (Program Rules)</li>
+<li>Certification completed once per year; school administrators verify enrollment and provide cost information.</li>
+<li>Tuition and fee schedules must be submitted annually.</li>
+<li>Graduation data required for all high school seniors with K12 funds.</li>
+</ul>
+</li>
+<li>Sources
+<ul>
+<li><a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2022/08/K12-Program-NPS-Certification-Deadlines.pdf">K12 Program Certification Deadlines</a></li>
+<li><a href="https://k12.ncseaa.edu/school-admins/annual-requirements/">Annual Requirements</a></li>
+<li><a href="https://k12.ncseaa.edu/school-admins/managing-funds/certification-and-endorsement/">Certification and Endorsement</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="i-domicile-verification--inter-agency-cooperation-context">I) Domicile Verification &amp; Inter-Agency Cooperation Context</h3>
+<p>This context implements the requirements of G.S. 115C-562.3 for verifying domicile and eligibility through cooperation with multiple state agencies.</p>
+<ul>
+<li>
+<p>Aggregates/Entities</p>
+<ul>
+<li>DomicileDetermination (root) — VerificationMethod, Evidence[], VerificationStatus, StateAgencyVerifications[], SubmittedAt, VerifiedAt</li>
+<li>StateAgencyVerificationRequest — Agency, RequestType, RequestedAt, ResponseStatus, VerificationResult</li>
+<li>EligibilityVerificationCase — ApplicationId, VerificationSampleType (random/error-prone), VerificationDocuments[], CooperationStatus, DeadlineDate, RevocationReason?</li>
+<li>StatePerPupilAllocation — FiscalYear, Amount, EffectiveDate, Source (from DPI annual report)</li>
+</ul>
+</li>
+<li>
+<p>Key Invariants (from G.S. 115C-562.3)</p>
+<ul>
+<li>Authority must verify 4% of scholarship applications annually, including those with apparent errors. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a1)</a>)</li>
+<li>Verification process must follow federal verification requirements for free and reduced-price lunch applications as guidance. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a1)</a>)</li>
+<li>If household fails to cooperate with verification, award must be revoked. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a1)</a>)</li>
+<li>State agencies must cooperate expeditiously via electronic or similarly effective means. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a)</a>)</li>
+<li>Department of Public Instruction must provide average State per pupil allocation by December 1 each year for next fiscal year awards. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(c)</a>)</li>
+</ul>
+</li>
+<li>
+<p>Acceptable Evidence of Domicile (G.S. 115C-562.3(a))</p>
+<ol>
+<li>Verified State driver's license or State identification card (via DMV)</li>
+<li>Verified State voter registration (via State Board of Elections)</li>
+<li>Verified receipt of public benefits from State agency (via DHHS, Commerce, etc.)</li>
+<li>Verified filing of State income taxes for year prior to application (via Department of Revenue)</li>
+<li>Verified enrollment in North Carolina public school at time of application (via Department of Public Instruction)</li>
+<li>Electronically submitted copy of current documents showing parent name and NC address:
+<ul>
+<li>Utility bill</li>
+<li>Bank statement</li>
+<li>Government check</li>
+<li>Paycheck</li>
+<li>Any other government document</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>State Agency Integrations Required</p>
+<ul>
+<li>Division of Motor Vehicles (DOT) — verify driver's license/ID card</li>
+<li>Department of Public Instruction — verify public school enrollment; provide annual per pupil allocation</li>
+<li>Department of Commerce — verify public benefits</li>
+<li>Department of Health and Human Services — verify public benefits (e.g., Medicaid, TANF, food assistance)</li>
+<li>Department of Revenue — verify state income tax filing</li>
+<li>State Board of Elections — verify voter registration</li>
+<li>State Chief Information Officer — facilitate electronic verification infrastructure
+(Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a)</a>)</li>
+</ul>
+</li>
+<li>
+<p>Authorization &amp; Access Requirements</p>
+<ul>
+<li>Household members must authorize Authority to access verification information from state agencies including Revenue, DHHS, and DPI. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(b)</a>)</li>
+</ul>
+</li>
+<li>
+<p>Domain Events</p>
+<ul>
+<li>DomicileVerificationInitiated, StateAgencyVerificationRequested, StateAgencyResponseReceived, DomicileVerified, DomicileDenied, VerificationSampleSelected, HouseholdAuthorizationReceived, CooperationDeadlinePassed, AwardRevokedForNonCooperation, PerPupilAllocationUpdated</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-canonical-entities-and-value-objects-selected">4) Canonical Entities and Value Objects (selected)</h2>
+<ul>
+<li>Student { studentId, name, DOB, disabilityStatus (ESA+), residency }</li>
+<li>Parent { parentId, contact info, SSN/EIN (for W-9), MyPortalUserId }</li>
+<li>Application { applicationId, programType, submittedAt, status, windowId }</li>
+<li>AwardOffer { offerId, programType, amount, acceptanceDeadline }</li>
+<li>ScholarshipAward { awardId, programType, year, amount, status, schoolId? }</li>
+<li>School { schoolId, name, type: DirectPayment|Reimbursement|HomeSchool, DNPEId?, eligibility }</li>
+<li>Provider { providerId, orgName, types[], enrollmentStatus, approvalDate }</li>
+<li>ESAAccount { accountId, awardLevel, openingBalance, currentBalance, minSpendRequired, rolloverEligible, caps }</li>
+<li>PurchaseRequest { requestId, type, category, amount, vendorId?, providerId?, invoiceRef, status, rejectionCode, submittedAt }</li>
+<li>ParentAgreement { agreementId, signedAt, clauses[], leaReleaseRequired, affidavitDate }</li>
+<li>LEARelease { releaseId, signedAt, scope }</li>
+<li>Payment { paymentId, programType, term, schoolId|vendorId|providerId, amount, status, endorsedByParentAt }</li>
+<li>ToDoItem { todoId, kind, assignedTo, dueDate, status }</li>
+<li>Documents (EligibilityDetermination, IRS Return Transcript, Income Worksheet, W-9)</li>
+<li>DomicileDetermination { determinationId, verificationMethod, evidenceType[], verifiedBy (state agency), verifiedAt, status }</li>
+<li>StateAgencyVerification { verificationId, agency (DMV|DPI|Revenue|DHHS|Commerce|Elections), requestType, requestedAt, responseAt, verificationResult }</li>
+<li>VerificationCase { caseId, applicationId, sampleType (random|error-prone|all), selectedAt, documentsRequired[], householdCooperation, deadlineDate, outcome }</li>
+<li>StatePerPupilAllocation { fiscalYear, amount, reportedByDPI, reportDate }</li>
+<li>RenewalOffer { offerId, studentId, programType, fiscalYear, sentAt, responseDeadline, status (pending|accepted|declined|expired) }</li>
+<li>DisabilityReevaluation { reevaluationId, studentId, dueDate, submittedAt, documentType (IEP|professionalAssessment), status }</li>
+<li>ParentEndorsement { endorsementId, awardId, term, parentName, nameEntered, validationResult, endorsedAt, deadline }</li>
+<li>LEARelease { releaseId, studentId, enrollmentType, signedAt, effectivePeriod }</li>
+<li>SchoolTransfer { transferId, studentId, fromSchoolId, toSchoolId, requestedAt, currentSchoolNotifiedAt, newSchoolEnrollmentConfirmedAt, completedAt, status }</li>
+<li>AwardTier { tierId, programType, householdIncomeRange, priorityLevel, description }</li>
+<li>Waitlist { waitlistId, studentId, applicationId, addedAt, tier, status, awardedFromWaitlistAt? }</li>
+<li>AnnualCertification { certificationId, schoolId, fiscalYear, submittedAt, studentsCount, verificationStatus }</li>
+<li>TuitionFeeSchedule { scheduleId, schoolId, fiscalYear, submittedAt, tuitionAmounts[], requiredFees[] }</li>
+<li>TestResult { resultId, studentId, schoolId, grade, testType, testDate, scores (standard/scaled, percentile, stanine?, NCE?, gradeEquivalent?), submittedAt }</li>
+<li>GraduationDataReport { reportId, schoolId, fiscalYear, seniorCount, graduationData[], submittedAt }</li>
+<li>Webinar { webinarId, title, topic, recordingUrl, slidesUrl, scheduledAt, targetAudience (parents|schools|administrators) }</li>
+<li>Resource { resourceId, title, type (guide|FAQ|bestPractice), url, targetAudience, lastUpdated }</li>
+<li>Newsletter { newsletterId, issueDate, title, content, recipientType }</li>
+<li>Value objects: AcademicSubject, ExpenseCategory, AwardLevel, SchoolTerm (Fall/Spring), HouseholdSize, HouseholdIncome, RejectionCode, DomicileEvidenceType, VerificationMethod, StateAgency, TestType, AudienceType</li>
+</ul>
+<h2 id="5-principal-workflows-happy-path-and-key-branches">5) Principal Workflows (Happy-path and key branches)</h2>
+<h3 id="51-esa-new-application-to-award">5.1 ESA+ New Application to Award</h3>
+<ol>
+<li>Parent creates/uses MyPortal account; selects ESA+; submits application.</li>
+<li>Within 7 days, parent uploads Eligibility Determination via MyPortal To-Do.
+<ul>
+<li>Must be from NC public school or Department of Defense school in NC.</li>
+<li>Legal document identifying student as having disability and eligible for special education services.</li>
+<li>Typically part of Individualized Education Program (IEP).</li>
+<li>Full individualized evaluation must have been conducted by team including parents and qualified professionals.</li>
+<li>Evaluation must be current (conducted within last 3 years).</li>
+</ul>
+</li>
+<li>SEAA verifies eligibility determination document and other requirements (residency, age, not in full-time postsecondary).</li>
+<li>If eligible and within application window, student enters lottery.</li>
+<li>Lottery in April; awards offered until funds exhausted.</li>
+<li>Parent accepts award in MyPortal by deadline. (Video guidance linked on site.)</li>
+<li>Next steps: choose school option (Direct Payment / Reimbursement / Home School), sign Parent Agreement (+ LEA Release if required), submit W-9/affidavit.</li>
+<li>Funding flows per school option begin (see 5.3–5.5).
+(Sources: <a href="https://k12.ncseaa.edu/the-education-student-accounts/awarding-process/">Awarding Process</a>; <a href="https://k12.ncseaa.edu/the-education-student-accounts/documentation-of-a-disability/">Documentation of Disability</a>; <a href="https://k12.ncseaa.edu/the-education-student-accounts/program-rules-and-requirements/">Program Rules</a>; <a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-scholarship-funds-work/">How Scholarship Funds Work</a>; <a href="https://www.dpi.nc.gov/eligibility-determination/download?attachment">NC DPI Eligibility Determination</a>)</li>
+</ol>
+<h3 id="52-os-new-application--income-verification">5.2 OS New Application &amp; Income Verification</h3>
+<ol>
+<li>Parent applies for OS (application window and rolling notices per program page).</li>
+<li>If selected for income verification, To-Do appears in MyPortal.</li>
+<li>Parent uses Interactive Income Calculator (optional guide) and completes Income Verification Worksheet.</li>
+<li>Parent obtains IRS Return Transcript (online) and uploads; additional docs upon request.</li>
+<li>SEAA reviews; if verified and funds available, award offer issued; parent accepts by deadline.</li>
+<li>Parent/school complete Parent Endorsement and tasks per term.
+(Sources: OS Income Verification; OS landing; How to Apply; How Scholarship Funds Work)</li>
+</ol>
+<h3 id="53-direct-payment-schools-os-and-esa">5.3 Direct Payment Schools (OS and ESA+)</h3>
+<ul>
+<li>Payments twice per year (Fall and Spring). All tasks completed in MyPortal by school and parent, including Parent Endorsement each term.</li>
+<li>Tips: verify award amounts before endorsement; contact SEAA if discrepancy.</li>
+<li>ESA+ only: any ESA+ residual after tuition/fees moves to ClassWallet for allowable expenses.
+(Sources: How Scholarship Funds Work)</li>
+</ul>
+<h3 id="54-esa-reimbursement-schools">5.4 ESA+ Reimbursement Schools</h3>
+<ul>
+<li>Family pays tuition/fees out-of-pocket.</li>
+<li>Submit receipts/documentation at semester end via ClassWallet/MyPortal flow (as directed).</li>
+<li>Unspent fall funds remain for spring in ClassWallet.
+(Sources: How Scholarship Funds Work)</li>
+</ul>
+<h3 id="55-esa-home-schools">5.5 ESA+ Home Schools</h3>
+<ul>
+<li>SEAA deposits ESA+ funds to ClassWallet twice per year.</li>
+<li>Family purchases allowable products via marketplace and allowable services via enrolled providers; off-market “Pay Vendor” path requires invoice/cart screenshot.
+(Sources: Allowable Expenses; How Scholarship Funds Work)</li>
+</ul>
+<h3 id="56-esa-allowable-expense-purchasing">5.6 ESA+ Allowable Expense Purchasing</h3>
+<p><strong>Marketplace Product Purchase:</strong></p>
+<ul>
+<li>Parent signs into ClassWallet account.</li>
+<li>Browses marketplace and selects items from authorized vendors.</li>
+<li>Adds items to cart and submits order for SEAA review.</li>
+<li>SEAA reviews purchase against allowable expense categories and rules.</li>
+<li>Upon approval, funds deducted from ESA+ account and products shipped to parent address.</li>
+<li>If rejected, parent receives notification with rejection code and remediation guidance.</li>
+</ul>
+<p><strong>Service Provider Payment:</strong></p>
+<ul>
+<li>Parent obtains invoice from enrolled service provider at time of service.</li>
+<li>Signs into ClassWallet account.</li>
+<li>Finds provider from list of enrolled providers.</li>
+<li>Uploads invoice, enters required details (amount, service description, dates).</li>
+<li>Submits for SEAA review.</li>
+<li>SEAA verifies provider enrollment status, service category allowability, and invoice details.</li>
+<li>Upon approval, funds transferred directly to service provider.</li>
+<li>If rejected, parent receives notification with rejection code.</li>
+</ul>
+<p><strong>Off-Market Vendor (Pay Vendor):</strong></p>
+<ul>
+<li>Parent identifies vendor/product not in ClassWallet marketplace.</li>
+<li>Obtains invoice or cart screenshot showing item details, price, vendor info.</li>
+<li>Signs into ClassWallet, selects &quot;Pay Vendor&quot; option.</li>
+<li>Uploads invoice/screenshot and enters vendor details.</li>
+<li>Submits for SEAA staff manual review.</li>
+<li>Staff validates: allowable category, reasonable pricing, vendor legitimacy, documentation completeness.</li>
+<li>Approval or rejection with specific code and guidance.</li>
+</ul>
+<p><strong>Special Rules:</strong></p>
+<ul>
+<li>Transportation requires signed contract between parent and provider included with first invoice. (Parent Guide)</li>
+<li>Accessories must be purchased within 30 days of main device order; frequency limits enforced (e.g., once per 3 years).</li>
+<li>All purchases must support core academic subjects (math, science, English/language arts, social studies, foreign language).</li>
+<li>Prohibited: computer hardware not defined as educational technology, consumable supplies (paper, pens, markers), non-enrolled service providers.</li>
+</ul>
+<p>(Sources: <a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/classwallet/">ClassWallet</a>; <a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/allowable-expenses/">Allowable Expenses</a>; <a href="https://k12.ncseaa.edu/media/0ckgxt0f/parentguideae2526final.pdf">Parent Guide to Allowable Expenses</a>; <a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2021/08/ESA_ClassWallet-Approval-Process.pdf">ClassWallet Approval Process</a>)</p>
+<h3 id="57-renewal--continuing-eligibility-esa">5.7 Renewal &amp; Continuing Eligibility (ESA+)</h3>
+<ul>
+<li>Annual renewal process via MyPortal.</li>
+<li>Disability re-evaluation every 3 years.</li>
+<li>Minimum Spend check ≥ $1,000 on allowable core-subject items per school year; noncompliance causes loss of renewal eligibility.</li>
+<li>Rollover computation (only for higher award) with caps.
+(Sources: Program Rules and Continuing Eligibility webinar)</li>
+</ul>
+<h3 id="58-transfers--co-enrollment">5.8 Transfers &amp; Co-enrollment</h3>
+<ul>
+<li>Families may transfer schools; must adhere to deadlines and update MyPortal.</li>
+<li>Co-enrollment policies defined for ESA+. Direct payment vs reimbursement impacts.
+(Sources: ESA+ School Transfers pages)</li>
+</ul>
+<h3 id="59-domicile-verification-process-gs-115c-5623">5.9 Domicile Verification Process (G.S. 115C-562.3)</h3>
+<ul>
+<li>Parent submits application with domicile information (address, claimed residency).</li>
+<li>System validates domicile using established domicile determination system per G.S. 115C-366.</li>
+<li>Parent provides one or more acceptable forms of evidence:
+<ul>
+<li>Electronically verified: State driver's license/ID (DMV), voter registration (Elections), public benefits receipt (DHHS/Commerce), state tax filing (Revenue), or public school enrollment (DPI)</li>
+<li>Electronic document upload: utility bill, bank statement, government check, paycheck, or other government document showing parent name and NC address</li>
+</ul>
+</li>
+<li>Authority initiates electronic verification requests to appropriate state agencies.</li>
+<li>State agencies respond expeditiously with verification results.</li>
+<li>If domicile established, application proceeds; if not, application marked ineligible.
+(Sources: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3</a>; <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/PDF/BySection/Chapter_115C/GS_115C-366.pdf">G.S. 115C-366</a>)</li>
+</ul>
+<h3 id="510-application-verification-sampling-process-gs-115c-5623">5.10 Application Verification Sampling Process (G.S. 115C-562.3)</h3>
+<ul>
+<li>Authority selects 4% of awarded applications annually for verification (including those with apparent errors on face of application).</li>
+<li>Selected households receive verification notice via MyPortal To-Do.</li>
+<li>Household members authorize Authority to access state agency information (Revenue, DHHS, DPI).</li>
+<li>Household provides documentation per verification requirements (following federal verification process for free and reduced-price lunch as guidance).</li>
+<li>Authority reviews documentation and verifies against original application.</li>
+<li>Verification process follows USDA guidance: selection criteria, notification, documentation collection, review, and follow-up.</li>
+<li>If household cooperates and verification successful, award continues.</li>
+<li>If household fails to cooperate by deadline, Authority revokes award.
+(Sources: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3</a>; <a href="https://www.fns.usda.gov/cn/verification-toolkit">USDA Verification Toolkit</a>)</li>
+</ul>
+<h3 id="511-annual-per-pupil-allocation-update-gs-115c-5623">5.11 Annual Per Pupil Allocation Update (G.S. 115C-562.3)</h3>
+<ul>
+<li>By December 1 each year, Department of Public Instruction provides Authority with average State per pupil allocation for current fiscal year.</li>
+<li>This amount determines maximum scholarship awards for eligible students in following fiscal year per G.S. 115C-562.2(b2).</li>
+<li>Award amounts calculated based on: 90% of average per pupil allocation or 90% of tuition/fees (whichever is less) for income-qualified students.</li>
+<li>System updates award calculation parameters annually based on DPI-provided allocation.
+(Sources: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(c)</a>; <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.2.html">G.S. 115C-562.2</a>)</li>
+</ul>
+<h3 id="512-os-renewal-process">5.12 OS Renewal Process</h3>
+<ul>
+<li>Starting late January, SEAA sends renewal offers to students who received OS funding in prior fall semester.</li>
+<li>Renewal students prioritized for funding before new applicants.</li>
+<li>Parent accesses MyPortal, completes renewal application, addresses all To-Do items.</li>
+<li>Deadline: April 15 to respond and complete all tasks.</li>
+<li>Students who received spring-only funding receive renewal offers later in spring semester.</li>
+<li>System validates continued income eligibility and residency.</li>
+<li>If requirements met and funds available, renewal award issued.
+(Sources: <a href="https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/how-to-renew/">OS Renewal</a>; <a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2020/10/Rules_OPS.pdf">Rules Governing Opportunity Scholarship</a>)</li>
+</ul>
+<h3 id="513-esa-renewal--continuing-eligibility">5.13 ESA+ Renewal &amp; Continuing Eligibility</h3>
+<ul>
+<li>Annual renewal process via MyPortal.</li>
+<li>Student must continue to meet all initial eligibility requirements.</li>
+<li>Every 3 years: Disability re-evaluation required; parent submits updated IEP or professional assessment documentation via MyPortal To-Do.</li>
+<li>Minimum Spend verification: System checks that ≥ $1,000 spent on allowable core-subject expenses during school year; if not met, student ineligible for renewal.</li>
+<li>Rollover computation for higher award students (base award not eligible for rollover).</li>
+<li>Renewal offer issued if all requirements satisfied; parent accepts by deadline.
+(Sources: <a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-to-renew/continuing-eligibility/">ESA+ Continuing Eligibility</a>; Program Rules)</li>
+</ul>
+<h3 id="514-parent-endorsement-process-each-semester-for-direct-payment">5.14 Parent Endorsement Process (Each Semester for Direct Payment)</h3>
+<ul>
+<li>MyPortal notifies parent of Parent Endorsement To-Do task for current semester.</li>
+<li>Parent logs in to MyPortal, reviews award amount and school information.</li>
+<li>Parent types their name exactly as it appears in MyPortal account (case-sensitive validation).</li>
+<li>Endorsement submitted; if name mismatch, system rejects and displays error with exact match requirement.</li>
+<li>Upon successful endorsement, Authority processes payment to school per G.S. 115C-562.6.</li>
+<li>If parent fails to endorse by deadline, award forfeited and funds reallocated to other students.
+(Sources: <a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-scholarship-funds-work/">How Scholarship Funds Work</a>; <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.6.html">G.S. 115C-562.6</a>)</li>
+</ul>
+<h3 id="515-school-transfer-process-mid-year-transfer">5.15 School Transfer Process (Mid-Year Transfer)</h3>
+<ul>
+<li>Parent decides to transfer student to different eligible nonpublic school.</li>
+<li>Parent logs into MyPortal and fills out Student Transfer Form.</li>
+<li>Parent notifies current school of intent to transfer.</li>
+<li>Parent completes enrollment process at new school.</li>
+<li>New school confirms enrollment in MyPortal.</li>
+<li>SEAA updates funding records; ESA+ funds remain portable and transfer with student.</li>
+<li>Timing of transfer may affect disbursement timing and available wallet funds.
+(Sources: <a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/school-transfers/">ESA+ School Transfers</a>; <a href="https://k12.ncseaa.edu/media/n0gjhckv/how-to-transfer-schools-or-cancel-your-scholarship.pdf">School Transfer Form Guide</a>)</li>
+</ul>
+<h3 id="516-school-annual-certification-process">5.16 School Annual Certification Process</h3>
+<ul>
+<li>August: School certification period begins.</li>
+<li>School administrator logs into MyPortal.</li>
+<li>For each scholarship student: verify enrollment status and provide cost information (tuition, required fees).</li>
+<li>Submit certification for each student.</li>
+<li>SEAA reviews and processes certifications.</li>
+<li>Certifications link to payment calculations for upcoming semester.
+(Sources: <a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2022/08/K12-Program-NPS-Certification-Deadlines.pdf">K12 Program Certification Deadlines</a>; <a href="https://k12.ncseaa.edu/school-admins/managing-funds/certification-and-endorsement/">Certification and Endorsement</a>)</li>
+</ul>
+<h3 id="517-school-testing-and-reporting-submission">5.17 School Testing and Reporting Submission</h3>
+<ul>
+<li>Throughout school year: administer nationally standardized tests to scholarship students in grades 3-12.</li>
+<li>Tests must measure achievement in required subjects (English, grammar, reading, spelling, mathematics for grades 3-8; same or verbal/quantitative competencies for grades 9, 10, 12; ACT for grade 11).</li>
+<li>Acceptable tests: Stanford Achievement Test, Iowa Tests of Basic Skills, TerraNova, ACT.</li>
+<li>By July 15: submit test results to NCSEAA electronically in PDF format.</li>
+<li>Results must include: Standard/Scaled Score, National Percentile Rank, and if available National Stanine, NCE, or Grade Equivalent.</li>
+<li>SEAA reviews submissions for compliance.
+(Sources: <a href="https://k12.ncseaa.edu/school-admins/annual-requirements/testing-and-reporting/">Testing and Reporting</a>; <a href="https://www.doa.nc.gov/divisions/non-public-education/private-schools/standardized-testing">DNPE Testing Requirements</a>)</li>
+</ul>
+<h2 id="6-policies-rules-and-invariants-selected-with-citations">6) Policies, Rules, and Invariants (selected with citations)</h2>
+<ul>
+<li>
+<p>ESA+ Minimum Spending Requirement: Spend at least $1,000 on tuition and/or allowable expenses in core subjects (ELA, math, social studies, science) by end of school year; else ineligible for renewal. (Program Rules)</p>
+</li>
+<li>
+<p>ESA+ Rollover: Only higher award ($17,000) can roll over up to $4,500; cumulative balance ≤ $30,000; base award ($9,000) cannot roll over. (Program Rules)</p>
+</li>
+<li>
+<p>LEA Release: ESA+ full-time nonpublic or home school students must sign LEA Release relinquishing public school special education services during participation. (Program Rules)</p>
+</li>
+<li>
+<p>1099-G: SEAA reports ESA+ non-tuition/required-fee spending to IRS for prior calendar year; NC deduction allowed only if included in federal AGI. (Program Rules – Tax Implications)</p>
+</li>
+<li>
+<p>ClassWallet Marketplace: Only channel for products with ESA+ funds; Pay Vendor for off-market with invoice; services require enrolled providers. (Allowable Expenses)</p>
+</li>
+<li>
+<p>Accessory Rules: If not bundled, allowed only within 30 days from main device order; frequency limits (e.g., once every 3 years). (Educational Technology page)</p>
+</li>
+<li>
+<p>Transportation: Requires signed contract (parent-provider) included with first invoice; student identification required. (Parent Guide)</p>
+</li>
+<li>
+<p>Summer Purchasing Pause: ClassWallet suspended mid-June; plan ahead. (Plan for Summer Expenses)</p>
+</li>
+<li>
+<p>Lottery: ESA+ lottery in April for eligible applications submitted in defined window; awards until funds exhausted. (Awarding Process)</p>
+</li>
+<li>
+<p>Parent Endorsement: Required each semester for direct payment flows; name entry is case-sensitive in MyPortal. (How Scholarship Funds Work)</p>
+</li>
+<li>
+<p>OS Income Verification: Use MyPortal To-Do; IRS Return Transcript required for 2024 unless exception; deadlines and extensions managed by SEAA. (Income Verification page)</p>
+</li>
+<li>
+<p>Domicile Verification Requirements (G.S. 115C-562.3): State residency per G.S. 115C-366 must be established before scholarship eligibility; Authority maintains domicile determination system; multiple verification methods accepted including electronic verification through state agencies. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a)</a>)</p>
+</li>
+<li>
+<p>Application Verification Sampling: Authority must verify 4% of applications annually including error-prone applications; verification follows federal free/reduced lunch verification guidance; household cooperation required or award revoked. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a1)</a>)</p>
+</li>
+<li>
+<p>Inter-Agency Data Sharing: State agencies (DMV, DPI, Commerce, DHHS, Revenue, Elections, State CIO) must expeditiously cooperate with Authority via electronic or similarly effective means for domicile/eligibility verification. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a)</a>)</p>
+</li>
+<li>
+<p>Household Authorization for Verification: Applicant household members must authorize Authority to access information from Revenue, DHHS, and DPI for verification purposes. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(b)</a>)</p>
+</li>
+<li>
+<p>Per Pupil Allocation Reporting: DPI must provide average State per pupil allocation by December 1 annually to determine maximum scholarship amounts for following fiscal year. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(c)</a>)</p>
+</li>
+<li>
+<p>Award Calculation (G.S. 115C-562.2): Maximum scholarship amounts based on household income relative to federal free/reduced lunch eligibility; up to 90% of average State per pupil allocation or 90% of tuition/fees for full-time students; 45% for part-time students. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.2.html">G.S. 115C-562.2</a>)</p>
+</li>
+<li>
+<p>School Obligations (G.S. 115C-562.5): Nonpublic schools accepting scholarship students must: provide tuition documentation to Authority and DNPE; conduct criminal background check on decision-making authority; provide annual progress reports with standardized test scores; submit test results by July 15; report graduation rates; schools with 70+ scholarship students must contract CPA for financial review; maintain in-state facility for in-person instruction. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.5.html">G.S. 115C-562.5</a>)</p>
+</li>
+<li>
+<p>Standardized Testing Requirements: Students in grades 3-12 must take nationally standardized tests annually; grades 3-8: achievement tests in English, grammar, reading, spelling, math; grades 9, 10, 12: same or competencies in verbal/quantitative areas; grade 11: ACT required; acceptable tests include Stanford Achievement Test, Iowa Tests of Basic Skills, TerraNova; results must include Standard/Scaled Score, National Percentile Rank, and if available National Stanine, NCE, or Grade Equivalent. (Sources: <a href="https://k12.ncseaa.edu/school-admins/annual-requirements/testing-and-reporting/">Testing and Reporting</a>; <a href="https://www.doa.nc.gov/divisions/non-public-education/private-schools/standardized-testing">DNPE Testing Requirements</a>)</p>
+</li>
+<li>
+<p>ESA+ Disability Eligibility (G.S. 115C-562.1): Student must have documented disability per public school Eligibility Determination confirming need for special education or related services; determination must be submitted within 7 days of application. (Sources: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.1.html">G.S. 115C-562.1</a>; ESA+ Awarding Process)</p>
+</li>
+<li>
+<p>ESA+ Eligibility Determination Requirements: Must be from NC public school or Department of Defense school in NC; legal document identifying student with disability and eligible for special education services; typically part of IEP; full individualized evaluation required by team including parents and qualified professionals; evaluation must be current (within 3 years); student must also meet residency, age, and enrollment requirements. (Sources: <a href="https://k12.ncseaa.edu/the-education-student-accounts/documentation-of-a-disability/">Documentation of Disability</a>; <a href="https://www.dpi.nc.gov/eligibility-determination/download?attachment">NC DPI Eligibility Determination</a>)</p>
+</li>
+<li>
+<p>Scholarship Endorsement (G.S. 115C-562.6): Authority must remit scholarship funds to nonpublic schools at least twice per year; funds must be endorsed by at least one parent/guardian; failure to endorse results in forfeiture and reallocation to other students. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.6.html">G.S. 115C-562.6</a>)</p>
+</li>
+<li>
+<p>Parent Endorsement Case Sensitivity: Parent must type name exactly as appears in MyPortal account; system is case-sensitive; variation in capitalization causes endorsement failure. (Source: <a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-scholarship-funds-work/">How Scholarship Funds Work</a>)</p>
+</li>
+<li>
+<p>OS Renewal Process: Renewal offers sent starting late January to prior-year recipients; families must respond by April 15 via MyPortal; all tasks must be completed by deadlines; renewal students prioritized before new applicants; spring-only recipients receive renewal offers later in semester. (Sources: <a href="https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/how-to-renew/">OS Renewal</a>; <a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2020/10/Rules_OPS.pdf">Rules Governing Opportunity Scholarship</a>)</p>
+</li>
+<li>
+<p>OS Eligibility Requirements: Available to students K-12 who attended public school minimum 10 days in fall semester before applying; also available to new K/1st grade students meeting household income criteria; students must maintain income eligibility annually. (Source: <a href="https://k12.ncseaa.edu/opportunity-scholarship/">OS Program</a>)</p>
+</li>
+<li>
+<p>ESA+ Continuing Eligibility: Students must re-evaluate disability every 3 years by submitting updated IEP or professional assessments; must continue to meet all initial eligibility requirements annually. (Source: <a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-to-renew/continuing-eligibility/">ESA+ Continuing Eligibility</a>)</p>
+</li>
+<li>
+<p>LEA Release Requirement: ESA+ students attending full-time nonpublic or home school must sign LEA Release waiving child's right to receive public school special education services during period of ESA+ participation; required because scholarships for settings where public school services unavailable. (Sources: <a href="https://k12.ncseaa.edu/media/m44elcjw/esa-lea-release.pdf">LEA Release Form</a>; <a href="https://k12.ncseaa.edu/the-education-student-accounts/program-rules-and-requirements/">Program Rules</a>)</p>
+</li>
+<li>
+<p>Allowable Expenses Categories (ESA+): Curriculum, educational technology, testing materials/textbooks, tutoring, educational therapy, transportation (with signed contract). (Sources: <a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/allowable-expenses/">Allowable Expenses</a>; <a href="https://k12.ncseaa.edu/media/0ckgxt0f/parentguideae2526final.pdf">Parent Guide to Allowable Expenses</a>)</p>
+</li>
+<li>
+<p>Prohibited Expenses (ESA+): Computer hardware/technological devices not defined as educational technology, consumable supplies (paper, pens, markers), services from providers not enrolled with SEAA. (Source: <a href="https://www.ncseaa.edu/wp-content/uploads/sites/1429/2022/01/ESA-Plus-Program-Rules-FINAL.pdf">ESA+ Program Rules</a>)</p>
+</li>
+<li>
+<p>Educational Technology Allowable (ESA+): Desktops, laptops, tablets (e.g., iPads); wireless keyboards/mice, printers, cables, carrying cases, external speakers; educational software and apps designed to aid learning and disabilities. Accessories must be purchased within 30 days of device order if not bundled; can be replaced once every 3 years. (Sources: <a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/allowable-expenses/educational-technology/">Educational Technology</a>; <a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2020/10/EducationalTechnology.pdf">ESA+ Educational Technology Info</a>; <a href="https://k12.ncseaa.edu/media/0ckgxt0f/parentguideae2526final.pdf">Parent Guide</a>)</p>
+</li>
+<li>
+<p>Educational Technology Non-Allowable (ESA+): Printer ink, household items, memberships, out-of-state providers. (Source: <a href="https://k12.ncseaa.edu/media/pnyownzr/esa-excluded-ed-tech.pdf">ESA+ Excluded Educational Technology</a>)</p>
+</li>
+<li>
+<p>DNPE Home School Requirements: Parent/guardian must hold at least high school diploma or equivalent; submit Notice of Intent to Operate including school name and address; maintain attendance records and nationally standardized test results. (Sources: <a href="https://www.doa.nc.gov/divisions/non-public-education/home-schools/requirements-recommendations">DNPE Home School Requirements</a>; <a href="https://www.doa.nc.gov/divisions/non-public-education/home-schools">DNPE Home Schools</a>)</p>
+</li>
+<li>
+<p>DNPE Private School Requirements: File Notice of Intent form to register; ensure fire and sanitation inspections are current; for multiple locations, follow guidance on administering and registering each location correctly. (Sources: <a href="https://www.doa.nc.gov/divisions/non-public-education/private-schools">DNPE Private Schools</a>; <a href="https://www.doa.nc.gov/divisions/non-public-education/private-schools/requirements">Private School Requirements</a>)</p>
+</li>
+<li>
+<p>OS Priority Application Period: Applications submitted Feb 1 - March 1 receive priority; must be complete by deadline; lottery conducted in March; students placed in Award Tiers based on household income with lower income receiving priority; awards distributed until funds exhausted. (Sources: <a href="https://k12prod.ncseaa.edu/opportunity-scholarship/awarding-process/">OS Awarding Process</a>; <a href="https://www.ncseaa.edu/2025/02/k12-program-announcement/">Priority Period Announcement</a>)</p>
+</li>
+<li>
+<p>Additional Funding Allocations: SEAA may announce additional funding periods (e.g., early December) to distribute remaining resources to students on waitlist who were not previously awarded. (Source: <a href="https://www.ncseaa.edu/wp-content/uploads/sites/1171/2024/11/FAQ-for-website_NOV2024_expanded-from-notification.pdf">OS FAQ</a>)</p>
+</li>
+</ul>
+<h2 id="7-domain-events-suggested-event-vocabulary">7) Domain Events (suggested event vocabulary)</h2>
+<ul>
+<li>ApplicationSubmitted(programType)</li>
+<li>EligibilityDeterminationSubmitted(studentId)</li>
+<li>IncomeVerificationRequested(applicationId)</li>
+<li>IncomeVerified(applicationId)</li>
+<li>LotteryConducted(batchId)</li>
+<li>AwardOfferMade(offerId)</li>
+<li>AwardAccepted(awardId)</li>
+<li>AwardDeclined(offerId)</li>
+<li>ParentAgreementSigned(studentId, year)</li>
+<li>LEAReleaseSigned(studentId, year)</li>
+<li>ParentEndorsementCompleted(studentId, term)</li>
+<li>SchoolPaid(paymentId)</li>
+<li>FundsMovedToWallet(accountId, amount)</li>
+<li>PurchaseSubmitted(requestId)</li>
+<li>PurchaseApproved(requestId)</li>
+<li>PurchaseRejected(requestId, code)</li>
+<li>ProviderEnrolled(providerId)</li>
+<li>MinimumSpendAchieved(studentId, year)</li>
+<li>MinimumSpendFailed(studentId, year)</li>
+<li>RolloverComputed(accountId)</li>
+<li>Tax1099GPrepared(parentId, year)</li>
+<li>AwardTerminated(awardId, reason)</li>
+<li>DomicileVerificationInitiated(applicationId)</li>
+<li>DomicileEvidenceSubmitted(applicationId, evidenceType)</li>
+<li>StateAgencyVerificationRequested(verificationId, agency)</li>
+<li>StateAgencyVerificationReceived(verificationId, result)</li>
+<li>DomicileVerified(applicationId)</li>
+<li>DomicileDenied(applicationId, reason)</li>
+<li>VerificationSampleSelected(applicationId[], fiscalYear, samplePercentage)</li>
+<li>VerificationDocumentationRequested(applicationId)</li>
+<li>HouseholdAuthorizationReceived(applicationId)</li>
+<li>VerificationDocumentsSubmitted(applicationId)</li>
+<li>VerificationCompleted(applicationId, outcome)</li>
+<li>VerificationCooperationDeadlinePassed(applicationId)</li>
+<li>AwardRevokedForNonCooperation(awardId)</li>
+<li>PerPupilAllocationUpdated(fiscalYear, amount)</li>
+<li>SchoolTestResultsSubmitted(schoolId, fiscalYear, studentCount)</li>
+<li>SchoolFinancialReviewCompleted(schoolId, fiscalYear)</li>
+<li>SchoolBackgroundCheckSubmitted(schoolId, authorityPersonId)</li>
+<li>RenewalOfferSent(studentId, programType, fiscalYear)</li>
+<li>RenewalApplicationCompleted(studentId)</li>
+<li>RenewalDeadlinePassed(studentId, outcome)</li>
+<li>DisabilityReevaluationRequired(studentId)</li>
+<li>DisabilityReevaluationSubmitted(studentId, documentType)</li>
+<li>ParentEndorsementInitiated(awardId, term)</li>
+<li>ParentEndorsementSubmitted(awardId, nameEntered, validated)</li>
+<li>ParentEndorsementRejected(awardId, reason)</li>
+<li>EndorsementDeadlinePassed(awardId)</li>
+<li>AwardForfeitedForNonEndorsement(awardId)</li>
+<li>LEAReleaseRequired(studentId, enrollmentType)</li>
+<li>LEAReleaseSubmitted(studentId)</li>
+<li>SchoolTransferRequested(transferId, studentId, fromSchoolId, toSchoolId)</li>
+<li>CurrentSchoolNotified(transferId)</li>
+<li>NewSchoolEnrollmentConfirmed(transferId, schoolId)</li>
+<li>SchoolTransferCompleted(transferId)</li>
+<li>SchoolTransferCanceled(transferId, reason)</li>
+<li>SchoolCertificationStarted(schoolId, fiscalYear)</li>
+<li>StudentEnrollmentVerified(studentId, schoolId, fiscalYear)</li>
+<li>SchoolCertificationSubmitted(schoolId, fiscalYear, studentCount)</li>
+<li>TuitionFeeScheduleSubmitted(schoolId, fiscalYear)</li>
+<li>TestResultsReceived(schoolId, grade, testType, studentCount)</li>
+<li>TestResultsValidated(schoolId, fiscalYear)</li>
+<li>GraduationDataSubmitted(schoolId, fiscalYear, seniorCount)</li>
+<li>WebinarScheduled(webinarId, topic, scheduledAt)</li>
+<li>ResourcePublished(resourceId, type, targetAudience)</li>
+<li>NewsletterSent(newsletterId, recipientType, sentAt)</li>
+<li>StudentPlacedOnWaitlist(studentId, applicationId, tier)</li>
+<li>WaitlistStudentOffered(studentId, offerId)</li>
+<li>AdditionalFundingAllocated(programType, amount, announcedAt)</li>
+<li>EducationalTechnologyPurchased(requestId, deviceType, accessory)</li>
+<li>AccessoryPurchaseValidated(requestId, withinTimeWindow, frequencyCheckPassed)</li>
+<li>DNPENoticeOfIntentFiled(schoolId, schoolType, filedAt)</li>
+<li>FireInspectionUpdated(schoolId, inspectionDate, status)</li>
+<li>SanitationInspectionUpdated(schoolId, inspectionDate, status)</li>
+</ul>
+<h2 id="8-third-party-systems--integrations">8) Third-Party Systems &amp; Integrations</h2>
+<ul>
+<li>MyPortal (NCSEAA) — primary workflow/task/document portal for parents and schools. Integration patterns: SSO/IDP, task APIs, document intake, notifications.</li>
+<li>ClassWallet — ESA+ wallet, marketplace, pay-vendor, invoices; supports approvals and ledger; requires secure API integration and webhook/event ingestion for status changes.</li>
+<li>Provider Search (NCSEAA web app) — authoritative directory of enrolled service providers; nightly sync or on-demand lookup.</li>
+<li>DNPE — authoritative registry for private/home school status; eligibility checks and periodic sync recommended.</li>
+<li>IRS — OS income verification relies on IRS Return Transcript; system should store attestation and metadata of transcript receipt (not necessarily automate IRS integration).</li>
+<li>Payment Rails — bank ACH to schools/vendors/providers; could be via ClassWallet for ESA+ non-school payments; direct ACH for OS/ESA+ school disbursements.</li>
+<li>Communications — Email and in-portal messaging; Wistia video links for training (non-transactional).</li>
+<li>CFNC (College Foundation of North Carolina) — partner organization providing education planning, NC 529 savings plan, and financial aid resources (FAFSA assistance, grants, scholarships, loans); contextual relationship but no direct operational integration for K12 ESA+/OS; provides planning tools and resources for families transitioning from K12 to higher education. (Source: <a href="https://www.cfnc.org/pay-for-college/apply-for-financial-aid/">CFNC Financial Aid</a>)</li>
+<li>Division of Motor Vehicles (NC DOT) — domicile verification via driver's license/state ID validation; electronic verification interface required. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3</a>)</li>
+<li>Department of Public Instruction — verify public school enrollment for domicile; provide average State per pupil allocation by December 1 annually; receive standardized test results from schools; coordinate special education eligibility determinations. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3</a>)</li>
+<li>Department of Commerce — verify receipt of public benefits for domicile verification. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3</a>)</li>
+<li>Department of Health and Human Services — verify public benefits (Medicaid, TANF, food assistance via ePASS) for domicile and income verification; provide verification data to Authority. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3</a>)</li>
+<li>Department of Revenue — verify state income tax filing for prior year for domicile verification; support income verification process with authorized household access. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3</a>)</li>
+<li>State Board of Elections — verify voter registration for domicile determination. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3</a>)</li>
+<li>State Chief Information Officer — facilitate and coordinate electronic verification infrastructure across state agencies. (Source: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3</a>)</li>
+<li>NC Residency Determination Service (RDS) — authoritative residency determination system; reusable residency classification for state aid programs. (Source: <a href="https://www.ncresidency.org/">NC RDS</a>)</li>
+<li>Division of Non-Public Education (DNPE) — receive tuition documentation from schools; maintain private/home school registry; enforce standardized testing requirements; verify fire and sanitation inspections for private schools; manage Notice of Intent forms for private and home school registration. Home schools must have parent/guardian with at least high school diploma; maintain attendance records and nationally standardized test results. Private schools must file Notice of Intent and ensure current fire/sanitation inspections. (Sources: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.5.html">G.S. 115C-562.5</a>; <a href="https://www.doa.nc.gov/divisions/non-public-education/home-schools/requirements-recommendations">DNPE Home Schools Requirements</a>; <a href="https://www.doa.nc.gov/divisions/non-public-education/private-schools">DNPE Private Schools</a>; <a href="https://www.doa.nc.gov/divisions/non-public-education/private-schools/requirements">Private School Requirements</a>)</li>
+</ul>
+<h2 id="9-non-functional-requirements-nfrs">9) Non-Functional Requirements (NFRs)</h2>
+<ul>
+<li>Compliance &amp; Auditability: Full ledger of approvals, endorsements, payments, and policy evaluations; immutable event log; export to auditors.</li>
+<li>Security &amp; Privacy: PII/financial data; encrypt at rest and in transit; least-privilege RBAC; rigorous document access controls.</li>
+<li>Availability &amp; Resilience: Payment windows (Aug/Sep and Jan/Feb) and application/award cycles (Feb–Apr) are peak; design for load; graceful degradation for ClassWallet downtime.</li>
+<li>Accessibility: ADA-compliant web UIs; EN/ES content; case-sensitive fields like Parent Endorsement require clear UI guidance.</li>
+<li>Observability: Metrics for award utilization, minimum spend compliance, approval latency, rejection code distribution.</li>
+<li>Policy Externalization: Rules engine or policy service for allowable expense logic, accessory timing, minimum spending, rollover, and eligibility to reduce code churn.</li>
+</ul>
+<h2 id="10-edge-cases--exceptions-selected">10) Edge Cases &amp; Exceptions (selected)</h2>
+<ul>
+<li>
+<p>ESA+ Minimum Spend not met — automatic non-renewal; appeal/exception handling workflow may be needed.</p>
+</li>
+<li>
+<p>Off-market purchase lacking sufficient documentation — rejection with code; resubmission allowed within window.</p>
+</li>
+<li>
+<p>Accessory purchase submitted outside 30-day window or exceeding frequency — auto-reject.</p>
+</li>
+<li>
+<p>IRS transcript unavailable by deadline — documented extension process via SEAA (per OS income verification FAQ).</p>
+</li>
+<li>
+<p>Name mismatch on Parent Endorsement (case sensitivity) — prevent submission and provide exact-match hint.</p>
+</li>
+<li>
+<p>Dual Award but school is not Direct Payment — ineligible for dual-use; notify and require school change or separate usage.</p>
+</li>
+<li>
+<p>Rollover exceeding caps — auto-adjust to $4,500 and/or $30,000 ceiling; remainder returned to SEAA.</p>
+</li>
+<li>
+<p>Summer purchasing pause — queue purchases for post-pause processing (inform user of restrictions).</p>
+</li>
+<li>
+<p>Domicile verification failure — multiple evidence types attempted but none verified; application marked ineligible with appeal process available.</p>
+</li>
+<li>
+<p>State agency verification timeout — agency fails to respond within reasonable time; fallback to manual verification or document upload path.</p>
+</li>
+<li>
+<p>Conflicting domicile evidence — parent provides multiple forms of evidence with different addresses; requires clarification and primary residence determination.</p>
+</li>
+<li>
+<p>Verification sample selection edge cases — application both randomly selected and flagged for errors; single verification process handles both criteria.</p>
+</li>
+<li>
+<p>Household refuses authorization for state agency access — cannot complete verification; award must be revoked per statute.</p>
+</li>
+<li>
+<p>Mid-year domicile change — student/family moves out of state during school year; impact on award continuation and pro-rating.</p>
+</li>
+<li>
+<p>Per pupil allocation late delivery — DPI misses December 1 deadline; award calculations delayed or use prior year amount pending update.</p>
+</li>
+<li>
+<p>School testing non-compliance — school fails to submit test results by July 15; potential impact on school eligibility for future awards.</p>
+</li>
+<li>
+<p>School financial review threshold — school enrolls exactly 70 scholarship students; CPA review requirement triggers.</p>
+</li>
+<li>
+<p>Background check reveals disqualifying offense — school leadership has criminal history; school may be ineligible to accept scholarship students.</p>
+</li>
+</ul>
+<h2 id="11-implementation-plan-phased">11) Implementation Plan (Phased)</h2>
+<p>A modern implementation can be a modular monolith or microservice suite. Below is a service-oriented plan; adapt to team scale and ops maturity.</p>
+<ul>
+<li>
+<p>Phase 0 — Discovery &amp; DDD Baseline</p>
+<ul>
+<li>Formalize ubiquitous language; confirm aggregates and events.</li>
+<li>Capture statutory references; parameterize program-year policy values (award amounts, dates).</li>
+</ul>
+</li>
+<li>
+<p>Phase 1 — Identity, MyPortal Gateway, and Application Service</p>
+<ul>
+<li>Identity &amp; RBAC (Parent, School, Provider, SEAA roles). SSO with MyPortal if applicable.</li>
+<li>Application Service: application intake, document To-Do orchestration, status machine.</li>
+<li>Domicile Verification Service: domicile determination system per G.S. 115C-366 and 115C-562.3; electronic verification integration framework.</li>
+<li>State Agency Integration Layer: DMV (driver's license/ID), DPI (school enrollment), Revenue (tax filing), DHHS (public benefits), Commerce (public benefits), Elections (voter registration), State CIO (infrastructure coordination).</li>
+<li>Document upload for domicile evidence: utility bills, bank statements, government documents.</li>
+<li>ESA+ Eligibility Determination intake and validation pipeline.</li>
+<li>OS Income Verification workflow: worksheet capture, transcript document handling, exception/extension requests.</li>
+<li>Verification Sampling Service: 4% random selection, error-prone identification, verification case management.</li>
+<li>Household Authorization workflow for state agency data access.</li>
+<li>Document Store: secure, typed, lifecycle-managed.</li>
+</ul>
+</li>
+<li>
+<p>Phase 2 — Awarding &amp; Lottery Service</p>
+<ul>
+<li>Lottery batching, results, and audit trail.</li>
+<li>Award Offer &amp; Acceptance; deadlines; notifications.</li>
+<li>School registry &amp; school-type logic; Parent Agreement and LEA Release e-sign capture.</li>
+</ul>
+</li>
+<li>
+<p>Phase 3 — Disbursements &amp; Parent Endorsement</p>
+<ul>
+<li>Payment Schedule for direct payment schools; Parent Endorsement task UX (case-sensitive validation cues).</li>
+<li>Dual Award ordering logic (OS→ESA+); remainder-to-wallet event.</li>
+<li>ACH payout engine, reconciliation, refunds.</li>
+</ul>
+</li>
+<li>
+<p>Phase 4 — ESA+ Wallet &amp; Purchasing</p>
+<ul>
+<li>ClassWallet integration (API/webhook); account provisioning; ledger sync.</li>
+<li>Allowable Expenses rules engine; rejection codes; documentation requirements per category.</li>
+<li>Pay Vendor (off-market) flow; invoice validator; transport contract attachment and validation.</li>
+<li>Provider Enrollment service and provider directory sync.</li>
+</ul>
+</li>
+<li>
+<p>Phase 5 — Compliance, Rollover, and Tax Reporting</p>
+<ul>
+<li>Minimum spend computation; renewal gate.</li>
+<li>Rollover computation per award level; cap enforcement; return of excess to SEAA.</li>
+<li>1099-G reporting pipeline for non-tuition spend; parent statements.</li>
+<li>Verification completion tracking; non-cooperation detection and award revocation.</li>
+<li>School compliance monitoring: test results tracking (July 15 deadline), financial review requirements (70+ students), background check management.</li>
+</ul>
+</li>
+<li>
+<p>Phase 6 — Admin Console, Analytics, School Compliance &amp; CX</p>
+<ul>
+<li>SEAA ops dashboards; exception queues; bulk comms.</li>
+<li>State agency integration monitoring and health checks.</li>
+<li>Verification case management interface for SEAA staff.</li>
+<li>Per Pupil Allocation annual update workflow (DPI integration; December 1 deadline tracking).</li>
+<li>School compliance dashboard: testing submission status, financial review status, background check status.</li>
+<li>Metrics: utilization, approval latency, rejection heatmap, provider coverage, verification completion rates, state agency response times, domicile verification success rates.</li>
+<li>Content surfaces: webinars, guides, seasonal reminders (summer pause notice).</li>
+</ul>
+</li>
+<li>
+<p>Shared Platform</p>
+<ul>
+<li>Event bus; outbox pattern for reliable integration.</li>
+<li>Scheduling (cron) for windows (lottery, disbursement cycles, rollover, tax).</li>
+<li>Feature flags and policy registry by program year.</li>
+<li>Test harness with scenario packs (happy path + policy edge cases).</li>
+</ul>
+</li>
+</ul>
+<h2 id="12-acceptance-criteria-samples">12) Acceptance Criteria (samples)</h2>
+<ul>
+<li>
+<p>Application &amp; Eligibility</p>
+<ul>
+<li>Given parent submits ESA+ application, when EDD not uploaded within 7 days, then status → ineligible and parent notified.</li>
+<li>Given OS application selected for verification, when IRS transcript uploaded and verified, then award offer eligibility is updated within N business days.</li>
+</ul>
+</li>
+<li>
+<p>Awarding &amp; Disbursement</p>
+<ul>
+<li>Given active award and Direct Payment school, when Parent Endorsement completed, then ACH payment initiated within X days and visible in school portal.</li>
+<li>Given Dual Award, when tuition &lt; OS award, then residual OS policy applies (communication), and ESA+ remainder rules executed → balance to ClassWallet.</li>
+</ul>
+</li>
+<li>
+<p>Wallet &amp; Purchasing (ESA+)</p>
+<ul>
+<li>Given off-market invoice, when category is disallowed, then request is rejected with a specific rejection code and remediation instructions.</li>
+<li>Given accessory request outside 30 days, then auto-reject with code and reference to policy.</li>
+</ul>
+</li>
+<li>
+<p>Compliance &amp; Reporting</p>
+<ul>
+<li>Given school year ends, when min-spend &lt; $1,000, then renewal eligibility flag = false and parent notified with appeal info.</li>
+<li>Given calendar year close, when non-tuition spend exists, then 1099-G prepared and parent notified by January deadline.</li>
+</ul>
+</li>
+<li>
+<p>Domicile Verification &amp; Inter-Agency Cooperation</p>
+<ul>
+<li>Given parent submits application, when domicile evidence is State driver's license, then system requests electronic verification from DMV and receives result within N days.</li>
+<li>Given parent provides utility bill as domicile evidence, when document uploaded, then manual review triggered and domicile determination completed within N business days.</li>
+<li>Given 4% verification sampling, when sample selected, then households notified via MyPortal To-Do and deadline set per federal guidance.</li>
+<li>Given verification case opened, when household fails to provide documentation by deadline, then award automatically revoked and parent notified.</li>
+<li>Given December 1 annually, when DPI provides per pupil allocation, then system updates award calculation parameters for next fiscal year within 2 business days.</li>
+<li>Given application with apparent errors, when detected, then automatically included in verification sample regardless of random selection.</li>
+</ul>
+</li>
+<li>
+<p>School Compliance</p>
+<ul>
+<li>Given school has 70+ scholarship students, when fiscal year ends, then CPA financial review requirement triggered and school notified with deadline.</li>
+<li>Given school has scholarship students in grades 3-12, when July 15 approaches and test results not submitted, then escalating reminders sent to school starting June 1.</li>
+<li>Given school leadership change, when new decision-making authority appointed, then background check requirement triggered within 30 days.</li>
+</ul>
+</li>
+</ul>
+<h2 id="13-open-questions--implementation-notes">13) Open Questions / Implementation Notes</h2>
+<ul>
+<li>OS direct details for rolling award windows and monthly awards: confirm final 2025–26 processes.</li>
+<li>Exact rejection code taxonomy and descriptions: maintain centrally and expose to UIs.</li>
+<li>Detailed accessory frequency rules per item (e.g., protective cases, chargers) — align with latest Parent Guide.</li>
+<li>Provider enrollment vetting (background checks, licenses) — confirm data fields and external validations.</li>
+<li>MyPortal integration contract: APIs vs. SSO + deep links; event/webhook availability.</li>
+<li>ClassWallet API availability: sandbox environments, webhook reliability, idempotency keys.</li>
+<li>State agency integration technical specifications: API contracts, authentication methods, response time SLAs, data formats for each agency (DMV, DPI, Revenue, DHHS, Commerce, Elections).</li>
+<li>Domicile determination rules engine: specific logic for G.S. 115C-366 implementation; edge cases for temporary absence, military families, divorced parents with joint custody.</li>
+<li>Verification sampling algorithm: exact criteria for &quot;error-prone&quot; applications; random selection methodology; audit trail requirements.</li>
+<li>Federal verification guidance adoption: which specific USDA free/reduced lunch verification procedures apply; documentation requirements mapping.</li>
+<li>Per pupil allocation communication protocol: DPI data format; automated ingestion vs manual entry; historical tracking requirements.</li>
+<li>Background check vendor: which service(s) used for school leadership checks; disqualifying offenses criteria; appeal process.</li>
+<li>School financial review: CPA firm selection process; review scope and deliverables; remediation requirements for findings.</li>
+<li>Multi-year domicile verification: frequency of re-verification for continuing students; triggers for re-verification during school year.</li>
+<li>State agency data privacy agreements: MOUs, data use restrictions, retention policies, breach notification procedures.</li>
+</ul>
+<h2 id="14-glossary-ubiquitous-language">14) Glossary (Ubiquitous Language)</h2>
+<ul>
+<li>Direct Payment School: Registered school that receives OS/ESA+ funds directly; requires Parent Endorsement each term.</li>
+<li>ESA+ Reimbursement School: School that declines direct payment; families pay and are reimbursed via ESA+ after semester.</li>
+<li>Home School (ESA+): Parent-directed education registered with DNPE; ESA+ funds for allowable expenses via ClassWallet.</li>
+<li>Allowable Expense: Product/service permitted under ESA+ policy; category constraints apply.</li>
+<li>Prohibited Expense: Explicitly disallowed purchase categories.</li>
+<li>Parent Agreement: Annual ESA+ contract enumerating obligations and rules.</li>
+<li>LEA Release: Agreement releasing public-school special education services while in ESA+ (full-time nonpublic/home only).</li>
+<li>Parent Endorsement: Required parent action each term that authorizes school payment amount; case-sensitive signature field in MyPortal.</li>
+<li>Lottery: Random selection process for awards when demand exceeds supply.</li>
+<li>Rollover: Carry-forward of unused ESA+ funds (higher award only; cap-limited).</li>
+<li>1099-G: IRS form issued for ESA+ non-tuition spend.</li>
+<li>Domicile: Legal residence of student/parent for scholarship eligibility purposes; established per G.S. 115C-366.</li>
+<li>Domicile Determination System: Authority's system for verifying NC residency through multiple evidence types and state agency cooperation.</li>
+<li>Verification Sample: 4% of scholarship applications selected annually for additional documentation and verification per G.S. 115C-562.3.</li>
+<li>Error-Prone Application: Application with apparent errors on face that must be included in verification sample.</li>
+<li>State Agency Verification: Electronic verification of domicile evidence through cooperation with DMV, DPI, Revenue, DHHS, Commerce, Elections, and State CIO.</li>
+<li>Per Pupil Allocation: Average State funding per student in public schools; reported by DPI annually by December 1; determines maximum scholarship amounts.</li>
+<li>Household Authorization: Required consent from household members for Authority to access verification information from state agencies.</li>
+<li>Verification Cooperation: Household's timely response to verification requests; non-cooperation results in award revocation.</li>
+<li>Nonpublic School Obligations: Requirements per G.S. 115C-562.5 including tuition documentation, background checks, progress reports, standardized testing, graduation rates, and financial reviews (for schools with 70+ scholarship students).</li>
+</ul>
+<h2 id="15-quick-links-for-further-research">15) Quick Links (for further research)</h2>
+<ul>
+<li><a href="https://k12.ncseaa.edu/">K12 Home</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/resources/">ESA+ Resources</a></li>
+<li><a href="https://k12.ncseaa.edu/the-education-student-accounts/program-rules-and-requirements/">ESA+ Rules</a></li>
+<li><a href="https://k12.ncseaa.edu/the-education-student-accounts/awarding-process/">ESA+ Awarding</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/allowable-expenses/">ESA+ Allowable Expenses</a></li>
+<li><a href="https://k12.ncseaa.edu/opportunity-scholarship/">OS Program</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/payment-process/">OS Payment Process</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/opportunity-scholarship/income-verification/">OS Income Verification</a></li>
+<li><a href="https://www2.ncseaa.edu/approvedprovidersk12/default.aspx">Provider Search</a></li>
+<li><a href="https://myportal.ncseaa.edu/NC/login.aspx">MyPortal</a></li>
+<li><a href="https://www.doa.nc.gov/divisions/non-public-education">DNPE</a></li>
+<li><a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/classwallet/">ClassWallet</a></li>
+<li><a href="https://www.cfnc.org/">CFNC</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByChapter/Chapter_115C.html">NC General Statutes Chapter 115C</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.1.html">G.S. 115C-562.1 (ESA+ Eligibility)</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.2.html">G.S. 115C-562.2 (Award Amounts)</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3 (Verification &amp; Inter-Agency Cooperation)</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.5.html">G.S. 115C-562.5 (School Obligations)</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.6.html">G.S. 115C-562.6 (Scholarship Endorsement)</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/PDF/BySection/Chapter_115C/GS_115C-366.pdf">G.S. 115C-366 (Domicile Requirements)</a></li>
+<li><a href="https://k12.ncseaa.edu/school-admins/annual-requirements/testing-and-reporting/">Testing and Reporting</a></li>
+<li><a href="https://www.ncresidency.org/">NC Residency Determination Service</a></li>
+<li><a href="https://www.fns.usda.gov/cn/verification-toolkit">USDA Verification Toolkit</a></li>
+</ul>
+<h2 id="16-discrepancies-gaps--items-requiring-further-investigation">16) Discrepancies, Gaps &amp; Items Requiring Further Investigation</h2>
+<p>This section identifies areas where statutory requirements, regulatory guidance, or operational details require clarification or where potential conflicts exist between sources.</p>
+<h3 id="161-domicile-verification--inter-agency-coordination">16.1 Domicile Verification &amp; Inter-Agency Coordination</h3>
+<p><strong>Statutory Requirement vs. Current Understanding:</strong></p>
+<ul>
+<li>G.S. 115C-562.3 mandates electronic verification through multiple state agencies (DMV, DPI, Commerce, DHHS, Revenue, Elections, State CIO), but current documentation focuses primarily on IRS transcripts for income verification and public school enrollment verification.</li>
+<li><strong>Gap</strong>: Detailed integration specifications, API contracts, and data exchange protocols with each state agency are not documented in public-facing materials.</li>
+<li><strong>Investigation Needed</strong>:
+<ul>
+<li>Technical implementation details for each state agency integration</li>
+<li>Existing MOUs or data sharing agreements between NCSEAA and state agencies</li>
+<li>Response time SLAs for electronic verification requests</li>
+<li>Fallback procedures when electronic verification unavailable</li>
+<li>Data privacy and security protocols for inter-agency data sharing</li>
+</ul>
+</li>
+</ul>
+<p><strong>Source</strong>: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a)</a></p>
+<h3 id="162-verification-sampling-process">16.2 Verification Sampling Process</h3>
+<p><strong>Statutory Requirement vs. Current Understanding:</strong></p>
+<ul>
+<li>G.S. 115C-562.3(a1) requires 4% verification rate following federal free/reduced lunch verification guidance, but current documentation does not detail the verification process for K12 scholarships.</li>
+<li><strong>Gap</strong>: Specific procedures for implementing USDA verification guidance in scholarship context; criteria for identifying &quot;error-prone&quot; applications; documentation requirements; timeline for verification process.</li>
+<li><strong>Investigation Needed</strong>:
+<ul>
+<li>Exact mapping from USDA free/reduced lunch verification procedures to scholarship verification</li>
+<li>Definition and detection criteria for &quot;error-prone&quot; applications</li>
+<li>Timeline from sample selection to completion deadline</li>
+<li>Appeal process for households who dispute verification findings</li>
+<li>Acceptable documentation types per verification category</li>
+</ul>
+</li>
+</ul>
+<p><strong>Sources</strong>: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a1)</a>; <a href="https://www.fns.usda.gov/cn/verification-toolkit">USDA Verification Toolkit</a></p>
+<h3 id="163-award-amount-calculation-details">16.3 Award Amount Calculation Details</h3>
+<p><strong>Statutory Requirement vs. Current Understanding:</strong></p>
+<ul>
+<li>G.S. 115C-562.2(b2) specifies complex award calculation based on household income tiers relative to federal free/reduced lunch eligibility (up to 90% of per pupil allocation or tuition, whichever less), but current documentation provides simplified award amounts ($3,000-$7,000 for OS; $9,000/$17,000 for ESA+).</li>
+<li><strong>Gap</strong>: Exact income thresholds for OS tiers; calculation methodology when tuition &lt; award cap; part-time student pro-rating rules.</li>
+<li><strong>Investigation Needed</strong>:
+<ul>
+<li>Precise household income thresholds for each OS award tier (2025-26)</li>
+<li>Current average State per pupil allocation amount (latest from DPI)</li>
+<li>Calculation examples for edge cases (tuition variations, part-time enrollment)</li>
+<li>Rounding rules and minimum award amounts</li>
+</ul>
+</li>
+</ul>
+<p><strong>Sources</strong>: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.2.html">G.S. 115C-562.2</a>; OS program pages</p>
+<h3 id="164-school-compliance-requirements">16.4 School Compliance Requirements</h3>
+<p><strong>Statutory Requirement vs. Current Understanding:</strong></p>
+<ul>
+<li>G.S. 115C-562.5 imposes multiple obligations on schools (criminal background checks, annual progress reports, standardized testing, graduation rates, financial reviews for 70+ students, in-state facilities), but operational documentation focuses primarily on testing and enrollment tasks.</li>
+<li><strong>Gap</strong>: Enforcement mechanisms; consequences for non-compliance; background check vendor/process; financial review scope and standards; graduation rate reporting methodology.</li>
+<li><strong>Investigation Needed</strong>:
+<ul>
+<li>Background check disqualifying offenses list and appeal process</li>
+<li>Financial review scope, standards, and deliverables for 70+ student threshold</li>
+<li>Graduation rate calculation methodology and reporting format</li>
+<li>Consequences for schools that fail compliance requirements</li>
+<li>Timeline for background check completion upon leadership changes</li>
+</ul>
+</li>
+</ul>
+<p><strong>Source</strong>: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.5.html">G.S. 115C-562.5</a></p>
+<h3 id="165-domicile-vs-residency-determination-service-rds">16.5 Domicile vs. Residency Determination Service (RDS)</h3>
+<p><strong>Potential Conflict:</strong></p>
+<ul>
+<li>G.S. 115C-562.3 requires Authority to &quot;establish a domicile determination system&quot; specific to K12 scholarships, while NC Residency Determination Service (RDS) provides centralized residency determination for higher education.</li>
+<li><strong>Question</strong>: Is K12 scholarship domicile determination separate from RDS, or should it leverage RDS as the common service?</li>
+<li><strong>Investigation Needed</strong>:
+<ul>
+<li>Relationship between K12 domicile determination and RDS</li>
+<li>Whether RDS can/should be used for K12 program or if parallel system required</li>
+<li>Differences in domicile requirements between K12 (G.S. 115C-366) and higher education</li>
+</ul>
+</li>
+</ul>
+<p><strong>Sources</strong>: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3</a>; <a href="https://www.ncresidency.org/">NC RDS</a></p>
+<h3 id="166-testing-requirements-alignment">16.6 Testing Requirements Alignment</h3>
+<p><strong>Potential Gap:</strong></p>
+<ul>
+<li>G.S. 115C-562.5 requires standardized testing with results submitted by July 15, and DNPE has separate testing requirements for private schools, but alignment between these requirements is not explicitly documented.</li>
+<li><strong>Investigation Needed</strong>:
+<ul>
+<li>Confirmation that same test results satisfy both NCSEAA and DNPE requirements</li>
+<li>Coordination process between NCSEAA and DNPE for test result sharing</li>
+<li>Handling of schools that meet DNPE but not NCSEAA requirements or vice versa</li>
+</ul>
+</li>
+</ul>
+<p><strong>Sources</strong>: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.5.html">G.S. 115C-562.5</a>; <a href="https://k12.ncseaa.edu/school-admins/annual-requirements/testing-and-reporting/">Testing and Reporting</a>; <a href="https://www.doa.nc.gov/divisions/non-public-education/private-schools/standardized-testing">DNPE Testing</a></p>
+<h3 id="167-household-member-definition-for-authorization">16.7 Household Member Definition for Authorization</h3>
+<p><strong>Statutory Ambiguity:</strong></p>
+<ul>
+<li>G.S. 115C-562.3(b) requires &quot;household members&quot; to authorize state agency data access, but statute does not define which household members must provide authorization.</li>
+<li><strong>Investigation Needed</strong>:
+<ul>
+<li>Definition of &quot;household members&quot; for authorization purposes</li>
+<li>Whether all adults in household must authorize or only parent/guardian of student</li>
+<li>Handling split households, divorced parents, legal guardians</li>
+<li>Form and process for obtaining and documenting authorization</li>
+</ul>
+</li>
+</ul>
+<p><strong>Source</strong>: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(b)</a></p>
+<h3 id="168-per-pupil-allocation-update-timing">16.8 Per Pupil Allocation Update Timing</h3>
+<p><strong>Operational Question:</strong></p>
+<ul>
+<li>G.S. 115C-562.3(c) requires DPI to provide per pupil allocation by December 1 &quot;for that fiscal year to determine the maximum scholarship amount for eligible students to be awarded in the following fiscal year.&quot;</li>
+<li><strong>Clarification Needed</strong>:
+<ul>
+<li>Whether &quot;that fiscal year&quot; means the current fiscal year (July 1 - June 30) or the school year</li>
+<li>Exact formula for calculating maximum scholarship from per pupil allocation (90% cap confirmed, but other factors?)</li>
+<li>Process if DPI misses December 1 deadline</li>
+<li>Historical per pupil allocation amounts for trend analysis</li>
+</ul>
+</li>
+</ul>
+<p><strong>Source</strong>: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(c)</a></p>
+<h3 id="169-state-cio-role-in-electronic-verification">16.9 State CIO Role in Electronic Verification</h3>
+<p><strong>Unclear Scope:</strong></p>
+<ul>
+<li>G.S. 115C-562.3(a) names State Chief Information Officer as required to cooperate with verification efforts, but specific role/responsibilities not defined.</li>
+<li><strong>Investigation Needed</strong>:
+<ul>
+<li>Whether State CIO provides technical infrastructure, security oversight, or data governance</li>
+<li>Existing state enterprise services that could support verification (e.g., NC Identity Management, state data exchange platforms)</li>
+<li>Procurement or development decisions for verification infrastructure</li>
+</ul>
+</li>
+</ul>
+<p><strong>Source</strong>: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a)</a></p>
+<h3 id="1610-verification-of-electronic-documents">16.10 Verification of Electronic Documents</h3>
+<p><strong>Process Gap:</strong></p>
+<ul>
+<li>G.S. 115C-562.3(a)(6) allows &quot;electronically submitted copy&quot; of documents (utility bill, bank statement, etc.) showing name and address, but verification methodology not specified.</li>
+<li><strong>Investigation Needed</strong>:
+<ul>
+<li>Manual review vs. automated document verification technology</li>
+<li>Acceptable file formats and image quality standards</li>
+<li>Document age limits (how recent must utility bill be?)</li>
+<li>Fraud detection measures for submitted documents</li>
+<li>Third-party verification services if any</li>
+</ul>
+</li>
+</ul>
+<p><strong>Source</strong>: <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_115C/GS_115C-562.3.html">G.S. 115C-562.3(a)(6)</a></p>
+<h3 id="1611-anti-discrimination-requirements-and-religious-exemptions">16.11 Anti-Discrimination Requirements and Religious Exemptions</h3>
+<p><strong>Policy Gap:</strong></p>
+<ul>
+<li>Statutes establish requirements for schools accepting scholarship students (G.S. 115C-562.5), but do not explicitly address anti-discrimination requirements or religious exemptions for private schools.</li>
+<li>Public sources indicate nonpublic schools accepting scholarships are not bound by same anti-discrimination requirements as public schools and can implement admission/enrollment policies based on religious beliefs.</li>
+<li><strong>Investigation Needed</strong>:
+<ul>
+<li>Statutory or regulatory anti-discrimination requirements (if any) for schools accepting scholarship students</li>
+<li>Religious exemptions scope and application</li>
+<li>Disclosure requirements to parents about school policies</li>
+<li>Impact on ESA+ students with disabilities when private schools not required to follow IDEA</li>
+<li>Recourse for families if student denied admission or expelled based on protected characteristics</li>
+<li>Whether Authority has oversight or enforcement role regarding school admission/enrollment policies</li>
+</ul>
+</li>
+</ul>
+<p><strong>Note</strong>: This is a policy-sensitive area requiring legal review to understand current statutory requirements vs. school autonomy. Implementation should document actual legal requirements and any disclosure/transparency obligations.</p>
+<p><strong>Sources</strong>: General research on NC private school scholarship programs; requires authoritative legal interpretation.</p>
+<h3 id="1612-os-public-school-attendance-requirement">16.12 OS Public School Attendance Requirement</h3>
+<p><strong>Clarification Needed:</strong></p>
+<ul>
+<li>OS eligibility requires students K-12 to have attended public school minimum 10 days in fall semester before applying, OR be new K/1st grade students.</li>
+<li><strong>Questions</strong>:
+<ul>
+<li>Exact definition of &quot;public school&quot; (does charter school count? virtual public school?)</li>
+<li>How 10-day attendance verified (school district records? parent attestation? state database?)</li>
+<li>Exception handling for students who cannot meet 10-day requirement (e.g., move to NC mid-semester)</li>
+<li>Relationship to domicile verification timing</li>
+<li>Renewal students: do they need to re-verify public school attendance or is initial verification sufficient?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Source</strong>: <a href="https://k12.ncseaa.edu/opportunity-scholarship/">OS Program</a></p>
+<h3 id="1613-case-sensitive-parent-endorsement-implementation">16.13 Case-Sensitive Parent Endorsement Implementation</h3>
+<p><strong>User Experience Concern:</strong></p>
+<ul>
+<li>MyPortal requires exact case-sensitive name match for parent endorsement; mismatch causes rejection.</li>
+<li><strong>Investigation Needed</strong>:
+<ul>
+<li>Rationale for case-sensitive requirement (security? identity verification?)</li>
+<li>User guidance to prevent errors (e.g., display expected name format before entry)</li>
+<li>Error message clarity and remediation guidance</li>
+<li>Accessibility considerations (screen readers, assistive technology)</li>
+<li>Alternative verification methods for users with name variations or special characters</li>
+<li>Appeal process if parent unable to complete endorsement due to name mismatch issues</li>
+</ul>
+</li>
+</ul>
+<p><strong>Source</strong>: <a href="https://k12.ncseaa.edu/families-of-awarded-students/esaplus-program/how-scholarship-funds-work/">How Scholarship Funds Work</a></p>
+<h2 id="configuration-settings">Configuration Settings</h2>
+<ul>
+<li>[  ] application, feature-level</li>
+<li>[  ] CONST items?</li>
+</ul>
+<h2 id="questions">Questions</h2>
+<ol>
+<li>Will there be any time zone considerations? Some of the events or action items have deadline dates and times. What if the person completing the form or task is in a different time zone?</li>
+<li>Audit log and timestamp timezone, default timezine (EST)?</li>
+<li>Requirements for multi-language support (US English, Spanish)?</li>
+</ol>
+<h2 id="tool-selection">Tool Selection</h2>
+<ol>
+<li>Rules Engine for both frontend and backend.</li>
+<li>Internationalization Tools (i18n).</li>
+</ol>
+<p>— End —</p>
+
+</body>
+</html>

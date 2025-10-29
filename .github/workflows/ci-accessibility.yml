@@ -1,0 +1,45 @@
+name: CI - Accessibility
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Storybook
+        run: |
+          cd presentation || true
+          npm run build-storybook || npx build-storybook -o storybook-static || true
+
+      - name: Run Pa11y (page-level checks)
+        run: |
+          # Adjust target URL to your preview environment or serve static Storybook
+          npx pa11y http://localhost:6006 || true
+
+      - name: Run Playwright accessibility tests
+        env:
+          PREVIEW_URL: ${{ secrets.PREVIEW_URL }}
+        run: |
+          npx playwright install --with-deps
+          npx playwright test research/ada-compliance/playwright/a11y.spec.ts --reporter=list
+
+      - name: Upload accessibility artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a11y-reports
+          path: research/ada-compliance/**

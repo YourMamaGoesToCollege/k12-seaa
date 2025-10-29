@@ -1,0 +1,51 @@
+trigger:
+- none
+
+pr: none
+
+schedules: []
+
+stages:
+- stage: Accessibility
+  displayName: Accessibility Scans
+  jobs:
+  - job: RunA11y
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - checkout: self
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '20.x'
+      displayName: 'Use Node 20'
+
+    - script: |
+        npm ci
+      displayName: 'Install dependencies'
+
+    - script: |
+        npx playwright install --with-deps
+      displayName: 'Install Playwright browsers'
+
+    - script: |
+        # Run Playwright a11y tests (will save axe JSON into artifacts folder)
+        npx playwright test research/ada-compliance/playwright/a11y.spec.ts --reporter=list
+      displayName: 'Run Playwright accessibility tests'
+
+    - script: |
+        # Find latest axe report and process
+        REPORT=$(ls -t research/ada-compliance/artifacts/*.json | head -n1)
+        echo "Processing report: $REPORT"
+        node scripts/axereport-processor.js "$REPORT"
+      env:
+        AZDO_ORG_URL: $(System.TeamFoundationCollectionUri)
+        AZDO_PROJECT: $(System.TeamProject)
+        AZDO_PAT: $(accessibilityAzdoPat)
+      displayName: 'Process axe report (create/update work items)'
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: 'research/ada-compliance/artifacts'
+        artifactName: 'a11y-reports'
+        publishLocation: 'Container'
+      displayName: 'Publish a11y artifacts'

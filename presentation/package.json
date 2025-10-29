@@ -1,0 +1,21 @@
+{
+  "name": "mind-the-gap",
+  "version": "1.0.0",
+  "description": "Use to create presentation using markdown.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "html": "marp k12-roadmap-and-eb.md --output k12-roadmap-and-eb.html",
+    "pdf": "marp k12-roadmap-and-eb.md --pdf --allow-local-files --output \"k12-roadmap-and-eb.pdf\""
+  },
+  "keywords": [
+    "presentation",
+    "marp-cli",
+    "markdown"
+  ],
+  "author": "Matt Vaughn",
+  "license": "ISC",
+  "dependencies": {
+    "@marp-team/marp-cli": "^3.4.0"
+  }
+}
