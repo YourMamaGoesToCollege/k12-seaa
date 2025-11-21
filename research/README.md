@@ -76,6 +76,31 @@ Complete domain model documentation covering the entire NCSEAA ecosystem.
 
 ---
 
+### ⚙️ Workflow Architecture Research **NEW**
+**Comprehensive workflow orchestration:** [`workflow-architecture/`](./workflow-architecture/README.md)
+
+Complete research and architecture for implementing workflow orchestration in the K-12 SEAA system:
+- **Technology Overview:** Azure Durable Functions, Logic Apps, Event Grid, Elsa Workflows, MassTransit
+- **K-12 Workflow Analysis:** 100+ workflows across 4 applications with complexity assessment
+- **Architecture Recommendations:** Hybrid orchestration approach with detailed diagrams
+- **Implementation Patterns:** Production-ready code examples for common workflow scenarios
+- **Integration Architecture:** Third-party integration patterns (ClassWallet, RDS, Email)
+- **Migration Strategy:** Phased 9-month plan from current task engine to workflow orchestration
+
+**Best for:** Architects designing workflow solutions, developers implementing workflows, stakeholders evaluating technology decisions.
+
+**Key Topics:**
+- Long-running workflow management
+- Event-driven architecture patterns
+- State persistence and recovery
+- Distributed transaction coordination
+- Error handling and compensation
+- Third-party integration resilience
+
+**Start here:** [`workflow-architecture/README.md`](./workflow-architecture/README.md)
+
+---
+
 ## Recommended Reading Path
 
 ### If you're new to DDD:
@@ -91,7 +116,15 @@ Complete domain model documentation covering the entire NCSEAA ecosystem.
 ### If you're an architect:
 1. Start with [`ddd-1.md`](./ddd-1.md) for system-wide view
 2. Review [`ddd-2.md`](./ddd-2.md) for K-12 bounded contexts
-3. Use [`ddd-primer-for-stakeholders.md`](./ddd-primer-for-stakeholders.md) to communicate with non-technical stakeholders
+3. Read [`workflow-architecture/`](./workflow-architecture/README.md) for workflow orchestration architecture
+4. Use [`ddd-primer-for-stakeholders.md`](./ddd-primer-for-stakeholders.md) to communicate with non-technical stakeholders
+
+### If you're implementing workflows:
+1. Start with [`workflow-architecture/README.md`](./workflow-architecture/README.md) for overview
+2. Review [`workflow-architecture/01-technology-overview.md`](./workflow-architecture/01-technology-overview.md) to understand technology options
+3. Study [`workflow-architecture/03-architecture-recommendations.md`](./workflow-architecture/03-architecture-recommendations.md) for architectural patterns
+4. Reference [`workflow-architecture/04-implementation-patterns.md`](./workflow-architecture/04-implementation-patterns.md) for code examples
+5. Check [`workflow-architecture/05-integration-architecture.md`](./workflow-architecture/05-integration-architecture.md) for third-party integrations
 
 ---
 
@@ -120,5 +153,6 @@ If you have questions about these documents or need clarification on any DDD con
 
 ## Document History
 
+- **2025-10-22:** Added `workflow-architecture/` - Comprehensive workflow orchestration research including technology overview, architecture recommendations, implementation patterns, integration architecture, and migration strategy
 - **2024-10-14:** Added `ddd-primer-for-stakeholders.md` - Comprehensive primer for IT stakeholders new to DDD
 - **Earlier:** Initial domain research and analysis documents created
