@@ -1,4 +1,5 @@
 # K-12 SEAA Comprehensive Implementation Plan
+
 ## IT Stakeholder Presentation - Complete Scope Analysis
 
 **Presentation Date:** October 2025  
@@ -13,6 +14,7 @@
 The K-12 SEAA modernization project encompasses comprehensive scholarship program management for North Carolina's ESA+ and Opportunity Scholarship programs. This document provides a complete inventory of all core features required for production launch by **May 1, 2026**.
 
 **Critical Scope Areas:**
+
 1. **Household & Student Management** - Application submission, renewals, profile management
 2. **School Management** - Registration, certification, endorsement, payment tracking
 3. **Provider Management** - Enrollment, approval, directory, invoicing
@@ -21,6 +23,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 6. **Verification & Compliance** - Eligibility verification, domicile, income, mandatory reviews
 
 **Platform Serves:**
+
 - Up to 80,000 concurrent users
 - Two scholarship programs (ESA+, Opportunity Scholarship)
 - Four web portals (Household, School, Provider, Admin)
@@ -33,7 +36,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### 1. HOUSEHOLD & STUDENT MANAGEMENT
 
 #### 1.1 Application Workflows
+
 **ESA+ New Application:**
+
 - Student eligibility form (age, grade, disability documentation)
 - Household income verification
 - Domicile verification (multiple evidence types)
@@ -47,6 +52,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Application status tracking and notifications
 
 **Opportunity Scholarship New Application:**
+
 - Student basic information (age, grade, demographics)
 - Household composition and income data
 - Income verification selection (4% sampling)
@@ -61,6 +67,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Application status tracking
 
 #### 1.2 Renewal & Continuing Eligibility
+
 - Annual renewal application (simplified workflow)
 - ESA+ continuing eligibility requirements
   - Minimum spending verification ($1,000 threshold)
@@ -76,6 +83,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Non-renewal notifications and appeals
 
 #### 1.3 Student Profile & Account Management
+
 - Student demographic information
 - Household member management
 - Contact information updates
@@ -86,6 +94,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Account security (password, MFA)
 
 #### 1.4 School Selection & Transfers
+
 - School search and directory browsing
 - Direct Payment vs Reimbursement school identification
 - School enrollment confirmation
@@ -96,6 +105,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Transfer notification workflows
 
 #### 1.5 Communication & Notifications
+
 - To-Do list and task management
 - Email notifications (application status, deadlines, payments)
 - In-app messaging and alerts
@@ -110,6 +120,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### 2. SCHOOL MANAGEMENT
 
 #### 2.1 School Registration & Profile
+
 - School registration workflow
 - DNPE registration verification
 - School type classification (Direct Payment, Reimbursement, Home School)
@@ -121,6 +132,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - School profile updates and changes
 
 #### 2.2 Student Enrollment Management
+
 - Student roster management
 - Enrollment confirmation workflows
 - Semester enrollment updates
@@ -131,7 +143,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Enrollment capacity management
 
 #### 2.3 Certification & Endorsement
+
 **Annual School Certification:**
+
 - Certification deadline tracking (varies by program)
 - Tuition and fee amount confirmation
 - Enrollment verification for each student
@@ -141,6 +155,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Certification approval process
 
 **Semester Parent Endorsement:**
+
 - Parent endorsement request generation
 - Case-sensitive signature validation
 - Endorsement deadline enforcement
@@ -150,6 +165,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Bulk endorsement processing
 
 #### 2.4 Payment & Financial Management
+
 - Payment schedule visibility
 - Expected payment calculations
 - Payment disbursement tracking
@@ -161,7 +177,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Payment history and reporting
 
 #### 2.5 Compliance & Reporting
+
 **Testing Requirements:**
+
 - Standardized test administration
 - Test results submission (July 15 deadline)
 - Grade level testing requirements (3-12)
@@ -170,18 +188,21 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Non-compliance notifications
 
 **Financial Review Requirements:**
+
 - 70+ student threshold monitoring
 - CPA financial review requirement
 - Review submission and approval
 - Audit findings remediation
 
 **Background Checks:**
+
 - School leadership background check tracking
 - Disqualifying offense identification
 - Check renewal requirements
 - Compliance reporting
 
 #### 2.6 School Portal Features
+
 - Dashboard with key metrics
 - Student scholarship list and status
 - Payment schedule and history
@@ -196,6 +217,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### 3. PROVIDER MANAGEMENT
 
 #### 3.1 Provider Registration & Enrollment
+
 - Provider application submission
 - Business information and credentials
 - Service category selection
@@ -208,6 +230,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Profile updates and changes
 
 #### 3.2 Provider Directory
+
 - Public provider search functionality
 - Category-based browsing
 - Service area and location filters
@@ -218,6 +241,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Directory maintenance and updates
 
 #### 3.3 Invoice & Payment Processing
+
 - Invoice submission workflow
 - Purchase request matching
 - Invoice validation and approval
@@ -228,6 +252,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Reconciliation workflows
 
 #### 3.4 Compliance & Quality
+
 - Provider credential maintenance
 - Annual review requirements
 - Service quality monitoring
@@ -241,7 +266,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### 4. ADMIN PORTAL OPERATIONS
 
 #### 4.1 Application Processing & Review
+
 **Application Intake:**
+
 - Application queue management
 - Application review workflows
 - Document verification
@@ -252,6 +279,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Processing status tracking
 
 **Eligibility Determination:**
+
 - Eligibility criteria evaluation
 - Income calculation and verification
 - Domicile verification review
@@ -261,7 +289,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Decision notification workflows
 
 #### 4.2 Verification Management
+
 **Domicile Verification:**
+
 - Electronic verification via state agencies:
   - DMV (driver's license/ID verification)
   - DPI (public school enrollment)
@@ -276,6 +306,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Manual override capabilities
 
 **Income Verification (OS):**
+
 - 4% random sample selection
 - Error-prone application identification
 - Verification notification generation
@@ -286,6 +317,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Verification completion tracking
 
 **Application Verification Sampling:**
+
 - Random selection algorithm (4% of applications)
 - Error-prone criteria identification
 - Verification case creation
@@ -295,7 +327,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Award revocation for non-compliance
 
 #### 4.3 Award Management
+
 **Lottery Administration:**
+
 - Lottery batch creation
 - Random selection processing
 - Priority period preference handling
@@ -305,6 +339,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Audit trail maintenance
 
 **Award Calculation:**
+
 - ESA+ award amount determination ($9,000 vs $17,000)
 - OS tiered award calculation (income-based)
 - Dual award ordering logic
@@ -314,6 +349,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Award cap enforcement
 
 **Award Lifecycle:**
+
 - Award offer management
 - Acceptance deadline tracking
 - Award activation
@@ -323,6 +359,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Award history tracking
 
 #### 4.4 Document Management
+
 - Document upload processing
 - Document type classification
 - Virus scanning and validation
@@ -335,6 +372,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Document To-Do generation and tracking
 
 #### 4.5 Communication & Case Management
+
 - Bulk communication campaigns
 - Email template management
 - Scheduled notification triggers
@@ -346,7 +384,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Exception queue management
 
 #### 4.6 Reporting & Analytics
+
 **Operational Dashboards:**
+
 - Application pipeline status
 - Processing time metrics
 - Verification completion rates
@@ -357,6 +397,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - System performance indicators
 
 **Compliance Reports:**
+
 - Statutory reporting requirements
 - Audit trail exports
 - Financial reconciliation
@@ -366,6 +407,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Fraud detection indicators
 
 **Business Intelligence:**
+
 - Program participation trends
 - Geographic distribution analysis
 - Demographic insights
@@ -375,6 +417,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Performance benchmarking
 
 #### 4.7 System Administration
+
 - User account management (RBAC)
 - Role and permission configuration
 - Security group management
@@ -390,7 +433,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### 5. PAYMENT & FINANCIAL SYSTEMS
 
 #### 5.1 Payment Processing Infrastructure
+
 **Direct Payment Schools:**
+
 - Payment schedule management (Aug/Sep and Jan/Feb cycles)
 - Parent endorsement validation
 - Tuition and fee calculation
@@ -402,6 +447,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Payment reconciliation
 
 **ESA+ Wallet (ClassWallet Integration):**
+
 - Account provisioning
 - Fund allocation after tuition payment
 - Balance tracking
@@ -410,7 +456,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Account closure handling
 
 #### 5.2 ESA+ Purchasing & Expense Management
+
 **Allowable Expense Categories:**
+
 - Curriculum and educational materials
 - Tutoring and educational services
 - Educational technology
@@ -423,6 +471,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Educational software subscriptions
 
 **Purchase Request Processing:**
+
 - On-marketplace purchase workflow
 - Off-marketplace invoice submission
 - Category validation
@@ -434,6 +483,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Transaction recording
 
 **Purchase Rules Engine:**
+
 - Prohibited expense detection
 - Accessory purchase timing (30-day window)
 - Accessory frequency limits
@@ -444,7 +494,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Manual review triggers
 
 #### 5.3 Financial Compliance
+
 **Minimum Spending (ESA+):**
+
 - Annual spending calculation
 - $1,000 threshold enforcement
 - Non-renewal for insufficient spending
@@ -452,6 +504,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Exception tracking
 
 **Rollover Management (ESA+):**
+
 - Eligible award identification (higher award only)
 - Annual rollover calculation
 - $4,500 annual cap enforcement
@@ -460,6 +513,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Rollover notification to families
 
 **Tax Reporting:**
+
 - 1099-G preparation for non-tuition ESA+ spending
 - Parent tax statement generation
 - IRS filing requirements
@@ -467,6 +521,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Tax document distribution
 
 #### 5.4 Payment Reconciliation & Audit
+
 - Daily payment transaction reconciliation
 - School payment verification
 - ClassWallet transaction matching
@@ -482,7 +537,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### 6. VERIFICATION & COMPLIANCE SYSTEMS
 
 #### 6.1 State Agency Integration Platform
+
 **Agency Integration Framework:**
+
 - DMV integration (driver's license/ID verification)
 - DPI integration (school enrollment, per pupil allocation)
 - Department of Revenue (tax filing verification)
@@ -492,6 +549,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - State CIO coordination
 
 **Integration Capabilities:**
+
 - Electronic verification request submission
 - Response processing and validation
 - Timeout and error handling
@@ -502,7 +560,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Response time SLA tracking
 
 #### 6.2 Eligibility Verification Workflows
+
 **Domicile Determination:**
+
 - G.S. 115C-366 implementation
 - Multiple evidence type support
 - Electronic verification priority
@@ -513,6 +573,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Verification result notification
 
 **Disability Verification (ESA+):**
+
 - Eligibility Determination Document validation
 - IEP/504 plan review
 - Prior public school enrollment verification
@@ -521,6 +582,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Documentation completeness checking
 
 **Income Verification (OS):**
+
 - Income calculation worksheet processing
 - IRS transcript validation
 - Income tier determination
@@ -529,7 +591,9 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Non-compliance processing
 
 #### 6.3 Ongoing Compliance Monitoring
+
 **Annual Verifications:**
+
 - Per pupil allocation update (DPI, December 1 deadline)
 - School testing compliance (July 15 deadline)
 - School financial reviews (70+ students)
@@ -539,6 +603,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Award eligibility reconfirmation
 
 **Mandatory Reviews:**
+
 - Verification sampling (4% of applications)
 - Error-prone application identification
 - Random selection processing
@@ -548,6 +613,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Award revocation workflows
 
 #### 6.4 Audit & Compliance Reporting
+
 - Immutable event logging
 - Compliance audit trail
 - Regulatory reporting
@@ -562,6 +628,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ## Cross-Cutting Platform Services
 
 ### 7.1 Communication Center
+
 - Email template engine (program-specific templates)
 - Scheduled campaign management
 - Event-triggered notifications
@@ -572,6 +639,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Localization support (EN/ES)
 
 ### 7.2 Messaging Center
+
 - In-app notification system
 - Banner alerts
 - Modal dialogs
@@ -582,6 +650,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Real-time updates
 
 ### 7.3 Rules Engine
+
 - Eligibility calculation rules
 - Income verification rules
 - Award calculation logic
@@ -593,6 +662,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Rule audit trail
 
 ### 7.4 Document Service
+
 - Secure document storage (Azure Blob)
 - Document type management
 - Virus scanning
@@ -603,6 +673,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Retention policy enforcement
 
 ### 7.5 Identity & Security
+
 - Microsoft Entra ID integration
 - Role-based access control (RBAC)
 - Multi-factor authentication
@@ -613,6 +684,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - Session management
 
 ### 7.6 Query & Reporting
+
 - Cube.js reporting layer
 - Ad-hoc query builder
 - Pre-built report templates
@@ -629,6 +701,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### Phase 1: Foundation & Core Applications (Weeks 1-8)
 
 **Weeks 1-4 (Oct 15 - Nov 11):**
+
 - ✅ ESA+ application forms (reactive forms) - 2 weeks
 - ✅ Opportunity Scholarship application forms - 2 weeks
 - ✅ Application submission workflows
@@ -637,6 +710,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 - ✅ Application status tracking
 
 **Weeks 5-8 (Nov 12 - Dec 9):**
+
 - ✅ Renewal workflows (both programs) - 1 week
 - ✅ Income verification workflow - 1 week
 - ✅ Eligibility determination submission - 1 week
@@ -647,12 +721,14 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### Phase 2: Cross-Cutting Services & Integration (Weeks 9-12)
 
 **Weeks 9-10 (Dec 10 - Dec 23):**
+
 - ✅ Communication Center (email templates, triggers) - 2 weeks
 - ✅ Messaging Center (in-app notifications) - 2 weeks
 - ✅ Microsoft Entra Security integration - 1 week
 - ✅ Document Management (PandaDocs) - 1 week
 
 **Weeks 11-12 (Dec 24 - Jan 6):**
+
 - ✅ Rules Engine integration - 2 weeks
 - ✅ Query Builder (Cube.js) foundation - 1 week
 - ✅ Basic reporting dashboards - 1 week
@@ -660,12 +736,14 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### Phase 3: Advanced Workflows & Admin Features (Weeks 13-16)
 
 **Weeks 13-14 (Jan 7 - Jan 20):**
+
 - ✅ Domicile verification workflows - 2 weeks
 - ✅ State agency integration framework - 2 weeks
 - ✅ Verification sampling service - 1 week
 - ✅ Admin application review workflows - 1 week
 
 **Weeks 15-16 (Jan 21 - Feb 3):**
+
 - ✅ Lottery service implementation - 1 week
 - ✅ Award calculation engine - 2 weeks
 - ✅ Award lifecycle management - 1 week
@@ -675,6 +753,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### Phase 4: Financial & Payment Systems (Weeks 17-18)
 
 **Weeks 17-18 (Feb 4 - Feb 17):**
+
 - ✅ Payment processing infrastructure - 2 weeks
 - ✅ ACH payment file generation - 1 week
 - ✅ ClassWallet integration - 2 weeks
@@ -685,6 +764,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### Phase 5: School & Provider Portals (Weeks 19-20)
 
 **Weeks 19-20 (Feb 18 - Mar 3):**
+
 - ✅ School portal features - 2 weeks
   - Dashboard and metrics
   - Student roster management
@@ -698,6 +778,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### Phase 6: Compliance & Reporting (Weeks 21-22)
 
 **Weeks 21-22 (Mar 4 - Mar 17):**
+
 - ✅ Compliance monitoring workflows - 2 weeks
 - ✅ Testing requirement tracking - 1 week
 - ✅ Financial review management - 1 week
@@ -709,6 +790,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### Phase 7: Testing & Quality Assurance (Weeks 23-24)
 
 **Weeks 23-24 (Mar 18 - Mar 31):**
+
 - ✅ End-to-end workflow testing - 2 weeks
 - ✅ Performance and load testing (80K users) - 1 week
 - ✅ Security testing and penetration testing - 1 week
@@ -718,6 +800,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### Phase 8: UAT & Refinement (Weeks 25-26)
 
 **Weeks 25-26 (Apr 1 - Apr 14):**
+
 - ✅ User acceptance testing - 2 weeks
 - ✅ Defect resolution - 2 weeks
 - ✅ Performance optimization - 1 week
@@ -726,6 +809,7 @@ The K-12 SEAA modernization project encompasses comprehensive scholarship progra
 ### Phase 9: Production Preparation (Weeks 27-28)
 
 **Weeks 27-28 (Apr 15 - Apr 28):**
+
 - ✅ Production environment setup - 1 week
 - ✅ Data migration and validation - 1 week
 - ✅ Staff training - 1 week
@@ -802,6 +886,7 @@ gantt
 ### Development Teams (6-8 FTE)
 
 **Frontend Team (2-3 FTE):**
+
 - Angular application development
 - Reactive forms implementation
 - Portal UI components
@@ -809,6 +894,7 @@ gantt
 - Accessibility compliance
 
 **Backend Team (2-3 FTE):**
+
 - .NET API development
 - Business logic implementation
 - Database schema design
@@ -816,6 +902,7 @@ gantt
 - Performance optimization
 
 **Integration Team (1-2 FTE):**
+
 - External system integration
 - ClassWallet API
 - PandaDocs integration
@@ -823,6 +910,7 @@ gantt
 - Payment rails integration
 
 **QA Team (1-2 FTE):**
+
 - Test plan development
 - Automated testing
 - Manual testing
@@ -844,14 +932,16 @@ gantt
 ### High-Risk Areas
 
 **1. State Agency Integrations**
+
 - **Risk:** Multiple agencies, varying APIs, unknown response times
-- **Mitigation:** 
+- **Mitigation:**
   - Early integration testing
   - Fallback to manual workflows
   - Regular status monitoring
   - Agency coordination meetings
 
 **2. ClassWallet Integration**
+
 - **Risk:** Complex workflows, vendor dependency, webhook reliability
 - **Mitigation:**
   - Sandbox testing early
@@ -860,6 +950,7 @@ gantt
   - Regular vendor communication
 
 **3. Payment Processing**
+
 - **Risk:** Financial transactions, regulatory compliance, ACH accuracy
 - **Mitigation:**
   - Comprehensive testing
@@ -868,6 +959,7 @@ gantt
   - Financial controls
 
 **4. Data Migration**
+
 - **Risk:** Legacy data quality, volume, complexity
 - **Mitigation:**
   - Data profiling early
@@ -876,6 +968,7 @@ gantt
   - Rollback procedures
 
 **5. Performance at Scale**
+
 - **Risk:** 80,000 concurrent users, peak load periods
 - **Mitigation:**
   - Load testing early and often
@@ -896,6 +989,7 @@ gantt
 ## Success Criteria
 
 ### Delivery Milestones
+
 - ✅ Phase 1 complete by December 9, 2025
 - ✅ Cross-cutting services by December 23, 2025
 - ✅ Admin features by February 3, 2026
@@ -906,6 +1000,7 @@ gantt
 - ✅ **Production launch May 1, 2026** ✅
 
 ### Quality Metrics
+
 - Zero critical data integrity issues
 - Platform supports 80,000+ concurrent users
 - <2% defect escape rate post-UAT
@@ -915,6 +1010,7 @@ gantt
 - 99.9% uptime during business hours
 
 ### Business Outcomes
+
 - ESA+ and OS applications processed without manual intervention
 - Award calculations automated and auditable
 - Payment disbursements on schedule
@@ -928,6 +1024,7 @@ gantt
 ## Dependencies & Prerequisites
 
 ### External Dependencies
+
 1. **ClassWallet API** - ESA+ purchasing, wallet management
 2. **PandaDocs API** - Document e-signatures
 3. **State Agencies** - DMV, DPI, Revenue, DHHS, Commerce, Elections
@@ -936,6 +1033,7 @@ gantt
 6. **Azure Services** - Hosting, storage, identity
 
 ### Technical Prerequisites
+
 1. Microsoft Entra ID tenant configured
 2. Azure subscription and resources
 3. Development and staging environments
@@ -944,6 +1042,7 @@ gantt
 6. Backup and disaster recovery
 
 ### Organizational Prerequisites
+
 1. Project governance structure
 2. Stakeholder approval process
 3. Change management procedures
@@ -956,53 +1055,57 @@ gantt
 ## Appendix: Feature-to-Phase Mapping
 
 ### Household Portal Features
-| Feature | Phase | Weeks |
-|---------|-------|-------|
-| Application Forms | 1 | 1-4 |
-| Renewal Workflows | 1 | 5-8 |
-| Profile Management | 1 | 5-8 |
-| School Selection | 1 | 5-8 |
-| Document Upload | 1 | 1-4 |
-| Communication Center | 2 | 9-10 |
-| To-Do Lists | 2 | 9-10 |
-| Award Acceptance | 3 | 13-16 |
-| Payment History | 4 | 17-18 |
-| Purchase Requests | 4 | 17-18 |
+
+| Feature              | Phase | Weeks |
+| -------------------- | ----- | ----- |
+| Application Forms    | 1     | 1-4   |
+| Renewal Workflows    | 1     | 5-8   |
+| Profile Management   | 1     | 5-8   |
+| School Selection     | 1     | 5-8   |
+| Document Upload      | 1     | 1-4   |
+| Communication Center | 2     | 9-10  |
+| To-Do Lists          | 2     | 9-10  |
+| Award Acceptance     | 3     | 13-16 |
+| Payment History      | 4     | 17-18 |
+| Purchase Requests    | 4     | 17-18 |
 
 ### School Portal Features
-| Feature | Phase | Weeks |
-|---------|-------|-------|
-| School Registration | 1 | 5-8 |
-| Student Roster | 5 | 19-20 |
-| Certification | 3 | 13-16 |
-| Endorsement | 3 | 13-16 |
-| Payment Tracking | 5 | 19-20 |
-| Testing Compliance | 6 | 21-22 |
-| Financial Review | 6 | 21-22 |
-| Dashboard | 5 | 19-20 |
+
+| Feature             | Phase | Weeks |
+| ------------------- | ----- | ----- |
+| School Registration | 1     | 5-8   |
+| Student Roster      | 5     | 19-20 |
+| Certification       | 3     | 13-16 |
+| Endorsement         | 3     | 13-16 |
+| Payment Tracking    | 5     | 19-20 |
+| Testing Compliance  | 6     | 21-22 |
+| Financial Review    | 6     | 21-22 |
+| Dashboard           | 5     | 19-20 |
 
 ### Provider Portal Features
-| Feature | Phase | Weeks |
-|---------|-------|-------|
-| Provider Registration | 1 | 5-8 |
-| Provider Directory | 5 | 19-20 |
-| Invoice Submission | 4 | 17-18 |
-| Payment Tracking | 5 | 19-20 |
-| Credential Management | 6 | 21-22 |
+
+| Feature               | Phase | Weeks |
+| --------------------- | ----- | ----- |
+| Provider Registration | 1     | 5-8   |
+| Provider Directory    | 5     | 19-20 |
+| Invoice Submission    | 4     | 17-18 |
+| Payment Tracking      | 5     | 19-20 |
+| Credential Management | 6     | 21-22 |
 
 ### Admin Portal Features
-| Feature | Phase | Weeks |
-|---------|-------|-------|
-| Application Review | 3 | 13-16 |
-| Eligibility Determination | 3 | 13-16 |
-| Verification Management | 3 | 13-16 |
-| Lottery Administration | 3 | 13-16 |
-| Award Management | 3 | 13-16 |
-| Payment Processing | 4 | 17-18 |
-| Compliance Monitoring | 6 | 21-22 |
-| Reporting & Analytics | 6 | 21-22 |
-| Document Management | 2 | 9-10 |
-| Communication Management | 2 | 9-10 |
+
+| Feature                   | Phase | Weeks |
+| ------------------------- | ----- | ----- |
+| Application Review        | 3     | 13-16 |
+| Eligibility Determination | 3     | 13-16 |
+| Verification Management   | 3     | 13-16 |
+| Lottery Administration    | 3     | 13-16 |
+| Award Management          | 3     | 13-16 |
+| Payment Processing        | 4     | 17-18 |
+| Compliance Monitoring     | 6     | 21-22 |
+| Reporting & Analytics     | 6     | 21-22 |
+| Document Management       | 2     | 9-10  |
+| Communication Management  | 2     | 9-10  |
 
 ---
 
@@ -1017,6 +1120,7 @@ This comprehensive implementation plan provides a complete roadmap for deliverin
 ✅ **Realistic** - Based on proven technology patterns  
 
 **Next Steps:**
+
 1. Stakeholder review and approval
 2. Resource allocation confirmation
 3. Sprint planning and team assignments
@@ -1025,6 +1129,7 @@ This comprehensive implementation plan provides a complete roadmap for deliverin
 6. Risk management and adjustment
 
 **Success depends on:**
+
 - Clear prioritization and scope control
 - Adequate resource allocation
 - Timely stakeholder decisions
